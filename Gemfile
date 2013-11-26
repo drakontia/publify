@@ -72,7 +72,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14'
   gem 'simplecov', :require => false
   gem 'pry-rails'
-	# gem 'feedzirra' # required for blogger import
+  # gem 'feedzirra' # required for blogger import
+end
+
+# Install gems as additional
+Dir.glob(File.join(File.dirname(__FILE__), "Gemfile.local")) do |gemlocal|
+  eval(IO.read(gemlocal), binding)
 end
 
 # Install gems from each theme
