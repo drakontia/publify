@@ -156,12 +156,12 @@ ja:
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
-        permalinks: "Permalinks"
-        permalink_format: "Permalink format"
-        date_and_title: "Date and title"
-        month_and_title: "Month and title"
-        title_only: "Title only"
-        custom: "Custom"
+        permalinks: "パーマリンク"
+        permalink_format: "パーマリンク形式"
+        date_and_title: "日付とタイトル"
+        month_and_title: "年月とタイトル"
+        title_only: "タイトルのみ"
+        custom: "カスタム"
         sample: "Here are some examples to get you started."
         you_can_custom_your_url_structure: "You can custom your URL structure using the following tags:"
         your_article_slug: "your article slug. <strong>Using this slug is mandatory</strong>."
@@ -227,7 +227,7 @@ ja:
     pages:
       index:
         manage_pages: "ページの管理"
-        new_page: "New Page"
+        new_page: "新規ページ"
         title: "タイトル"
         permalink: "パーマリンク"
         author: "投稿者"
@@ -236,7 +236,7 @@ ja:
         publish: "公開"
         title: "タイトル"
         images: "Images"
-        publish_settings: "Publish settings"
+        publish_settings: "公開設定"
         status: "ステータス"
         online: "オンライン"
         article_filter: "記事フィルター"
@@ -283,15 +283,15 @@ ja:
         cancel: "キャンセル"
     dashboard:
       drafts:
-        your_drafts: "Your drafts"
-        no_drafts_yet: "No drafts yet, why don't you start and write one"
+        your_drafts: "ドラフト"
+        no_drafts_yet: "ドラフトはありません。今すぐ書き始めましょう！"
       welcome:
         today: "Today"
         articles_and_comments_count_since: "%{articles_count} articles and %{comments_count} comments were posted since your last connexion"
         running_publify: "Publify バージョン%{version} が稼働中です"
         content: "コンテンツ"
         articles_count:
-          zero: "no article"
+          zero: "記事なし"
           one: "1記事"
           other: "%{count}記事"
         your_articles_count:
@@ -350,17 +350,17 @@ ja:
     content:
       index:
         published: "公開済み"
-        new_article: "New article"
-        all_articles: "All articles"
+        new_article: "新規記事"
+        all_articles: "すべての記事"
         manage_articles: "記事の管理"
         withdrawn: "Withdrawn"
         drafts: "下書き:"
-        publication_pending: "Publication pending"
+        publication_pending: "公開保留中"
         search: "検索"
         title: "タイトル"
-        select_a_category: "Select a category"
-        select_an_author: "Select an author"
-        publication_date: "Publication date"
+        select_a_category: "カテゴリの選択"
+        select_an_author: "執筆者の選択"
+        publication_date: "公開日時"
         filter: "フィルター"
       form:
         public: "Public"
@@ -396,7 +396,7 @@ ja:
         description: "説明"
         title: "タイトル"
     menu:
-      help: "Help"
+      help: "ヘルプ"
       documentation: "Documentation"
       report_a_bug: "Report a bug"
       in_page_plugins: "In page plugins"
@@ -469,7 +469,7 @@ ja:
       login: "ログイン"
       password: "パスワード"
       remember_me: "ログイン状態を持続"
-      sign_in: "Sign in"
+      sign_in: "サインイン"
     confirm:
       proceed_to: "Proceed to %{link}"
       admin: "admin"
