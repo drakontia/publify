@@ -23,13 +23,11 @@ tmp/*
 /coverage/
 nbproject
 public/cache/*
-Gemfile.lock
 .rbenv-version
 .ruby-version
 bin/
 .bundle/
 .sass-cache/
 /vendor/bundle
-/themes/*
 !/themes/bootstrap
 !/themes/typographic
