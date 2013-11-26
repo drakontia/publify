@@ -1,30 +1,3 @@
-require 'yaml'
-env = ENV["RAILS_ENV"] || 'development'
-dbfile = File.expand_path("../config/database.yml", __FILE__)
-
-unless File.exists?(dbfile)
-  if ENV['DB']
-    FileUtils.cp "config/database.yml.#{ENV['DB'] || 'postgres'}", 'config/database.yml'
-  else
-    raise "You need to configure config/database.yml first"
-  end
-end
-
-conf = YAML.load(File.read(dbfile))
-environment = conf[env]
-adapter = environment['adapter'] if environment
-raise "You need define an adapter in your database.yml or set your RAILS_ENV variable" if adapter == '' || adapter.nil?
-case adapter
-when 'sqlite3'
-  gem 'sqlite3'
-when 'postgresql'
-  gem 'pg'
-when 'mysql2'
-  gem 'mysql2'
-else
-  raise "Don't know what gem to use for adapter #{adapter}"
-end
-
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.14'
