@@ -1,8 +1,9 @@
-<div id="carousel-image-picker" class="carousel slide" data-ride="carousel">
+<div id="caroutsel-wrapper">
+<div id="carousel-content" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <% images.size.times do |picknum| %>
-      <li data-target="#carousel-image-picker" data-slide-to=<%= picknum %>></li>
+      <li data-target="#carousel-wrapper" data-slide-to=<%= picknum %>></li>
     <% end %>
   </ol>
 
@@ -16,10 +17,11 @@
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-image-picker" data-slide="prev">
+  <a class="left carousel-control" href="#carousel-wrapper" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
-  <a class="right carousel-control" href="#carousel-image-picker" data-slide="next">
+  <a class="right carousel-control" href="#carousel-wrapper" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
+</div>
 </div>
