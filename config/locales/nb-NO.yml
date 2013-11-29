@@ -4,7 +4,55 @@ nb-NO:
       truncate: "Truncate"
       next: "Neste"
       last: "Last"
+  layouts:
+    administration:
+      new: "Ny"
   admin:
+    settings:
+      write:
+        write: "Skriv"
+        publish: "Publiser"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Send trackbacks"
+        explain: "Når du publiserer artikler kan Publify sende trackbacks til de hjemmesider du lenker til. Dette bør deaktiveres for private blogger da det ellers kan lekke privat informasjion til hjemmesider du diskuterer. For offentlige blogger, er det ingen reell mening i å deaktivere dette."
+        urls_to_ping: "Nettadresser som skal pinges automatisk"
+        latitude_longitude: "Breddegrad, lengdegrad"
+        display: "Vis"
+        your_geoloc: "din breddegrad og lengdegrad"
+        example: "for eksempel"
+        media: "Media"
+        image_thumbnail_size: "Liten bildestørrelse"
+        image_medium_size: "Mellomstor bildestørrelse"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Databasemigreringer"
+        information: "Informasjon"
+        current_database_version: "Nåværende databaseversjon"
+        you_are_up_to_date: "Du er oppdatert!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Manglende migrations"
+        update_database_now: "Oppdater database nå"
+        may_take_a_moment: "kan vare et øyeblikk"
+      index:
+        general_settings: "Generelle innstillinger"
+        your_blog: "Din blogg"
+        blog_name: "Bloggtittel"
+        blog_subtitle: "Undertittel for blogg"
+        blog_url: "Bloggadresse"
+        language: "Språk"
+        users: "Brukere"
+        allow_users_to_register: "Tillat brukere å registrere seg"
+        explain_allow_users_to_register: "Du kan tillate brukere å registrere seg på bloggen din. Som standard vil de registreres som bidragsytere, et upriviligert kontonivå som kun gir dem en egen profil på websiden. Dersom du ikke ønsker at brukere skal kunne registrere seg, så kan du legge dem til selv under brukerkontoer."
+        publify_notify_new_articles_or_comments: "Publify kan gi deg beskjed når nye artikler eller kommentarer er mottatt"
+        source_email: "Epostavsender"
+        email_address_used_to_notify: "Epostadresse som brukes av Publify til å sende beskjeder"
+        items_to_display_in_admin_lists: "Enheter å vise i adminlisten"
     seo:
       titles:
         title_settings: "Tittelinnstillinger"
@@ -123,6 +171,7 @@ nb-NO:
         article_filter: "artikkelfilter"
         permanent_link: "Permanent lenke"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Diskusjon"
@@ -197,12 +246,15 @@ nb-NO:
           other: "%{count} kommentarer"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "Dette stedet gir deg en rask oversikt over hva som foregår på din Publify-blogg og hva du kan gjøre. Kanskje du ønsker å %{availabel_actions}."
@@ -244,8 +296,6 @@ nb-NO:
         publish: "Publiser"
         title: "Tittel"
         images: "Bilder"
-        excerpt: "Utdrag"
-        excerpt_explaination: "Utdrag er oppsummeringer som vises på bloggsiden, men ikke i artikkelen"
         publish_settings: "Publiseringsinnstillinger"
         status: "Status"
         published: "Publisert"
@@ -262,6 +312,7 @@ nb-NO:
         categories: "Kategorier"
         tags: "Tags"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "Ny kategori"
     categories:
@@ -280,7 +331,10 @@ nb-NO:
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
-      new_article: "New Article"
+      new_article: "Ny artikkel"
+      new_page: "Ny side"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profil"
       logout: "Logg ut &raquo;"
       home: "Hjem"

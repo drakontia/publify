@@ -4,7 +4,55 @@ ja:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "New"
   admin:
+    settings:
+      write:
+        write: "新規作成"
+        publish: "公開"
+        trackbacks: "トラックバック"
+        send_trackbacks: "トラックバックを送信"
+        explain: "記事が公開されると、Publifyはリンクしたページへトラックバックを送信します。非公開ブログの場合は公開されたブログへ情報が漏れないようにこのチェックボックスを非選択にしてください。公開ブログの場合は非選択にする必要はありません。"
+        urls_to_ping: "自動的にPingを送信するURL"
+        latitude_longitude: "緯度、経度"
+        display: "表示"
+        your_geoloc: "あなたの緯度、経度"
+        example: "例"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "データベースマイグレーション"
+        information: "インフォメーション"
+        current_database_version: "現在のデータベースのバージョン"
+        you_are_up_to_date: "最新です!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "マイグレーションが必要です"
+        update_database_now: "データベースを今すぐ更新"
+        may_take_a_moment: "少しお待ちください"
+      index:
+        general_settings: "General settings"
+        your_blog: "あなたのブログ"
+        blog_name: "ブログ名"
+        blog_subtitle: "ブログサブタイトル"
+        blog_url: "ブログURL"
+        language: "言語"
+        users: "ユーザー"
+        allow_users_to_register: "ユーザーに登録させる"
+        explain_allow_users_to_register: "ユーザーがこのブログに登録するのを許可できます。デフォルトでユーザーは自分自身のプロフィールを編集する以外の権限を持たないcontributorとして登録されます。ユーザーに登録させたくない場合は、管理者であるあなた自らがユーザーを追加することができます。"
+        publify_notify_new_articles_or_comments: "新しい記事やコメントが投稿された場合に通知を送ることができます"
+        source_email: "メールアドレス"
+        email_address_used_to_notify: "通知の送信先メールアドレス"
+        items_to_display_in_admin_lists: "管理リストに表示する行数"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ ja:
         article_filter: "記事フィルター"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "フィードバック"
@@ -197,12 +246,15 @@ ja:
           other: "%{count} comments"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -244,8 +296,6 @@ ja:
         publish: "公開"
         title: "タイトル"
         images: "Images"
-        excerpt: "要約"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "ステータス"
         published: "公開済み"
@@ -262,6 +312,7 @@ ja:
         categories: "カテゴリ"
         tags: "タグ"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -281,6 +332,9 @@ ja:
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
       new_article: "New Article"
+      new_page: "New Page"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "プロフィール"
       logout: "ログアウト &raquo;"
       home: "Home"

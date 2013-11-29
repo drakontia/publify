@@ -190,7 +190,6 @@ Localization.define("nb_NO") do |l|
   l.store "Spam comments:", "Spam-kommentarer:"
   l.store "In your spam queue:", "I Spam-køen:"
 
-  l.store "Display", "Vis"
   l.store "All comments", "Alle kommentarer"
   l.store "Limit to ham", "Begrens til Ham"
   l.store "Limit to presumed ham", "Begrens til antatt Ham"
@@ -252,17 +251,6 @@ Localization.define("nb_NO") do |l|
   l.store "Feedback settings", "Feedback-innstillinger"
 
   # app/views/admin/settings/index.html.erb
-  l.store "Your blog", "Din blogg"
-  l.store "Blog name", "Bloggtittel"
-  l.store "Blog subtitle", "Undertittel for blogg"
-  l.store "Blog URL", "Bloggadresse"
-  l.store "Language", "Språk"
-  l.store "Allow users to register", "Tillat brukere å registrere seg"
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", "Du kan tillate brukere å registrere seg på bloggen din. Som standard vil de registreres som bidragsytere, et upriviligert kontonivå som kun gir dem en egen profil på websiden. Dersom du ikke ønsker at brukere skal kunne registrere seg, så kan du legge dem til selv under brukerkontoer."
-  l.store "Publify can notify you when new articles or comments are posted", "Publify kan gi deg beskjed når nye artikler eller kommentarer er mottatt"
-  l.store "Source Email", "Epostavsender"
-  l.store "Email address used by Publify to send notifications", "Epostadresse som brukes av Publify til å sende beskjeder"
-  l.store "Items to display in admin lists", "Enheter å vise i adminlisten"
   l.store "Date format", "Datoformat"
   l.store "ago", "siden"
   l.store "Time format", "Klokkeformat"
@@ -274,30 +262,10 @@ Localization.define("nb_NO") do |l|
   l.store "You can use your Google Feedburner account instead of Publify feed URL. To enable this, fill this form with your Feedburner ID.", "Du kan bruke din Gooogle Feedburner-konto istedet for Publify feed URL. For å aktivere dette, fyll ut dette skjemaet med din Feedburner ID."
 
   # app/views/admin/settings/update_database.html.erb
-  l.store "Information", "Informasjon"
-  l.store "Current database version", "Nåværende databaseversjon"
   l.store "New database version", "Ny databaseversjon"
   l.store "Your database supports migrations", "Din database støtter migrations"
-  l.store "Needed migrations", "Manglende migrations"
-  l.store "You are up to date!", "Du er oppdatert!"
-  l.store "Update database now", "Oppdater database nå"
-  l.store "may take a moment", "kan vare et øyeblikk"
-  l.store "Database migration", "Databasemigreringer"
   l.store "yes", "ja"
   l.store "no", "nei"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "Send trackbacks"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "Når du publiserer artikler kan Publify sende trackbacks til de hjemmesider du lenker til. Dette bør deaktiveres for private blogger da det ellers kan lekke privat informasjion til hjemmesider du diskuterer. For offentlige blogger, er det ingen reell mening i å deaktivere dette."
-  l.store "URLs to ping automatically", "Nettadresser som skal pinges automatisk"
-  l.store "Latitude, Longitude", "Breddegrad, lengdegrad"
-  l.store "your latitude and longitude", "din breddegrad og lengdegrad"
-  l.store "example", "for eksempel"
-  l.store "Image thumbnail size", "Liten bildestørrelse"
-  l.store "Image medium size", "Mellomstor bildestørrelse"
-  l.store "Write", "Skriv"
-
-  # app/views/admin/sidebar/_publish.html.erb
   l.store "Changes published", "Endringer publisert"
 
   # app/views/admin/sidebar/_target.html.erb
@@ -311,16 +279,6 @@ Localization.define("nb_NO") do |l|
   l.store "Get more plugins", "Hent flere plugins"
   l.store "Sidebar", ""
   l.store "Publish changes", "Publiser endringer"
-  l.store "Displays links to monthly archives", ""
-  l.store "Displays a list of authors ordered by name with links to their articles and profile", ""
-  l.store "Livesearch", ""
-  l.store "Adds livesearch to your Publify blog", ""
-  l.store "This widget just displays links to Publify main site, this blog's admin and RSS.", ""
-  l.store "Adds basic search sidebar in your Publify blog", ""
-  l.store "Static", ""
-  l.store "Static content, like links to other sites, advertisements, or blog meta-information", ""
-  l.store "RSS and Atom feeds", ""
-  l.store "XML Syndication", ""
   l.store "remove", "supprimer"
 
   l.store "Are you sure you want to delete the tag", "Er du sikker på at du vil slette denne taggen"
@@ -369,12 +327,7 @@ Localization.define("nb_NO") do |l|
   # app/views/admin/users/destroy.html.erb
   l.store "Really delete user", "Vil du virkelig slette brukeren"
   l.store "Yes", "Ja"
-  l.store "Users", "Brukere"
-
-  # app/views/admin/users/edit.html.erb
   l.store "Edit User", "Rediger bruker"
-
-  # app/views/admin/users/index.html.erb
   l.store "New User", "Ny bruker"
   l.store "Comments", "Kommentarer"
   l.store "State", "Tilstand"
@@ -403,15 +356,9 @@ Localization.define("nb_NO") do |l|
   l.store "RSS feed for this post", "RSS-feed for denne artikkel"
   l.store "trackback uri", "Trackback URI"
   l.store "Comments are disabled", "Kommentarer er deaktiveret"
-  l.store "Trackbacks are disabled", ""
 
   # app/views/authors/show.html.erb
   l.store "Website:", "Hjemmeside:"
-  l.store "MSN:", ""
-  l.store "Yahoo:", ""
-  l.store "Jabber:", ""
-  l.store "AIM:", ""
-  l.store "Twitter:", ""
   l.store "About %s", "Om %s"
   l.store "This author has not published any article yet", "Forfatteren har ikke publisert noen artikler enda"
 
@@ -576,7 +523,6 @@ Localization.define("nb_NO") do |l|
   l.store "Extended Content", "Utvidet innhold"
   l.store "Feedback Search", "Søk i feedback"
   l.store "Filters", "Filtre"
-  l.store "General Settings", "Generelle innstillinger"
   l.store "Google verification link", "Verifiseringslenke for Google"
   l.store "IP", "IP-adresse"
   l.store "If you are reading this article elsewhere than", "Dersom du leser denne artikkelen et annet sted enn"

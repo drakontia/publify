@@ -4,7 +4,55 @@ da:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "Ny"
   admin:
+    settings:
+      write:
+        write: "Skriv"
+        publish: "Udgiv"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Send trackbacks"
+        explain: "Når du udgiver artikler kan Publify sende trackbacks til de hjemmesider du linker til. Dette bør slåes fra for private blogs da det ellers kan lække privat information til hjemmesider du diskuterer. For offentlige blogs, er der ingen reel mening i at deaktivere dette."
+        urls_to_ping: "Webadresser der automatisk pinges"
+        latitude_longitude: "Breddegrad, længdegrad"
+        display: "Vis"
+        your_geoloc: "din breddegrad og længdegrad"
+        example: "for eksempel"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Database migration"
+        information: "Information"
+        current_database_version: "Nuværende database version"
+        you_are_up_to_date: "Du er up to date!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Manglende migrations"
+        update_database_now: "Updatér database nu"
+        may_take_a_moment: "Det varer et øjeblik"
+      index:
+        general_settings: "Generelle Indstillinger"
+        your_blog: "Din Blog"
+        blog_name:  "Blog titel"
+        blog_subtitle: "Blog undertitel"
+        blog_url: "Blogadresse"
+        language: "Sprog"
+        users: "Brugere"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "Publify kan give dig besked, når nye artikler eller kommentarer er indsendt"
+        source_email: "Afsender e-mail"
+        email_address_used_to_notify: "E-mail adresse der bruges af Publify til at sende meddelelser"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -108,7 +156,7 @@ da:
     pages:
       index:
         manage_pages: "Administrer sider"
-        new_page: "New Page"
+        new_page: "ny Side"
         title: "Titel"
         permalink: "Permanent link"
         author: "Forfatter"
@@ -123,6 +171,7 @@ da:
         article_filter: "Artikelfilter"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Diskussion"
@@ -197,12 +246,15 @@ da:
           other: "%{count} kommentarer"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "Dette sted giver dig en hurtig oversigt over, hvad der sker på din Publify blog, og hvad du kan gøre. Måske du ønsker at %{available_actions}."
@@ -227,7 +279,7 @@ da:
     content:
       index:
         published: "Offentliggjort"
-        new_article: "New article"
+        new_article: "Ny Artikel"
         all_articles: "All articles"
         manage_articles: "Administrer artikler"
         withdrawn: "Withdrawn"
@@ -244,8 +296,6 @@ da:
         publish: "Udgiv"
         title: "Titel"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Status"
         published: "Offentliggjort"
@@ -262,6 +312,7 @@ da:
         categories: "Kategorier"
         tags: "Tags"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -280,7 +331,10 @@ da:
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
-      new_article: "New Article"
+      new_article: "Ny Artikel"
+      new_page: "Ny Side"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "Log ud &raquo;"
       home: "Home"

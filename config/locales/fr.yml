@@ -4,7 +4,55 @@ fr:
       truncate: "Truncate"
       next: "Suivant"
       last: "Last"
+  layouts:
+    administration:
+      new: "Nouveau"
   admin:
+    settings:
+      write:
+        write: "Écrire"
+        publish: "Publier"
+        trackbacks: "Rétroliens"
+        send_trackbacks: "Envoyer des rétroliens"
+        explain: "Quand vous publiez un billet sur Publify, vous pouvez envoyer un rétrolien aux sites que vous liez. Cette fonctionnalité devrait être désactivée pour les blogs privée puisqu'elle permet de donner des informations à leur sujet à des tiers. Ceci ne s'impose cependant pas pour un blog public."
+        urls_to_ping: "Sites à alerter automatiquement"
+        latitude_longitude: "Latitude, Longitude"
+        display: "Afficher"
+        your_geoloc: "vos coordonnées géographiques"
+        example: "exemple"
+        media: "Média"
+        image_thumbnail_size: "Taille des vignettes"
+        image_medium_size: "Taille des images réduites"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Mise à jour de la base de données"
+        information: "Informations"
+        current_database_version: "Version actuelle de la base"
+        you_are_up_to_date: "Vous êtes à jour !"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Mise à jour nécessaire"
+        update_database_now: "Mettez votre base à jour"
+        may_take_a_moment: "cela peut prendre un moment"
+      index:
+        general_settings: "General settings"
+        your_blog: "Votre blog "
+        blog_name: "Titre du blog"
+        blog_subtitle: "Sous-titre du blog"
+        blog_url: "Adresse du blog"
+        language: "Langue"
+        users: "Utilisateurs"
+        allow_users_to_register: "Autoriser les utilisateurs à s'enregistrer"
+        explain_allow_users_to_register: "Vous pouvez permettre aux utilisateurs de s'enregistrer sur votre blog. Par défaut, ils seront enregistrés come contributeurs. Cet utilisateur a un niveau faible sans droit mais qui possède sont propre profile sur le site. Si vous ne voulez pas que les utilisateurs s'enregistrent, vous pouvez les ajouter vous même dans la partie d'administration des utilisateurs."
+        publify_notify_new_articles_or_comments: "Publify peut vous alerter quand de nouveaux articles et commentaires sont publiés"
+        source_email: "Adresse courriel source"
+        email_address_used_to_notify: "Adresse courriel utilisée par Publify pour l'envoi d'alertes"
+        items_to_display_in_admin_lists: "Nombre d'éléments à afficher dans les listes"
     seo:
       titles:
         title_settings: "Paramétrage des titres"
@@ -123,6 +171,7 @@ fr:
         article_filter: "Mise en forme des billets"
         permanent_link: "Lien permanent"
         page_with_action_name: "%{action} page"
+        type_your_post: "Tapez votre texte"
     feedback:
       index:
         feedback: "Commentaires"
@@ -247,8 +296,6 @@ fr:
         publish: "Publier"
         title: "Titre"
         images: "Images"
-        excerpt: "Extrait"
-        excerpt_explaination: "Les résumés vous permettent d'afficher un texte descriptif de votre article à la place de ce dernier sur la page d'accueil de votre blog"
         publish_settings: "Paramètres de publication"
         status: "État"
         published: "Publié"
@@ -265,6 +312,7 @@ fr:
         categories: "Catégories"
         tags: "Labels"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Tapez votre texte"
       categories:
         new_category: "Nouvelle catégorie"
     categories:
@@ -284,6 +332,9 @@ fr:
       sidebar_plugins: "Widgets"
       logged_in_as: "Salutations, %{login}"
       new_article: "Nouvel article"
+      new_page: "Nouvelle Page"
+      new_media: "Nouveau Média"
+      new_note : "Nouvelle Note"
       profile: "Profil"
       logout: "Déconnexion &raquo;"
       home: "Tableau de bord"

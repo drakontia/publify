@@ -4,7 +4,55 @@ lt:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "Neuer"
   admin:
+    settings:
+      write:
+        write: "Rašyti"
+        publish: "Publikuoti"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Siųsti dienoraščių nuorodas"
+        explain: "Publikuojant straipsnius Publify gali siųsti dienoraščių nuorodas į puslapius, į kuriuos jūs rodote. Tai gali būti išjungta ant privačių dienoraščių, bet viešuose nėra priežasties išjungti šio nustatymo"
+        urls_to_ping: "URL adresai į kuriuos pranešti automatiškai"
+        latitude_longitude: "Geografinė platuma, ilguma"
+        display: "Rodyti"
+        your_geoloc: "Tavo geografinė platuma ir ilguma"
+        example: "Pavyzdys"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Datenbank Migration"
+        information: "Information"
+        current_database_version: "Aktuelle Datenbank Version"
+        you_are_up_to_date: "Sie sind auf dem aktuellsten Stand!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Migrationen sind notwendig"
+        update_database_now: "Update der Datenbank jetzt"
+        may_take_a_moment: "dauert einen Moment"
+      index:
+        general_settings: "Pagrindiniai nustatymai"
+        your_blog: "Tavo dienoraščio adresas"
+        blog_name: "Dienoraščio pavadinimas"
+        blog_subtitle: "Dienoraščio subpavadinimas"
+        blog_url: "Dienoraščio adresas"
+        language: "Kalba"
+        users: "Users"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "Publify kann Sie benachrichtigen, wenn neue Artikel oder Kommentare angelegt werden"
+        source_email: "Email Adresse"
+        email_address_used_to_notify: "Email Adresse, die Publify beim Versenden von Benachrichtigungen verwenden soll"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -114,7 +162,7 @@ lt:
         author: "Author"
         date: "Date"
       form:
-        publish: "Publish"
+        publish: "Publikuoti"
         title: "Title"
         images: "Images"
         publish_settings: "Publish settings"
@@ -123,6 +171,7 @@ lt:
         article_filter: "Article filter"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Feedback"
@@ -197,12 +246,15 @@ lt:
           other: "%{count} comments"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -241,11 +293,9 @@ lt:
         filter: "Filter"
       form:
         public: "Public"
-        publish: "Publish"
+        publish: "Publikuoti"
         title: "Title"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Status"
         published: "Published"
@@ -460,8 +510,6 @@ lt:
         publish: "Publikuoti"
         title: "Pavadinimas"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Statusas"
         published: "Publikuotas"
@@ -478,6 +526,7 @@ lt:
         categories: "Categories"
         tags: "Žymės"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -497,6 +546,9 @@ lt:
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Sveiki, %{login}"
       new_article: "New Article"
+      new_page: "New Page"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "Atsijungti &raquo;"
       home: "Home"

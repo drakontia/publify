@@ -4,7 +4,55 @@ pl:
       truncate: "Truncate"
       next: "Następne"
       last: "Last"
+  layouts:
+    administration:
+      new: "Nowy"
   admin:
+    settings:
+      write:
+        write: "Pisanie"
+        publish: "Publish"
+        trackbacks: "Trackbacki"
+        send_trackbacks: "Wyślij trackbacki"
+        explain: "Publikując artykuły, Publify może powiadomić strony, do których podasz łącza. Opcja ta powinna być wyłączona w przypadku blogów osobistych, gdyż może doprowadzić do wycieku prywatnych informacji. W przypadku blogów publicznych wyłączenie tej opcji nie ma większego sensu."
+        urls_to_ping: "Automatycznie pingowane łącza"
+        latitude_longitude: "Szerokość geogr., długość geogr."
+        display: "Wyświetl"
+        your_geoloc: "Twoją szerokość i długość geograficzna"
+        example: "na przykład"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Migruj bazę danych"
+        information: "Informacja"
+        current_database_version: "Aktualna wersja bazy danych"
+        you_are_up_to_date: "Wszystko jest aktualne!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Potrzebne migracje"
+        update_database_now: "Aktualizuj bazę danych"
+        may_take_a_moment: "może zająć dłuższą chwilę"
+      index:
+        general_settings: "Ustawienia ogólne"
+        your_blog: "Twój blog"
+        blog_name: "Nazwa bloga"
+        blog_subtitle: "Podtytuł bloga"
+        blog_url: "Adres URL bloga"
+        language: "Język"
+        users: "Users"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "Publify może wysyłać powiadomienia o nowych artykułach bądź komentarzach"
+        source_email: "Źródłowy adres email"
+        email_address_used_to_notify: "Adres email używany przez Publify do wysyłania powiadomień"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ pl:
         article_filter: "Filtr artykułów"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Komentarze"
@@ -197,12 +246,15 @@ pl:
           other: "%{count} komentarze"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -244,8 +296,6 @@ pl:
         publish: "Publikuj"
         title: "Tytuł"
         images: "Grafika"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Stan"
         published: "Opublikowane"
@@ -262,6 +312,7 @@ pl:
         categories: "Categories"
         tags: "Tagi"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "Utwórz nową kategorię"
     categories:
@@ -281,6 +332,9 @@ pl:
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
       new_article: "New Article"
+      new_page: "New Page"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "Wyloguj &raquo;"
       home: "Home"

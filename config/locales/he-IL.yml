@@ -4,7 +4,55 @@ he-IL:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "New"
   admin:
+    settings:
+      write:
+        write: "כתוב"
+        publish: "פרסם"
+        trackbacks: "עוקבים חזרה"
+        send_trackbacks: "שלח עוקבים-חזרה"
+        explain: "בעת פרסום במאמר, Publify יכולה לשלוח עוקבים-חזרה לאתרים אליהם אתה מקשר. מומלץ לבטל זאת לבלוגים פרטיים משום שמידע פרטי על האתרים אליהם אתה מקשר עלול לדלוף. לבלוגים ציבוריים, אין טעם לבטל זאת."
+        urls_to_ping: "כתובות לקישור אוטומטי"
+        latitude_longitude: "קו רוחב, קו אורך"
+        display: "תצוגה"
+        your_geoloc: "קווי הרוחב והאורך שלך"
+        example: "דוגמא"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "עדכוני בסיס הנתונים"
+        information: "מידע"
+        current_database_version: "גרסת בסיס הנתונים הנוכחית"
+        you_are_up_to_date: "בסיס הנתונים שלך מעודכן !"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "עדכונים נדרשים"
+        update_database_now: "עדכן את בסיס הנתונים"
+        may_take_a_moment: "ייתכן כי ייקח זמן מה"
+      index:
+        general_settings: "General settings"
+        your_blog: "הבלוג שלך"
+        blog_name: "שם הבלוג"
+        blog_subtitle: "כותרת משנה"
+        blog_url: "כתובת הבלוג"
+        language: "שפה"
+        users: "משתמשים"
+        allow_users_to_register: "אפשר למשתמשים להירשם"
+        explain_allow_users_to_register: "תוכל לאפשר למשתמשים להירשם לבלוג שלך. כברירת מחדל, הם יירשמו כתורמים - חשבון שאינו נותן הרשאות מיוחדות אלא רק את הזכות להחזיק  חשבון באתר. אם אינך רוצה שהמשתמשים יוכלו להירשם בעצמם, תוכל להוסיף אותם בעצמך כחללק מדף זה"
+        publify_notify_new_articles_or_comments: "Publify יכולה לעדכן אותך בעת שמאמרים חדשים או תגובות נשלחות."
+        source_email: "דואל המקור"
+        email_address_used_to_notify: "כתובת הדואל שתשמש את Publify לשלוח עדכונים"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ he-IL:
         article_filter: "מסנן הכתבה"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "משוב"
@@ -197,12 +246,15 @@ he-IL:
           other: "%d תגובות"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -244,8 +296,6 @@ he-IL:
         publish: "פרסם"
         title: "כותרת"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "מצב"
         published: "פורסם"
@@ -262,6 +312,7 @@ he-IL:
         categories: "קטגוריות"
         tags: "תוויות"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -281,6 +332,9 @@ he-IL:
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
       new_article: "New Article"
+      new_page: "New Page"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "דיוקן"
       logout: "Log out &raquo;"
       home: "בית"

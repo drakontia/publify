@@ -61,12 +61,17 @@ module Admin::ContentHelper
     html << "</div>"
   end
   
-  def toggle_element(element, label=_("Change"))
-    link_to(label, "##{element}", :"data-toggle" => :collapse, :"data-target" => "##{element}")
+  def toggle_element(element, label=t('.change'))
+    link_to(label, "##{element}", :"data-toggle" => :collapse)
   end
   
   def publish_now_or_already_published(article)
     return _("now") unless article.published and article.state.to_s.downcase == 'published'
     display_date_and_time(article.published_at)
+  end
+  
+  def publish_or_save
+    return t(".publish") if controller.action_name == "new"
+    return t(".save")
   end
 end

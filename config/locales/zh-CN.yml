@@ -4,7 +4,55 @@ zh-CN:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "New"
   admin:
+    settings:
+      write:
+        write: "寫入"
+        publish: "发布"
+        trackbacks: "引用"
+        send_trackbacks: "引用發送"
+        explain: "當公開的文章或引用會洩漏你私人的資訊時，對於不公開的博客publify會終止連結。在公開的博客並無此選項"
+        urls_to_ping: "URL自動地Ping"
+        latitude_longitude: "緯度,經度"
+        display: "顯示"
+        your_geoloc: "你的緯度、經度"
+        example: "舉例"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "資料庫移動"
+        information: "資訊"
+        current_database_version: "當前的資料庫版本"
+        you_are_up_to_date: "你現在是最新的狀態"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "必要的移動"
+        update_database_now: "現在更新資料庫"
+        may_take_a_moment: "需要稍等一下"
+      index:
+        general_settings: "一般設定"
+        your_blog: "你的博客"
+        blog_name: "博客名稱"
+        blog_subtitle: "副標題"
+        blog_url: "博客URL"
+        language: "言語"
+        users: "使用者"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "當新的文章或评论被貼上時publify會通知你"
+        source_email: "原始email"
+        email_address_used_to_notify: "email位址使用publify發出通知"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ zh-CN:
         article_filter: "Article filter"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "回应"
@@ -197,12 +246,15 @@ zh-CN:
           other: "%{count}条评论"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "这里給你一個快速的概览，让你知道你的博客发生什么事情了。也许你想要%{available_actions}"
@@ -244,8 +296,6 @@ zh-CN:
         publish: "发布"
         title: "标题"
         images: "Images"
-        excerpt: "摘要"
-        excerpt_explaination: "摘要对文章的总结，只会显示在首页，不会出现在文章正文。"
         publish_settings: "发布设定"
         status: "状态"
         published: "已发表"
@@ -262,6 +312,7 @@ zh-CN:
         categories: "分类"
         tags: "标签"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "创建分类"
     categories:
@@ -280,7 +331,10 @@ zh-CN:
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
-      new_article: "New Article"
+      new_article: "新文章"
+      new_page: "新页面"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "登出 &raquo;"
       home: "首页"

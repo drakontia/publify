@@ -201,54 +201,19 @@ Localization.define("fr_FR") do |l|
   l.store "Enable reCaptcha", "Utiliser reCaptcha"
   l.store "Remember to set your reCaptcha keys inside config/initializers/recaptcha.rb", "N'oubliez pas de mettre votre clé d'activation dans config/initializers/recaptcha.rb"
   l.store "Feedback settings", "Paramètres des commentaires"
-
-  # app/views/admin/settings/index.html.erb
-  l.store "Your blog", "Votre blog "
-  l.store "Blog name", "Titre du blog"
-  l.store "Blog subtitle", "Sous-titre du blog"
-  l.store "Blog URL", "Adresse du blog"
-  l.store "Language", "Langue"
-  l.store "Allow users to register", "Autoriser les utilisateurs à s'enregistrer"
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", "Vous pouvez permettre aux utilisateurs de s'enregistrer sur votre blog. Par défaut, ils seront enregistrés come contributeurs. Cet utilisateur a un niveau faible sans droit mais qui possède sont propre profile sur le site. Si vous ne voulez pas que les utilisateurs s'enregistrent, vous pouvez les ajouter vous même dans la partie d'administration des utilisateurs."
-  l.store "Publify can notify you when new articles or comments are posted", "Publify peut vous alerter quand de nouveaux articles et commentaires sont publiés"
-  l.store "Source Email", "Adresse courriel source"
-  l.store "Email address used by Publify to send notifications", "Adresse courriel utilisée par Publify pour l'envoi d'alertes"
-  l.store "Items to display in admin lists", "Nombre d'éléments à afficher dans les listes"
   l.store "Date format", "Afficher les dates"
   l.store "ago", "il y a"
   l.store "Time format", "Afficher les heures"
   l.store "Publishing options", "Options de publication"
-  l.store "Display", "Afficher"
   l.store "articles on my homepage by default", "billet sur ma page d'accueil params par défaut"
   l.store "articles in my news feed by default", "billets dans mon flux RSS par défaut"
   l.store "Show only article excerpt on feed", "Tronquer les articles dans le flux RSS"
   l.store "Feedburner ID", "Identifiant Feedburner"
   l.store "You can use your Google Feedburner account instead of Publify feed URL. To enable this, fill this form with your Feedburner ID.", "Vous pouvez utiliser votre compte Google Feedburner plutôt que votre adresse de flux Publify. Pour l'autoriser, remplissez ce formulaire avec votre identifiant Feedburner."
-
-  # app/views/admin/settings/update_database.html.erb
-  l.store "Information", "Informations"
-  l.store "Current database version", "Version actuelle de la base"
   l.store "New database version", "Nouvelle version de la base"
   l.store "Your database supports migrations", "Votre base de données supporte la mise à jour"
-  l.store "Needed migrations", "Mise à jour nécessaire"
-  l.store "You are up to date!", "Vous êtes à jour !"
-  l.store "Update database now", "Mettez votre base à jour"
-  l.store "may take a moment", "cela peut prendre un moment"
-  l.store "Database migration", "Mise à jour de la base de données"
   l.store "yes", "oui"
   l.store "no", "non"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "Envoyer des rétroliens"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "Quand vous publiez un billet sur Publify, vous pouvez envoyer un rétrolien aux sites que vous liez. Cette fonctionnalité devrait être désactivée pour les blogs privée puisqu'elle permet de donner des informations à leur sujet à des tiers. Ceci ne s'impose cependant pas pour un blog public."
-  l.store "URLs to ping automatically", "Sites à alerter automatiquement"
-  l.store "Latitude, Longitude", "Latitude, Longitude"
-  l.store "your latitude and longitude", "vos coordonnées géographiques"
-  l.store "example", "exemple"
-  l.store "Media", "Média"
-  l.store "Image thumbnail size", "Taille des vignettes"
-  l.store "Image medium size", "Taille des images réduites"
-  l.store "Write", "Écrire"
 
   # app/views/admin/shared/destroy.html.erb
   l.store "Changes published", "Modifications publiées"
@@ -337,7 +302,6 @@ Localization.define("fr_FR") do |l|
   l.store "Comments", "Commentaires"
   l.store "State", "État"
   l.store "%s user", "%s"
-  l.store "Users", "Utilisateurs"
   l.store "Manage users", "Gérer les utilisateurs"
 
   # app/views/admin/users/new.html.erb
@@ -360,7 +324,6 @@ Localization.define("fr_FR") do |l|
   l.store "is about to say", "va dire"
   l.store "There are", "Il y a"
   l.store "Leave a response", "Réagir à ce billet"
-  l.store "Trackbacks", "Rétroliens"
   l.store "Use the following link to trackback from your own site", "Utilisez le lien ci-dessous pour envoyer un rétrolien depuis votre site"
   l.store "RSS feed for this post", "Flux RSS de ce billet"
   l.store "trackback uri", "URL de rétrolien"
@@ -450,7 +413,6 @@ Localization.define("fr_FR") do |l|
   l.store "You can leave a %s", "Vous pouvez déposer un %s"
   l.store "or a %s from your own site", "ou un %s depuis votre site"
   l.store "Read full article", "Lire l'article complet"
-  l.store "trackback", "rétrolien"
 
   # themes/standard_issue/views/articles/_comment_form.html.erb
   l.store "Name %s", "Votre nom %s"
@@ -580,7 +542,6 @@ Localization.define("fr_FR") do |l|
   l.store "Metadata was successfully removed.", "Les métadonnées ont été supprimées avec succès."
   l.store "Mon", "Lun"
   l.store "Monday", "Lundi"
-  l.store "New Redirect", ""
   l.store "No", "Non"
   l.store "Not published by Apple", "Donnée non publiée par Apple"
   l.store "Notification", "Notifications"

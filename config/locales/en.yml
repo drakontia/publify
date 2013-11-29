@@ -4,7 +4,55 @@ en:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "New"
   admin:
+    settings:
+      write:
+        write: "Write"
+        publish: "Publish"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Send trackbacks"
+        explain: "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this."
+        urls_to_ping: "URLs to ping automatically"
+        latitude_longitude: "Latitude, Longitude"
+        display: "Display"
+        your_geoloc: "your latitude and longitude"
+        example: "example"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Database migration"
+        information: "Information"
+        current_database_version: "Current database version"
+        you_are_up_to_date: "You are up to date!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Needed migrations"
+        update_database_now: "Update database now"
+        may_take_a_moment: "may take a moment"
+      index:
+        general_settings: "General settings"
+        your_blog: "Your blog"
+        blog_name: "Blog name"
+        blog_subtitle: "Blog subtitle"
+        blog_url: "Blog URL"
+        language: "Language"
+        users: "Users"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "Publify can notify you when new articles or comments are posted"
+        source_email: "Source Email"
+        email_address_used_to_notify: "Email address used by Publify to send notifications"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ en:
         article_filter: "Article filter"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Feedback"
@@ -197,12 +246,15 @@ en:
           other: "%{count} comments"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -244,8 +296,6 @@ en:
         publish: "Publish"
         title: "Title"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Status"
         published: "Published"
@@ -262,6 +312,7 @@ en:
         categories: "Categories"
         tags: "Tags"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -281,6 +332,9 @@ en:
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
       new_article: "New Article"
+      new_page: "New Page"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "Log out &raquo;"
       home: "Home"

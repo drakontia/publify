@@ -4,7 +4,55 @@ ru:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "New"
   admin:
+    settings:
+      write:
+        write: "Write"
+        publish: "Опубликовать"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Send trackbacks"
+        explain: "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this."
+        urls_to_ping: "URLs to ping automatically"
+        latitude_longitude: "Latitude, Longitude"
+        display: "Display"
+        your_geoloc: "your latitude and longitude"
+        example: "example"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Database migration"
+        information: "Information"
+        current_database_version: "Current database version"
+        you_are_up_to_date: "You are up to date!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Needed migrations"
+        update_database_now: "Update database now"
+        may_take_a_moment: "may take a moment"
+      index:
+        general_settings: "Главные настройки"
+        your_blog: "Ваш блог"
+        blog_name: "Имя блога"
+        blog_subtitle: "Подзаголовок блога"
+        blog_url: "URL блога"
+        language: "Язык"
+        users: "Users"
+        allow_users_to_register: "Разрешить пользователям регистрироваться"
+        explain_allow_users_to_register: "Вы можете разрешить пользователям регистрироваться в вашем блоге. По умолчанию они регистрируются как контрибьюторы, то есть получают непривелигированные учетные записи, которые не имеют никаких прав — только профиль на сайте. Если вы не хотите давать пользователям возможность регистрироваться, вы можете добавлять их вручную в разделе «пользователи» панели администратора"
+        publify_notify_new_articles_or_comments: "Publify can notify you when new articles or comments are posted"
+        source_email: "Source Email"
+        email_address_used_to_notify: "Email address used by Publify to send notifications"
+        items_to_display_in_admin_lists: "Элементы для отображения в администраторских списках"
     seo:
       titles:
         title_settings: "Настройки заголовка"
@@ -123,6 +171,7 @@ ru:
         article_filter: "Фильтр постов"
         permanent_link: "Постоянная ссылка"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Комментарии"

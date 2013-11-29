@@ -51,14 +51,6 @@ Localization.define("ro_RO") do |l|
   l.store "Delete this file from the webserver?", "Ștergi acest fișier de pe server?"
   l.store "File Uploads", "Încărcări de fișiere"
   l.store "Browse", ""
-  l.store "Displays links to monthly archives", ""
-  l.store "Displays a list of authors ordered by name with links to their articles and profile", ""
-  l.store "This widget just displays links to Publify main site, this blog's admin and RSS.", ""
-  l.store "Show pages for this blog", ""
-  l.store "Static", ""
-  l.store "Static content, like links to other sites, advertisements, or blog meta-information", ""
-  l.store "RSS and Atom feeds", ""
-  l.store "XML Syndication", ""
   l.store "remove", "supprimer"
   l.store "Enable comments by default", "Implicit comentariile să fie active"
   l.store "Enable Trackbacks by default", "Implicit retrolegăturile să fie active"
@@ -66,15 +58,10 @@ Localization.define("ro_RO") do |l|
   l.store "Comments filter", "Filtru pentru comentarii"
   l.store "Enable gravatars", "Activează gravataruri"
   l.store "Show your email address", "Arată adresa ta de email"
-  l.store "Notifications", ""
-  l.store "Publify can notify you when new articles or comments are posted", "Publify te poate alerta la publicarea de noi articole sau comentarii"
-  l.store "Source Email", "Expeditor email"
-  l.store "Email address used by Publify to send notifications", "Adresa email folosită de Publify pentru a trimite alerte prin email"
   l.store "Enabling spam protection will make Publify compare the IP address of posters as well as the contents of their posts against local and remote blacklists. Good defense against spam bots", "La activarea protecției anti-spam, Publify va compara adresa IP a utilizatorului care publică un articol, cît și conținutul articolului publicat, cu niște liste negre locale sau din altă parte. Reprezintă o bună apărare împotriva unui spam bot "
   l.store "Enable spam protection", "Activează protecția anti-spam"
   l.store "Akismet Key", "Cheia Akismet"
   l.store "Publify can (optionally) use the %s spam-filtering service.  You need to register with Akismet and receive an API key before you can use their service.  If you have an Akismet key, enter it here", "Opțional, Publify poate folosi serviciul %s de filtrare spam. Trebuie să te înregistrezi la Akismet și să primești o cheie API pentru a putea folosi acest serviciu. Dacă ai deja o cheie Akismet, introdu-o aici"
-  l.store "Disable trackbacks site-wide", ""
   l.store "This setting allows you to disable trackbacks for every article in your blog.  It won't remove existing trackbacks, but it will prevent any further attempt to add a trackback anywhere on your blog.", "Această opțiune va dezactiva trimiterea de retrolegături de acum înainte. Retrolegăturile existente vor rămîne în site-uri, dar alte retrolegături nu vor mai fi posibile nicăieri in blog."
   l.store "Disable comments after", "Dezactivează comentariile după "
   l.store "days", "zile"
@@ -83,42 +70,15 @@ Localization.define("ro_RO") do |l|
   l.store "Publify will automatically reject comments and trackbacks which contain over a certain amount of links in them", "Publify va respinge automat comentarii și retrolegături care conțin mai mult decît un anumit număr de legături"
   l.store "Set to 0 to never reject comments", "Comentariile nu vor fi respinse niciodată dacă alegi valoarea 0"
 
-  l.store "Your blog", "Site"
-  l.store "Blog name", "Numele blogului"
-  l.store "Blog subtitle", "Subtitlul blogului"
-  l.store "Blog URL", "Adresa blogului"
-  l.store "Language", "Language" #Need translate
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", ""
-  l.store "Items to display in admin lists", ""
-  l.store "Publishing options", ""
-  l.store "Display", "Afișează"
   l.store "articles on my homepage by default", "articole implicit în pagina principală"
   l.store "articles in my news feed by default", "articole implicit în RSS"
   l.store "Show full article on feed", "Include articole complete în RSS"
   l.store "Feedburner ID", ""
   l.store "You can use your Google Feedburner account instead of Publify feed URL. To enable this, fill this form with your Feedburner ID.", ""
-  l.store "Information", "Informații"
-  l.store "Current database version", "Versiunea curentă a bazei de date"
   l.store "New database version", "Versiunea nouă a bazei de date"
   l.store "Your database supports migrations", "Baza de date poate fi actualizată"
-  l.store "Needed migrations", "Actualizări necesare"
-  l.store "You are up to date!", "Baza de date este la zi!"
-  l.store "Update database now", "Actualizează baza de date acum"
-  l.store "may take a moment", "ar putea să dureze puțin"
-  l.store "Database migration", "Actualizări ale bazei de date"
   l.store "yes", "da"
   l.store "no", "nu"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "Trimite retrolegături"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "Cînd publici un articol, Publify poate trimite automat retrolegături site-urilor pe care le specifici. În cazul unui blog personal, această opțiune ar trebui dezactivată, ca să nu deconspire informații private. Dacă blogul e public, opțiunea aceasta poate rămîne activă."
-  l.store "URLs to ping automatically", "Site-uri de anunțat automat"
-  l.store "Latitude, Longitude", "Latitudine, longitudine"
-  l.store "your latitude and longitude", "latitudinea și longitudinea ta"
-  l.store "example", "de pildă"
-  l.store "Write", "Publicare"
-
-  # app/views/admin/sidebar/_availables.html.erb
   l.store "You have no plugins installed", "Niciun plugin instalat"
 
   # app/views/admin/sidebar/_publish.html.erb
@@ -137,10 +97,6 @@ Localization.define("ro_RO") do |l|
   l.store "Display name", "Numele real"
   l.store "Active theme", "Tema activă"
   l.store "Choose a theme", "Alege o temă"
-  l.store "Use this theme", ""
-
-  # app/views/admin/users/_form.html.erb
-  l.store "Account settings", ""
   l.store "Password confirmation", "Confirmă parola"
   l.store "Profile", ""
   l.store "Active", ""
@@ -152,34 +108,10 @@ Localization.define("ro_RO") do |l|
   l.store "Send notification messages via email", "Alerte prin email"
   l.store "Send notification messages when new articles are posted", "Alerte la publicarea de articole noi"
   l.store "Send notification messages when comments are posted", "Alerte la publicarea de comentarii noi"
-  l.store "Contact options", ""
-  l.store "Your site", ""
-  l.store "Your MSN", ""
-  l.store "Your Yahoo ID", ""
-  l.store "Your Jabber ID", ""
-  l.store "Your AIM id", ""
-  l.store "Your Twitter username", ""
-  l.store "Tell us more about you", ""
-
-  # app/views/admin/users/destroy.html.erb
   l.store "Really delete user", "Ești sigur că dorești să ștergi acest utilizator"
-  l.store "Yes", ""
-  l.store "Users", ""
-
-  # app/views/admin/users/edit.html.erb
   l.store "Edit User", "Editează un utilizator"
-
   l.store "New User", "Utilizator nou"
-  l.store "State", ""
-  l.store "%s user", ""
-
-  # app/views/admin/users/new.html.erb
-  l.store "Add User", ""
-
-  # app/views/articles/_article.html.erb
   l.store "Posted by", "Publicat de"
-  l.store "Continue reading", ""
-
   # app/views/articles/_comment.html.erb
   l.store "said", "a scris"
   l.store "This comment has been flagged for moderator approval.  It won't appear on this blog until the author approves it", "Acest comentariu a fost marcat pentru moderare. El nu va apărea în blog înainte de a fi aprobat."
@@ -204,13 +136,10 @@ Localization.define("ro_RO") do |l|
 
   # app/views/articles/read.html.erb
   l.store "Leave a response", "Comentează"
-  l.store "Trackbacks", ""
   l.store "Use the following link to trackback from your own site", "Folosește link-ul următor pentru a realiza o retrolegătură de la site-ul tău"
   l.store "RSS feed for this post", "Flux RSS pentru acest articol"
   l.store "trackback uri", "URL pentru retrolegătură"
   l.store "Comments are disabled", "Comentariile sînt dezactivate"
-  l.store "Trackbacks are disabled", ""
-
   l.store "Trackbacks for", "Retrolegături pentru"
 
   l.store "Read all articles in %s", ""
@@ -290,7 +219,6 @@ Localization.define("ro_RO") do |l|
   l.store "Extended Content", "Conținutul extins"
   l.store "Feedback Search", "Caută prin comentarii"
   l.store "Filters", "Filtre"
-  l.store "General Settings", "Setări generale"
   l.store "IP", "Adresa IP"
   l.store "Jabber", "Jabber"
   l.store "Jabber account", "Cont Jabber"

@@ -42,10 +42,6 @@ Localization.define("ja_JP") do |l|
   l.store "%%a, %%d %%b %%Y %%H:%%M:%%S GMT", Proc.new { |date| sprintf(date.strftime("%Y-%m-%d %H:%M:%S GMT")) }
   l.store "%%d. %%b", Proc.new { |date| sprintf(date.strftime("%m/%d")) }
   l.store "no trackbacks", "トラックバックなし"
-  l.store "1 trackback", ""
-  l.store "%d trackbacks", ""
-
-  # app/helpers/content_helper.rb
   l.store "Posted in", "カテゴリ"
   l.store "no posts", ""
   l.store "1 post", ""
@@ -112,10 +108,6 @@ Localization.define("ja_JP") do |l|
   l.store "Comments filter", "コメントフィルター"
   l.store "Enable gravatars", "Gravatarを有効にする"
   l.store "Show your email address", "メールアドレスを表示"
-  l.store "Notifications", ""
-  l.store "Publify can notify you when new articles or comments are posted", "新しい記事やコメントが投稿された場合に通知を送ることができます"
-  l.store "Source Email", "メールアドレス"
-  l.store "Email address used by Publify to send notifications", "通知の送信先メールアドレス"
   l.store "Enabling spam protection will make Publify compare the IP address of posters as well as the contents of their posts against local and remote blacklists. Good defense against spam bots", "スパムプロテクションを有効にすると、投稿者のIPアドレスおよびその投稿内容をローカル、リモート両方のブラックリストと比較します"
   l.store "Enable spam protection", "スパムプロテクションを有効にする"
   l.store "Akismet Key", "Akismetキー"
@@ -130,20 +122,9 @@ Localization.define("ja_JP") do |l|
   l.store "Set to 0 to never reject comments", "コメントを拒否しない場合は0を設定してください"
 
   # app/views/admin/settings/index.html.erb
-  l.store "Your blog", "あなたのブログ"
-  l.store "Blog name", "ブログ名"
-  l.store "Blog subtitle", "ブログサブタイトル"
-  l.store "Blog URL", "ブログURL"
-  l.store "Language", "言語"
-  l.store "Allow users to register", "ユーザーに登録させる"
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", "ユーザーがこのブログに登録するのを許可できます。デフォルトでユーザーは自分自身のプロフィールを編集する以外の権限を持たないcontributorとして登録されます。ユーザーに登録させたくない場合は、管理者であるあなた自らがユーザーを追加することができます。"
-  l.store "Items to display in admin lists", "管理リストに表示する行数"
-  l.store "Publishing options", ""
-  l.store "Display", "表示"
   l.store "articles on my homepage by default", "ホームページのデフォルト記事数"
   l.store "articles in my news feed by default", "RSSフィードのデフォルト記事数"
   l.store "Show full article on feed", "記事の全文をフィードに表示"
-  l.store "Feedburner ID", ""
 
   # app/views/admin/settings/seo.html.erb
   l.store "Format of permalink", "パーマリンクの書式"
@@ -151,30 +132,11 @@ Localization.define("ja_JP") do |l|
   l.store "Unchecking this box will add <code>noindex, follow</code> meta tags in every category page, removing them from search engines and preventing duplicate content issues", "このボックスのチェックを外すと、全てのカテゴリのページに<code>noindex, follow</code>のMETAタグを付与します。すると検索エンジンからそれらのページが削除され、コンテンツ重複の防止になります"
   l.store "Index tags", "タグのインデックス"
   l.store "Unchecking this box will add <code>noindex, follow</code> meta tags in every tags page, removing them from search engines and preventing duplicate content issues", "このボックスのチェックを外すと、全てのタグのページに<code>noindex, follow</code>のMETAタグを付与します。すると検索エンジンからそれらのページが削除され、コンテンツ重複の防止になります"
-  l.store "You robots.txt file is not writeable. Publify won't be able to write it", ""
   l.store "Search Engine Optimization", "検索エンジン最適化"
-  l.store "Information", "インフォメーション"
-  l.store "Current database version", "現在のデータベースのバージョン"
   l.store "New database version", "新しいデータベースのバージョン"
   l.store "Your database supports migrations", "あなたのデータベースはマイグレーションをサポートしています"
-  l.store "Needed migrations", "マイグレーションが必要です"
-  l.store "You are up to date!", "最新です!"
-  l.store "Update database now", "データベースを今すぐ更新"
-  l.store "may take a moment", "少しお待ちください"
-  l.store "Database migration", "データベースマイグレーション"
   l.store "yes", "はい"
   l.store "no", "いいえ"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "トラックバックを送信"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "記事が公開されると、Publifyはリンクしたページへトラックバックを送信します。非公開ブログの場合は公開されたブログへ情報が漏れないようにこのチェックボックスを非選択にしてください。公開ブログの場合は非選択にする必要はありません。"
-  l.store "URLs to ping automatically", "自動的にPingを送信するURL"
-  l.store "Latitude, Longitude", "緯度、経度"
-  l.store "your latitude and longitude", "あなたの緯度、経度"
-  l.store "example", "例"
-  l.store "Write", "新規作成"
-
-  # app/views/admin/sidebar/_availables.html.erb
   l.store "You have no plugins installed", "プラグインがインストールされていません"
 
   # app/views/admin/sidebar/_publish.html.erb
@@ -239,24 +201,15 @@ Localization.define("ja_JP") do |l|
   l.store "Your Twitter username", "あなたのTwitter ID"
   l.store "display Twitter on public profile", "公開プロフィールにTwitter IDを表示"
   l.store "Tell us more about you", "補足事項"
-
-  # app/views/admin/users/destroy.html.erb
   l.store "Really delete user", "本当にユーザーを削除"
   l.store "Yes", "はい"
-  l.store "Users", "ユーザー"
-
-  # app/views/admin/users/edit.html.erb
   l.store "Edit User", "ユーザー編集"
-
-  # app/views/admin/users/index.html.erb
   l.store "New User", "新規ユーザー"
   l.store "Comments", "コメント"
   l.store "State", "状態"
   l.store "%s user", "%s"
   l.store "Add User", "ユーザーの追加"
   l.store "Posted by", "投稿者"
-  l.store "Continue reading", ""
-
   l.store "said", "発言"
   l.store "This comment has been flagged for moderator approval.  It won't appear on this blog until the author approves it", "このコメントはモデレーターの確認が必要です。モデレーターが確認後にコメントが表示されます。"
 
@@ -270,60 +223,11 @@ Localization.define("ja_JP") do |l|
   l.store "is about to say", "〜について言う"
   l.store "There are", "ここに"
   l.store "Leave a response", "コメントを書く"
-  l.store "Trackbacks", "トラックバック"
   l.store "Use the following link to trackback from your own site", "トラックバックリンク"
   l.store "RSS feed for this post", "この記事のRSSフィード"
   l.store "trackback uri", "トラックバックURL"
   l.store "Comments are disabled", "コメントは許可されていません"
-  l.store "Trackbacks are disabled", ""
-
-  # app/views/authors/show.html.erb
-  l.store "Web site:", ""
-  l.store "MSN:", ""
-  l.store "Yahoo:", ""
-  l.store "Jabber:", ""
-  l.store "AIM:", ""
-  l.store "Twitter:", ""
-  l.store "About %s", ""
-  l.store "Welcome", ""
-  l.store "Welcome to your %s blog setup. Just fill in your blog title and your email, and Publify will take care of everything else", ""
-
-  # app/views/shared/_confirm.html.erb
-  l.store "Congratulations!", ""
-  l.store "You have successfully signed up", ""
-  l.store "<strong>Login:</strong> %s", ""
-  l.store "Don't lose the mail sent at %s or you won't be able to login anymore", ""
-
-  # app/views/shared/_search.html.erb
-  l.store "Live Search", ""
-  l.store "Powered by %s", ""
-  l.store "Designed by %s ", ""
   l.store "Continue reading...", "続きを読む‥"
-  l.store "This entry was posted on %s", ""
-  l.store "and %s", ""
-  l.store "You can follow any response to this entry through the %s", ""
-  l.store "Atom feed", ""
-  l.store "You can leave a %s", ""
-  l.store "or a %s from your own site", ""
-  l.store "Read full article", ""
-  l.store "trackback", ""
-
-  l.store "later", ""
-
-  l.store "enabled", ""
-  l.store "never displayed", ""
-  l.store "Website", ""
-  l.store "Textile enabled", ""
-  l.store "Markdown enabled", ""
-  l.store "required", ""
-
-  # test/mocks/themes/typographic/views/shared/_search.html.erb
-  l.store "Searching", ""
-
-  l.store "About", ""
-  l.store "Designed by %s ported to publify by %s ", ""
-
-  l.store "styled with %s", ""
   l.store "Trackbacks for", "〜へのトラックバック"
   l.store "Archives", "アーカイブ"
 

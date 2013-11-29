@@ -63,14 +63,7 @@ Localization.define("pt_BR") do |l|
   l.store "You are not authorized to open this file", "Você não está autorizado a abrir esse arquivo"
   l.store "File saved successfully", "Arquivo salvo com sucesso"
   l.store "Unable to write file", "Incapaz de escrever no arquivo"
-
-  # app/controllers/admin/users_controller.rb
   l.store "User was successfully created.", "Usuário criado com sucesso"
-
-  # app/controllers/application_controller.rb
-  l.store "Localization.rtl", ""
-
-  # app/controllers/articles_controller.rb
   l.store "No posts found...", "Nenhum post encontrado..."
   l.store "Archives for", "Arquivos de"
   l.store "Archives for ", "Arquivos de"
@@ -160,7 +153,6 @@ Localization.define("pt_BR") do |l|
 
   # app/views/admin/dashboard/_posts.html.erb
   l.store "Latest Posts", ""
-  l.store "No posts yet, why don't you start and write one", ""
   l.store "Limit to spam", "Limitar a spam"
   l.store "Are you sure you want to delete the page", "&iquest;Est&aacute;s seguro que deseas eliminar esta p&aacute;gina?"
   l.store "Delete this page", "Eliminar esta p&aacute;gina"
@@ -178,10 +170,6 @@ Localization.define("pt_BR") do |l|
   l.store "Comments filter", "Filtro de comentarios"
   l.store "Enable gravatars", "Habilitar gravatars"
   l.store "Show your email address", "Mostrar tu direcci&oacute;n de email"
-  l.store "Notifications", ""
-  l.store "Publify can notify you when new articles or comments are posted", "Publify puede notificarte cuando nuevos art&iacute;culos o comentarios sean a&ntilde;adidos"
-  l.store "Source Email", "Email remitente"
-  l.store "Email address used by Publify to send notifications", "Direcci&oacute;n de email usada por Publify para enviar notificaciones"
   l.store "Enabling spam protection will make Publify compare the IP address of posters as well as the contents of their posts against local and remote blacklists. Good defense against spam bots", "Habilitando la protecci&oacute;n anti-spam har&aacute; que publify compare la direcci&oacute;n IP del usuario as&iacute; como el contenido de sus comentarios contra una lista negra remota o local. Es una buena defensa contra los robots de spam"
   l.store "Enable spam protection", "Habilitar protecci&oacute;n anti-spam"
   l.store "Akismet Key", "Clave de Akismet (API key)"
@@ -194,42 +182,13 @@ Localization.define("pt_BR") do |l|
   l.store "Max Links", "M&aacute;ximo n&uacute;mero de links"
   l.store "Publify will automatically reject comments and trackbacks which contain over a certain amount of links in them", "Publify rechazar&aacute; autom&aacute;ticamente los comentarios y trackbacks que contengan m&aacute;s de un cierto n&uacute;mero de links en ellos"
   l.store "Set to 0 to never reject comments", "Introducir 0 para nunca rechazar comentarios"
-
-  # app/views/admin/settings/index.html.erb
-  l.store "Your blog", "Tu sitio"
-  l.store "Blog name", "Nombre del blog"
-  l.store "Blog subtitle", "Subt&iacute;tulo del blog"
-  l.store "Blog URL", "URL del blog"
-  l.store "Language", "Idioma" #Need translate
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", ""
-  l.store "Items to display in admin lists", ""
-  l.store "Publishing options", ""
-  l.store "Display", "Mostrar"
   l.store "articles on my homepage by default", "art&iacute;culos en mi p&aacute;gina de inicio por default"
   l.store "articles in my news feed by default", "art&iacute;culos en mi feed RSS"
   l.store "Show full article on feed", "Mostrar art&iacute;culo completo en el feed"
-  l.store "Information", "Informaci&oacute;n"
-  l.store "Current database version", "Versi&oacute;n actual de la base de datos"
   l.store "New database version", "Nueva versi&oacute;n de la base de datos"
   l.store "Your database supports migrations", "Tu base de datos soporta migraciones"
-  l.store "Needed migrations", "Migraciones necesarias"
-  l.store "You are up to date!", "Est&aacute;s al d&iacute;a!"
-  l.store "Update database now", "Actualizar la base de datos ahora"
-  l.store "may take a moment", "puede tomar un momento"
-  l.store "Database migration", "Migraci&oacute;n de la base de datos"
   l.store "yes", "s&iacute;"
   l.store "no", "no"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "Enviar trackbacks"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "Cuando se publican art&iacute;culos, Publify puede enviar trackbacks a sitios enlazados. Esto deber&iacute;a deshabilitarse para blogs privados para que no se escape informaci&oacute;n privada a sitios que est&aacute;s comentando. Para blogs p&uacute;blicos, realmente no hay raz&oacute;n para deshabilitar esto."
-  l.store "URLs to ping automatically", "Enviar pings a URLs autom&aacute;ticamente"
-  l.store "Latitude, Longitude", "Latitud, Longitud"
-  l.store "your latitude and longitude", "tu latitud y longitud"
-  l.store "example", "ejemplo"
-  l.store "Write", "Escribir"
-
-  # app/views/admin/sidebar/_availables.html.erb
   l.store "You have no plugins installed", "No tienes plugins instalados"
 
   # app/views/admin/sidebar/_publish.html.erb
@@ -260,10 +219,6 @@ Localization.define("pt_BR") do |l|
   l.store "Display name", "Nombre para mostrar"
   l.store "Active theme", "Tema activo"
   l.store "Choose a theme", "Escoge un tema"
-  l.store "Use this theme", ""
-
-  # app/views/admin/users/_form.html.erb
-  l.store "Account settings", ""
   l.store "Password confirmation", "Confirmar Contrase&ntilde;a"
   l.store "Active", ""
   l.store "Inactive", ""
@@ -274,24 +229,8 @@ Localization.define("pt_BR") do |l|
   l.store "Send notification messages via email", "Enviar notificaciones por email"
   l.store "Send notification messages when new articles are posted", "Enviar notificaciones cuando un nuevo art&iacute;culo sea publicado"
   l.store "Send notification messages when comments are posted", "Enviar notificaciones cuando un nuevo comentario sea publicado"
-  l.store "Contact options", ""
-  l.store "Your site", ""
-  l.store "Your MSN", ""
-  l.store "Your Yahoo ID", ""
-  l.store "Your Jabber ID", ""
-  l.store "Your AIM id", ""
-  l.store "Your Twitter username", ""
-  l.store "Tell us more about you", ""
-
-  # app/views/admin/users/destroy.html.erb
   l.store "Really delete user", "&iquest;Realmente desea eliminar este usuario?"
-  l.store "Yes", ""
-  l.store "Users", ""
-
-  # app/views/admin/users/edit.html.erb
   l.store "Edit User", "Editar usuario"
-
-  # app/views/admin/users/index.html.erb
   l.store "New User", "Nuevo Usuario"
   l.store "Posted by", "Publicado por"
 
@@ -314,30 +253,11 @@ Localization.define("pt_BR") do |l|
   l.store "There are", "Hay"
 
   l.store "Leave a response", "Deja un comentario"
-  l.store "Trackbacks", ""
   l.store "Use the following link to trackback from your own site", "Usa el siguiente link para crear un trackback desde tu propio sitio"
   l.store "RSS feed for this post", "Feed RSS para este art&iacute;culo"
   l.store "trackback uri", "trackback uri"
   l.store "Comments are disabled", "Los comentarios est&aacute;n deshabilitados"
-  l.store "Trackbacks are disabled", ""
-
-  # themes/true-blue-3/views/articles/_article.html.erb
-  l.store "%%a, %%d %%b %%Y %%H:%%M", ""
-
-  l.store "If you liked this article you can %s", ""
-  l.store "add me to Twitter", ""
   l.store "Trackbacks for", "Trackbacks para"
-
-
-  # vendor/plugins/authors_sidebar/views/content.rhtml
-  l.store "Authors", ""
-
-  # vendor/plugins/xml_sidebar/views/content.rhtml
-  l.store "Syndicate", ""
-  l.store "Category %s", ""
-  l.store "Tag %s", ""
-
-  # Obsolete translations
   l.store "%d Articles", ["Art&iacute;culo", "%d Art&iacute;culos"]
   l.store "%d Categories", ["Categor&iacute;", "%d Categor&iacute;as"]
   l.store "%d Comments", ["Comentario", "%d Comentarios"]
@@ -403,7 +323,6 @@ Localization.define("pt_BR") do |l|
   l.store "Extended Content", "Contenido Extendido"
   l.store "Feedback Search", "B&uacute;squeda de comentarios"
   l.store "Filters", "Filtros"
-  l.store "General Settings", "Preferencias generales"
   l.store "IP", "Direcci&oacute;n IP"
   l.store "Jabber", "Jabber"
   l.store "Jabber account", "Cuenta de Jabber"
@@ -499,5 +418,4 @@ Localization.define("pt_BR") do |l|
   l.store "seperate with spaces", "separar con espacios"
   l.store "via email", "por email"
   l.store "with %s Famfamfam iconset %s", "con el iconset %s de Famfamfam %s"
-  l.store "your blog", "tu blog"
 end

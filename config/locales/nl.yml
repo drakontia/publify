@@ -4,7 +4,55 @@ nl:
       truncate: "Truncate"
       next: "Volgende"
       last: "Last"
+  layouts:
+    administration:
+      new: "Nieuwe"
   admin:
+    settings:
+      write:
+        write: "Schrijf"
+        publish: "Publiceer"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Verstuur trackbacks"
+        explain: "Wanneer je een artikel publiceert kan Publify een trackback sturen naar de sites waaraan je linkt. Dit zou voor priv&eacute;-blogs uit moeten staan, omdat het niet-publieke informatie 'lekt' naar sites die je bediscussieert. Voor publieke blogs is er geen goede reden om het uit te zetten."
+        urls_to_ping: "URLs to ping automatically"
+        latitude_longitude: "Latitude, Longitude"
+        display: "Toon"
+        your_geoloc: "your latitude and longitude"
+        example: "example"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Database migratie"
+        information: "Informatie"
+        current_database_version: "Huidige database versie"
+        you_are_up_to_date: "Je bent bij de tijd!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Benodigde migraties"
+        update_database_now: "Werk database nu bij"
+        may_take_a_moment: "kan even duren"
+      index:
+        general_settings: "Algemene instellingen"
+        your_blog: "Je blog"
+        blog_name: "Blog naam"
+        blog_subtitle: "Blog ondertitel"
+        blog_url: "Blog URL"
+        language: "Taal"
+        users: "Gebruikers"
+        allow_users_to_register: "Sta gebruikers toe zich te registreren"
+        explain_allow_users_to_register: "Je kunt gebruikers toestaan zich te registreren bij je blog. Standaard zullen ze contributors worden, een soort account zonder rechten behalve het hebben van een profiel op de site. Als je niet wilt dat gebruikers zich registreren kun je ze altijd zelf toevoegen in het gebruikers deel."
+        publify_notify_new_articles_or_comments: "Publify can je notificeren wanneer nieuwe artikelen of commentaren gepost worden"
+        source_email: "Bron e-mail"
+        email_address_used_to_notify: "E-mail adres dat Publify gebruikt om notificaties te versturen"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -123,6 +171,7 @@ nl:
         article_filter: "Artikel filter"
         permanent_link: "Permanente link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Feedback"
@@ -197,12 +246,15 @@ nl:
           other: "%{count} reacties"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "Deze pagina geeft je een snel overzicht van wat er gebeurt op je Type blog en wat je doen kunt. Misschien wil je %{available_actions}"
@@ -244,8 +296,6 @@ nl:
         publish: "Publiceer"
         title: "Titel"
         images: "Afbeeldingen"
-        excerpt: "Uittreksel"
-        excerpt_explaination: "Uittreksels zijn een samenvatting van een post die alleen op de homepage staat, maar niet in de post zelf staan"
         publish_settings: "Publicatie instellingen"
         status: "Status"
         published: "Gepubliceerd"
@@ -262,6 +312,7 @@ nl:
         categories: "Categoriën"
         tags: "Trefwoorden"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "Nieuwe categorie"
     categories:
@@ -280,7 +331,10 @@ nl:
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Logged in as %{login}"
-      new_article: "New Article"
+      new_article: "Nieuw artikel"
+      new_page: "Nieuwe pagina"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profiel"
       logout: "Log out &raquo;"
       home: "Begin"

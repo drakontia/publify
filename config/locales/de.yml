@@ -4,7 +4,55 @@ de:
       truncate: "Truncate"
       next: "Next"
       last: "Last"
+  layouts:
+    administration:
+      new: "Neuer"
   admin:
+    settings:
+      write:
+        write: "Schreiben"
+        publish: "Veröffentlichen"
+        trackbacks: "Trackbacks"
+        send_trackbacks: "Trackbacks verschicken"
+        explain: "Publify kann Trackbacks zu anderen Websites schicken, zu denen Sie in veröffentlichten Artikeln verlinken. Das sollte für private Blogs deaktiviert werden, weil sonst nicht-öffentliche Informationen mit dem Trackback Ping nach außen zu den Seiten gehen, die Sie in Ihren Artikeln diskutieren. Für öffentliche Blogs jedoch besteht kein wirklicher Grund, das zu deaktivieren."
+        urls_to_ping: "Automatisch diese URLs anpingen"
+        latitude_longitude: "geografische Breite, Länge"
+        display: "Zeige"
+        your_geoloc: "Ihrer geografischen Breite und Länge"
+        example: "Beispiel"
+        media: "Media"
+        image_thumbnail_size: "Image thumbnail size"
+        image_medium_size: "Image medium size"
+        avatar_size: "Avatar size"
+        publish_on_twitter: "Publish on Twitter"
+        twitter_consumer_key: "Twitter consumer key"
+        twitter_consumer_secret: "Twitter consumer secret"
+      update_database:
+        database_migration: "Datenbank Migration"
+        information: "Information"
+        current_database_version: "Aktuelle Datenbank Version"
+        you_are_up_to_date: "Sie sind auf dem aktuellsten Stand!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "Migrationen sind notwendig"
+        update_database_now: "Update der Datenbank jetzt"
+        may_take_a_moment: "dauert einen Moment"
+      index:
+        general_settings: "Allgemeine Einstellungen"
+        your_blog: "Mein Blog"
+        blog_name: "Blog Titel"
+        blog_subtitle: "Blog Untertitel"
+        blog_url: "Blog Adresse"
+        language: "Language"
+        users: "Benutzer"
+        allow_users_to_register: "Allow users to register"
+        explain_allow_users_to_register: "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin."
+        publify_notify_new_articles_or_comments: "Publify kann Sie benachrichtigen, wenn neue Artikel oder Kommentare angelegt werden"
+        source_email: "Email Adresse"
+        email_address_used_to_notify: "Email Adresse, die Publify beim Versenden von Benachrichtigungen verwenden soll"
+        items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
         title_settings: "Title settings"
@@ -108,7 +156,7 @@ de:
     pages:
       index:
         manage_pages: "Seiten verwalten"
-        new_page: "New Page"
+        new_page: "Neue Seite"
         title: "Titel"
         permalink: "Permanenter Link"
         author: "Autor"
@@ -123,6 +171,7 @@ de:
         article_filter: "Textfilter für Artikel"
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
+        type_your_post: "Type your post"
     feedback:
       index:
         feedback: "Diskussion"
@@ -197,12 +246,15 @@ de:
           other: "%{count} comments"
         approved_count:
           zero: "no approved"
+          one: "1 approved"
           other: "%{count} approved"
         unconfirmed_count:
           zero: "no unconfirmed"
+          one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
           zero: "no spam"
+          one: "1 spam"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -227,7 +279,7 @@ de:
     content:
       index:
         published: "Veröffentlicht"
-        new_article: "New article"
+        new_article: "Neuen Artikeln"
         all_articles: "All articles"
         manage_articles: "Artikel verwalten"
         withdrawn: "Withdrawn"
@@ -244,8 +296,6 @@ de:
         publish: "Veröffentlichen"
         title: "Titel"
         images: "Images"
-        excerpt: "Excerpt"
-        excerpt_explaination: "Excerpts are post summaries that show only on your blog homepage and won’t appear on the post itself"
         publish_settings: "Publish settings"
         status: "Status"
         published: "Veröffentlicht"
@@ -262,6 +312,7 @@ de:
         categories: "Categories"
         tags: "Tags"
         tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "New Category"
     categories:
@@ -280,7 +331,10 @@ de:
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
       logged_in_as: "Angemeldet %{login}"
-      new_article: "New Article"
+      new_article: "Neuen Artikeln"
+      new_page: "Neue Seite"
+      new_media: "New Media"
+      new_note : "New Note"
       profile: "Profile"
       logout: "Abmelden &raquo;"
       home: "Home"

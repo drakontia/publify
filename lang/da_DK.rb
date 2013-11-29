@@ -88,10 +88,6 @@ Localization.define("da_DK") do |l|
   l.store "Comments filter", "Kommentarfilter"
   l.store "Enable gravatars", "Vis gravatars"
   l.store "Show your email address", "Vis din e-mail addresse"
-  l.store "Notifications", ""
-  l.store "Publify can notify you when new articles or comments are posted", "Publify kan give dig besked, når nye artikler eller kommentarer er indsendt"
-  l.store "Source Email", "Afsender e-mail"
-  l.store "Email address used by Publify to send notifications", "E-mail adresse der bruges af Publify til at sende meddelelser"
   l.store "Enabling spam protection will make Publify compare the IP address of posters as well as the contents of their posts against local and remote blacklists. Good defense against spam bots", "Enabling spam protection will make publify compare the IP address of posters as well as the contents of their posts against local and remote blacklists. Good defense against spam bots" #Need translate
   l.store "Enable spam protection", "Aktiver spam beskyttelse"
   l.store "Akismet Key", "Akismet nøgle"
@@ -105,42 +101,13 @@ Localization.define("da_DK") do |l|
   l.store "Publify will automatically reject comments and trackbacks which contain over a certain amount of links in them", "Publify will automatically reject comments and trackbacks which contain over a certain amount of links in them" #Need translate
   l.store "Set to 0 to never reject comments", "Sæt til 0 for at aldrig forkaste kommentarer"
 
-  # app/views/admin/settings/index.html.erb
-  l.store "Your blog", "Din Blog"
-  l.store "Blog name", "Blog titel"
-  l.store "Blog subtitle", "Blog undertitel"
-  l.store "Blog URL", "Blogadresse"
-  l.store "Language", "Sprog"
-  l.store "You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.", ""
-  l.store "Items to display in admin lists", ""
-  l.store "Publishing options", ""
-  l.store "Display", "Vis"
   l.store "articles on my homepage by default", "artikler på min hjemmeside som standard"
   l.store "articles in my news feed by default", "artikler i min nyhedsfeed som standard"
   l.store "Show full article on feed", "Vis hele artiklen i min feed"
-  l.store "Feedburner ID", ""
-  l.store "Information", "Information"
-  l.store "Current database version", "Nuværende database version"
   l.store "New database version", "Ny database version"
   l.store "Your database supports migrations", "Din database understøtter migrations"
-  l.store "Needed migrations", "Manglende migrations"
-  l.store "You are up to date!", "Du er up to date!"
-  l.store "Update database now", "Updatér database nu"
-  l.store "may take a moment", "Det varer et øjeblik"
-  l.store "Database migration", "Database migration"
   l.store "yes", "ja"
   l.store "no", "nej"
-
-  # app/views/admin/settings/write.html.erb
-  l.store "Send trackbacks", "Send trackbacks"
-  l.store "When publishing articles, Publify can send trackbacks to websites that you link to. This should be disabled for private blogs as it will leak non-public information to sites that you're discussing. For public blogs, there's no real point in disabling this.", "Når du udgiver artikler kan Publify sende trackbacks til de hjemmesider du linker til. Dette bør slåes fra for private blogs da det ellers kan lække privat information til hjemmesider du diskuterer. For offentlige blogs, er der ingen reel mening i at deaktivere dette."
-  l.store "URLs to ping automatically", "Webadresser der automatisk pinges"
-  l.store "Latitude, Longitude", "Breddegrad, længdegrad"
-  l.store "your latitude and longitude", "din breddegrad og længdegrad"
-  l.store "example", "for eksempel"
-  l.store "Write", "Skriv"
-
-  # app/views/admin/sidebar/_availables.html.erb
   l.store "You have no plugins installed", "Du har ikke installeret nogen plugins"
 
   # app/views/admin/sidebar/_publish.html.erb
@@ -172,10 +139,6 @@ Localization.define("da_DK") do |l|
   l.store "Display name", "Vis navn"
   l.store "Active theme", "Aktiv tema"
   l.store "Choose a theme", "Vælg et tema"
-  l.store "Use this theme", ""
-
-  # app/views/admin/users/_form.html.erb
-  l.store "Account settings", ""
   l.store "Password confirmation", "Gentag kodeord"
   l.store "Profile", "Profil"
   l.store "Active", ""
@@ -202,25 +165,10 @@ Localization.define("da_DK") do |l|
   l.store "Your Twitter username", "Dit Twitter brugernavn"
   l.store "display Twitter on public profile", "Vis twitter på din profil"
   l.store "Tell us more about you", "Fortæl lidt mere om dig"
-
-  # app/views/admin/users/destroy.html.erb
   l.store "Really delete user", "Vil du virkelig slette brugeren"
-  l.store "Yes", ""
-  l.store "Users", ""
-
-  # app/views/admin/users/edit.html.erb
   l.store "Edit User", "Rediger bruger"
-
-  # app/views/admin/users/index.html.erb
   l.store "New User", "Ny bruger"
   l.store "Comments", "Kommentarer"
-  l.store "State", ""
-  l.store "%s user", ""
-
-  # app/views/admin/users/new.html.erb
-  l.store "Add User", ""
-
-  # app/views/articles/_article.html.erb
   l.store "Posted by", "Skrevet af"
   l.store "Continue reading", ""
 
@@ -249,56 +197,16 @@ Localization.define("da_DK") do |l|
 
   # app/views/articles/read.html.erb
   l.store "Leave a response", "Skriv en kommentar"
-  l.store "Trackbacks", ""
   l.store "Use the following link to trackback from your own site", "Brug følgende link til lave trackback fra din egen side"
   l.store "RSS feed for this post", "RSS Feed for denne artikel"
   l.store "trackback uri", "Trackback URI"
   l.store "Comments are disabled", "Kommentarer er deaktiveret"
-  l.store "Trackbacks are disabled", ""
-
   l.store "later", "senere"
 
   # test/mocks/themes/typographic/views/articles/_comment_form.html.erb
   l.store "Leave a comment", "Skriv en kommentar"
   l.store "Name %s", "Navn %s"
   l.store "enabled", "aktiveret"
-  l.store "never displayed", ""
-  l.store "Website", ""
-  l.store "Textile enabled", ""
-  l.store "Markdown enabled", ""
-  l.store "required", ""
-
-  # test/mocks/themes/typographic/views/articles/_comment_list.html.erb
-  l.store "No comments", ""
-
-  # themes/dirtylicious/layouts/default.html.erb
-  l.store "About", ""
-  l.store "Designed by %s ported to publify by %s ", ""
-
-  # themes/scribbish/layouts/default.html.erb
-  l.store "styled with %s", ""
-
-  # themes/scribbish/views/articles/_article.html.erb
-  l.store "Meta", ""
-
-  l.store "You are here: ", ""
-
-  # themes/true-blue-3/views/articles/_article.html.erb
-  l.store "%%a, %%d %%b %%Y %%H:%%M", ""
-
-  # themes/true-blue-3/views/articles/_comment_form.html.erb
-  l.store "Your website", ""
-
-  # themes/true-blue-3/views/articles/read.html.erb
-  l.store "If you liked this article you can %s", ""
-  l.store "add me to Twitter", ""
-  l.store "Trackbacks for", "Trackbacks for"
-
-  l.store "Read all articles in %s", ""
-
-  l.store "Previous", ""
-
-  # vendor/plugins/archives_sidebar/views/content.rhtml
   l.store "Archives", "Arkiv"
 
   # vendor/plugins/authors_sidebar/views/content.rhtml
@@ -306,10 +214,6 @@ Localization.define("da_DK") do |l|
 
   # vendor/plugins/xml_sidebar/views/content.rhtml
   l.store "Syndicate", "Syndikat"
-  l.store "Category %s", ""
-  l.store "Tag %s", ""
-
-  # Obsolete translations
   l.store "%d Categories", ["Kategori", "%d kategorier"]
   l.store "%d Comments", "%d Kommentarer"
   l.store "%d Users", ["Bruger", "%d Brugere"]
@@ -375,7 +279,6 @@ Localization.define("da_DK") do |l|
   l.store "Extended Content", "Udvidet indhold"
   l.store "Feedback Search", "Søg i feedback"
   l.store "Filters", "Filtre"
-  l.store "General Settings", "Generelle Indstillinger"
   l.store "IP", "IP-adresse"
   l.store "Jabber", "Jabber"
   l.store "Jabber account", "Jabber konto"
