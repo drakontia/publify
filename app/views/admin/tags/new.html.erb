@@ -5,6 +5,7 @@
   </h2>
 <% end %>
 
+<<<<<<< HEAD
 <div class='row'>
   <div class='col-md-4'>
     <%= form_tag :action=>"edit", :id => @tag.id do %>
@@ -19,6 +20,19 @@
   </div>
   <div class='col-md-8'>
     <table class="table table-hover">
+=======
+<div>
+  <div class='col-md-4'>
+    <%= form_tag :action=>"edit", :id => @tag.id do %>
+    <%= error_messages_for 'tag' %>
+    <label for="tag_display_name"><%= _("Name")%>:</label>
+    <%= text_field 'tag', 'display_name', :class => 'medium' %>
+    <%= cancel_or_save %>
+    <% end %>
+  </div>
+  <div class='col-md-8'>
+    <table class="table table-striped">
+>>>>>>> Update Twitter Bootstrap CSS to 3.0.2
       <thead>
         <tr class='noborder'>
         <th><%= _("Display Name") %></th>

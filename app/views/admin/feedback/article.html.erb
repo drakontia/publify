@@ -32,6 +32,7 @@
   <%= hidden_field_tag('article_id', @article.id) %>
   <fieldset>
     <legend><%= t(".add_a_comment")%></legend>
+<<<<<<< HEAD
     <div class='row'>
       <div class="form-group col-md-4">
         <label for="comment_author" class='control-label'><%= t(".author")%></label>
@@ -62,6 +63,25 @@
         <%= t(".action_or_other", first_action: link_to(t(".cancel"), {action: 'index'}, class: 'btn'), second_action: submit_tag(t(".save"), class: 'btn btn-primary')) %>
       </div>
     </div>
+=======
+    <div class='form-group'>
+      <label for="comment_author" class='control-label'><%= t(".author")%></label>
+      <%= text_field 'comment', 'author', :class => 'medium' %>
     </div>
+    <div class='form-group'>
+      <label for="comment_email" class='control-label'><%= t(".email")%></label>
+      <%= text_field 'comment', 'email', :class => 'medium' %>
+    </div>
+    <div class='form-group'>
+      <label for="comment_url" class='control-label'><%= t(".url") %></label>
+      <%= text_field 'comment', 'url', :class => 'medium' %>
+    </div>
+    <div class='form-group'>
+      <label for='comment_body' class='control-label'><%= t(".your_comment") %></label>
+      <script type="text/javascript">edToolbar('comment_body', '<%= current_user.default_text_filter.name %>');</script>
+      <%= text_area 'comment', 'body', { :rows => '10', :class => 'col-md-6'} %>
+>>>>>>> Update Twitter Bootstrap CSS to 3.0.2
+    </div>
+    <%= t(".action_or_other", first_action: link_to(t(".cancel"), {action: 'index'}, class: 'btn'), second_action: submit_tag(t(".save"), class: 'btn btn-primary')) %>
   </fieldset>
 <% end %>

@@ -6,6 +6,7 @@
 <% end %>
 
 <%= form_tag({action: 'index'}, method: :get, class: 'form-inline') do %>
+<<<<<<< HEAD
   <p>
     <%= link_to(t(".all"), {controller: 'admin/feedback', action: :index}, {class: 'label label-default'}) %>
     <%= link_to(t(".unapproved_comments"), {controller: 'admin/feedback', action: :index, confirmed: 'f'}, {class: 'label label-info'}) %>
@@ -14,6 +15,32 @@
     <%= link_to(t(".presumed_spam"), {controller: 'admin/feedback', action: :index, published: 'f'}, {class: 'label label-warning'}) %>
     <%= link_to(t(".spam"), {controller: 'admin/feedback', action: :index, spam: 'f'}, {class: 'label label-danger'}) %>
   </p>
+=======
+  <div>
+    <span class='badge badge-inverse'>
+      <%= link_to(t(".all"), controller: 'admin/feedback', action: :index) %>
+    </span>&nbsp;
+    <span class='badge'>
+      <%= link_to(t(".unapproved_comments"), controller: 'admin/feedback', action: :index, confirmed: 'f') %>
+    </span>&nbsp;
+    <span class='badge badge-success'>
+      <%= link_to(t(".ham"), controller: 'admin/feedback', action: :index, ham: 'f') %>
+    </span>&nbsp;
+    <span class='badge badge-important'>
+      <%= link_to(t(".spam"), controller: 'admin/feedback', action: :index, spam: 'f') %>
+    </span>&nbsp;
+    <span class='badge badge-info'>
+      <%= link_to(t(".presumed_ham"), controller: 'admin/feedback', action: :index, presumed_ham: 'f') %>
+    </span>&nbsp;
+    <span class='badge badge-warning'>
+      <%= link_to(t(".presumed_spam"), controller: 'admin/feedback', action: :index, published: 'f') %>
+    </span>&nbsp;
+    <div class='pull-right input-group'>
+      <input type="text" id="feedback_search" name="search" value="<%=h params[:search] %>" class='medium' />
+      <%= submit_tag(t(".search"), {:class => 'btn'}) %>
+    </div>
+  </div>
+>>>>>>> Update Twitter Bootstrap CSS to 3.0.2
 <% end %>
 
 <%= form_tag({:action => 'bulkops'}, {class: 'form-inline'}) do %>
