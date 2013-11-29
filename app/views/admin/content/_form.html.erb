@@ -38,7 +38,7 @@
       <div>
         <%= text_field 'article', 'title', :class => 'form-control', :placeholder => t('.title') %>
       </div>
-      <%#= render('images', { :images => @images}) unless @images.empty? %>
+      <%= render('images', { :images => @images}) unless @images.empty? %>
   
       <div id="editor">
         <i class='glyphicon glyphicon-picture'></i> 
