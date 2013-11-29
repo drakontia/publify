@@ -41,12 +41,10 @@
       <%#= render('images', { :images => @images}) unless @images.empty? %>
   
       <div id="editor">
-        <!--
         <i class='glyphicon glyphicon-picture'></i> 
         <span id='image-link'>
           <%= toggle_element('carousel-wrapper', t('.images')) %>
         </span>
-          -->
 
         <div id='simple_editor'>
           <%= text_area('article', 'body_and_extended', {:class => 'form-control ', :height => '360px', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
