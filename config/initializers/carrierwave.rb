@@ -11,7 +11,9 @@ else
       config.fog_credentials = {
         :provider               => 'AWS',
         :aws_access_key_id      => ENV["aws_access_key_id"],
-        :aws_secret_access_key  => ENV["aws_secret_access_key"]
+        :aws_secret_access_key  => ENV["aws_secret_access_key"],
+        :region                 => 'tokyo',
+        :endpoint               => 'https://coapublify.s3-website-ap-northeast-1.amazonaws.com'
       }
 
       config.fog_directory  = ENV["aws_bucket"]
