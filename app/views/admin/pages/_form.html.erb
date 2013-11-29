@@ -1,7 +1,6 @@
 <input type="hidden" name="user_textfilter" id="user_textfilter" value="<%= current_user.text_filter_name %>" />
 
 <%= error_messages_for 'page' %>
-<<<<<<< HEAD
 <div class='row'>
   <div class='col-md-12'>
     <span class='pull-right'>
@@ -26,10 +25,6 @@
     </div>
   </div>
   <div class='col-md-8'>
-=======
-<div>
-  <div class='col-md-9'>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
     <div>
       <%= text_field 'page', 'title', :class => 'form-control', :placeholder => t('.title')  %>
     </div>
@@ -58,7 +53,6 @@
         
       </div>
     </div>
-<<<<<<< HEAD
   </div>
 </div>
 
@@ -110,43 +104,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= submit_tag( t(".publish"), class: 'btn btn-success') %>
-=======
-    <div class='separator'>
-      <div class='well'>
-        <fieldset>
-          <legend><%= t(".publish_settings") %></legend>
-          <div class='form-group'>
-            <%= t(".status") %>: <strong><%= _(@page.state.to_s.downcase) %></strong> <%= toggle_element 'status' %>
-            <div id='status' style='display: none;'>
-              <label for="page_published" class='checkbox'>
-                <%= check_box 'page', 'published'  %>
-                <%= t(".online")%>
-              </label>
-              <p><span class='btn btn-xs'><%= toggle_element 'status', "OK" %></span></p>
-            </div>
-          </div>
-          <div class='form-group'>
-            <%= t(".article_filter") %>: <strong><%= _("#{@page.text_filter.description}") %></strong> <%= toggle_element 'text_filter' %>
-            <div id='text_filter' style='display: none;'>
-              <select name="page[text_filter]" id="text_filter">
-              <%= options_for_select text_filter_options, @page.text_filter %>
-            </select>
-            <p><span class='btn btn-xs'><%= toggle_element 'text_filter', "OK" %></span></p>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class='pull-right'>
-        <%= submit_tag(t(".publish"), class: 'btn btn-primary') %>
-      </div>
-    </div>
-  </div>
-  <div class='col-md-3'>
-    <div class='well'>
-      <h4><%= t(".permanent_link")%></h4>
-      <div>
-        <%= text_field 'page', 'name', :class => 'input-block-level' %>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

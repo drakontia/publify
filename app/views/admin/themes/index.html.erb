@@ -17,21 +17,13 @@
 
     <div class='col-md-6'>
       <% if theme.path == @active.path -%>
-<<<<<<< HEAD
         <div class='well'>
-=======
-        <div class='well container'>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
           <h3><%= "#{theme.name} - #{_("Active theme")}" %></h3>
           <%= image_tag(preview_url, class: 'img-responsive img-thumbnail') %>
           <%= theme.description_html %>
         </div>
       <% else -%>
-<<<<<<< HEAD
         <div class=''>
-=======
-        <div class='container'>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
           <h3><%= link_to(theme.name, switch_url, title: _("Use this theme")) %></h3>
           <%= link_to(image_tag(preview_url, class: 'img-thumbnail'), switch_url, title: _("Use this theme")) %>
           <%= theme.description_html %>

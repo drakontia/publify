@@ -5,7 +5,6 @@
   </h2>
 <% end %>
 
-<<<<<<< HEAD
 <div class='row'>
   <div class='col-md-4'>
     <%= form_tag action: "edit", id: @category.id do %>
@@ -26,31 +25,11 @@
       <div class='form-group'>
         <%= cancel_or_save %>
       </div>
-=======
-<div>
-  <div class='col-md-4'>
-    <%= form_tag :action=>"edit", :id => @category.id do %>
-      <%= error_messages_for 'category' %>
-      <label for='category_name'><%= t(".name") %></label>
-      <%= text_field :category, :name, :class => 'col-md-12' %>
-      <label for='category_keywords' class='control-label'><%= t(".keywords") %></label>
-      <%= text_field :category, :keywords, :class => 'col-md-12' %>
-      <label for="category_permalink"><%= t(".permalink") %></label>
-      <%= text_field :category, :permalink, :class => 'col-md-12' %>
-      <p class='help-block'><%= t(".explaination") %></p>
-      <label for="category_description"><%= t(".description") %></label>
-      <%= text_area :category, :description, :rows => 5, :class => 'col-md-12' %>
-      <%= cancel_or_save %>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
     <% end %>
   </div>
 
   <div class="col-md-8">
-<<<<<<< HEAD
     <table class="table table-hover" id='category_container'>
-=======
-    <table id='category_container' class="table table-striped">
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
       <thead>
         <tr class='noborder'>
           <th style='width:40%'><%= t(".title") %></th>

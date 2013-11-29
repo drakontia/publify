@@ -9,7 +9,6 @@
 <%= form_tag :action => 'update' do %>
 
   <fieldset class='form-horizontal'>
-<<<<<<< HEAD
     <legend><%= t(".your_blog")%></legend>
     <div class='form-group'>
       <label class='control-label col-sm-2' for="setting_blog_name"><%= t(".blog_name")%></label>
@@ -62,41 +61,6 @@
       <div class='col-sm-1'>
         <%= text_field(:setting, :admin_display_elements, {:size => 4, :class => 'form-control'})%>
       </div>
-=======
-    <legend><%= _("Your blog")%></legend>
-    <div class='form-group'>
-      <label class='control-label' for="setting_blog_name"><%= _("Blog name")%></label>
-      <%= text_field(:setting, :blog_name, {:class => 'col-md-6', :size => this_blog.blog_name.length })%>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for="setting_blog_subtitle"><%= _("Blog subtitle")%></label>
-      <%= text_field(:setting, :blog_subtitle, {:class => 'col-md-6', :size => this_blog.blog_subtitle.length})%>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for="setting_base_url"><%= _("Blog URL")%></label>
-      <%= text_field(:setting, :base_url, {:size => this_blog.base_url.length, :class => 'col-md-6'})%>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for="setting_lang"><%= _("Language")%></label>
-      <select name="setting[lang]" id='setting_lang'>
-        <%= fetch_langs %>
-      </select>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for="setting_allow_signup"><%= _("Allow users to register")%></label>
-      <%= check_box(:setting, :allow_signup) %>
-      <span class='help-block'><%= _("You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.") %>.</span>
-    </div>
-    <div class='form-group'>
-      <p><%= _("Publify can notify you when new articles or comments are posted")%></p>
-      <label class='control-label' for="setting_email_from"><%= _("Source Email")%></label>
-      <%= text_field(:setting, :email_from, { :class => 'col-md-6'}) %>
-      <span class='help-block'><%= _("Email address used by Publify to send notifications")%></span>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for="setting_admin_display_elements"><%= _("Items to display in admin lists")%></label>
-      <%= text_field(:setting, :admin_display_elements, {:size => 4, :class => 'col-md-1'})%>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
     </div>
   </fieldset>
 

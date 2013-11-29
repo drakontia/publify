@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= t(".inbound_links") %></h3>
@@ -8,19 +7,6 @@
       <% if @inbound_links.nil? %>
         <li class='alert alert-danger'>
         <%= t('.you_have_no_internet_connection') %>
-=======
-<h3><%= t(".inbound_links") %></h3>
-<div class='well'>
-  <ul class='unstyled'>
-    <% if @inbound_links.nil? %>
-      <li class='alert alert-danger'>
-      <%= t('.you_have_no_internet_connection') %>
-      </li>
-    <% else %>
-      <% if @inbound_links.empty? %>
-        <li class='alert'>
-        <%= t(".no_one_made_link_to_you_yet") %>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
         </li>
       <% else %>
         <% if @inbound_links.empty? %>
