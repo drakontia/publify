@@ -1,11 +1,9 @@
-<div id="carousel-wrapper">
-  <div id="carousel-content">
-    <% images.each do |image| %>
-      <%= show_thumbnail_for_editor(image) %>
-    <% end %>
-
-  </div>
+<div id="carousel-content">
+  <% images.each do |image| %>
+    <%= show_thumbnail_for_editor(image) %>
+  <% end %>
 </div>
+
 <script type="text/javascript">
   $(document).ready(function () {
     $("#carousel-content").smoothDivScroll({
