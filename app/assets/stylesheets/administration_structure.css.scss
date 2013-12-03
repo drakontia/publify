@@ -72,6 +72,14 @@ tr .action {
   border-width: 1px 0;
 }
 
+#carousel-content div.scrollableArea * {
+  position: relative;
+  display: block
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
 /* Sidebars */
 
 .avatar {
