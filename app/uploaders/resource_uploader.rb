@@ -19,10 +19,6 @@ class ResourceUploader < CarrierWave::Uploader::Base
     "files/#{model.class.to_s.underscore}/#{model.id}"
   end
 
-  def cache_dir
-    "files/tmp/#{model.class.to_s.underscore}/#{model.id}"
-  end
-
   version :thumb, :if => :image? do
     process :dynamic_resize_to_fit => :thumb
   end
