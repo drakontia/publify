@@ -6,19 +6,6 @@
   <fieldset>
   <div class="form-group">
     <%= text_field(:user, :login, {class: 'form-control', placeholder: t(".login"), autofocus: 'autofocus'})%>
-  <%= text_field(:user, :login, {class: 'input-block-level', placeholder: t(".login"), autofocus: 'autofocus'})%>
-  <%= password_field(:user, :password, {class: 'input-block-level', placeholder: t(".password")})%>
-  <div class='clearfix'>
-    <div class='row'>
-      <div class='col-md-2'>
-        <label class='checkbox inline'>
-          <%= check_box_tag 'remember_me' %><small><%= t('.remember_me')%></small>
-        </label>
-      </div>
-      <div class='col-md-2'>
-        <%= submit_tag t('.sign_in'), class: "btn btn-info pull-right"  %>
-      </div>
-    </div>
   </div>
   <div class="form-group">
     <%= password_field(:user, :password, {class: 'form-control', placeholder: t(".password")})%>
@@ -29,7 +16,7 @@
     </label>
   </div>
   <%= submit_tag t('.sign_in'), class: "btn btn-lg btn-success btn-block"  %>
-</fieldset>  
+</fieldset>
 <% end %>
 
 <%- content_for :account_links do %>
