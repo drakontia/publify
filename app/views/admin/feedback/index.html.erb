@@ -1,8 +1,11 @@
 <%- content_for :page_heading do %>
-  <i class="icon-large icon-comment"></i>
-  <h2 class="page-title"><%= t(".feedback") %></h2>
+  <h2>
+    <i class="glyphicon glyphicon-large glyphicon-comment"></i>
+    <%= t(".feedback") %>
+  </h2>
 <% end %>
 
+<%= render_the_flash %>
 <%= form_tag({action: 'index'}, method: :get, class: 'form-inline') do %>
   <div>
     <span class='badge badge-inverse'>
@@ -23,31 +26,34 @@
     <span class='badge badge-warning'>
       <%= link_to(t(".presumed_spam"), controller: 'admin/feedback', action: :index, published: 'f') %>
     </span>&nbsp;
-    <div class='pull-right input-append'>
+    <div class='pull-right input-group'>
       <input type="text" id="feedback_search" name="search" value="<%=h params[:search] %>" class='medium' />
       <%= submit_tag(t(".search"), {:class => 'btn'}) %>
     </div>
   </div>
 <% end %>
 
-<%= form_tag({:action => 'bulkops'}) do %>
-  <%= render 'button', { :position => 'top' } %>
+<%= form_tag({:action => 'bulkops'}, {class: 'form-inline'}) do %>
 
-  <%= hidden_field_tag "search", params[:search]%>
   <%= hidden_field_tag "page", params[:page]%>
 
-  <table class='table table-striped'>
+  <%= render 'button', { :position => 'top' } %>          
+  <table class='table hover'>
     <thead>
       <tr class='noborder'>
-        <th><input type="checkbox" name="checkall" id="checkall" onclick="check_all(this);"/></th>
-        <th><%= t(".status")%></th>
-        <th><%= t(".comment_author")%></th>
-        <th><%= t(".comment")%></th>
-        <th><%= t(".article")%></th>
+        <th colspan='5'>
+          <input type="checkbox" name="checkall" id="checkall" onclick="check_all(this);"/>
+          <%= t(".select_all") %>
+        </th>
       </tr>
     </thead>
-    <%= render_void_table(@feedback.size, 5) %>
-
+    <%- if @feedback.empty? %>
+      <tr>
+        <td colspan="5">
+          <%= t(".no_feedback") %>
+        </td>
+      </tr>
+    <%- end %>
     <% @feedback.each do |comment| %>
       <%= render 'feedback', {:comment => comment} %>
     <% end %>

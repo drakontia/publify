@@ -1,27 +1,15 @@
-<div id="carousel-wrapper">
-<div id="carousel-content" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% images.size.times do |picknum| %>
-      <li data-target="#carousel-content" data-slide-to=<%= picknum %>></li>
-    <% end %>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <% images.each do |image| %>
-      <div class="item">
-        <%= show_thumbnail_for_editor(image) %>
-      </div>
-    <% end %>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-content" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-content" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+<div id="carousel-content">
+  <% images.each do |image| %>
+    <%= show_thumbnail_for_editor(image) %>
+  <% end %>
 </div>
-</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#carousel-content").smoothDivScroll({
+      mousewheelScrolling: "allDirections",
+      manualContinuousScrolling: true,
+      autoScrollingMode: "onStart"
+    });
+  });
+</script>

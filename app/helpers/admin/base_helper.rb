@@ -1,6 +1,10 @@
 module Admin::BaseHelper
   include ActionView::Helpers::DateHelper
 
+  def tab_for(current_module)
+    content_tag(:li, link_to(_(current_module.menu_name), current_module.menu_url))    
+  end
+
   def subtabs_for(current_module)
     output = ""
     AccessControl.submenus_for(current_user.profile_label, current_module).each do |m|
@@ -13,14 +17,6 @@ module Admin::BaseHelper
     output
   end
 
-  def cancel(url = {:action => 'index'})
-    link_to _("Cancel"), url, :class => 'btn'
-  end
-
-  def save(val = _("Store"))
-    submit_tag(val, :class => 'btn btn-primary')
-  end
-
   def link_to_edit(label, record, controller = controller.controller_name)
     link_to label, {:controller => controller, :action => 'edit', :id => record.id}, :class => 'edit'
   end
@@ -29,11 +25,6 @@ module Admin::BaseHelper
     if current_user.admin? || current_user.id == record.user_id
       link_to label, {:controller => controller, :action => 'edit', :id => record.id}, :class => 'edit'
     end
-  end
-
-  def link_to_destroy(record, controller = controller.controller_name)
-    link_to image_tag('admin/delete.png', :alt => _("delete"), :title => _("Delete content")),
-      :controller => controller, :action => 'destroy', :id => record.id
   end
 
   def text_filter_options
@@ -48,39 +39,17 @@ module Admin::BaseHelper
     end
   end
 
-  def plugin_options(kind, blank = true)
+  def plugin_options(kind)
     r = PublifyPlugins::Keeper.available_plugins(kind).collect do |plugin|
       [ plugin.name, plugin.to_s ]
     end
-    blank ? r << [_("none"),''] : r
-  end
-
-  def task_overview
-    content_tag :li, link_to(_('Back to list'), :action => 'index')
-  end
-
-  def render_void_table(size, cols)
-    return unless size == 0
-    content_tag(:tr) do
-      content_tag(:td, _("There are no %s yet. Why don't you start and create one?", _(controller.controller_name)), { colspan: cols})
-    end
-  end
-
-  def cancel_or_save(message=_("Save"))
-    "#{cancel} #{_("or")} #{save(message)}"
-  end
-
-  def get_short_url(item)
-    return "" if item.short_url.nil?
-    sprintf(content_tag(:small, "%s %s"), _("Short url:"), link_to(item.short_url, item.short_url, only_path: false))
   end
 
   def show_actions item
     content_tag(:div, { :class => 'action', :style => '' }) do
-      [ content_tag(:small, link_to_published(item)),
-        small_to_edit(item),
-        small_to_delete(item),
-        get_short_url(item) ].join(" | ").html_safe
+      [ button_to_edit(item),
+        button_to_delete(item),
+        button_to_short_url(item) ].join(" ").html_safe
     end
   end
 
@@ -92,19 +61,11 @@ module Admin::BaseHelper
     date.strftime('%d/%m/%Y %H:%M')
   end
 
-  def link_to_published(item)
-    return link_to_permalink(item,  _("Show"), nil, 'published') if item.published
-
-    type = controller.controller_name == 'content' ? "" : "_page"
-
-    link_to(_("Preview"), {:controller => '/articles', :action => "preview#{type}", :id => item.id}, {:class => 'unpublished', :target => '_new'})
-  end
-
   def published_or_not(item)
-    return content_tag(:small, _("Published"), :class => 'label label-success') if item.state.to_s.downcase == 'published'
-    return content_tag(:small, _("Draft"), :class => 'label label-info') if item.state.to_s.downcase == 'draft'
-    return content_tag(:small, _("Withdrawn"), :class => 'label label-important') if item.state.to_s.downcase == 'withdrawn'
-    return content_tag(:small, _("Publication pending"), :class => 'label label-warning') if item.state.to_s.downcase == 'publicationpending'
+    return content_tag(:span, t(".published"), class: 'label label-success') if item.state.to_s.downcase == 'published'
+    return content_tag(:span, t(".draft"), class: 'label label-info') if item.state.to_s.downcase == 'draft'
+    return content_tag(:span, t(".withdrawn"), class: 'label label-important') if item.state.to_s.downcase == 'withdrawn'
+    return content_tag(:span, t(".publication_pending"), class: 'label label-warning') if item.state.to_s.downcase == 'publicationpending'
   end
 
   def macro_help_popup(macro, text)
@@ -127,25 +88,25 @@ module Admin::BaseHelper
     return picture
   end
 
-  def save_settings
-    content_tag(:div, cancel_or_save(_("Update settings")).html_safe, :class => 'form-actions')
+  def button_to_edit(item)
+    link_to(content_tag(:span, '', class: 'glyphicon glyphicon-pencil'), {action: 'edit', id: item.id}, {class: 'btn btn-primary btn-xs btn-action'})
   end
 
-  def small_to_edit(item)
-    content_tag(:small, link_to(_("Edit"), :action => 'edit', :id => item.id))
+  def button_to_delete(item)
+    link_to(content_tag(:span, '', class: 'glyphicon glyphicon-trash'), {action: 'destroy', id: item.id}, {class: 'btn btn-danger btn-xs btn-action'})
   end
 
-  def small_to_delete(item)
-    content_tag(:small, link_to(_("Delete"), {:action => 'destroy', :id => item.id}, :class => 'delete'))
+  def button_to_short_url(item)
+    return "" if item.short_url.nil?
+    link_to(content_tag(:span, '', class: 'glyphicon glyphicon-link'), item.short_url, {class: 'btn btn-success btn-xs btn-action'})
+  end
+
+  def button_to_show(item)
+    link_to_permalink(item,  content_tag(:span, '', class: 'glyphicon glyphicon-link'), nil, 'btn btn-success btn-xs btn-action')
   end
 
   def twitter_available?(blog, user)
     blog.has_twitter_configured? && user.has_twitter_configured?
   end
 
-  def twitter_disabled_message(blog, user)
-    unless twitter_available?(blog, user)
-      content_tag(:p, _("If you want to push short statuses on Twitter, you need to %s Twitter gave you after you %s.", link_to(_("fill in the oauth credentials"), :controller => 'admin/settings', action: 'write'), link_to(_("registered your application"), "https://dev.twitter.com/apps/new")).html_safe, class: 'alert alert-warning')
-    end
-  end
 end

@@ -1,5 +1,9 @@
 <%- content_for :page_heading do %>
-  <i class="icon-large icon-comment"></i><h2 class="page-title"><%= _("Comments for %s", link_to(h(@comment.article.title), :controller => '/admin/content', :action => 'edit', :id => @comment.article.id).html_safe).html_safe %></h2>
+
+  <h2 class="page-title">
+    <i class="glyphicon glyphicon-large glyphicon-comment"></i>
+    <%= t(".comments_for", article_link: link_to(h(@comment.article.title), controller: '/admin/content', action: 'edit', id: @comment.article.id).html_safe) %>
+  </h2>
 <% end %>
 
 <%= form_tag :action => "update", :id => @comment.id do %>
@@ -8,34 +12,25 @@
   <%= hidden_field_tag 'article_id', @article.id %>
 
   <fieldset class='form-horizontal'>
-    <div class='control-group'>
+    <div class='form-group'>
       <label for="comment_author" class='control-label'><%= _("Author")%></label>
-      <div class='controls'>
-        <%= text_field 'comment', 'author', :class => 'span3' %>
-      </div>
+      <%= text_field 'comment', 'author', :class => 'col-md-3' %>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label for="comment_email" class='control-label'><%= _("Email")%></label>
-      <div class='controls'>
-        <%= text_field 'comment', 'email', :class => 'span3' %>
-      </div>
+      <%= text_field 'comment', 'email', :class => 'col-md-3' %>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label for="comment_url" class='control-label'><%= _("Url") %></label>
-      <div class='controls'>
-        <%= text_field 'comment', 'url', :class => 'medium' %>
-      </div>
+      <%= text_field 'comment', 'url', :class => 'medium' %>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label for='comment_body' class='control-label'><%= _("Your comment") %></label>
-      <div class='controls'>
-        <script type="text/javascript">edToolbar('comment_body', '<%= current_user.default_text_filter.name %>');</script>
-        <%= text_area 'comment', 'body', { :rows => '10', :class => 'input-block-level'} %>
-      </div>
+      <script type="text/javascript">edToolbar('comment_body', '<%= current_user.default_text_filter.name %>');</script>
+      <%= text_area 'comment', 'body', { :rows => '10', :class => 'input-block-level'} %>
     </div>
-    <div class='form-actions'>
-      <%= cancel_or_save %>
-    </div>
+    <%= cancel_or_save %>
   </fieldset>
 
 <% end %>
+

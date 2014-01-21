@@ -1,61 +1,54 @@
 <%- content_for :page_heading do %>
-  <i class="icon-large icon-settings"></i><h2 class="page-title"><%= _("General settings") %></h2>
+<h2>
+  <i class="glyphicon glyphicon-large glyphicon-cog"></i>
+  <%= t(".general_settings") %>
+</h2>
+
 <% end %>
 
 <%= form_tag :action => 'update' do %>
 
   <fieldset class='form-horizontal'>
     <legend><%= _("Your blog")%></legend>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_blog_name"><%= _("Blog name")%></label>
-      <div class='controls'>
-        <%= text_field(:setting, :blog_name, {:class => 'span6', :size => this_blog.blog_name.length })%>
-      </div>
+      <%= text_field(:setting, :blog_name, {:class => 'col-md-6', :size => this_blog.blog_name.length })%>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_blog_subtitle"><%= _("Blog subtitle")%></label>
-      <div class='controls'>
-        <%= text_field(:setting, :blog_subtitle, {:class => 'span6', :size => this_blog.blog_subtitle.length})%>
-      </div>
+      <%= text_field(:setting, :blog_subtitle, {:class => 'col-md-6', :size => this_blog.blog_subtitle.length})%>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_base_url"><%= _("Blog URL")%></label>
-      <div class='controls'>
-        <%= text_field(:setting, :base_url, {:size => this_blog.base_url.length, :class => 'span6'})%>
-      </div>
+      <%= text_field(:setting, :base_url, {:size => this_blog.base_url.length, :class => 'col-md-6'})%>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_lang"><%= _("Language")%></label>
-      <div class='controls'>
-        <select name="setting[lang]" id='setting_lang'>
-          <%= fetch_langs %>
-        </select>
-      </div>
+      <select name="setting[lang]" id='setting_lang'>
+        <%= fetch_langs %>
+      </select>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_allow_signup"><%= _("Allow users to register")%></label>
-      <div class='controls'>
-        <%= check_box(:setting, :allow_signup) %>
-        <span class='help-block'><%= _("You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.") %>.</span>
-      </div>
+      <%= check_box(:setting, :allow_signup) %>
+      <span class='help-block'><%= _("You can allow users to register to your blog. By default, they will register as contributors, an unpriviledged account level which grant them no rights but own a profile on the site. If you don't want users to register, you can thus add them by yourself in the users part of this admin.") %>.</span>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <p><%= _("Publify can notify you when new articles or comments are posted")%></p>
       <label class='control-label' for="setting_email_from"><%= _("Source Email")%></label>
-      <div class='controls'>
-        <%= text_field(:setting, :email_from, { :class => 'span6'}) %>
-        <span class='help-block'><%= _("Email address used by Publify to send notifications")%></span>
-      </div>
+      <%= text_field(:setting, :email_from, { :class => 'col-md-6'}) %>
+      <span class='help-block'><%= _("Email address used by Publify to send notifications")%></span>
     </div>
-    <div class='control-group'>
+    <div class='form-group'>
       <label class='control-label' for="setting_admin_display_elements"><%= _("Items to display in admin lists")%></label>
-      <div class='controls'>
-        <%= text_field(:setting, :admin_display_elements, {:size => 4, :class => 'span1'})%>
-      </div>
+      <%= text_field(:setting, :admin_display_elements, {:size => 4, :class => 'col-md-1'})%>
     </div>
-
   </fieldset>
 
   <%= hidden_field_tag 'from', 'index' %>
-  <%= save_settings %>
+  <div class='form-group'>
+    <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+    <%= t(".or") %>
+    <%= submit_tag(t(".update_settings"), class: 'btn btn-success') %>
+  </div>
 <% end %>

@@ -1,16 +1,21 @@
-<%= render_void_table(@pages.size, 5)  %>
+<%- if @pages.empty? %>
+  <tr>
+  <td colspan="5">
+    <%= t(".no_pages") %>
+  </td>
+</tr>
+<%- end %>
 
 <% for page in @pages %>
-<tr>
+  <tr>
   <td>
     <%= link_to_edit_with_profiles page.title, page %>
     <%= show_actions page %>
   </td>
   <td><%= page.name%></td>
-  <td><%= author_link(page) %></td>
   <td>
-    <%= format_date page.created_at %><br />
-    <%= published_or_not page %>
+    <%= author_link(page) %><br />
+    <small><%= format_date page.created_at %></small>
   </td>
 </tr>
 <% end %>

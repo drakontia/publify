@@ -8,43 +8,67 @@ module ApplicationHelper
     @page_title
   end
 
-  include SidebarHelper
+  def render_sidebars(*sidebars)
+    (sidebars.blank? ? Sidebar.find(:all, :order => 'active_position ASC') : sidebars).map do |sb|
+      @sidebar = sb
+      sb.parse_request(content_array, params)
+      render_sidebar(sb)
+    end.join
+  rescue => e
+    logger.error e
+    I18n.t('errors.render_sidebar')
+  end
 
-  # Basic english pluralizer.
-  # Axe?
-  def pluralize(size, zero, one , many )
-    case size
-    when 0 then zero
-    when 1 then one
-    else        sprintf(many, size)
+  def render_sidebar(sidebar)
+    if sidebar.view_root
+      render_deprecated_sidebar_view_in_view_root sidebar
+    else
+      render_to_string(partial: sidebar.content_partial, locals: sidebar.to_locals_hash, layout: false)
     end
   end
 
-  # Produce a link to the permalink_url of 'item'.
+  def render_deprecated_sidebar_view_in_view_root(sidebar)
+    logger.warn "Sidebar#view_root is deprecated. Place your _content.html.erb in views/sidebar_name/ in your plugin's folder"
+    # Allow themes to override sidebar views
+    view_root = File.expand_path(sidebar.view_root)
+    rails_root = File.expand_path(::Rails.root.to_s)
+    if view_root =~ /^#{Regexp.escape(rails_root)}/
+      new_root = view_root[rails_root.size..-1]
+      new_root.sub! %r{^/?vendor/}, ""
+      new_root.sub! %r{/views}, ""
+      new_root = File.join(this_blog.current_theme.path, "views", new_root)
+      view_root = new_root if File.exists?(File.join(new_root, "content.rhtml"))
+    end
+    render_to_string(:file => "#{view_root}/content.rhtml", :locals => sidebar.to_locals_hash, :layout => false)
+  end
+
+  def articles?
+    not Article.first.nil?
+  end
+
+  def trackbacks?
+    not Trackback.first.nil?
+  end
+
+  def comments?
+    not Comment.first.nil?
+  end
+
+  def render_to_string(*args, &block)
+    controller.send(:render_to_string, *args, &block)
+  end
+
   def link_to_permalink(item, title, anchor=nil, style=nil, nofollow=nil, only_path=false)
     options = {}
     options[:class] = style if style
     options[:rel] = "nofollow" if nofollow
-
     link_to title, item.permalink_url(anchor,only_path), options
-  end
-
-  # The '5 comments' link from the bottom of articles
-  def comments_link(article)
-    comment_count = article.published_comments.size
-    # FIXME Why using own pluralize metchod when the Localize._ provides the same funciotnality, but better? (by simply calling _('%d comments', comment_count) and using the en translation: l.store "%d comments", ["No nomments", "1 comment", "%d comments"])
-    link_to_permalink(article,pluralize(comment_count, _('no comments'), _('1 comment'), _('%d comments', comment_count)),'comments', nil, nil, true)
   end
 
   def avatar_tag(options = {})
     avatar_class = this_blog.plugin_avatar.constantize
     return '' unless avatar_class.respond_to?(:get_avatar)
     avatar_class.get_avatar(options)
-  end
-
-  def trackbacks_link(article)
-    trackbacks_count = article.published_trackbacks.size
-    link_to_permalink(article,pluralize(trackbacks_count, _('no trackbacks'), _('1 trackback'), _('%d trackbacks',trackbacks_count)),'trackbacks')
   end
 
   def meta_tag(name, value)
@@ -108,11 +132,6 @@ module ApplicationHelper
     image_tag(status.user.twitter_profile_image , class: "alignleft", alt: status.user.nickname)
   end
 
-  def view_on_twitter(status)
-    return if status.twitter_id.nil? or status.twitter_id.empty?
-    return " | " + link_to(_("View on Twitter"), File.join('https://twitter.com', status.user.twitter_account, 'status', status.twitter_id), {class: 'u-syndication', rel: 'syndication'})
-  end
-
   def google_analytics
     unless this_blog.google_analytics.empty?
       <<-HTML
@@ -154,9 +173,9 @@ module ApplicationHelper
 
   def render_the_flash
     return unless flash[:notice] or flash[:error] or flash[:warning]
-    the_class = flash[:error] ? 'error' : 'success'
+    the_class = flash[:error] ? 'danger' : 'success'
 
-    html = "<div class='alert alert-#{the_class}'>"
+    html = "<div style='margin-top: 20px' class='alert alert-#{the_class}'>"
     html << "<a class='close' href='#'>×</a>"
     html << render_flash rescue nil
     html << "</div>"
@@ -205,10 +224,10 @@ module ApplicationHelper
     @blog ||= Blog.default
   end
 
-  def stop_index_robots?
+  def stop_index_robots?(blog)
     stop = (params[:year].present? || params[:page].present?)
-    stop = @blog.unindex_tags if controller_name == "tags"
-    stop = @blog.unindex_categories if controller_name == "categories"
+    stop = blog.unindex_tags if controller_name == "tags"
+    stop = blog.unindex_categories if controller_name == "categories"
     stop
   end
 

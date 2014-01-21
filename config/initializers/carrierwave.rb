@@ -5,13 +5,18 @@ if Rails.env.in?(%(test cucumber))
   end
 else
   CarrierWave.configure do |config|
+    config.root = Rails.root.join('tmp') # adding these...
+    config.cache_dir = 'carrierwave'     # ...two lines
+
     if ENV["provider"] == "AWS"
       config.storage = :fog
 
       config.fog_credentials = {
         :provider               => 'AWS',
         :aws_access_key_id      => ENV["aws_access_key_id"],
-        :aws_secret_access_key  => ENV["aws_secret_access_key"]
+        :aws_secret_access_key  => ENV["aws_secret_access_key"],
+        :region                 => 'ap-northeast-1',
+        :persistent             => false
       }
 
       config.fog_directory  = ENV["aws_bucket"]
