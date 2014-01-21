@@ -5,9 +5,6 @@ if Rails.env.in?(%(test cucumber))
   end
 else
   CarrierWave.configure do |config|
-    config.root = Rails.root.join('tmp') # adding these...
-    config.cache_dir = 'carrierwave'     # ...two lines
-
     if ENV["provider"] == "AWS"
       config.storage = :fog
 

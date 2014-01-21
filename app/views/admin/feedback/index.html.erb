@@ -5,17 +5,8 @@
   </h2>
 <% end %>
 
+<%= render_the_flash %>
 <%= form_tag({action: 'index'}, method: :get, class: 'form-inline') do %>
-<<<<<<< HEAD
-  <p>
-    <%= link_to(t(".all"), {controller: 'admin/feedback', action: :index}, {class: 'label label-default'}) %>
-    <%= link_to(t(".unapproved_comments"), {controller: 'admin/feedback', action: :index, only: 'unapproved'}, {class: 'label label-info'}) %>
-    <%= link_to(t(".presumed_ham"), {controller: 'admin/feedback', action: :index, only: 'presumed_ham'}, {class: 'label label-primary'}) %>
-    <%= link_to(t(".ham"), {controller: 'admin/feedback', action: :index, only: 'ham'}, {class: 'label label-success'}) %>
-    <%= link_to(t(".presumed_spam"), {controller: 'admin/feedback', action: :index, only: 'presumed_spam'}, {class: 'label label-warning'}) %>
-    <%= link_to(t(".spam"), {controller: 'admin/feedback', action: :index, only: 'spam'}, {class: 'label label-danger'}) %>
-  </p>
-=======
   <div>
     <span class='badge badge-inverse'>
       <%= link_to(t(".all"), controller: 'admin/feedback', action: :index) %>
@@ -40,7 +31,6 @@
       <%= submit_tag(t(".search"), {:class => 'btn'}) %>
     </div>
   </div>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
 <% end %>
 
 <%= form_tag({:action => 'bulkops'}, {class: 'form-inline'}) do %>
@@ -57,8 +47,13 @@
         </th>
       </tr>
     </thead>
-    <%= render_void_table(@feedback.size, 5) %>
-
+    <%- if @feedback.empty? %>
+      <tr>
+        <td colspan="5">
+          <%= t(".no_feedback") %>
+        </td>
+      </tr>
+    <%- end %>
     <% @feedback.each do |comment| %>
       <%= render 'feedback', {:comment => comment} %>
     <% end %>

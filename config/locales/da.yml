@@ -1,4 +1,43 @@
 da:
+  articles:
+    read:
+      edit: "Rediger"
+      comments: "Kommentarer"
+      leave_a_response: "Skriv en kommentar"
+      rss_feed: "RSS Feed for denne artikel"
+      comments_are_disabled: "Kommentarer er deaktiveret"
+    comment_form:
+      comment: "comment"
+      email_address: "Email address"
+      your_website: "Your website"
+      leave_url_email: "leave url/email"
+      your_name: "Dit Navn"
+      your_blog: "your blog"
+      your_email: "Din email"
+      your_message: "Din besked"
+      comment_markup_help: "Hjælp med kommentar markup"
+      preview_comment: "Vis kommentar eksempel"
+    article_links:
+      comments:
+        zero: "no kommentarer"
+        one: "1 comment"
+        other: "%{count} kommentarer"
+    comment_counter:
+      comments:
+        zero: "no kommentarer"
+        one: "1 comment"
+        other: "%{count} kommentarer"
+  profile:
+    admin: "Publify administrator"
+    publisher: "Blog publisher"
+    contributor: "Contributor"
+  user:
+    status:
+      active: "Active"
+      inactive: "Inactive"
+  errors:
+    render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
+    no_posts_found: "No posts found..."
   views:
     pagination:
       truncate: "Truncate"
@@ -20,10 +59,59 @@ da:
       posted_in: "offentliggjort i"
       next_page: "Næste side"
       previous_page: "Forrige side"
+  setup:
+    confirm:
+      you_have_successfully_signed_up: "You have successfully signed up"
+      login: "Login: %{user}"
+      password: "Password: %{pass}"
+      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
+      proceed_to: "Proceed to %{link}"
+      admin: "admin"
   admin:
+    base:
+      restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
+      cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+    notes:
+      new:
+        no_notes: "There are no notes yet. Why don't you start and create one?"
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        notes: "Notes"
+        compose_new_note: "Compose new note"
+        publish_settings: "Publish settings"
+        posse_to_twitter: "POSSE to twitter"
+        in_reply_to: "In reply to"
+        tweet_id_like: "Tweet id like 123456"
+        permanent_link: "Permanent link"
+        published: "Offentliggjort"
+        publish_at: "Offentliggjort den"
+        cancel: "Anuller"
+        or: "or"
+        publish: "Udgiv"
+    redirects:
+      new:
+        no_redirects: "There are no redirects yet. Why don't you start and create one?"
+        cancel: "Anuller"
+        save: "Gem"
+        or: "or"
+        redirects: "Redirects"
+        from: "Fra"
+        to: "To"
+        leave_empty_to_shorten_a_link: "Leave empty to shorten a link"
+    themes:
+      index:
+        choose_a_theme: "Vælg et tema"
+        use_this_theme: "Use this theme"
+        active_theme: "%{name} - Aktiv tema"
+    profiles:
+      index:
+        your_profile: "Din profil"
     sidebar:
       index:
         sidebar: "Sidebar"
+        or: "or"
+        cancel: "Anuller"
         explain_how_its_works: "Træk og slip for at ændre indholdsoversigten der vises på denne blog. Du kan fjerne elementer fra indholdsoversigten bare ved at klikke fjern. Ændringer gemmes med det samme, men ikke aktiveret, før du klikker på 'Offentliggør' knappen."
         publish_changes: "Udgiv ændringer"
         available_items: "Tilgængelige objekter"
@@ -31,6 +119,9 @@ da:
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
     settings:
       display:
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         ago: "ago"
         custom_url: "Custom URL shortener domain"
         custom_url_help: "If you have a custom domain for URL shortening, enter it here."
@@ -49,9 +140,13 @@ da:
         statuses: "Statuses"
         time_format: "Time format"
       feedback:
+        none: "none"
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         feedback_settings: "Feedback settings"
         feedback: "Feedback"
-        comments: "Comments"
+        comments: "Kommentarer"
         enable_comments_by_default: "Aktiver kommentarer som standard"
         enable_feedback_moderation: "Aktiver feedback moderation"
         explain_feedback_moderation: "Du kan slå feedback moderation til for hele bloggen. Hvis du gør dette kommer kommentarer og trackbacks først frem når du har godkendt dem"
@@ -77,6 +172,12 @@ da:
         enable_recaptcha: "Enable reCaptcha"
         remember_to_set_your_recaptcha: "Remember to set your reCaptcha keys inside config/initializers/recaptcha.rb"
       write:
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         write: "Skriv"
         publish: "Udgiv"
         trackbacks: "Trackbacks"
@@ -107,6 +208,9 @@ da:
         update_database_now: "Updatér database nu"
         may_take_a_moment: "Det varer et øjeblik"
       index:
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         general_settings: "Generelle Indstillinger"
         your_blog: "Din Blog"
         blog_name:  "Blog titel"
@@ -122,6 +226,9 @@ da:
         items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         title_settings: "Title settings"
         home: "Home"
         title_template: "Title template"
@@ -155,6 +262,9 @@ da:
         replaced_by_the_archive_date: "Replaced by the archive date"
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
         permalinks: "Permalinks"
         permalink_format: "Permalink format"
@@ -169,6 +279,9 @@ da:
         your_article_month: "your article month of publication."
         your_article_day: "your article day of publication."
       index:
+        cancel: "Anuller"
+        or: "or"
+        update_settings: "Update settings"
         global_settings: "Global settings"
         general_settings: "Generelle indstillinger"
         meta_keywords: "Meta keywords"
@@ -196,13 +309,29 @@ da:
         explain_moderate_feedback: "You may want to moderate feedback when turning this on"
         explain_rss_description: "You can use the following tags: %author% (author name), %blog_url% (this blog URL), %blog_name% (this blog title) and %permalink_url% (a link to the article you want to protect)"
     shared:
+      macros:
+        show_help_on_publify_macros: "Show help on Publify macros"
+        name: "Navn"
+        description: "Beskrivelse"
+        tag: "Tag"
       destroy:
         are_you_sure: "Are you sure you want to delete this %{element}"
         action_or_other: "%{first_action} eller %{second_action}"
         cancel: "Anuller"
         delete: "Slet"
+    tags:
+      new:
+        no_tags: "There are no tags yet. Why don't you start and create one?"
+        articles: "Artikler"
+        display_name: "Vis navn"
+        manage_tags: "Administrer Tags"
+        name: "Navn"
+        cancel: "Anuller"
+        save: "Gem"
+        or: "or"
     resources:
       index:
+        no_resources: "There are no resources yet. Why don't you start and create one?"
         media_library: "Media Library"
         upload_a_file_to_your_site: "Upload en fil til din side"
         upload: "Upload"
@@ -217,6 +346,9 @@ da:
         original_size: "Original size"
     post_types:
       new:
+        cancel: "Anuller"
+        save: "Gem"
+        or: "or"
         post_types: "Post Types"
         name: "Navn"
         description: "Beskrivelse"
@@ -233,6 +365,8 @@ da:
         author: "Forfatter"
         date: "Dato"
       form:
+        cancel: "Anuller"
+        change: "Change"
         publish: "Udgiv"
         title: "Titel"
         images: "Images"
@@ -243,7 +377,20 @@ da:
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
+      pages:
+        no_pages: "There are no pages yet. Why don't you start and create one?"
     feedback:
+      bulkops:
+        success_mark_as_ham: 
+          zero: "No item selected to mark as Ham"
+          one: "Marked 1 item as Ham"
+          other: "Marked %{count} items as Ham"
+        success_mark_as_spam: 
+          zero: "No item selected to mark as Spam"
+          one: "Marked 1 item as Spam"
+          other: "Marked %{count} items as Spam"
+        success_classification: "Confirmed classification of %{count} item(s)"
+        success_deleted: "Deleted %{count} item(s)"
       index:
         feedback: "Diskussion"
         all: "All"
@@ -258,7 +405,9 @@ da:
         comment: "Comment"
         article: "Artikel"
         select_all: "Select all"
+        no_feedback: "There are no feedback yet. Why don't you start and create one?"
       article:
+        no_feedback: "There are no feedback yet. Why don't you start and create one?"
         comments_for: "Kommentarer for %{title}"
         status: "Status"
         comment_author: "Comment Author"
@@ -271,6 +420,10 @@ da:
         action_or_other: "%{first_action} eller %{second_action}"
         cancel: "Anuller"
         save: "Gem"
+      edit:
+        action_or_other: "%{first_action} eller %{second_action}"
+        save: "Gem"
+        comments_for: "Comments for %{article_link}"
       button:
         select_action: "Select action"
         delete_checked_items: "Delete Checked Items"
@@ -282,6 +435,8 @@ da:
         this_comment_by_was_flagged_as_spam: "This comment by %{author} was flagged as spam, %{cancel_link}?"
         cancel: "Anuller"
     dashboard:
+      index:
+        welcome_back: "Velkommen tilbage, %{user_name}!"
       drafts:
         your_drafts: "Your drafts"
         no_drafts_yet: "No drafts yet, why don't you start and write one"
@@ -347,7 +502,11 @@ da:
       comment:
         no_comments_yet: "Der er ingen kommentarer endnu"
         by: "By"
+      comments:
+        latest_comments: "Seneste kommentarer"
     content:
+      article_list:
+        no_articles: "There are no articles yet. Why don't you start and create one?"
       index:
         published: "Offentliggjort"
         new_article: "Ny Artikel"
@@ -363,6 +522,18 @@ da:
         publication_date: "Publication date"
         filter: "Filtrer"
       form:
+        article_type: "Article type"
+        now: "now"
+        preview: "Preview"
+        cancel: "Anuller"
+        save: "Gem"
+        default: "Default"
+        allow_comments_status:
+          zero: "disabled"
+          one: "aktiveret"
+        allow_pings_status:
+          zero: "disabled"
+          one: "aktiveret"
         public: "Public"
         publish: "Udgiv"
         title: "Titel"
@@ -388,6 +559,9 @@ da:
         new_category: "New Category"
     categories:
       new:
+        cancel: "Anuller"
+        save: "Gem"
+        or: "or"
         categories: "Kategorier"
         name: "Navn"
         keywords: "Keywords"
@@ -406,7 +580,7 @@ da:
       new_page: "Ny Side"
       new_media: "New Media"
       new_note : "New Note"
-      profile: "Profile"
+      profile: "Profil"
       logout: "Log ud &raquo;"
       home: "Home"
       dashboard: "Dashboard"
@@ -416,18 +590,38 @@ da:
         stats: "Der er %{files_count} objekter i cachen"
         sweep_cache: "Sweep cache"
         cache: "Cache"
-        explanations: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
+        explaination: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
     users:
+      edit:
+        edit_user: "Rediger bruger"
+      new:
+        add_user: "Add User"
+      index:
+        login: "Log ind"
+        users: "Brugere"
+        new_user: "Ny bruger"
+        name: "Navn"
+        email: "Email"
+        profile: "Profil"
+        articles: "Artikler"
+        comments: "Kommentarer"
+        state: "State"
+        user_state: "%{state} user"
       form:
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        cancel: "Anuller"
+        save: "Gem"
+        or: "or"
+        user_status: "User Status"
         account_settings: "Account Settings"
-        login: "Login"
+        login: "Log ind"
         password: "Password"
         password_confirmation: "Password confirmation"
         email: "Email"
-        profile: "Profile"
+        profile: "Profil"
         status: "Status"
-        active: "Active"
-        inactive: "Inactive"
         profile_settings: "Profile Settings"
         firstname: "First name"
         lastname: "Last name"
@@ -464,6 +658,7 @@ da:
     create_account: "Create an account"
     lost_my_password: "I've lost my password"
     login:
+      title: "Log ind"
       login: "Log ind"
       password: "Kodeord"
       remember_me: "Remember me"
@@ -472,12 +667,32 @@ da:
       proceed_to: "Proceed to %{link}"
       admin: "admin"
     recover_password:
+      title: "Recover your password"
       username_or_email: "Username or email"
       reset_my_password: "Reset my password"
     signup:
+      title: "Tilmelding"
       username: "Brugernavn"
       email: "Email"
       signup: "Tilmelding"
+  langs:
+    da_DK: "Danish"
+    de_DE: "German"
+    en_US: "English (US)"
+    es_MX: "Spanish (Mexican)"
+    fr_FR: "French"
+    he_IL: "Hebrew"
+    it_IT: "Italian"
+    ja_JP: "Japanese"
+    lt_LT: "Lithuanian"
+    nb_NO: "Norwegian"
+    nl_NL: "Nederland"
+    pl_PL: "Polish"
+    ro_RO: "Romanian"
+    ru_RU: "Russian"
+    zh_TW: "Chinese"
+    zh_CN: "Simple Chinese"
+    pt_BR: "Portuguese (Brazilian)"
   time:
     formats:
       default: "%m/%d/%Y %H:%M"

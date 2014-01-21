@@ -1,97 +1,84 @@
 <%- content_for :page_heading do %>
   <h2>
     <i class="glyphicon glyphicon-large glyphicon-th-list"></i>
-    <%= _("Notes") %>
+    <%= t(".notes") %>
   </h2>
-  
+
 <% end %>
 
-<<<<<<< HEAD
-<div class='row'>
-=======
 <div>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
   <div class='col-md-4'>
     <%= form_tag :action=>"edit", :id => @note.id do %>
       <input type="hidden" name="note[text_filter]" id="note_textfilter" value="<%= current_user.text_filter_name %>" />
       <div class='form-group'>
-        <%= text_area(:note, :body, {class: 'form-control', rows: '7', placeholder: _("Compose new note")}) %>  
+        <%= text_area(:note, :body, {class: 'form-control', rows: '7', placeholder: t(".compose_new_note")}) %>  
       </div>
 
       <fieldset class="hidden-phone">
-        <legend><%= _("Publish settings") %></legend>
-        <%= twitter_disabled_message(this_blog, current_user) %>
-<<<<<<< HEAD
-        <div class="checkbox">
-          <label for="push_to_twitter">
-            <%= check_box_tag 'push_to_twitter', true, @note.twitter_id.blank?, {disabled: !twitter_available?(this_blog, current_user)}  %>
-            <%= _("POSSE to Twitter")%>
-          </label>
-        </div>
-        <div class="form-group">
-          <label for="note_in_reply_to_status_id"><%= _("In reply to")%></label>
-          <%= text_field 'note', 'in_reply_to_status_id', :class => 'form-control', :placeholder => _("tweet id like 123456"), disabled: !twitter_available?(this_blog, current_user) %>
-        </div>
+        <legend><%= t(".publish_settings") %></legend>
+        <%- unless twitter_available?(this_blog, current_user) %>
+          <p class='alert alert-warning'>
+            <%= t(".how_to_setup_twitter", twitter_settings_link: link_to(t(".fill_the_twitter_credentials"), controller: 'admin/settings', action: 'write'), twitter_registration_link: link_to(t(".registered_your_application"), "https://dev.twitter.com/apps/new")) %>
+          </p>
+        <%- else %>
+          <div class="checkbox">
+            <label for="push_to_twitter">
+              <%= check_box_tag 'push_to_twitter', true, @note.twitter_id.blank?, {disabled: !twitter_available?(this_blog, current_user)}  %>
+              <%= t(".posse_to_twitter")%>
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="note_in_reply_to_status_id"><%= t(".in_reply_to")%></label>
+            <%= text_field 'note', 'in_reply_to_status_id', :class => 'form-control', :placeholder => t(".tweet_id_like"), disabled: !twitter_available?(this_blog, current_user) %>
+          </div>
+        <%- end %>
         <div class='form-group'>
-          <label for="note_permalink"><%= _("Permanent link")%></label>
+          <label for="note_permalink"><%= t(".permanent_link")%></label>
           <%= text_field 'note', 'permalink', :class => 'form-control' %>
         </div>
         <div class='checkbox'>
           <label for='note_published'>
             <%= check_box 'note', 'published'  %>
-            <%= _("Published") %>
+            <%= t(".published") %>
           </label>
         </div>
         <div class='form-group'>
-          <label for='note_published_at'><%= _("Publish at") %></label>
+          <label for='note_published_at'><%= t(".publish_at") %></label>
           <%= text_field 'note', 'published_at', {:class => 'form-control datepicker'} %>  
         </div>
         <div class='form-group'>
-          <%= cancel_or_save( _("Publish")) %>
+          <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+          <%= t(".or") %>
+          <%= submit_tag(t(".publish"), class: 'btn btn-success') %>
         </div>
-=======
-        <label for="push_to_twitter" class='checkbox'>
-          <%= check_box_tag 'push_to_twitter', true, @note.twitter_id.blank?, {disabled: !twitter_available?(this_blog, current_user)}  %>
-          <%= _("POSSE to Twitter")%>
-        </label>
-        <label for="note_in_reply_to_status_id"><%= _("In reply to")%></label>
-        <%= text_field 'note', 'in_reply_to_status_id', :class => 'input-block-level', :placeholder => _("tweet id like 123456"), disabled: !twitter_available?(this_blog, current_user) %>
-        <label for="note_permalink"><%= _("Permanent link")%></label>
-        <%= text_field 'note', 'permalink', :class => 'input-block-level' %>
-        <label for='note_published' class='checkbox'>
-          <%= check_box 'note', 'published'  %>
-          <%= _("Published") %>
-        </label>
-        <label for='note_published_at'><%= _("Publish at") %></label>
-        <%= text_field 'note', 'published_at', {:class => 'col-md-11 datepicker'} %>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
       </fieldset>
     </div>
   <% end %>
-<<<<<<< HEAD
 
-  <div class='col-md-8'>
-    <table class="table table-striped">
-      <%= render_void_table(@notes.size, 2)  %>
-      <% for status in @notes %>
-=======
-</div>
-<div class='col-md-8'>
-  <table class="table table-striped">
-    <thead>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
-      <tr>
-        <td>
-          <%= h(status.body.strip_html.slice(0..140)) %>
-          <%= show_actions status %>
-        </td>
-        <td>
-          <%= author_link(status)%><br />
-          <small><%= format_date_time status.published_at %></small>
-        </td>
-      </tr>
+    <div class='col-md-8'>
+      <table class="table table-striped">
+
+        <%- if @notes.empty? %>
+          <tr>
+          <td colspan="2">
+            <%= t(".no_notes") %>
+          </td>
+        </tr>
+      <%- end %>
+
+        <% for status in @notes %>
+          <tr>
+          <td>
+            <%= h(status.body.strip_html.slice(0..140)) %>
+            <%= show_actions status %>
+          </td>
+          <td>
+            <%= author_link(status)%><br />
+            <small><%= format_date_time status.published_at %></small>
+          </td>
+        </tr>
       <% end %>
-      <%= display_pagination(@notes, 3, 'first', 'last')%>
-    </table>
+        <%= display_pagination(@notes, 3, 'first', 'last')%>
+      </table>
+    </div>
   </div>
-</div>

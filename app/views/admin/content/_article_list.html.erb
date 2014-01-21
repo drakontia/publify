@@ -1,12 +1,21 @@
-<%= render_void_table(@articles.size, 7) %>
+<%- if @articles.empty? %>
+  <tr>
+    <td colspan="7">
+      <%= t(".no_articles") %>
+    </td>
+  </tr>
+<%- end %>
+
 <% for article in @articles %>
 <tr>
   <td>
-    <%#= published_or_not article %>
-    <%= link_to_published(article, h(article.title), h(article.title)) %>
+    <%- if article.published %>
+      <%= link_to_permalink(article, article.title, nil, 'published')%>
+    <%- else %>
+      <%= link_to(article.title, {controller: '/articles', action: "preview", id: article.id}, {class: 'unpublished', target: '_new'}) %>
+    <%- end %>
     <%= show_actions article %>
   </td>
-  <td><%= article.categories.map { |c| link_to h(c.name), {:controller => 'content', :action => 'index', "search[category]" => c.id}}.join(", ") %></td>
   <td>
     <%= author_link(article)%><br />
     <small><%= format_date article.published_at %></small>

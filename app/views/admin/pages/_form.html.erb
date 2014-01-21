@@ -1,18 +1,18 @@
 <input type="hidden" name="user_textfilter" id="user_textfilter" value="<%= current_user.text_filter_name %>" />
 
 <%= error_messages_for 'page' %>
-<<<<<<< HEAD
 <div class='row'>
   <div class='col-md-12'>
     <span class='pull-right'>
       <%= link_to(t('.cancel'), {action: 'index'}, {class: 'btn btn-default'}) %>
       <!-- Button trigger modal -->
       <button class="btn btn-success" data-toggle="modal" data-target="#publish">
-        <%= publish_or_save %>
+        <%= controller.action_name == "new" ? t(".publish") : t(".save") %>
       </button>    
     </span>
   </div>
 </div>
+
 <div class='row'>
   <div class='col-md-8 col-md-offset-2' style='padding-top: 20px'>
     <%= error_messages_for 'page' %>
@@ -21,44 +21,18 @@
 
 <div class='row'>
   <div class='col-md-2' id='quicktags-block'>
-    <div id='quicktags' style='padding-top: 10px;' class='pull-right'>
+    <div id='quicktags' class='pull-right'>
       <script type="text/javascript">edToolbar('page_body', '<%= @page.text_filter %>');</script>
     </div>
   </div>
+  
   <div class='col-md-8'>
-=======
-<div>
-  <div class='col-md-9'>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
-    <div>
-      <%= text_field 'page', 'title', :class => 'form-control', :placeholder => t('.title')  %>
-    </div>
-
-    <%#= render('images', { :images => @images}) unless @images.empty? %>
+    <%= text_field 'page', 'title', :class => 'form-control', :placeholder => t('.title')  %>
 
     <div id='editor'>
-      <!--
-      <i class='glyphicon glyphicon-picture'></i> 
-      <span id='image-link'>
-        <%= toggle_element('carousel-wrapper', t('.images')) %>
-      </span>      
-      -->
-      <div id='simple_editor'>
-        <%= text_area('page', 'body', {:class => 'form-control ', :height => '300px', :rows => '20', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
-        <%#= render 'admin/shared/macros' %>
-        <script type="text/javascript">
-        if (document.getElementById('page_body').value == "") {
-          wideArea().clearData("#page_body");;
-        } else {
-          adaptiveheight($("#page_body"));
-        }
-        
-        wideArea();
-        </script>
-        
-      </div>
+      <%= text_area('page', 'body', {:class => 'form-control ', :height => '300px', :rows => '20', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
+      <%#= render 'admin/shared/macros' %>
     </div>
-<<<<<<< HEAD
   </div>
 </div>
 
@@ -110,43 +84,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= submit_tag( t(".publish"), class: 'btn btn-success') %>
-=======
-    <div class='separator'>
-      <div class='well'>
-        <fieldset>
-          <legend><%= t(".publish_settings") %></legend>
-          <div class='form-group'>
-            <%= t(".status") %>: <strong><%= _(@page.state.to_s.downcase) %></strong> <%= toggle_element 'status' %>
-            <div id='status' style='display: none;'>
-              <label for="page_published" class='checkbox'>
-                <%= check_box 'page', 'published'  %>
-                <%= t(".online")%>
-              </label>
-              <p><span class='btn btn-xs'><%= toggle_element 'status', "OK" %></span></p>
-            </div>
-          </div>
-          <div class='form-group'>
-            <%= t(".article_filter") %>: <strong><%= _("#{@page.text_filter.description}") %></strong> <%= toggle_element 'text_filter' %>
-            <div id='text_filter' style='display: none;'>
-              <select name="page[text_filter]" id="text_filter">
-              <%= options_for_select text_filter_options, @page.text_filter %>
-            </select>
-            <p><span class='btn btn-xs'><%= toggle_element 'text_filter', "OK" %></span></p>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class='pull-right'>
-        <%= submit_tag(t(".publish"), class: 'btn btn-primary') %>
-      </div>
-    </div>
-  </div>
-  <div class='col-md-3'>
-    <div class='well'>
-      <h4><%= t(".permanent_link")%></h4>
-      <div>
-        <%= text_field 'page', 'name', :class => 'input-block-level' %>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

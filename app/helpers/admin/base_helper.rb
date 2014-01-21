@@ -17,14 +17,6 @@ module Admin::BaseHelper
     output
   end
 
-  def cancel(url = {:action => 'index'})
-    link_to _("Cancel"), url, :class => 'btn'
-  end
-
-  def save(val = _("Store"))
-    submit_tag(val, :class => 'btn btn-success')
-  end
-
   def link_to_edit(label, record, controller = controller.controller_name)
     link_to label, {:controller => controller, :action => 'edit', :id => record.id}, :class => 'edit'
   end
@@ -33,11 +25,6 @@ module Admin::BaseHelper
     if current_user.admin? || current_user.id == record.user_id
       link_to label, {:controller => controller, :action => 'edit', :id => record.id}, :class => 'edit'
     end
-  end
-
-  def link_to_destroy(record, controller = controller.controller_name)
-    link_to image_tag('admin/delete.png', :alt => _("delete"), :title => _("Delete content")),
-      :controller => controller, :action => 'destroy', :id => record.id
   end
 
   def text_filter_options
@@ -52,31 +39,10 @@ module Admin::BaseHelper
     end
   end
 
-  def plugin_options(kind, blank = true)
+  def plugin_options(kind)
     r = PublifyPlugins::Keeper.available_plugins(kind).collect do |plugin|
       [ plugin.name, plugin.to_s ]
     end
-    blank ? r << [_("none"),''] : r
-  end
-
-  def task_overview
-    content_tag :li, link_to(_('Back to list'), :action => 'index')
-  end
-
-  def render_void_table(size, cols)
-    return unless size == 0
-    content_tag(:tr) do
-      content_tag(:td, _("There are no %s yet. Why don't you start and create one?", _(controller.controller_name)), { colspan: cols})
-    end
-  end
-
-  def cancel_or_save(message=_("Save"))
-    "#{cancel} #{_("or")} #{save(message)}"
-  end
-
-  def get_short_url(item)
-    return "" if item.short_url.nil?
-    sprintf(content_tag(:small, "%s %s"), _("Short url:"), link_to(item.short_url, item.short_url, only_path: false))
   end
 
   def show_actions item
@@ -93,14 +59,6 @@ module Admin::BaseHelper
 
   def format_date_time(date)
     date.strftime('%d/%m/%Y %H:%M')
-  end
-
-  def link_to_published(item, show=_("Show"), preview=_("Preview"))
-    return link_to_permalink(item, show, nil, 'published') if item.published
-
-    type = controller.controller_name == 'content' ? "" : "_page"
-
-    link_to(preview, {:controller => '/articles', :action => "preview#{type}", :id => item.id}, {:class => 'unpublished', :target => '_new'})
   end
 
   def published_or_not(item)
@@ -130,10 +88,6 @@ module Admin::BaseHelper
     return picture
   end
 
-  def save_settings
-    content_tag(:div, cancel_or_save(_("Update settings")).html_safe, :class => 'form-group')
-  end
-
   def button_to_edit(item)
     link_to(content_tag(:span, '', class: 'glyphicon glyphicon-pencil'), {action: 'edit', id: item.id}, {class: 'btn btn-primary btn-xs btn-action'})
   end
@@ -155,9 +109,4 @@ module Admin::BaseHelper
     blog.has_twitter_configured? && user.has_twitter_configured?
   end
 
-  def twitter_disabled_message(blog, user)
-    unless twitter_available?(blog, user)
-      content_tag(:p, _("If you want to push short statuses on Twitter, you need to %s Twitter gave you after you %s.", link_to(_("fill in the oauth credentials"), :controller => 'admin/settings', action: 'write'), link_to(_("registered your application"), "https://dev.twitter.com/apps/new")).html_safe, class: 'alert alert-warning')
-    end
-  end
 end

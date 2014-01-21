@@ -1,4 +1,43 @@
 nl:
+  articles:
+    read:
+      edit: "Bewerken"
+      comments: "Reacties"
+      leave_a_response: "Geef een reactie"
+      rss_feed: "RSS feed voor dit bericht"
+      comments_are_disabled: "Reacties zijn niet mogelijk"
+    comment_form:
+      comment: "reactie"
+      email_address: "E-mailadres"
+      your_website: "Je website"
+      leave_url_email: "plaats url/e-mail"
+      your_name: "Jouw naam"
+      your_blog: "your blog"
+      your_email: "Jouw e-mail"
+      your_message: "Jouw bericht"
+      comment_markup_help: "Comment Markup Help"
+      preview_comment: "Bekijk reactie"
+    article_links:
+      comments:
+        zero: "Geen reacties"
+        one: "1 comment"
+        other: "%{count} comments"
+    comment_counter:
+      comments:
+        zero: "Geen reacties"
+        one: "1 comment"
+        other: "%{count} comments"
+  profile:
+    admin: "Publify administrator"
+    publisher: "Blog publisher"
+    contributor: "Contributor"
+  user:
+    status:
+      active: "Actief"
+      inactive: "Inactief"
+  errors:
+    render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
+    no_posts_found: "No posts found..."
   views:
     pagination:
       truncate: "Truncate"
@@ -20,10 +59,59 @@ nl:
       posted_in: "postet i"
       next_page: "Next page"
       previous_page: "Previous page"
+  setup:
+    confirm:
+      you_have_successfully_signed_up: "Je bent succesvol aangemeld"
+      login: "Inlognaam: %{user}"
+      password: "Wachtwoord: %{pass}"
+      dont_lose_the_mail_sent: "Verlies de e-mail verzonden naar %{email}, want anders kun je niet meer inloggen"
+      proceed_to: "Ga door naar %{link}"
+      admin: "admin"
   admin:
+    base:
+      restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
+      cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+    notes:
+      new:
+        no_notes: "Er zijn nog geen notes. Waarom begin je er niet een te maken?"
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        notes: "Notes"
+        compose_new_note: "Compose new note"
+        publish_settings: "Publicatie instellingen"
+        posse_to_twitter: "POSSE to twitter"
+        in_reply_to: "In reply to"
+        tweet_id_like: "Tweet id like 123456"
+        permanent_link: "Permanente link"
+        published: "Gepubliceerd"
+        publish_at: "Publiceren op"
+        cancel: "Terug"
+        or: "or"
+        publish: "Publiceer"
+    redirects:
+      new:
+        no_redirects: "Er zijn nog geen redirects. Waarom begin je er niet een te maken?"
+        cancel: "Terug"
+        save: "Bewaar"
+        or: "or"
+        redirects: "Redirects"
+        from: "Van"
+        to: "To"
+        leave_empty_to_shorten_a_link: "Leave empty to shorten a link"
+    themes:
+      index:
+        choose_a_theme: "Kies een thema"
+        use_this_theme: "Use this theme"
+        active_theme: "%{name} - Actieve thema's"
+    profiles:
+      index:
+        your_profile: "Je profiel"
     sidebar:
       index:
         sidebar: "Zijbalk"
+        or: "or"
+        cancel: "Terug"
         explain_how_its_works: "Sleep dingen heen en weer om de zijbalk van dit blog aan te passen. Om dingen te verwijderen klik je op verwijderen  Wijzigen worden automatisch opgeslagen, maar niet geactiveerd totdat je de 'Publiceer' knop klikt"
         publish_changes: "Publiceer wijzigingen"
         available_items: "Beschikbare dingen"
@@ -31,6 +119,9 @@ nl:
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
     settings:
       display:
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         ago: "ago"
         custom_url: "Custom URL shortener domain"
         custom_url_help: "If you have a custom domain for URL shortening, enter it here."
@@ -49,9 +140,13 @@ nl:
         statuses: "Statuses"
         time_format: "Time format"
       feedback:
+        none: "none"
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         feedback_settings: "Feedback settings"
         feedback: "Feedback"
-        comments: "Comments"
+        comments: "Reacties"
         enable_comments_by_default: "Commentaren standaard toestaan"
         enable_feedback_moderation: "Feedback controle aanzetten"
         explain_feedback_moderation: "Je kunt voor de hele site feedback controle aanzetten. Als je dat doet zal geen enkel commentaar of trackback op je blog verschijnen totdat je het goedkeurt"
@@ -77,6 +172,12 @@ nl:
         enable_recaptcha: "Enable reCaptcha"
         remember_to_set_your_recaptcha: "Remember to set your reCaptcha keys inside config/initializers/recaptcha.rb"
       write:
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         write: "Schrijf"
         publish: "Publiceer"
         trackbacks: "Trackbacks"
@@ -107,6 +208,9 @@ nl:
         update_database_now: "Werk database nu bij"
         may_take_a_moment: "kan even duren"
       index:
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         general_settings: "Algemene instellingen"
         your_blog: "Je blog"
         blog_name: "Blog naam"
@@ -122,6 +226,9 @@ nl:
         items_to_display_in_admin_lists: "Items to display in admin lists"
     seo:
       titles:
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         title_settings: "Title settings"
         home: "Begin"
         title_template: "Title template"
@@ -155,6 +262,9 @@ nl:
         replaced_by_the_archive_date: "Replaced by the archive date"
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
         permalinks: "Permalinks"
         permalink_format: "Permalink format"
@@ -169,6 +279,9 @@ nl:
         your_article_month: "your article month of publication."
         your_article_day: "your article day of publication."
       index:
+        cancel: "Terug"
+        or: "or"
+        update_settings: "Werk instellingen bij"
         global_settings: "Global settings"
         general_settings: "General settings"
         meta_keywords: "Meta-kewords"
@@ -196,13 +309,29 @@ nl:
         explain_moderate_feedback: "You may want to moderate feedback when turning this on"
         explain_rss_description: "You can use the following tags: %author% (author name), %blog_url% (this blog URL), %blog_name% (this blog title) and %permalink_url% (a link to the article you want to protect)"
     shared:
+      macros:
+        show_help_on_publify_macros: "Toon help voor Publify macro's"
+        name: "Naam"
+        description: "Omschrijving"
+        tag: "Tag"
       destroy:
         are_you_sure: "Are you sure you want to delete this %{element}"
         action_or_other: "%{first_action} of %{second_action}"
         cancel: "Terug"
         delete: "Verwijderen"
+    tags:
+      new:
+        no_tags: "Er zijn nog geen trefwoorden. Waarom begin je er niet een te maken?"
+        articles: "Artikelen"
+        display_name: "Toon naam"
+        manage_tags: "Beheer tags"
+        name: "Naam"
+        cancel: "Terug"
+        save: "Bewaar"
+        or: "or"
     resources:
       index:
+        no_resources: "Er zijn nog geen media. Waarom begin je er niet een te maken?"
         media_library: "Media Library"
         upload_a_file_to_your_site: "Upload een bestand naar je site"
         upload: "Upload"
@@ -217,6 +346,9 @@ nl:
         original_size: "Original size"
     post_types:
       new:
+        cancel: "Terug"
+        save: "Bewaar"
+        or: "or"
         post_types: "Post Types"
         name: "Naam"
         description: "Omschrijving"
@@ -233,6 +365,8 @@ nl:
         author: "Auteur"
         date: "Datum"
       form:
+        cancel: "Terug"
+        change: "Change"
         publish: "Publiceer"
         title: "Titel"
         images: "Afbeeldingen"
@@ -243,7 +377,20 @@ nl:
         permanent_link: "Permanente link"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
+      pages: 
+        no_pages: "Er zijn nog geen pages. Waarom begin je er niet een te maken?"
     feedback:
+      bulkops:
+        success_mark_as_ham: 
+          zero: "No item selected to mark as Ham"
+          one: "1 Item gemarkeerd als Ham"
+          other: "%{count} Items gemarkeerd als Ham"
+        success_mark_as_spam: 
+          zero: "No item selected to mark as Spam"
+          one: "1 Item gemarkeerd als Spam"
+          other: "%{count} Items gemarkeerd als Spam"
+        success_classification: "Classificatie van %{count} item(s) bevestigd"
+        success_deleted: "%{count} items verwijderd"
       index:
         feedback: "Feedback"
         all: "All"
@@ -258,7 +405,9 @@ nl:
         comment: "Reactie"
         article: "Artikel"
         select_all: "Select all"
+        no_feedback: "Er zijn nog geen feedback. Waarom begin je er niet een te maken?"
       article:
+        no_feedback: "Er zijn nog geen feedback. Waarom begin je er niet een te maken?"
         comments_for: "Commentaren voor %{title}"
         status: "Status"
         comment_author: "Auteur commentaar"
@@ -271,6 +420,10 @@ nl:
         action_or_other: "%{first_action} of %{second_action}"
         cancel: "Terug"
         save: "Bewaar"
+      edit:
+        action_or_other: "%{first_action} of %{second_action}"
+        save: "Bewaar"
+        comments_for: "Commentaren voor %{article_link}"
       button:
         select_action: "Kies actie"
         delete_checked_items: "Verwijder aangevinkte reacties"
@@ -282,6 +435,8 @@ nl:
         this_comment_by_was_flagged_as_spam: "Dit commentaar van %{author} was gemarkeerd als spam, %{cancel_link}?"
         cancel: "Terug"
     dashboard:
+      index:
+        welcome_back: "Welkom terug, %{user_name}!"
       drafts:
         your_drafts: "Your drafts"
         no_drafts_yet: "No drafts yet, why don't you start and write one"
@@ -347,7 +502,11 @@ nl:
       comment:
         no_comments_yet: "Nog geen reacties"
         by: "Door"
+      comments:
+        latest_comments: "Laatste reacties"
     content:
+      article_list:
+        no_articles: "Er zijn nog geen articles. Waarom begin je er niet een te maken?"
       index:
         published: "Gepubliceerd"
         new_article: "Nieuw artikel"
@@ -363,6 +522,18 @@ nl:
         publication_date: "Publication date"
         filter: "Filter"
       form:
+        article_type: "Article type"
+        now: "now"
+        preview: "Preview"
+        save: "Bewaar"
+        default: "Default"
+        cancel: "Terug"
+        allow_comments_status:
+          zero: "disabled"
+          one: "aangezet"
+        allow_pings_status:
+          zero: "disabled"
+          one: "aangezet"
         public: "Public"
         publish: "Publiceer"
         title: "Titel"
@@ -388,6 +559,9 @@ nl:
         new_category: "Nieuwe categorie"
     categories:
       new:
+        cancel: "Terug"
+        save: "Bewaar"
+        or: "or"
         categories: "Categoriën"
         name: "Naam"
         keywords: "Trefwoorden"
@@ -416,18 +590,38 @@ nl:
         stats: "There are currently %{files_count} files in cache for a total amount of %{size} Kb"
         sweep_cache: "Sweep cache"
         cache: "Cache"
-        explanations: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
+        explaination: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
     users:
+      edit:
+        edit_user: "Gebruiker wijzigen"
+      new:
+        add_user: "Gebruiker toevoegen"
+      index:
+        login: "inloggen"
+        users: "Gebruikers"
+        new_user: "Nieuwe gebruikers"
+        name: "Naam"
+        email: "Email"
+        profile: "Profiel"
+        articles: "Artikelen"
+        comments: "Reacties"
+        state: "State"
+        user_state: "%{state} gebruiker"
       form:
+        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        fill_the_twitter_credentials: "fill in the oauth credentials"
+        registered_your_application: "registered your application"
+        cancel: "Terug"
+        save: "Bewaar"
+        or: "or"
+        user_status: "User Status"
         account_settings: "Account Settings"
-        login: "Login"
+        login: "inloggen"
         password: "Password"
         password_confirmation: "Password confirmation"
         email: "Email"
-        profile: "Profile"
+        profile: "Profiel"
         status: "Status"
-        active: "Active"
-        inactive: "Inactive"
         profile_settings: "Profile Settings"
         firstname: "First name"
         lastname: "Last name"
@@ -464,7 +658,8 @@ nl:
     create_account: "Maak een account aan"
     lost_my_password: "Ik ben mijn wachtwoord kwijt"
     login:
-      login: "Log in"
+      title: "inloggen"
+      login: "inloggen"
       password: "Wachtwoord"
       remember_me: "Onthoud me"
       sign_in: "Sign in"
@@ -472,12 +667,32 @@ nl:
       proceed_to: "Ga door naar %{link}"
       admin: "admin"
     recover_password:
+      title: "Herstel uw wachtwoord"
       username_or_email: "Gebruikersnaam of e-mail"
       reset_my_password: "Reset my password"
     signup:
+      title: "aanmelden"
       username: "Gebruikersnaam"
       email: "E-mail"
       signup: "Meld aan"
+  langs:
+    da_DK: "Danish"
+    de_DE: "German"
+    en_US: "English (US)"
+    es_MX: "Spanish (Mexican)"
+    fr_FR: "French"
+    he_IL: "Hebrew"
+    it_IT: "Italian"
+    ja_JP: "Japanese"
+    lt_LT: "Lithuanian"
+    nb_NO: "Norwegian"
+    nl_NL: "Nederland"
+    pl_PL: "Polish"
+    ro_RO: "Romanian"
+    ru_RU: "Russian"
+    zh_TW: "Chinese"
+    zh_CN: "Simple Chinese"
+    pt_BR: "Portuguese (Brazilian)"
   time:
     formats:
       default: "%m/%d/%Y %H:%M"

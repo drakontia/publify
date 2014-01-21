@@ -13,32 +13,6 @@
   <p><%= t(".sample") %></p>  
 </div>
 
-<<<<<<< HEAD
-<div class='form-horizontal'>
-  <div class='form-group'>
-    <label class='control-label col-sm-2'><%= t(".permalink_format") %></label>
-    <div class='col-sm-5'>
-      <div class='radio'>
-        <label for="setting_permalink_format_yearmonthdaytitle">
-          <%= radio_button(:setting, :permalink_format, '/%year%/%month%/%day%/%title%') %>
-          <%= t(".date_and_title") %>
-        </label>
-        <small class='help-block'><%= "#{this_blog.base_url}/#{Time.now.strftime('%Y/%m/%d')}/sample-article" %></small>
-        <label for="setting_permalink_format_yearmonthtitle">
-          <%= radio_button(:setting, :permalink_format, '/%year%/%month%/%title%') %>
-          <%= t(".month_and_title") %>
-        </label>
-        <small class='help-block'><%= "#{this_blog.base_url}/#{Time.now.strftime('%Y/%m')}/sample-article" %></small>
-        <label for="setting_permalink_format_title">
-          <%= radio_button(:setting, :permalink_format, '/%title%') %> <%= t(".title_only") %>
-        </label>
-        <small class='help-block'><%= "#{this_blog.base_url}/sample-article" %></small>
-        <label for="setting_permalink_format_custom">
-          <%= radio_button(:setting, :permalink_format, 'custom') %> <%= t(".custom") %>
-          <%= text_field(:setting, :custom_permalink, { :class => 'form-control'})%>
-        </label>
-      </div>
-=======
   <div class='form-horizontal'>
     <div class='form-group'>
       <label class='control-label'><%= t(".permalink_format") %></label>
@@ -60,7 +34,6 @@
         <%= radio_button(:setting, :permalink_format, 'custom') %> <%= t(".custom") %>
         <%= text_field(:setting, :custom_permalink, { :class => 'col-md-5 '})%>
       </label>
->>>>>>> Update Twitter Bootstrap CSS to 3.0.2
     </div>
   </div>
 </div>
@@ -73,7 +46,11 @@
   <li><code>%day%</code>: <%= t(".your_article_day") %></li>
 </ul>
 
-<%= save_settings %>
+  <div class='form-group'>
+    <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+    <%= t(".or") %>
+    <%= submit_tag(t(".update_settings"), class: 'btn btn-success') %>
+  </div>
 <%= hidden_field_tag 'from', 'permalinks' %>
 <% end %>
 
