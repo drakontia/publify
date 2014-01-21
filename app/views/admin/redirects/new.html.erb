@@ -1,48 +1,51 @@
 <%- content_for :page_heading do %>
-<h2>
-  <i class="glyphicon glyphicon-large glyphicon-share-alt"></i>
-  <%= t(".redirects") %>
-</h2>
+  <h2>
+    <i class="glyphicon glyphicon-large glyphicon-tags"></i>
+    <%= t('.manage_tags') %>
+  </h2>
 <% end %>
 
-<div>
+<div class='row'>
   <div class='col-md-4'>
-    <%= form_tag :action=>"edit", :id => @redirect.id do %>
-      <%= error_messages_for 'redirect' %>
-      <label for="redirect_from_path"><%= _("From")%></label>
-      <%= text_field :redirect, :from_path, :class => 'col-md-12', :placeholder => "#{this_blog.base_url}/" %>
-      <span class='help-block'><%= _("Leave empty to shorten a link") %></span>
-      <label for="redirect_to_path"><%= _("To") %></label>
-      <%= text_field :redirect, :to_path, :class => 'col-md-12' %>
-      <%= cancel_or_save %>
-    <% end %>
+    <%= form_tag :action=>"edit", :id => @tag.id do %>
+    <%= error_messages_for 'tag' %>
+    <div class='form-group'>
+      <%= text_field :tag, :display_name, class: 'form-control', placeholder: t('.name') %>
+    </div>
+    <div class='form-group'>
+      <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+      <%= t(".or") %>
+      <%= submit_tag(t(".save"), class: 'btn btn-success') %>
+    </div>
+  <% end %>
   </div>
-
   <div class='col-md-8'>
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr class='noborder'>
-          <th><%= t(".from") %></th>
-          <th><%= t(".to") %></th>
+          <th><%= t('.display_name') %></th>
+          <th><%= t('.name')  %></th>
+          <th><%= t('.articles') %></th>
         </tr>
       </thead>
-      <%- if @redirects.empty? %>
+      <%- if @tags.empty? %>
         <tr>
-          <td colspan="2">
-            <%= t(".no_redirects") %>
+          <td colspan="3">
+            <%= t(".no_tags") %>
           </td>
         </tr>
       <%- end %>
-      <% for redirect in @redirects %>
+      <%- for tag in @tags %>
         <tr>
-          <td>
-            <%= link_to("#{redirect.to_url}", "#{redirect.to_url}") %>
-            <%= show_redirect_actions redirect %>
-          </td>
-          <td><%= link_to(redirect.to_path, redirect.to_path) %></td>
-        </tr>
-      <% end %>
-      <%= display_pagination(@redirects, 2)%>
+        <td>
+          <%= link_to_edit tag.display_name, tag %>
+          <%= show_tag_actions tag %>
+        </td>
+        <td><%= tag.name %></td>
+        <td><%= tag.published_articles.count.to_s %></td>
+      </tr>
+    <% end %>
+      <%= display_pagination(@tags, 3)%>
     </table>
   </div>
 </div>
