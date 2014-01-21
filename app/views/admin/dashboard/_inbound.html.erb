@@ -1,14 +1,12 @@
-<h3><%= t(".inbound_links") %></h3>
-<div class='well'>
-  <ul class='unstyled'>
-    <% if @inbound_links.nil? %>
-      <li class='alert alert-danger'>
-      <%= t('.you_have_no_internet_connection') %>
-      </li>
-    <% else %>
-      <% if @inbound_links.empty? %>
-        <li class='alert'>
-        <%= t(".no_one_made_link_to_you_yet") %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t(".inbound_links") %></h3>
+  </div>
+  <div class="panel-body">
+    <ul class='list-unstyled'>
+      <% if @inbound_links.nil? %>
+        <li class='alert alert-danger'>
+        <%= t('.you_have_no_internet_connection') %>
         </li>
       <% else %>
         <% if @inbound_links.empty? %>
