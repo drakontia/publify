@@ -13,7 +13,6 @@ Localization.define("fr_FR") do |l|
   l.store "unconfirmed", "non validés"
   l.store "yes", "oui"
   l.store "no", "non"
-  l.store "Drag some plugins here to fill your sidebar", "Déplacez des plugins dans cet espace afin de remplir votre sidebar"
   l.store "Static", "Contenu statique"
   l.store "Active", "Actif"
   l.store "Inactive", "Inactif"

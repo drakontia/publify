@@ -15,7 +15,6 @@ Localization.define("ja_JP") do |l|
   l.store "Index tags", "タグのインデックス"
   l.store "yes", "はい"
   l.store "no", "いいえ"
-  l.store "Drag some plugins here to fill your sidebar", "サイドバーで利用するプラグインをドラッグしてください"
   l.store "Active", "有効"
   l.store "Inactive", "無効"
   l.store "Editor", "エディタ"
