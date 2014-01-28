@@ -1,12 +1,44 @@
 he-IL:
+  comments:
+    comment:
+      said: "said"
+      this_comment_has_been_flagged_for_moderator_approval: "תגובה זו הועברה לביקורת. היא לא תופיע בבלוג עד אשר הכותב יאשר אותה"
+  tags:
+    index:
+      there_is_no_tags: "There is no tag"
+      next_page: "Next page"
+      previous_page: "Previous page"
+  helper:
+    at: "at"
   articles:
+    meta:
+      published_on: "Published on"
+      by: "by"
+      tags: "תוויות"
+    article:
+      posted_by: "נכתב על ידי"
+      this_entry_was_posted_on: "כתבה זו פורסמה בתאריך %{published_at}"
+      you_can_follow_entries_through_the: "תוכל לעקוב אחרי התגובות במאמר זו דרך %{feed}"
+      atom_feed: "מזין Atom"
+      you_can_leave_a: "תוכל להשאיר %{comment}"
+      comment: "תגובה"
+      or_trackback: "או %{trackback} מהאתר שלך"
+      trackback: "עוקב-חזרה"
+      read_full_article: "קרא את הכתבה המלאה"
+      comments: "תגובות"
+    archives:
+      posted_in: "פורסם ב-"
+      no_articles_found: "לא נמצאו כתבות"
     read:
+      use_the_following_link_to_trackback: "השתמש בקישור הבא כדי לעקוב-חזרה מהאתר שלך"
+      trackbacks: "Trackbacks"
+      edit: "Edit"
       comments: "תגובות"
       leave_a_response: "הגב"
       rss_feed: "מזין RSS לכתבה זו"
       comments_are_disabled: "התגובות מבוטלות"
     comment_form:
-      comment: "comment"
+      comment: "תגובה"
       email_address: "Email address"
       your_website: "Your website"
       leave_url_email: "השאר כתובת/דואל"
@@ -26,6 +58,9 @@ he-IL:
         zero: "ללא תגובות"
         one: "1 comment"
         other: "%{count} comments"
+  notes:
+    note:
+      view_on_twitter: "View on Twitter"
   profile:
     admin: "מנהל"
     publisher: "כותב"
@@ -34,7 +69,15 @@ he-IL:
     status:
       active: "Active"
       inactive: "Inactive"
+  notice:
+    note_successfully_updated: "Note was successfully updated"
+    note_successfully_created: "Note was successfully created"
   errors:
+    problem_sending_to_twitter: "Oooops something wrong happened"
+    you_are_not_allowed: "Error, you are not allowed to perform this action"
+    article_type_already_exist: "This article type already exists"
+    permalink_need_a_title: "You need a permalink format with an identifier : %%title%%"
+    cant_end_with_rss_or_atom: "Can't end in .rss or .atom. These are reserved to be used for feed URLs"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
   views:
@@ -70,6 +113,10 @@ he-IL:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
       cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+      successfully_saved: "%{element} was successfully saved."
+      unsuccessfully_saved: "%{element} could not be saved."
+      not_allowed: "Error, you are not allowed to perform this action"
+      successfully_deleted: "This %{name} was deleted successfully"
     notes:
       new:
         no_notes: "There are no notes yet. Why don't you start and create one?"
@@ -315,6 +362,7 @@ he-IL:
         description: "תיאור"
         tag: "תוית"
       destroy:
+        destroy_confirmation: "Destroy confirmation"
         are_you_sure: "האם אתה בטוח שברצונך למחוק את %{element} הזו?"
         action_or_other: "%{first_action} או %{second_action}"
         cancel: "בטל"

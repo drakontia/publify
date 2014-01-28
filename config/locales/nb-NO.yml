@@ -1,6 +1,37 @@
 nb-NO:
+  comments:
+    comment:
+      said: "sa"
+      this_comment_has_been_flagged_for_moderator_approval: "Denne kommentaren har blitt flagget for godkjenning av moderator. Den vil ikke bli vist på bloggen før moderatoren godkjenner den."
+  tags:
+    index:
+      there_is_no_tags: "There is no tag"
+      next_page: "Next page"
+      previous_page: "Previous page"
+  helper:
+    at: "at"
   articles:
+    meta:
+      published_on: "Publisert den"
+      by: "av"
+      tags: "Tags"
+    article:
+      posted_by: "Skrevet av"
+      this_entry_was_posted_on: "This entry was posted on %{published_at}"
+      you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
+      atom_feed: "Atom feed"
+      you_can_leave_a: "Du kan legge igjen en %{comment}"
+      comment: "kommentar"
+      or_trackback: "eller en %{trackback} fra din egen hjemmeside"
+      trackback: "trackback"
+      read_full_article: "Les hele artikkelen"
+      comments: "Kommentarer"
+    archives:
+      posted_in: "Publisert i"
+      no_articles_found: "Fant ingen artikler"
     read:
+      use_the_following_link_to_trackback: "Bruk følgende lenke for å opprette trackback fra din egen side"
+      trackbacks: "Trackbacks"
       edit: "Rediger"
       comments: "Kommentarer"
       leave_a_response: "Skriv en kommentar"
@@ -27,6 +58,9 @@ nb-NO:
         zero: "Ingen kommentarer"
         one: "1 comment"
         other: "%{count} Kommentarer"
+  notes:
+    note:
+      view_on_twitter: "View on Twitter"
   profile:
     admin: "Publify administrator"
     publisher: "Blog publisher"
@@ -35,7 +69,15 @@ nb-NO:
     status:
       active: "Active"
       inactive: "Inactive"
+  notice:
+    note_successfully_updated: "Note was successfully updated"
+    note_successfully_created: "Note was successfully created"
   errors:
+    problem_sending_to_twitter: "Oooops something wrong happened"
+    you_are_not_allowed: "Error, you are not allowed to perform this action"
+    article_type_already_exist: "This article type already exists"
+    permalink_need_a_title: "Du må bruke et permalenkeformat med identifikator: %%title%%"
+    cant_end_with_rss_or_atom: "Kan ikke slutte på .rss eller .atom. Disse er reserverte for feed-URLer"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
   views:
@@ -71,6 +113,10 @@ nb-NO:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
       cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+      successfully_saved: "%{element} was successfully saved."
+      unsuccessfully_saved: "%{element} could not be saved."
+      not_allowed: "Error, you are not allowed to perform this action"
+      successfully_deleted: "This %{name} was deleted successfully"
     notes:
       new:
         no_notes: "Det finnes ingen notes enda. Hva med å opprette en?"
@@ -316,6 +362,7 @@ nb-NO:
         description: "Beskrivelse"
         tag: "Tag"
       destroy:
+        destroy_confirmation: "Destroy confirmation"
         are_you_sure: "Er du sikker på at du vil slette denne %{element}?"
         action_or_other: "%{first_action} eller %{second_action}"
         cancel: "Annuller"

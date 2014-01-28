@@ -1,13 +1,44 @@
 ru:
+  comments:
+    comment:
+      said: "said"
+      this_comment_has_been_flagged_for_moderator_approval: "This comment has been flagged for moderator approval.  It won't appear on this blog until the author approves it"
+  tags:
+    index:
+      there_is_no_tags: "There is no tag"
+      next_page: "Next page"
+      previous_page: "Previous page"
+  helper:
+    at: "at"
   articles:
+    meta:
+      published_on: "Опубликовано"
+      by: "by"
+      tags: "Теги"
+    article:
+      posted_by: "Posted by"
+      this_entry_was_posted_on: "This entry was posted on %{published_at}"
+      you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
+      atom_feed: "Atom feed"
+      you_can_leave_a: "You can leave a %{comment}"
+      comment: "Отправить комментарий"
+      or_trackback: "or a %{trackback} from your own site"
+      trackback: "trackback"
+      read_full_article: "Read full article"
+      comments: "комментариев"
+    archives:
+      posted_in: "Posted in"
+      no_articles_found: "No articles found"
     read:
+      use_the_following_link_to_trackback: "Use the following link to trackback from your own site"
+      trackbacks: "Trackbacks"
       edit: "Редактировать"
       comments: "комментариев"
       leave_a_response: "Оставить отзыв"
       rss_feed: "RSS feed"
       comments_are_disabled: "Комментарии выключены"
     comment_form:
-      comment: "comment"
+      comment: "Отправить комментарий"
       email_address: "Электронная почта"
       your_website: "Веб-сайт"
       leave_url_email: "leave url/email"
@@ -27,6 +58,9 @@ ru:
         zero: "Нет комментариев"
         one: "1 comment"
         other: "%{count} comments"
+  notes:
+    note:
+      view_on_twitter: "View on Twitter"
   profile:
     admin: "Publify administrator"
     publisher: "Blog publisher"
@@ -35,7 +69,15 @@ ru:
     status:
       active: "Active"
       inactive: "Inactive"
+  notice:
+    note_successfully_updated: "Note was successfully updated"
+    note_successfully_created: "Note was successfully created"
   errors:
+    problem_sending_to_twitter: "Oooops something wrong happened"
+    you_are_not_allowed: "Error, you are not allowed to perform this action"
+    article_type_already_exist: "This article type already exists"
+    permalink_need_a_title: "You need a permalink format with an identifier : %%title%%"
+    cant_end_with_rss_or_atom: "Can't end in .rss or .atom. These are reserved to be used for feed URLs"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
   views:
@@ -71,6 +113,10 @@ ru:
     base:
       restart_application: "По соображениям безопасности вам следует перезапустить ваше Publify-приложение. Приятного блогерства!"
       cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+      successfully_saved: "%{element} was successfully saved."
+      unsuccessfully_saved: "%{element} could not be saved."
+      not_allowed: "Error, you are not allowed to perform this action"
+      successfully_deleted: "This %{name} was deleted successfully"
     notes:
       new:
         no_notes: "Ничего нет. Почему бы не начать и не добавить?"
@@ -316,6 +362,7 @@ ru:
         description: "Описание"
         tag: "Тег"
       destroy:
+        destroy_confirmation: "Destroy confirmation"
         are_you_sure: "Вы уверены, что хотите удалить %{element}?"
         action_or_other: "%{first_action} или %{second_action}"
         cancel: "Отменить"
@@ -472,8 +519,17 @@ ru:
           one: "1 комментарий"
           other: "комментариев: %{count}"
         approved_count:
+          zero: "no approved"
+          one: "1 approved"
+          other: "%{count} approved"
         unconfirmed_count:
+          zero: "no unconfirmed"
+          one: "1 unconfirmed"
+          other: "%{count} unconfirmed"
         spam_count:
+          zero: "no spam"
+          one: "1 spam"
+          other: "%{count} spam"
       overview:
         dashboard_explain: "Здесь можно посмотреть, что происходит в вашем Publify-блоге и что в нем можно сделать. Возможно, вы хотели бы %{available_actions}."
         write_a_post: "написать пост"
@@ -529,6 +585,7 @@ ru:
         public: "Public"
         publish: "Опубликовать"
         title: "Заголовок"
+        images: "Images"
         publish_settings: "Настройки публикации"
         status: "Статус"
         published: "Опубликован"
@@ -544,6 +601,8 @@ ru:
         save_as_draft: "Сохранить как черновик"
         categories: "Категории"
         tags: "Теги"
+        tags_explaination: "Separate tags with commas. Use double quotes (&quot;) around multi-word tags, e.g. &quot;opera house&quot;."
+        type_your_post: "Type your post"
       categories:
         new_category: "Новая категория"
     categories:
@@ -684,3 +743,9 @@ ru:
     pt_BR: "Portuguese (Brazilian)"
   time:
     formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%m/%d/%y"
+      letters_month_with_year: "%m %Y"
+  date:
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]

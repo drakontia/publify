@@ -1,6 +1,37 @@
 zh-TW:
+  comments:
+    comment:
+      said: "發言"
+      this_comment_has_been_flagged_for_moderator_approval: "這篇評論被標示為版主所允許的。他不會在部落格顯示直到版主承認他。"
+  tags:
+    index:
+      there_is_no_tags: "There is no tag"
+      next_page: "Next page"
+      previous_page: "Previous page"
+  helper:
+    at: "at"
   articles:
+    meta:
+      published_on: "Published on"
+      by: "by"
+      tags: "標示標籤"
+    article:
+      posted_by: "貼上"
+      this_entry_was_posted_on: "This entry was posted on %{published_at}"
+      you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
+      atom_feed: "Atom feed"
+      you_can_leave_a: "You can leave a %{comment}"
+      comment: "comment"
+      or_trackback: "or a %{trackback} from your own site"
+      trackback: "trackback"
+      read_full_article: "Read full article"
+      comments: "評論"
+    archives:
+      posted_in: "Posted in"
+      no_articles_found: "沒有找到任何文章"
     read:
+      use_the_following_link_to_trackback: "從你所屬的網點用隨後的連結去引用"
+      trackbacks: "Trackbacks"
       edit: "修改"
       comments: "評論"
       leave_a_response: "離開一個回應"
@@ -27,6 +58,9 @@ zh-TW:
         zero: "no comments"
         one: "1 comment"
         other: "%{count} comments"
+  notes:
+    note:
+      view_on_twitter: "View on Twitter"
   profile:
     admin: "Publify administrator"
     publisher: "Blog publisher"
@@ -35,7 +69,15 @@ zh-TW:
     status:
       active: "Active"
       inactive: "Inactive"
+  notice:
+    note_successfully_updated: "Note was successfully updated"
+    note_successfully_created: "Note was successfully created"
   errors:
+    problem_sending_to_twitter: "Oooops something wrong happened"
+    you_are_not_allowed: "Error, you are not allowed to perform this action"
+    article_type_already_exist: "This article type already exists"
+    permalink_need_a_title: "You need a permalink format with an identifier : %%title%%"
+    cant_end_with_rss_or_atom: "Can't end in .rss or .atom. These are reserved to be used for feed URLs"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
   views:
@@ -71,6 +113,10 @@ zh-TW:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
       cant_generate_secret: "Error: can't generate secret token. Security is at risk. Please, change %{checker_file} content"
+      successfully_saved: "%{element} was successfully saved."
+      unsuccessfully_saved: "%{element} could not be saved."
+      not_allowed: "Error, you are not allowed to perform this action"
+      successfully_deleted: "This %{name} was deleted successfully"
     notes:
       new:
         no_notes: "There are no notes yet. Why don't you start and create one?"
