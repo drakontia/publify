@@ -87,7 +87,12 @@
 <% unless controller.controller_name == 'users'%>
 <fieldset class='form-horizontal'>
   <legend><%= t('.avatar') %></legend>
-  <p><%= display_user_avatar(current_user, 'thumb') %> <%= t('.avatar_current') %></p>
+  <div>
+    <label class='control-label col-md-2' for="avatar"><%= t('.avatar_current') %></label>
+    <div class="col-md-4">
+      <%= display_user_avatar(current_user, 'thumb') %>
+    </div>
+  </div>
   <div class='form-group'>
     <label class='control-label col-md-2' for="avatar"><%= t('.upload')%></label>
     <div class="col-md-4">
@@ -160,7 +165,7 @@
 
 <fieldset class='form-horizontal'>
   <legend><%= t('.contact_settings')%></legend>
-  <div class='alert alert-info col-md-6'><%= t('.contact_explain', link: link_to(t('.author_page'), :controller => '/authors', :action => 'show', :id => current_user.login)) %></div>
+  <div class='alert alert-info'><%= t('.contact_explain', link: link_to(t('.author_page'), :controller => '/authors', :action => 'show', :id => current_user.login)) %></div>
   <div class='form-group'>
     <label class='control-label col-md-2' for="user_description"><%= t('.about')%></label>
     <div class="col-md-4">
