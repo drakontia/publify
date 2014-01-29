@@ -87,7 +87,7 @@
 <% unless controller.controller_name == 'users'%>
 <fieldset class='form-horizontal'>
   <legend><%= t('.avatar') %></legend>
-  <div>
+  <div class='form-group'>
     <label class='control-label col-md-2' for="avatar"><%= t('.avatar_current') %></label>
     <div class="col-md-4">
       <%= display_user_avatar(current_user, 'thumb') %>
