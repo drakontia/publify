@@ -30,6 +30,7 @@ gem 'dynamic_form', '~> 1.1.4'
 gem 'iconv'
 
 group :assets do
+  gem 'sass', "3.2.13"
   gem 'sass-rails', " ~> 3.2.6"
   gem 'coffee-rails', " ~> 3.2.2"
   gem 'uglifier'

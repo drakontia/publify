@@ -47,7 +47,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     daemons (1.1.9)
     descendants_tracker (0.0.3)
     diff-lcs (1.2.5)
@@ -76,7 +76,6 @@ GEM
       nokogiri (~> 1.5)
       ruby-hmac
     formatador (0.2.4)
-    gritter (1.0.3)
     hike (1.2.3)
     htmlentities (4.3.1)
     http (0.5.0)
@@ -114,7 +113,7 @@ GEM
       mini_portile (~> 0.5.0)
     pg (0.17.1)
     polyglot (0.3.3)
-    pry (0.9.12.4)
+    pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -216,7 +215,7 @@ GEM
     unf (0.1.3)
       unf_ext
     unf_ext (0.0.6)
-    unicorn (4.8.0)
+    unicorn (4.8.1)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
@@ -241,7 +240,6 @@ DEPENDENCIES
   factory_girl (~> 4.2.0)
   flickraw-cached
   fog
-  gritter (~> 1.0.3)
   htmlentities
   iconv
   jquery-rails (~> 3.0.4)
@@ -258,6 +256,7 @@ DEPENDENCIES
   require_relative
   rspec-rails (~> 2.14)
   rubypants (~> 0.2.0)
+  sass (= 3.2.13)
   sass-rails (~> 3.2.6)
   simplecov
   thin
