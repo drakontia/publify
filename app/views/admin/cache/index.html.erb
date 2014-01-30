@@ -10,7 +10,5 @@
 <p><%= t(".stats", files_count: @cache_number.to_i, size: @cache_size.to_i / 1000) %></p>
 
 <%= form_tag(controller: 'cache', action: 'index') do %>
-  <div class='form-group'>
-    <%= submit_tag(t(".sweep_cache"), class: 'btn btn-primary') %>
-  </div>
+  <%= submit_tag(t(".sweep_cache"), class: 'btn btn-primary') %>
 <% end %>

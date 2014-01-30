@@ -1,0 +1,7 @@
+ruby '1.9.3'
+group :heroku do
+  gem 'pg'
+  gem 'unicorn'
+  gem 'rails_12factor'
+  gem 'unf'
+end
