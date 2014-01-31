@@ -153,6 +153,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.6)
+    redcarpet (3.0.0)
     require_relative (1.0.3)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
@@ -253,6 +254,7 @@ DEPENDENCIES
   rails_autolink (~> 1.1.0)
   rake (~> 10.1.0)
   recaptcha
+  redcarpet
   require_relative
   rspec-rails (~> 2.14)
   rubypants (~> 0.2.0)
