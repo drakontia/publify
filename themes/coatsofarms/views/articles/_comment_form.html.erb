@@ -13,22 +13,22 @@
 <h2 id="formComments-title"><%= _("Leave a comment")%></h2>
 <div id="respond" class="post">
   <p>
-		<label for="comment_author"><%= _("Name %s", content_tag(:small, '('+_('required')+')' ))%></label>
-		<%= text_field "comment", "author" %>
+    <label for="comment_author"><%= _("Name %s", content_tag(:small, '('+_('required')+')' ))%></label>
+    <%= text_field "comment", "author" %>
   </p>
 
   <p>
-		<label for="comment_email"><%= _("Email")%> <small>(<%= _("never displayed") %>)</small></label>
-		<%= text_field "comment", "email" %>
-	</p>
-	<p>
-		<label><%= _("Website")%></label>
-		<%= text_field "comment", "url" %>
-	</p>
+    <label for="comment_email"><%= t(".email")%> <small>(<%= t(".never_displayed") %>)</small></label>
+    <%= text_field "comment", "email" %>
+  </p>
+  <p>
+    <label><%= t(".website")%></label>
+    <%= text_field "comment", "url" %>
+  </p>
 
   <p>
     <label>
-      <%= _("Comments")%>:
+      <%= t(".comments")%>:
       <%= content_tag('small', link_to(_("Textile enabled"), "http://hobix.com/textile/")) if this_blog.comment_text_filter.include? 'textile' %>
       <%= content_tag('small', link_to(_("Markdown enabled"), "http://daringfireball.net/projects/markdown/")) if this_blog.comment_text_filter.include? 'markdown' %>
       <br />
@@ -45,8 +45,8 @@
                          :update => 'preview',
                          :complete => "Element.show('preview')",
                          :url    => @article.preview_comment_url,
-												 :html => {:class => 'submit', :id => 'form-preview-button'}) %>
-    <%#= submit_tag _('Submit'), :id => 'form-submit-button', :class => 'submit', :onclick => "$('commentform').onsubmit();this.disabled=true;Element.hide('preview');return false;" %>
+                         :html => {:class => 'submit', :id => 'form-preview-button'}) %>
+    <%#= submit_tag t('.submit'), :id => 'form-submit-button', :class => 'submit', :onclick => "$('commentform').onsubmit();this.disabled=true;Element.hide('preview');return false;" %>
     <%= image_tag 'theme/spinner.gif', :id => 'comment_loading', :style => 'display:none' %>
   </p>
 </div>

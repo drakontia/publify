@@ -25,6 +25,9 @@ ja:
       or_trackback: "or a %{trackback} from your own site"
       trackback: "trackback"
       read_full_article: "Read full article"
+      email: "Eメール"
+      never_displayed: "never displayed"
+      website: "Website"
       comments: "コメント"
       about_to_say: "is about to say"
     archives:
