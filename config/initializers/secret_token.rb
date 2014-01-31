@@ -9,6 +9,8 @@ file = File.join(Rails.root, "config", "secret.token")
 
 if File.exists?(file)
   Publify::Application.config.secret_token = File.open(file, "r") { |f| f.read.delete("\n") }
+else if ENV["secret_token"].exists?
+  Publify::Application.config.secret_token = ENV["secret_token"]
 else
   Publify::Application.config.secret_token = $default_token
 end
