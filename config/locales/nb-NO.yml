@@ -1,4 +1,8 @@
 nb-NO:
+  setup:
+    page:
+      about: "Om"
+      body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
       said: "sa"
@@ -11,6 +15,14 @@ nb-NO:
   helper:
     at: "at"
   articles:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    search:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    comment_preview:
+      is_about_to_say: "vil snart si"
     meta:
       published_on: "Publisert den"
       by: "av"
@@ -38,6 +50,15 @@ nb-NO:
       rss_feed: "RSS-feed for denne artikkel"
       comments_are_disabled: "Kommentarer er deaktiveret"
     comment_form:
+      required: "required"
+      leave_a_comment: "Skriv en kommentar"
+      comment_author: "Navn %{author}"
+      email: "Epost"
+      website: "Hjemmeside"
+      comments: "Kommentarer"
+      markdown_enabled: "Markdown aktivert"
+      textile_enabled: "Textile aktivert"
+      never_displayed: "aldri vist"
       comment: "kommentar"
       email_address: "Epostadresse"
       your_website: "Din hjemmeside"
@@ -59,6 +80,9 @@ nb-NO:
         one: "1 comment"
         other: "%{count} Kommentarer"
   notes:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
     note:
       view_on_twitter: "View on Twitter"
   profile:
@@ -86,6 +110,10 @@ nb-NO:
       next: "Neste"
       last: "Last"
   layouts:
+    default:
+      html:
+        powered_by: "Bloggen bruker %{powered_by}"
+        designed_by: "Utformet av %{designed_by}"
     administration:
       new: "Ny"
   authors:
@@ -377,7 +405,7 @@ nb-NO:
         delete: "Slett"
     tags:
       edit:
-        success: "Tag oppdatert" 
+        success: "Tag oppdatert"
       new:
         no_tags: "Det finnes ingen tags enda. Hva med å opprette en?"
         articles: "Artikler"
@@ -447,6 +475,15 @@ nb-NO:
       pages:
         no_pages: "Det finnes ingen pages enda. Hva med å opprette en?"
     feedback:
+      state:
+        unclassified: "Uklassifisert"
+        ham: "Ham"
+        presumed_ham: "Ham?"
+        just_presumed_ham: "Kun antatt Ham"
+        just_marked_as_ham: "Kun markert som Ham"
+        presumed_spam: "Spam?"
+        just_marked_as_spam: "Kun markert som Spam"
+        spam: "Spam"
       update:
         success: "Kommentar oppdatert"
       create:
@@ -457,11 +494,11 @@ nb-NO:
       bulkops:
         error: "Ikke implementert"
         success_deleted_spam: "All spam er slettet"
-        success_mark_as_ham: 
+        success_mark_as_ham:
           zero: "No item selected to mark as Ham"
           one: "Markerte 1 enhet som Ham"
           other: "Markerte %{count} enheter som Ham"
-        success_mark_as_spam: 
+        success_mark_as_spam:
           zero: "No item selected to mark as Spam"
           one: "Markerte 1 enhet som Spam"
           other: "Markerte %{count} enheter som Spam"

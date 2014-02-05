@@ -1,4 +1,8 @@
 fr:
+  setup:
+    page:
+      about: "À propos de"
+      body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
       said: "a dit"
@@ -11,6 +15,14 @@ fr:
   helper:
     at: "at"
   articles:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    search:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    comment_preview:
+      is_about_to_say: "va dire"
     meta:
       published_on: "Published on"
       by: "by"
@@ -38,6 +50,15 @@ fr:
       rss_feed: "Flux RSS"
       comments_are_disabled: "Les commentaires sont désactivés"
     comment_form:
+      required: "required"
+      leave_a_comment: "laisser un commentaire"
+      comment_author: "Votre nom %{author}"
+      email: "Email"
+      website: "Votre site"
+      comments: "commentaires"
+      markdown_enabled: "Markdown activé"
+      textile_enabled: "Textile activé"
+      never_displayed: "jamais affiché"
       comment: "commentaire"
       email_address: "Adresse mail"
       your_website: "Votre site"
@@ -59,6 +80,9 @@ fr:
         one: "1 commentaire"
         other: "%{count} commentaires"
   notes:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
     note:
       view_on_twitter: "View on Twitter"
   profile:
@@ -86,6 +110,10 @@ fr:
       next: "Suivant"
       last: "Last"
   layouts:
+    default:
+      html:
+        powered_by: "Propulsé par %{powered_by}"
+        designed_by: "Design par %{designed_by}"
     administration:
       new: "Nouveau"
   authors:
@@ -447,6 +475,15 @@ fr:
       pages:
         no_pages: "Il n'y a pas encore de pages, pourquoi ne pas en créer une ? "
     feedback:
+      state:
+        unclassified: "Unclassified"
+        ham: "Ham"
+        presumed_ham: "Désirable?"
+        just_presumed_ham: "Marqué commme supposé désirable"
+        just_marked_as_ham: "Marqué comme désirable"
+        presumed_spam: "Spam?"
+        just_marked_as_spam: "Marqué comme spam"
+        spam: "Spam"
       update:
         success: "Commentaire mis à jour avec succès."
       create:

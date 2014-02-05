@@ -1,4 +1,8 @@
 he-IL:
+  setup:
+    page:
+      about: "אודות"
+      body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
       said: "said"
@@ -11,6 +15,14 @@ he-IL:
   helper:
     at: "at"
   articles:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    search:
+      next_page: "Next page"
+      previous_page: "Previous page"
+    comment_preview:
+      is_about_to_say: "עומד לומר"
     meta:
       published_on: "Published on"
       by: "by"
@@ -38,6 +50,15 @@ he-IL:
       rss_feed: "מזין RSS לכתבה זו"
       comments_are_disabled: "התגובות מבוטלות"
     comment_form:
+      required: "required"
+      leave_a_comment: "הגב"
+      comment_author: "שם %{author}"
+      email: "דואל"
+      website: "אתר"
+      comments: "תגובות"
+      markdown_enabled: "Markdown מאופשר"
+      textile_enabled: "Textile מאופשר"
+      never_displayed: "אל תציג לעולפ"
       comment: "תגובה"
       email_address: "Email address"
       your_website: "Your website"
@@ -59,6 +80,9 @@ he-IL:
         one: "1 comment"
         other: "%{count} comments"
   notes:
+    index:
+      next_page: "Next page"
+      previous_page: "Previous page"
     note:
       view_on_twitter: "View on Twitter"
   profile:
@@ -86,6 +110,10 @@ he-IL:
       next: "Next"
       last: "Last"
   layouts:
+    default:
+      html:
+        powered_by: "מופעל על ידי %{powered_by}"
+        designed_by: "עוצב על ידי %{designed_by}"
     administration:
       new: "New"
   authors:
@@ -98,7 +126,7 @@ he-IL:
       aim: "AIM:"
       twitter: "Twitter:"
       this_author_has_not_published_any_article_yet: "This author has not published any article yet"
-      posted_in: "posted in"
+      posted_in: "נשלח ב-"
       next_page: "הדף הבא"
       previous_page: "הדף הקודם"
   setup:
@@ -447,6 +475,15 @@ he-IL:
       pages:
         no_pages: "There are no pages yet. Why don't you start and create one?"
     feedback:
+      state:
+        unclassified: "לא סווג"
+        ham: "Ham"
+        presumed_ham: "לא-ספאם ?"
+        just_presumed_ham: "כנראה לא-ספאם"
+        just_marked_as_ham: "סומן כלא-ספאם"
+        presumed_spam: "ספאם ?"
+        just_marked_as_spam: "סומן כספאם"
+        spam: "Spam"
       update:
         success: "התגובה עודכנה בהצלחה."
       create:

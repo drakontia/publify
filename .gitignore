@@ -31,3 +31,4 @@ bin/
 /vendor/bundle
 !/themes/bootstrap
 !/themes/typographic
+gems/

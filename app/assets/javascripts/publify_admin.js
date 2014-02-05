@@ -8,6 +8,8 @@
 //= require_self
 //= require quicktags
 //= require widearea
+//= require tagmanager
+//= require typeahead
 //= require admin_publify
 //= require jquery-ui-1.10.3.custom
 //= require jquery.mousewheel
