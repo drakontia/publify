@@ -1,10 +1,20 @@
 ja:
+  errors:
+    404:
+      page_not_found: "Page not found"
+      the_page_you_are_looking_for: "The page you are looking for has moved or does not exist."
   setup:
+    index:
+      blog_name: "Blog name"
+      save: "Save"
+      welcome_to_your_blog_setup: "Welcome to your blog setup"
+      your_mail: "Your email"
     page:
       about: "About"
       body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
+      by: "by"
       said: "発言"
       this_comment_has_been_flagged_for_moderator_approval: "このコメントはモデレーターの確認が必要です。モデレーターが確認後にコメントが表示されます。"
   tags:
@@ -46,6 +56,11 @@ ja:
       posted_in: "Posted in"
       no_articles_found: "記事が見つかりませんでした"
     read:
+      comments_are_disabled: "Comments are disabled"
+      trackbacks_for: "Trackbacks for"
+      trackbacks_are_disabled: "Trackbacks are disabled"
+      if_you_liked_this_article_you_can: "If you liked this article you can %{add_twitter}"
+      add_me_to_twitter: "add me to Twitter"
       use_the_following_link_to_trackback: "トラックバックリンク"
       trackbacks: "Trackbacks"
       edit: "Edit"

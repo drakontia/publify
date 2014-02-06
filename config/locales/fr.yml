@@ -1,10 +1,20 @@
 fr:
+  errors:
+    404:
+      page_not_found: "Page non trouvée"
+      the_page_you_are_looking_for: "La page que vous cherchez a été déplacée ou n'existe pas"
   setup:
+    index:
+      blog_name: "Blog name"
+      save: "Enregistrer"
+      welcome_to_your_blog_setup: "Welcome to your blog setup"
+      your_mail: "Your email"
     page:
       about: "À propos de"
       body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
+      by: "par"
       said: "a dit"
       this_comment_has_been_flagged_for_moderator_approval: "Ce commentaire a été envoyé à la modération. Il ne sera affiché qu'une fois approuvé par un modérateur"
   tags:
@@ -25,7 +35,7 @@ fr:
       is_about_to_say: "va dire"
     meta:
       published_on: "Published on"
-      by: "by"
+      by: "par"
       tags: "Tags"
     article:
       posted_by: "Publié par"
@@ -42,6 +52,11 @@ fr:
       posted_in: "Publié sous"
       no_articles_found: "Aucun article ne correspond à la recherche"
     read:
+      comments_are_disabled: "Comments are disabled"
+      trackbacks_for: "Trackbacks for"
+      trackbacks_are_disabled: "Les rétroliens sont désactivés"
+      if_you_liked_this_article_you_can: "Si vous avez aimé cet article, vous pouvez %{add_twitter}"
+      add_me_to_twitter: "me suivre sur Twitter"
       use_the_following_link_to_trackback: "Utilisez le lien ci-dessous pour envoyer un rétrolien depuis votre site"
       trackbacks: "Trackbacks"
       edit: "Éditer"
@@ -68,7 +83,7 @@ fr:
       your_email: "Votre courriel"
       your_message: "Votre commentaire"
       comment_markup_help: "Aide sur le balisage des commentaires"
-      preview_comment: "Prévisualiser le commentaire" 
+      preview_comment: "Prévisualiser le commentaire"
     article_links:
       comments:
         zero: "aucun commentaire"
@@ -494,11 +509,11 @@ fr:
       bulkops:
         error: "Non implémenté"
         success_deleted_spam: "Tout le spam a été supprimé"
-        success_mark_as_ham: 
+        success_mark_as_ham:
           zero: "No item selected to mark as Ham"
           one: "Marked 1 item as Ham"
           other: "Marked %{count} items as Ham"
-        success_mark_as_spam: 
+        success_mark_as_spam:
           zero: "No item selected to mark as Spam"
           one: "Marked 1 item as Spam"
           other: "Marked %{count} items as Spam"
@@ -732,7 +747,7 @@ fr:
         name: "Nom"
         email: "Email"
         profile: "Profile"
-        articles: "Articles" 
+        articles: "Articles"
         comments: "Commentaires"
         state: "État"
         user_state: "%{state}"
