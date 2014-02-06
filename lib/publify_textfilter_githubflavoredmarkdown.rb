@@ -1,3 +1,6 @@
+# coding: utf-8
+require 'redcarpet'
+
 class PublifyApp
   class Textfilter
     class Githubflavoredmarkdown < TextFilterPlugin::Markup
