@@ -1,9 +1,29 @@
 it:
+  activerecord:
+    errors:
+      template:
+        header: ""
+        body: ""
+      models:
+        article:
+          attributes:
+            title:
+              blank: "can't be blank"
+  datetime:
+    distance_in_words:
+      x_days: "Distance in words"
   errors:
     404:
       page_not_found: "Page not found"
       the_page_you_are_looking_for: "The page you are looking for has moved or does not exist."
   setup:
+    confirm:
+      you_have_successfully_signed_up: "You have successfully signed up"
+      login: "Login: %{user}"
+      password: "Password: %{pass}"
+      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
+      proceed_to: "Proceed to %{link}"
+      admin: "admin"
     index:
       blog_name: "Blog name"
       save: "Save"
@@ -144,14 +164,6 @@ it:
       posted_in: "posted in"
       next_page: "Pagina successiva"
       previous_page: "Pagina precedente"
-  setup:
-    confirm:
-      you_have_successfully_signed_up: "You have successfully signed up"
-      login: "Login: %{user}"
-      password: "Password: %{pass}"
-      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
-      proceed_to: "Proceed to %{link}"
-      admin: "admin"
   admin:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
@@ -420,7 +432,7 @@ it:
         delete: "Elimina"
     tags:
       edit:
-        success: "Tag was successfully updated" 
+        success: "Tag was successfully updated"
       new:
         no_tags: "There are no tags yet. Why don't you start and create one?"
         articles: "Articoli"
@@ -487,7 +499,7 @@ it:
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
-      pages: 
+      pages:
         no_pages: "There are no pages yet. Why don't you start and create one?"
     feedback:
       state:
@@ -509,11 +521,11 @@ it:
       bulkops:
         error: "Non implementato"
         success_deleted_spam: "All spam have been deleted"
-        success_mark_as_ham: 
+        success_mark_as_ham:
           zero: "No item selected to mark as Ham"
           one: "Marked 1 item as Ham"
           other: "Marked %{count} items as Ham"
-        success_mark_as_spam: 
+        success_mark_as_spam:
           zero: "No item selected to mark as Spam"
           one: "Marked 1 item as Spam"
           other: "Marked %{count} items as Spam"
@@ -726,11 +738,12 @@ it:
       dashboard: "Dashboard"
       powered_by: "is proudly powered by"
     cache:
-      index:
+      show:
         stats: "There are currently %{files_count} files in cache for a total amount of %{size} Kb"
         sweep_cache: "Sweep cache"
         cache: "Cache"
         explaination: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
+      destroy:
         success: "Cache pulita"
         error: "Cache could not be cleared"
     users:

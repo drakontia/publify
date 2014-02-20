@@ -1,9 +1,29 @@
 fr:
+  activerecord:
+    errors:
+      template:
+        header: ""
+        body: ""
+      models:
+        article:
+          attributes:
+            title:
+              blank: "can't be blank"
+  datetime:
+    distance_in_words:
+      x_days: "distance en mots"
   errors:
     404:
       page_not_found: "Page non trouvée"
       the_page_you_are_looking_for: "La page que vous cherchez a été déplacée ou n'existe pas"
   setup:
+    confirm:
+      you_have_successfully_signed_up: "Vous vous êtes inscrit avec succès"
+      login: "Identifiant&nbsp;: %{user}"
+      password: "Mot de passe&nbsp;: %{pass}"
+      dont_lose_the_mail_sent: "Ne perdez pas l'email que nous venons de vous envoyer à l'adresse %{email} ou vous ne pourrez plus vous connecter à l'application"
+      proceed_to: "Proceed to %{link}"
+      admin: "admin"
     index:
       blog_name: "Blog name"
       save: "Enregistrer"
@@ -144,14 +164,6 @@ fr:
       posted_in: "publié dans"
       next_page: "Page suivante"
       previous_page: "Page précédente"
-  setup:
-    confirm:
-      you_have_successfully_signed_up: "Vous vous êtes inscrit avec succès"
-      login: "Identifiant&nbsp;: %{user}"
-      password: "Mot de passe&nbsp;: %{pass}"
-      dont_lose_the_mail_sent: "Ne perdez pas l'email que nous venons de vous envoyer à l'adresse %{email} ou vous ne pourrez plus vous connecter à l'application"
-      proceed_to: "Proceed to %{link}"
-      admin: "admin"
   admin:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
@@ -213,6 +225,8 @@ fr:
         available_items: "Éléments disponibles"
         active_sidebar_items: "Éléments utilisés"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
+      target_sidebar:
+        update: 'Update'
     settings:
       update:
         success: "Configuration mise à jour."
@@ -726,11 +740,12 @@ fr:
       dashboard: "Tableau de bord"
       powered_by: "tourne fièrement sous"
     cache:
-      index:
+      show:
         stats: "Il y a actuellement %{files_count} fichiers en cache pour un total de %{size} kilo octets."
         sweep_cache: "Vider le cache"
         cache: "Cache"
         explaination: "Afin d'économiser des ressources, Publify génère des fichiers statiques avec votre contenu. Ces fichiers sont supprimés lors d'une nouvelle publication. Vous pouvez cependant les effacer vous même."
+      destroy:
         success: "Le cache a été vidé avec succès"
         error: "Oops, un problème s'est produit et le cache n'a pas pu être vidé correctement"
     users:

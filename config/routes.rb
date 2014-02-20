@@ -45,8 +45,8 @@ Rails.application.routes.draw do
     end
   end
 
-  # TrackbacksController
   resources :trackbacks
+
   # I thinks it's useless. More investigating
   post "trackbacks/:id/:day/:month/:year", :to => 'trackbacks#create', :format => false
 
@@ -73,9 +73,7 @@ Rails.application.routes.draw do
   match '/tag/:id/page/:page', :to => 'tags#show', :format => false
   match '/tags/page/:page', :to => 'tags#index', :format => false
 
-  # AuthorsController
-  match '/author/:id(.:format)', :to => 'authors#show', :format => /rss|atom/, :as => 'xml'
-  match '/author(/:id)', :to => 'authors#show', :format => false
+  resources :author, only: :show
 
   # ThemesController
   scope :controller => 'theme', :filename => /.*/ do
@@ -92,6 +90,14 @@ Rails.application.routes.draw do
   match '/notes/page/:page', :to => 'notes#index', :format => false
   get '/note/:permalink', :to => 'notes#show', :format => false
 
+  namespace :admin do
+    resources :sidebar, only: [:index, :update, :destroy] do
+      collection do
+        put :sortable
+      end
+    end
+  end
+
 
   # Work around the Bad URI bug
   %w{ accounts backend files sidebar }.each do |i|
@@ -101,22 +107,16 @@ Rails.application.routes.draw do
   end
 
   # Admin/XController
-  %w{advanced cache categories content comments profiles general pages feedback
-     resources sidebar textfilters themes trackbacks users settings tags redirects seo post_types notes }.each do |i|
+  %w{content comments profiles general pages feedback resources sidebar textfilters themes trackbacks users settings tags redirects seo post_types notes }.each do |i|
     match "/admin/#{i}", :to => "admin/#{i}#index", :format => false
     match "/admin/#{i}(/:action(/:id))", :to => "admin/#{i}", :action => nil, :id => nil, :format => false
   end
 
-#  namespace :admin do
-#    resources :content do
-#      post :autosave, on: :collection
-#      post :destroy, on: :member
-#      get :auto_complete_for_article_keywords, on: :collection
-##      get :attachment_box_add, on: :member
-#    end
-#  end
+  namespace :admin do
+    get 'cache', to: 'cache#show'
+    delete 'cache', to: 'cache#destroy'
+  end
 
-  # default
   root :to  => 'articles#index', :format => false
 
   match '*from', :to => 'articles#redirect', :format => false

@@ -172,16 +172,6 @@ module ApplicationHelper
     feed_for('rss')
   end
 
-  def render_the_flash
-    return unless flash[:notice] or flash[:error] or flash[:warning] or flash[:success]
-    the_class = flash[:error] ? 'danger' : 'success'
-
-    html = "<div style='margin-top: 20px' class='alert alert-#{the_class}'>"
-    html << "<a class='close' href='#'>×</a>"
-    html << render_flash rescue nil
-    html << "</div>"
-  end
-
   def content_array
     if @articles
       @articles
@@ -194,15 +184,6 @@ module ApplicationHelper
     end
   end
 
-  def new_js_distance_of_time_in_words_to_now(date)
-    # Ruby Date class doesn't have #utc method, but _publify_dev.html.erb
-    # passes Ruby Date.
-    date = date.to_time
-    time = _(date.utc.strftime(_("%%a, %%d %%b %%Y %%H:%%M:%%S GMT", date.utc)))
-    timestamp = date.utc.to_i
-    content_tag(:span, time, {:class => "publify_date date gmttimestamp-#{timestamp}", :title => time})
-  end
-
   def display_date(date)
     date.strftime(this_blog.date_format)
   end
@@ -212,8 +193,11 @@ module ApplicationHelper
   end
 
   def display_date_and_time(timestamp)
-    return new_js_distance_of_time_in_words_to_now(timestamp) if this_blog.date_format == 'distance_of_time_in_words'
-    "#{display_date(timestamp)} #{t('helper.at')} #{display_time(timestamp)}"
+    if this_blog.date_format == 'setting_date_format_distance_of_time_in_words'
+      new_js_distance_of_time_in_words_to_now(timestamp) 
+    else
+      "#{display_date(timestamp)} #{t('helper.at')} #{display_time(timestamp)}"
+    end
   end
 
   def show_meta_keyword
@@ -244,12 +228,14 @@ module ApplicationHelper
     end
   end
 
-  def render_flash
-    output = []
-    for key,value in flash
-      output << "<span class=\"#{key.to_s.downcase}\">#{h(_(value))}</span>"
-    end if flash
-    output.join("<br />\n")
+  def new_js_distance_of_time_in_words_to_now(date)
+    # Ruby Date class doesn't have #utc method, but _publify_dev.html.erb
+    # passes Ruby Date.
+    date = date.to_time
+    time = date.utc.strftime("%a, %d %b %Y %H:%M:%S GMT")
+    timestamp = date.utc.to_i
+    content_tag(:span, time, {:class => "publify_date date gmttimestamp-#{timestamp}", :title => time})
   end
+
 
 end

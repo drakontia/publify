@@ -1,9 +1,29 @@
 ru:
+  activerecord:
+    errors:
+      template:
+        header: ""
+        body: ""
+      models:
+        article:
+          attributes:
+            title:
+              blank: "can't be blank"
+  datetime:
+    distance_in_words:
+      x_days: "Distance in words"
   errors:
     404:
       page_not_found: "Page not found"
       the_page_you_are_looking_for: "The page you are looking for has moved or does not exist."
   setup:
+    confirm:
+      you_have_successfully_signed_up: "You have successfully signed up"
+      login: "логин: %{user}"
+      password: "Password: %{pass}"
+      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
+      proceed_to: "Proceed to %{link}"
+      admin: "admin"
     index:
       blog_name: "Blog name"
       save: "Save"
@@ -144,14 +164,6 @@ ru:
       posted_in: "posted in"
       next_page: "Next page"
       previous_page: "Previous page"
-  setup:
-    confirm:
-      you_have_successfully_signed_up: "You have successfully signed up"
-      login: "логин: %{user}"
-      password: "Password: %{pass}"
-      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
-      proceed_to: "Proceed to %{link}"
-      admin: "admin"
   admin:
     base:
       restart_application: "По соображениям безопасности вам следует перезапустить ваше Publify-приложение. Приятного блогерства!"
@@ -726,11 +738,12 @@ ru:
       dashboard: "Дайджест"
       powered_by: "с гордостью работает на"
     cache:
-      index:
+      show:
         stats: "There are currently %{files_count} files in cache for a total amount of %{size} Kb"
         sweep_cache: "Sweep cache"
         cache: "Cache"
         explaination: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
+      destroy:
         success: "Cache has been sweeped"
         error: "Cache could not be cleared"
     users:

@@ -1,9 +1,29 @@
 nb-NO:
+  activerecord:
+    errors:
+      template:
+        header: ""
+        body: ""
+      models:
+        article:
+          attributes:
+            title:
+              blank: "can't be blank"
+  datetime:
+    distance_in_words:
+      x_days: "Distance in words"
   errors:
     404:
       page_not_found: "Page not found"
       the_page_you_are_looking_for: "The page you are looking for has moved or does not exist."
   setup:
+    confirm:
+      you_have_successfully_signed_up: "Du er nå registrert"
+      login: "Logg inn: %{user}"
+      password: "Passord: %{pass}"
+      dont_lose_the_mail_sent: "Ikke mist eposten som ble sendt %{email}. Uten passordet vil du ikke kunne logge inn senere"
+      proceed_to: "Fortsett til %{link}"
+      admin: "admin"
     index:
       blog_name: "Blog name"
       save: "Save"
@@ -144,14 +164,6 @@ nb-NO:
       posted_in: "posted in"
       next_page: "Neste side"
       previous_page: "Forrige side"
-  setup:
-    confirm:
-      you_have_successfully_signed_up: "Du er nå registrert"
-      login: "Logg inn: %{user}"
-      password: "Passord: %{pass}"
-      dont_lose_the_mail_sent: "Ikke mist eposten som ble sendt %{email}. Uten passordet vil du ikke kunne logge inn senere"
-      proceed_to: "Fortsett til %{link}"
-      admin: "admin"
   admin:
     base:
       restart_application: "For security reasons, you should restart your Publify application. Enjoy your blogging experience."
@@ -726,11 +738,12 @@ nb-NO:
       dashboard: "Dashboard"
       powered_by: "bruker med stolthet"
     cache:
-      index:
+      show:
         stats: "Det finnes for øyeblikket %{files_count} filer i cachen som utgjør totalt %{size} kB"
         sweep_cache: "Sweep cache"
         cache: "Cache"
         explaination: "For å lagre resurser cacher Publify innholdet i statiske filer. Cachen slettes hver gang noe publiseres. Du kan også velge å slette cachen selv."
+      destroy:
         success: "Cache er kostet rent (sweeped)"
         error: "Cache kunne ikke rengjøres"
     users:
