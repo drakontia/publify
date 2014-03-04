@@ -5,7 +5,7 @@ Publify
 
 [![Build Status](https://travis-ci.org/publify/publify.png)](https://travis-ci.org/publify/publify)
 [![Code Climate](https://codeclimate.com/github/publify/publify.png)](https://codeclimate.com/github/publify/publify)
-[![Dependency Status](https://gemnasium.com/fdv/publify.png)](https://gemnasium.com/fdv/publify)
+[![Dependency Status](https://gemnasium.com/publify/publify.png)](https://gemnasium.com/publify/publify)
 
 ### Table of contents
 
@@ -98,7 +98,7 @@ Install Publify locally
 To install Publify you need the following:
 
 -   Ruby 1.9.3 or 2.0
--   Ruby On Rails 3.2.14
+-   Ruby On Rails 3.2.16
 -   A database engine, MySQL, PgSQL or SQLite3
 
 <a href="installpublify"></a>

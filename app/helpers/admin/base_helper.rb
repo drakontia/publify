@@ -1,8 +1,59 @@
 module Admin::BaseHelper
   include ActionView::Helpers::DateHelper
 
+  def toggle_element(element, label=t('.change'))
+    link_to(label, "##{element}", :"data-toggle" => :collapse)
+  end
+
+  def dashboard_action_links
+    links = []
+    links << link_to(t('.write_a_post'), controller: 'content', action: 'new') if current_user.can_access_to_articles?
+    links << link_to(t('.write_a_page'), controller: 'pages', action: 'new') if current_user.can_access_to_pages?
+    links << link_to(t(".update_your_profile_or_change_your_password"), controller: 'profiles', action: 'index')
+    links.join(', ')
+  end
+
+  def show_redirect_actions item
+    content_tag(:div, {:class => 'action'}) do
+      [ button_to_edit(item),
+        button_to_delete(item) ].join(" ").html_safe
+    end
+  end
+
+  def show_rss_description
+    Article.first.get_rss_description rescue ""
+  end
+
+  def show_tag_actions item
+    content_tag(:div, {:class => 'action'}) do
+      [ button_to_edit(item),
+        button_to_delete(item),
+        link_to_permalink(item, "#{item.articles.size} <span class='glyphicon glyphicon-link'></span>".html_safe, nil, 'btn btn-success btn-xs').html_safe
+        ].join(" ").html_safe
+    end
+  end
+
+  def class_for_admin_state(sidebar, this_position)
+    case sidebar.admin_state
+    when :active
+      return 'active alert-info'
+    when :will_change_position
+      if this_position == sidebar.active_position
+        return 'will_change ghost'
+      else
+        return 'will_change alert-warning'
+      end
+    else
+      raise sidebar.admin_state.inspect
+    end
+  end
+
+  def robot_writable?
+    File.writable?"#{::Rails.root.to_s}/public/robots.txt"
+  end
+
   def tab_for(current_module)
-    content_tag(:li, link_to(current_module.menu_name, current_module.menu_url))    
+    content_tag(:li, link_to(current_module.menu_name, current_module.menu_url))
   end
 
   def subtabs_for(current_module)
@@ -53,21 +104,6 @@ module Admin::BaseHelper
     end
   end
 
-  def format_date(date)
-    date.strftime('%d/%m/%Y')
-  end
-
-  def format_date_time(date)
-    date.strftime('%d/%m/%Y %H:%M')
-  end
-
-  def published_or_not(item)
-    return content_tag(:span, t(".published"), class: 'label label-success') if item.state.to_s.downcase == 'published'
-    return content_tag(:span, t(".draft"), class: 'label label-info') if item.state.to_s.downcase == 'draft'
-    return content_tag(:span, t(".withdrawn"), class: 'label label-important') if item.state.to_s.downcase == 'withdrawn'
-    return content_tag(:span, t(".publication_pending"), class: 'label label-warning') if item.state.to_s.downcase == 'publicationpending'
-  end
-
   def macro_help_popup(macro, text)
     "<a href=\"#{url_for :controller => 'textfilters', :action => 'macro_help', :id => macro.short_name}\" onclick=\"return popup(this, 'Publify Macro Help')\">#{text}</a>"
   end
@@ -99,10 +135,6 @@ module Admin::BaseHelper
   def button_to_short_url(item)
     return "" if item.short_url.nil?
     link_to(content_tag(:span, '', class: 'glyphicon glyphicon-link'), item.short_url, {class: 'btn btn-success btn-xs btn-action'})
-  end
-
-  def button_to_show(item)
-    link_to_permalink(item, content_tag(:span, '', class: 'glyphicon glyphicon-link'), nil, 'btn btn-success btn-xs btn-action')
   end
 
   def twitter_available?(blog, user)

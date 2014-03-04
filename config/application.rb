@@ -20,10 +20,6 @@ module Publify
     
     config.plugins = [ :all ]
 
-    config.autoload_paths += %W(
-      app/apis
-    ).map {|dir| "#{::Rails.root.to_s}/#{dir}"}.select { |dir| File.directory?(dir) }
-
     # Activate observers that should always be running
     config.active_record.observers = :email_notifier, :web_notifier
 
@@ -41,12 +37,10 @@ module Publify
   end
 
   # Load included libraries.
-  require 'localization'
   require 'sidebar'
   require 'publify_sidebar'
   require 'publify_textfilters'
   require 'publify_avatar_gravatar'
-  require 'action_web_service'
   require 'publify_lang'
   ## Required by the plugins themselves.
   # require 'avatar_plugin'
@@ -79,15 +73,6 @@ module Publify
   end
 
   ActionMailer::Base.default :charset => 'utf-8'
-
-  # Work around interpolation deprecation problem: %d is replaced by
-  # {{count}}, even when we don't want them to.
-  # FIXME: We should probably fully convert to standard Rails I18n.
-  class I18n::Backend::Simple
-    def interpolate(locale, string, values = {})
-      interpolate_without_deprecated_syntax(locale, string, values)
-    end
-  end
 
   if ::Rails.env != 'test'
     begin

@@ -12,7 +12,6 @@ class Note < Content
   setting :in_reply_to_protected, :boolean, false
   setting :in_reply_to_message, :string, ""
 
-  belongs_to :user
   validates_presence_of :body
   validates_uniqueness_of :permalink, :guid
 
@@ -33,11 +32,6 @@ class Note < Content
 
   def categories;[];end
   def tags;[];end
-
-  def set_author(user)
-    self.author = user.login
-    self.user = user
-  end
 
   def html_preprocess(field, html)
     PublifyApp::Textfilter::Twitterfilter.filtertext(nil,nil,html,nil).nofollowify
@@ -88,7 +82,6 @@ class Note < Content
 
     begin
       options = {}
-
       if self.in_reply_to_status_id and self.in_reply_to_status_id != ""
         options = {:in_reply_to_status_id => self.in_reply_to_status_id}
         self.in_reply_to_message = twitter.status(self.in_reply_to_status_id).to_json

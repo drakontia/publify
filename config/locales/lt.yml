@@ -1,4 +1,16 @@
 lt:
+  meta_sidebar:
+    content:
+      rss_feed: "RSS Feed"
+      admin: "Admin"
+      powered_by_publify: "Powered by Publify"
+      search: "Search"
+  search_sidebar:
+    content:
+      search: "Search"
+  page_sidebar:
+    content:
+      pages: "Pages"
   activerecord:
     errors:
       template:
@@ -45,9 +57,12 @@ lt:
   helper:
     at: "at"
   articles:
+    password_form:
+      submit: "Submit"
     index:
       next_page: "Next page"
       previous_page: "Previous page"
+      page: "page"
     search:
       next_page: "Next page"
       previous_page: "Previous page"
@@ -139,6 +154,7 @@ lt:
     cant_end_with_rss_or_atom: "Can't end in .rss or .atom. These are reserved to be used for feed URLs"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
+    no_notes_found: "No notes found..."
   views:
     pagination:
       truncate: "Truncate"
@@ -147,6 +163,8 @@ lt:
   layouts:
     default:
       html:
+        home: "Home"
+        statuses: "Statuses"
         powered_by: "Powered by %{powered_by}"
         designed_by: "Designed by %{designed_by}"
     administration:
@@ -173,12 +191,13 @@ lt:
       not_allowed: "Error, you are not allowed to perform this action"
       successfully_deleted: "This %{name} was deleted successfully"
     notes:
-      new:
+      header:
+        notes: "Notes"
+      form:
         no_notes: "There are no notes yet. Why don't you start and create one?"
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the oauth credentials"
         registered_your_application: "registered your application"
-        notes: "Notes"
         compose_new_note: "Compose new note"
         publish_settings: "Publish settings"
         posse_to_twitter: "POSSE to twitter"
@@ -189,7 +208,12 @@ lt:
         publish_at: "Publikuotas"
         cancel: "Baigti"
         or: "or"
-        publish: "Publikuoti"
+      show:
+        destroy_confirmation: "Destroy confirmation"
+        are_you_sure: "Are you sure you want to delete this note"
+        action_or_other: "%{first_action} arba %{second_action}"
+        cancel: "Baigti"
+        delete: "Trinti"
     redirects:
       destroy:
         success: 'Redirection was successfully deleted.'
@@ -330,7 +354,6 @@ lt:
         users: "Vartotojai"
         allow_users_to_register: "Allow users to register"
         explain_allow_users_to_register: "This will allow users to register themselves as contributors, an unprivileged account level which grants them no rights beyond owning a profile on the site. If you don't want users to register, you can add them via <em>Manage users</em> under <em>Settings</em>."
-        publify_notify_new_articles_or_comments: "Publify kann Sie benachrichtigen, wenn neue Artikel oder Kommentare angelegt werden"
         source_email: "Email Adresse"
         email_address_used_to_notify: "Email Adresse, die Publify beim Versenden von Benachrichtigungen verwenden soll"
         items_to_display_in_admin_lists: "Items to display in admin lists"
@@ -388,6 +411,7 @@ lt:
         your_article_year: "your article year of publication."
         your_article_month: "your article month of publication."
         your_article_day: "your article day of publication."
+        help_on_permalink_settings: "Help on permalink settings"
       index:
         cancel: "Baigti"
         or: "or"
@@ -499,6 +523,8 @@ lt:
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
+        published: "published"
+        offline: "offline"
       pages:
         no_pages: "There are no pages yet. Why don't you start and create one?"
     feedback:

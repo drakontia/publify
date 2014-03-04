@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.14'
+gem 'rails', '~> 3.2.16'
 gem 'require_relative'
 gem 'htmlentities'
 gem 'bluecloth', '~> 2.1'
@@ -22,8 +22,8 @@ gem 'akismet', '~> 1.0'
 gem 'twitter', '~> 5.2.0'
 gem 'redcarpet'
 
-gem "jquery-rails", "~> 3.0.4"
-gem "jquery-ui-rails", "~> 4.0.4"
+gem "jquery-rails", "~> 3.1.0"
+gem "jquery-ui-rails", "~> 4.2.0"
 
 gem 'rails_autolink', '~> 1.1.0'
 gem 'dynamic_form', '~> 1.1.4'

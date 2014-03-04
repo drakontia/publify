@@ -1,4 +1,16 @@
 ru:
+  meta_sidebar:
+    content:
+      rss_feed: "RSS Feed"
+      admin: "Admin"
+      powered_by_publify: "Powered by Publify"
+      search: "Search"
+  search_sidebar:
+    content:
+      search: "Search"
+  page_sidebar:
+    content:
+      pages: "Pages"
   activerecord:
     errors:
       template:
@@ -45,9 +57,12 @@ ru:
   helper:
     at: "at"
   articles:
+    password_form:
+      submit: "Submit"
     index:
       next_page: "Next page"
       previous_page: "Previous page"
+      page: "page"
     search:
       next_page: "Next page"
       previous_page: "Previous page"
@@ -139,6 +154,7 @@ ru:
     cant_end_with_rss_or_atom: "Can't end in .rss or .atom. These are reserved to be used for feed URLs"
     render_sidebar: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
     no_posts_found: "No posts found..."
+    no_notes_found: "No notes found..."
   views:
     pagination:
       truncate: "Truncate"
@@ -147,6 +163,8 @@ ru:
   layouts:
     default:
       html:
+        home: "Home"
+        statuses: "Statuses"
         powered_by: "Powered by %{powered_by}"
         designed_by: "Designed by %{designed_by}"
     administration:
@@ -173,12 +191,13 @@ ru:
       not_allowed: "Error, you are not allowed to perform this action"
       successfully_deleted: "This %{name} was deleted successfully"
     notes:
-      new:
+      header:
+        notes: "Notes"
+      form:
         no_notes: "Ничего нет. Почему бы не начать и не добавить?"
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the oauth credentials"
         registered_your_application: "registered your application"
-        notes: "Notes"
         compose_new_note: "Compose new note"
         publish_settings: "Настройки публикации"
         posse_to_twitter: "POSSE to twitter"
@@ -190,6 +209,12 @@ ru:
         cancel: "Отменить"
         or: "or"
         publish: "Опубликовать"
+      show:
+        destroy_confirmation: "Destroy confirmation"
+        are_you_sure: "Are you sure you want to delete this note"
+        action_or_other: "%{first_action} или %{second_action}"
+        cancel: "Отменить"
+        delete: "Удалить"
     redirects:
       destroy:
         success: 'Redirection was successfully deleted.'
@@ -330,7 +355,6 @@ ru:
         users: "Users"
         allow_users_to_register: "Разрешить пользователям регистрироваться"
         explain_allow_users_to_register: "Вы можете разрешить пользователям регистрироваться в вашем блоге. По умолчанию они регистрируются как контрибьюторы, то есть получают непривелигированные учетные записи, которые не имеют никаких прав — только профиль на сайте. Если вы не хотите давать пользователям возможность регистрироваться, вы можете добавлять их вручную в разделе «пользователи» панели администратора"
-        publify_notify_new_articles_or_comments: "Publify can notify you when new articles or comments are posted"
         source_email: "Source Email"
         email_address_used_to_notify: "Email address used by Publify to send notifications"
         items_to_display_in_admin_lists: "Элементы для отображения в администраторских списках"
@@ -388,6 +412,7 @@ ru:
         your_article_year: "год публикации вашего поста."
         your_article_month: "месяц публикации вашего поста."
         your_article_day: "день публикации вашего поста."
+        help_on_permalink_settings: "Help on permalink settings"
       index:
         cancel: "Отменить"
         or: "or"
@@ -499,6 +524,8 @@ ru:
         permanent_link: "Постоянная ссылка"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
+        published: "published"
+        offline: "offline"
       pages:
         no_pages: "Ничего нет. Почему бы не начать и не добавить?"
     feedback:

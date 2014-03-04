@@ -5,7 +5,9 @@ body {
 }
 
 footer {
+  margin-top: 50px;
   padding-bottom: 20px;
+  clear: both;
 }
 
 tr.noborder td {
@@ -252,4 +254,8 @@ twitter-typeahead {
 
 .tt-suggestion p {
   margin: 0;
+}
+
+.draggable:hover {
+  cursor: move;
 }

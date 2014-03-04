@@ -1,4 +1,16 @@
 fr:
+  meta_sidebar:
+    content:
+      rss_feed: "RSS Feed"
+      admin: "Admin"
+      powered_by_publify: "Powered by Publify"
+      search: "Search"
+  search_sidebar:
+    content:
+      search: "Search"
+  page_sidebar:
+    content:
+      pages: "Pages"
   activerecord:
     errors:
       template:
@@ -43,18 +55,21 @@ fr:
       next_page: "Next page"
       previous_page: "Previous page"
   helper:
-    at: "at"
+    at: "à"
   articles:
+    password_form:
+      submit: "Envoyer"
     index:
       next_page: "Next page"
       previous_page: "Previous page"
+      page: "page"
     search:
       next_page: "Next page"
       previous_page: "Previous page"
     comment_preview:
       is_about_to_say: "va dire"
     meta:
-      published_on: "Published on"
+      published_on: "Publié le"
       by: "par"
       tags: "Tags"
     article:
@@ -139,6 +154,7 @@ fr:
     cant_end_with_rss_or_atom: "Ne peut pas se terminer par .rss ou .atom. Cette extension est réservée aux flux de syndication"
     render_sidebar: "Une erreur s'est produite. Un ou plusieurs plugins sont probablement manquants ou en erreur. Peut-être devriez-vous les supprimer ou les réinstaller"
     no_posts_found: "Aucun article n'a été trouvé"
+    no_notes_found: "Aucune note n'a été trouvée..."
   views:
     pagination:
       truncate: "Truncate"
@@ -147,6 +163,8 @@ fr:
   layouts:
     default:
       html:
+        home: "Home"
+        statuses: "Statuses"
         powered_by: "Propulsé par %{powered_by}"
         designed_by: "Design par %{designed_by}"
     administration:
@@ -173,12 +191,13 @@ fr:
       not_allowed: "Error, you are not allowed to perform this action"
       successfully_deleted: "This %{name} was deleted successfully"
     notes:
-      new:
+      header:
+        notes: "Notes"
+      form:
         no_notes: "Il n'y a pas encore de notes, pourquoi ne pas en créer une ? "
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the oauth credentials"
         registered_your_application: "registered your application"
-        notes: "Notes"
         compose_new_note: "Compose new note"
         publish_settings: "Paramètres de publication"
         posse_to_twitter: "POSSE to twitter"
@@ -190,6 +209,12 @@ fr:
         cancel: "Annuler"
         or: "ou"
         publish: "Publier"
+      show:
+        destroy_confirmation: "Confirmation de suppression"
+        are_you_sure: "Êtes-vous certain de vouloir supprimer cette note"
+        action_or_other: "%{first_action} ou %{second_action}"
+        cancel: "Annuler"
+        delete: "Supprimer"
     redirects:
       destroy:
         success: "La redirection a été supprimée avec succès."
@@ -332,7 +357,6 @@ fr:
         users: "Utilisateurs"
         allow_users_to_register: "Autoriser les utilisateurs à s'enregistrer"
         explain_allow_users_to_register: "Vous pouvez permettre aux utilisateurs de s'enregistrer sur votre blog. Par défaut, ils seront enregistrés come contributeurs. Cet utilisateur a un niveau faible sans droit mais qui possède sont propre profile sur le site. Si vous ne voulez pas que les utilisateurs s'enregistrent, vous pouvez les ajouter vous même dans la partie d'administration des utilisateurs."
-        publify_notify_new_articles_or_comments: "Publify peut vous alerter quand de nouveaux articles et commentaires sont publiés"
         source_email: "Adresse courriel source"
         email_address_used_to_notify: "Adresse courriel utilisée par Publify pour l'envoi d'alertes"
         items_to_display_in_admin_lists: "Nombre d'éléments à afficher dans les listes"
@@ -390,6 +414,7 @@ fr:
         your_article_year: "L'année de publication de votre article."
         your_article_month: "Le mois de publication de votre article."
         your_article_day: "Le jour de publication de votre article."
+        help_on_permalink_settings: "Aide sur le paramétrage des permaliens"
       index:
         cancel: "Annuler"
         or: "ou"
@@ -501,6 +526,8 @@ fr:
         permanent_link: "Lien permanent"
         page_with_action_name: "%{action} page"
         type_your_post: "Tapez votre texte"
+        published: "publiée"
+        offline: "hors ligne"
       pages:
         no_pages: "Il n'y a pas encore de pages, pourquoi ne pas en créer une ? "
     feedback:
@@ -862,6 +889,7 @@ fr:
     formats:
       default: "%d/%m/%Y %H:%M"
       short: "%d/%m/%y"
+      with_spaces: "%d %B %y"
       letters_month_with_year: "%B %Y"
   date:
     month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, "Novembre", Décembre]

@@ -181,8 +181,6 @@ describe Note do
         it { expect(note.twitter_message).to eq(expected_tweet) }
         it { expect(note.twitter_message.length).to eq(140) }
       end
-
-
     end
   end
 
@@ -215,4 +213,5 @@ describe Note do
       end
     end
   end
+
 end
