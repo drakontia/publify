@@ -10,10 +10,10 @@
 
 <div id="preview" style="display:none"></div>
 
-<h2 id="formComments-title"><%= _("Leave a comment")%></h2>
+<h2 id="formComments-title"><%= #{"Leave a comment"}%></h2>
 <div id="respond" class="post">
   <p>
-    <label for="comment_author"><%= _("Name %s", content_tag(:small, '('+_('required')+')' ))%></label>
+    <label for="comment_author">Name <%= content_tag(:small, '('+_('required')+')' ) %></label>
     <%= text_field "comment", "author" %>
   </p>
 
