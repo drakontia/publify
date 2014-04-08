@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-if ENV["HEROKU"] == 'true'
+if ENV["HEROKU"] == "true"
   ruby '1.9.3'
 
   gem "pg"
