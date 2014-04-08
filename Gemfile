@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
-=======
 
 if ENV["HEROKU"]
   ruby '2.0.0'
