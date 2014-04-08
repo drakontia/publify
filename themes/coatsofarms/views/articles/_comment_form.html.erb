@@ -13,7 +13,7 @@
 <h2 id="formComments-title"><%= t(".leave_a_comment")%></h2>
 <div id="respond" class="post">
   <p>
-  <label for="comment_author"><%= t(".your_name") %><%= content_tag(:small, '('+_('required')+')' ) %></label>
+  <label for="comment_author"><%= t(".your_name") %><%= content_tag(:small, '('+t(".required")+')' ) %></label>
     <%= text_field "comment", "author" %>
   </p>
 
@@ -41,7 +41,7 @@
   <% end %>
 
   <p class="buttons">
-    <%#= submit_to_remote('preview', _('Preview') + '!',
+    <%#= submit_to_remote('preview', t(".preview_comment") + '!',
                          :update => 'preview',
                          :complete => "Element.show('preview')",
                          :url    => @article.preview_comment_url,
