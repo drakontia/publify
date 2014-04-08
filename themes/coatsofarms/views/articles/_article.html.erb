@@ -1,23 +1,11 @@
-<div class="atomentry" id="article-<%= article.id %>">
-  <div class="title">
-    <h2 class="title"><%= (controller.action_name.include? 'permalink') ? article.title : link_to_permalink(article,article.title) %></h2>
-    <div class="meta">
-      <%= t(".posted_by") %> <cite><%= author_link(article) %></cite> <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= display_date_and_time article.published_at %></abbr>
-    </div>
-  </div>
-  <div class="content">
+<article id="article-<%= article.id %>" class='h-entry hentry h-as-note'>
+  <h2 class='page-header p-name entry-title'><%= (controller.controller_name == 'redirect') ? article.title : link_to_permalink(article,article.title) %></h2>
+  <div class='e-content entry-content article'>
     <%= render 'articles/protected_article_content', { :article => article } %>
+    <%= render 'articles/meta', article: article %>    
   </div>
-  <% if controller.controller_name == "articles" and controller.action_name == "redirect" %>
-    <%= render 'articles/meta', article: article %>
-    <div class='comments'>
-      <%= render 'articles/comment_counter', article: article %>
-    </div>
-  <% else %>
-    <p class="links">
-  <%= link_to_permalink(article, t(".read_full_article"), nil, 'more') if controller.action_name != 'permalink' %>
-  <%= link_to t('.comments', count: article.published_comments.size), article.permalink_url('comments') %>
-  </p>
-<% end %>
-  <br style="clear: left;" />
-</div>
+
+  <div class='comments'>
+    <%= render 'articles/comment_counter', article: article %>
+  </div>
+</article>
