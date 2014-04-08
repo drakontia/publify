@@ -10,7 +10,7 @@ else
 
   require 'yaml'
   env = ENV["RAILS_ENV"] || 'development'
-  dbfile = File.expand_path("../config/database.yml", __FILE__)
+  dbfile = File.expand_path("../config/database.yml", __FILE__) if Dir.glob(File.join(File.dirname(__FILE__), "../config/database.yml"))
 
   unless File.exists?(dbfile)
     if ENV['DB']
