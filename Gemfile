@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 if ENV["HEROKU"]
-  ruby '2.0.0'
+  ruby '1.9.3'
 
   gem "pg"
-  gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
+  gem "unicorn" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 else
 
@@ -35,7 +35,6 @@ else
     raise "Don't know what gem to use for adapter #{adapter}"
   end
 end
->>>>>>> upstream/master
 
 gem 'rails', '~> 3.2.16'
 gem 'require_relative'
@@ -56,12 +55,7 @@ gem 'fog'
 gem 'recaptcha', :require => 'recaptcha/rails', :branch => 'rails3'
 gem 'carrierwave'
 gem 'akismet', '~> 1.0'
-<<<<<<< HEAD
-gem 'twitter', '~> 5.2.0'
-gem 'redcarpet'
-=======
 gem 'twitter', '~> 5.6.0'
->>>>>>> upstream/master
 
 gem "jquery-rails", "~> 3.1.0"
 gem "jquery-ui-rails", "~> 4.2.0"
