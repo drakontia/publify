@@ -69,9 +69,7 @@ nl:
     comment_preview:
       is_about_to_say: "gaat zeggen"
     meta:
-      published_on: "Published on"
-      by: "by"
-      tags: "Trefwoorden"
+      published_on: "Published on %{publish_date_and_time} by %{by}, tags %{tags}"
     article:
       posted_by: "Geplaatst door"
       this_entry_was_posted_on: "This entry was posted on %{published_at}"
@@ -194,6 +192,7 @@ nl:
       header:
         notes: "Notes"
       form:
+        now: "Now"
         no_notes: "Er zijn nog geen notes. Waarom begin je er niet een te maken?"
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the oauth credentials"
