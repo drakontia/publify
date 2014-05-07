@@ -6,7 +6,7 @@ source 'https://rubygems.org'
   gem "unicorn" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 
-gem 'rails', '~> 3.2.16'
+gem 'rails', '~> 3.2.17'
 gem 'require_relative'
 gem 'htmlentities'
 gem 'bluecloth', '~> 2.1'
