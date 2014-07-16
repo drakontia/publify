@@ -6,8 +6,7 @@ source 'https://rubygems.org'
   gem "unicorn" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 
-gem 'rails', '~> 3.2.17'
-gem 'require_relative'
+gem 'rails', '~> 3.2.18'
 gem 'htmlentities'
 gem 'bluecloth', '~> 2.1'
 gem 'coderay', '~> 1.1.0'
@@ -33,8 +32,6 @@ gem "jquery-ui-rails", "~> 4.2.0"
 gem 'rails_autolink', '~> 1.1.0'
 gem 'dynamic_form', '~> 1.1.4'
 
-gem 'iconv'
-
 group :assets do
   gem 'sass', "3.2.13"
   gem 'sass-rails', " ~> 3.2.6"
@@ -46,7 +43,7 @@ group :development, :test do
   gem 'thin'
   gem 'factory_girl', '~> 4.2.0'
   gem 'webrat'
-  gem 'rspec-rails', '~> 2.14'
+  gem 'rspec-rails', '~> 2.99.0'
   gem 'simplecov', :require => false
   gem 'pry-rails'
 end
