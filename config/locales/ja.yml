@@ -253,6 +253,8 @@ ja:
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
+      target_sidebar:
+        update: "更新"
     settings:
       update:
         success: "設定は更新されました"
