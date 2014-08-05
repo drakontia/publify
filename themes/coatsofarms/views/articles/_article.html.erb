@@ -6,8 +6,6 @@
     </div>
   </div>
   <div class="content">
-    <%= @article.html(:body) %>
-    <%= @article.html(:extended) %>
     <%= render 'articles/protected_article_content', { :article => article } %>
   </div>
   <% if controller.controller_name == "articles" and controller.action_name == "redirect" %>
