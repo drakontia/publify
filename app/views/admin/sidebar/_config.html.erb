@@ -45,7 +45,7 @@ function f_drop(event){
         <%= image_tag "spinner-blue.gif", :id => 'update_spinner',
           :style => 'display:none;' -%>
       </h3>
-      <div id="active" ondragover="f_dragover(event)" ondrop="f_drop(event)" dropzone="move">
+      <div id="active">
         <%= render :partial => 'target' %>
       </div>
     </div>
