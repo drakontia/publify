@@ -9,8 +9,7 @@ class PublifyApp
 
       class HTMLwithBootstrap < Redcarpet::Render::HTML
         def table(header, body)
-          "<table class=\"table .table-bordered\"><thead>\n#{header}\n</thead>\n"
-          "<tbody>\n#{body}\n</tbody></table>"
+          super(header, body).gsub('<table>', '<table class="table .table-bordered">')
         end
       end
 
