@@ -7,12 +7,6 @@ class PublifyApp
       plugin_display_name "GitHub Flavored Markdown"
       plugin_description 'GitHub Flavored Markdown markup language from <a href="https://help.github.com/articles/github-flavored-markdown">GitHub Help</a>'
 
-      class HTMLwithBootstrap < Redcarpet::Render::HTML
-        def table(header, body)
-          super(header, body).gsub('<table>', '<table class="table .table-bordered">')
-        end
-      end
-
       def self.help_text
         %{
 [GFM](https://help.github.com/articles/github-flavored-markdown) is a simple text-to-HTML converter.
@@ -40,7 +34,7 @@ e.g. `this is ~~good~~ bad`.
           :autolink           => true,
           :strikethrough      => true
         }
-        markdown = Redcarpet::Markdown.new(HTMLwithBootstrap, opt)
+        markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,opt)
         markdown.render(text)
 
       end
