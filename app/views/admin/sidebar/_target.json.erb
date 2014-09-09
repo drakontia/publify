@@ -1,4 +1,4 @@
-<ul class="sortable" ondragover="f_dragover(event)" ondrop="f_drop(event)" dropzone="move">
+<ul class="sortable">
   <%- @ordered_sidebars.each_with_index do |sidebar, index| -%>
     <%- next unless sidebar.id -%>
     <%= render partial: 'target_sidebar', locals: { sidebar: sidebar, sortable_index: index } %>
