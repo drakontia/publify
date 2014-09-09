@@ -46,29 +46,22 @@ p.subtitle {
 }
 
 #sidebar {
-  font-size: 90%;
   margin-top: 24px;
 }
 
 img.centered, img.alignleft, img.alignright, img.thumb {
-    border: 1px solid #DDDDDD;
-    border-radius: 4px 4px 4px 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    line-height: 1;
-    padding: 4px;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  line-height: 1;
+  padding: 4px;
 }
 
 .navbar-inverse .navbar-inner {
-        background-image: url("../../images/theme/header-menu.png");
-        
+  background-image: url("../../images/theme/header-menu.png");
 }
 
 .navbar .nav > li {
-border-left: 1px solid #111111;
-    border-right: 1px solid #444444;
-}
-
-.navbar .nav > li > a {
-        color: #eee;
-        padding: 8px 10px;
+  border-left: 1px solid #111111;
+  border-right: 1px solid #444444;
 }
