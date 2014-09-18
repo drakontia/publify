@@ -44,23 +44,23 @@ tr .action {
 /* Sidebars */
 
 .avatar {
-	float: left;
-	margin-right: 3px;
-	margin-bottom: 3px;
+  float: left;
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 #autocomplete li {
-	background: #D9EDF7;
-	color: #3A87AD;
-	padding: 5px 8px;
-	line-height: 18px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: #D9EDF7;
+  color: #3A87AD;
+  padding: 5px 8px;
+  line-height: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
 }
 
 #autocomplete li:hover {
-	color: #00438a;
-	border-bottom: 1px solid #00438a;
+  color: #00438a;
+  border-bottom: 1px solid #00438a;
 }
 
 #main  {
@@ -238,4 +238,16 @@ twitter-typeahead {
 
 .draggable:hover {
   cursor: move;
+}
+
+.save-bar {
+  height: 40px;
+}
+
+.gravatar {
+  margin-right: 10px;
+}
+
+.tt-hint {
+  z-index: -1;
 }

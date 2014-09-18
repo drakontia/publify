@@ -1,8 +1,8 @@
 <input type="hidden" name="user_textfilter" id="user_textfilter" value="<%= current_user.text_filter_name %>" />
 
 <%= error_messages_for 'page' %>
-<div class='row'>
-  <div class='col-md-12'>
+<div class='row save-bar'>
+  <div class='col-md-8 col-md-offset-2'>
     <span class='pull-right'>
       <%= link_to(t('.cancel'), {action: 'index'}, {class: 'btn btn-default'}) %>
       <!-- Button trigger modal -->
@@ -30,7 +30,7 @@
     <%= text_field 'page', 'title', :class => 'form-control', :placeholder => t('.title')  %>
 
     <div id='editor'>
-      <%= text_area('page', 'body', {:class => 'form-control ', :height => '300px', :rows => '20', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
+      <%= text_area('page', 'body', {:class => 'form-control ', style: 'height: 360px', :rows => '20', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
       <%#= render 'admin/shared/macros' %>
     </div>
   </div>

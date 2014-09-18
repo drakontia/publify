@@ -187,7 +187,7 @@ describe Admin::ContentController do
 
       assert_response :redirect, :action => 'index'
 
-      new_article = Article.find(:first, :order => "created_at DESC")
+      new_article = Article.order(created_at: :desc).first
 
       new_article.body.should eq body
       new_article.extended.should eq extended
@@ -241,14 +241,14 @@ describe Admin::ContentController do
         response.should render_template 'edit'
         assigns(:article).should_not be_nil
         assigns(:article).should be_valid
-        response.should contain(/body/)
-        response.should contain(/extended content/)
+        response.body.should match(/body/)
+        response.body.should match(/extended content/)
       end
 
       it "correctly converts multi-word tags" do
         a = create(:article, :keywords => '"foo bar", baz')
         get :edit, :id => a.id
-        response.should have_selector("input[id=article_keywords][value='baz, \"foo bar\"']")
+        response.body.should have_selector("input[id=article_keywords][value='baz, \"foo bar\"']")
       end
     end
 
@@ -287,20 +287,20 @@ describe Admin::ContentController do
       end
 
       it 'should delete draft about this article if update' do
-        article = @article
-        draft = Article.create!(article.attributes.merge(:state => 'draft', :parent_id => article.id, :guid => nil))
+        attributes = @article.attributes.except("id").merge(:state => 'draft', :parent_id => @article.id, :guid => nil)
+        draft = Article.create!(attributes)
         lambda do
-          put :update, 'id' => article.id, 'article' => { 'title' => 'new'}
+          put :update, 'id' => @article.id, 'article' => { 'title' => 'new'}
         end.should change(Article, :count).by(-1)
         Article.should_not be_exists({:id => draft.id})
       end
 
       it 'should delete all draft about this article if update not happen but why not' do
-        article = @article
-        draft = Article.create!(article.attributes.merge(:state => 'draft', :parent_id => article.id, :guid => nil))
-        draft_2 = Article.create!(article.attributes.merge(:state => 'draft', :parent_id => article.id, :guid => nil))
+        attributes = @article.attributes.except("id").merge(:state => 'draft', :parent_id => @article.id, :guid => nil)
+        draft = Article.create!(attributes)
+        draft_2 = Article.create!(attributes)
         lambda do
-          put :update, 'id' => article.id, 'article' => { 'title' => 'new'}
+          put :update, 'id' => @article.id, 'article' => { 'title' => 'new'}
         end.should change(Article, :count).by(-2)
         Article.should_not be_exists({:id => draft.id})
         Article.should_not be_exists({:id => draft_2.id})

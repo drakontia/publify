@@ -2,8 +2,8 @@
 
 <div id="autosave"><%= hidden_field_tag("article[id]", @article.id) if @article.present? %></div>
 
-<div class='row'>
-  <div class='col-md-10 col-md-offset-1' id="save-bar">
+<div class='row save-bar'>
+  <div class='col-md-8 col-md-offset-2' id="save-bar">
     <div class='pull-right'>
       <%= link_to(t('.cancel'), {action: 'index'}, {class: 'btn btn-default'}) %>
       <span id='preview_link'>
@@ -36,7 +36,7 @@
   <div class='col-md-8'>
     <%= text_field 'article', 'title', :class => 'form-control', :placeholder => t('.title') %>  
     <div id="editor">
-      <%= text_area('article', 'body_and_extended', {:class => 'form-control ', :height => '360px', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
+      <%= text_area('article', 'body_and_extended', {:class => 'form-control ', style: 'height: 360px', placeholder: t('.type_your_post'), :"data-widearea" => "enable"}) %>
       <%#= render 'admin/shared/macros' %>      
     </div> <!-- End of editor -->
   </div>
@@ -149,7 +149,7 @@
               <%= toggle_element('publish') %>
               </p>
               <div id='publish' class='collapse'>
-                <%= text_field 'article', 'published_at', :class => "datepicker" %>
+                <%= text_field 'article', 'published_at' %>
                 <p>
                 <span class="btn btn-mini btn-default">
                   <%= toggle_element('publish', t('.ok')) %>

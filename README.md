@@ -46,7 +46,7 @@ The demo is reset every 2 hours.
 To install Publify you need the following:
 
 -   Ruby 2.0 or 2.1
--   Ruby On Rails 3.2.16
+-   Ruby On Rails 4.1.1
 -   A database engine, MySQL, PgSQL or SQLite3
 
 1.  Unzip Publify archive
@@ -58,6 +58,7 @@ $ bundle install
 $ rake db:create
 $ rake db:migrate
 $ rake db:seed
+$ rake asset:precompile
 $ ./script/rails server
 ```
 
@@ -88,16 +89,10 @@ HEROKU=true bundle install
 
 Remove Gemfile.lock from .gitignore and commit it.
 
-Add the user env Heroku plugin:
-
-```bash
-heroku labs:enable user-env-compile -a your_app_name
-```
-
 Add the HEROKU config variable to your Heroku instance:
 
 ```bash
-heroku set:config HEROKU=true
+heroku config:set HEROKU=true
 ```
 
 Push the repository to Heroku.
@@ -107,6 +102,12 @@ After the first deployment, don't forget to run the database migration and seed.
 
 ```bash
 heroku run rake db:migrate db:seed
+```
+
+If application error has occurred after migration, you need to restart Heroku server.
+
+```bash
+heroku restart
 ```
 
 ## Resources

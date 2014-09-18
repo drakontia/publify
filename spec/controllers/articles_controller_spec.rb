@@ -21,19 +21,19 @@ describe ArticlesController, "base" do
       render_views
 
       it 'should have good link feed rss' do
-        response.should have_selector('head>link[href="http://test.host/articles.rss"]')
+        response.body.should have_selector('head>link[href="http://test.host/articles.rss"]', visible: false)
       end
 
       it 'should have good link feed atom' do
-        response.should have_selector('head>link[href="http://test.host/articles.atom"]')
+        response.body.should have_selector('head>link[href="http://test.host/articles.atom"]', visible: false)
       end
 
       it 'should have a canonical url' do
-        response.should have_selector("head>link[href='#{blog.base_url}/']")
+        response.body.should have_selector("head>link[href='#{blog.base_url}/']", visible: false)
       end
 
       it 'should have good title' do
-        response.should have_selector('title', :content => "test blog | test subtitles")
+        response.body.should have_selector('title', :text => "test blog | test subtitles", visible: false)
       end
     end
   end
@@ -53,24 +53,24 @@ describe ArticlesController, "base" do
       context "with the view rendered" do
         render_views
         it 'should have good feed rss link' do
-          response.should have_selector('head>link[href="http://test.host/search/a.rss"]')
+          response.body.should have_selector('head>link[href="http://test.host/search/a.rss"]', visible: false)
         end
 
         it 'should have good feed atom link' do
-          response.should have_selector('head>link[href="http://test.host/search/a.atom"]')
+          response.body.should have_selector('head>link[href="http://test.host/search/a.atom"]', visible: false)
         end
 
         it 'should have a canonical url' do
-          response.should have_selector("head>link[href='#{blog.base_url}/search/a']")
+          response.body.should have_selector("head>link[href='#{blog.base_url}/search/a']", visible: false)
         end
 
         it 'should have a good title' do
-          response.should have_selector('title', :content => "Results for a | test blog")
+          response.body.should have_selector('title', :text => "Results for a | test blog", visible: false)
         end
 
         it 'should have content markdown interpret and without html tag' do
-          response.should have_selector('div') do |div|
-            div.should contain(%Q{in markdown format * we * use [ok](http://blog.ok.com) to define a link})
+          response.body.should have_selector('div') do |div|
+            div.should match(%Q{in markdown format * we * use [ok](http://blog.ok.com) to define a link})
           end
         end
       end
@@ -79,21 +79,18 @@ describe ArticlesController, "base" do
     it 'should render feed rss by search' do
       get 'search', :q => 'a', :format => 'rss'
       response.should be_success
-      response.should render_template('index_rss_feed')
-      @layouts.keys.compact.should be_empty
+      response.should render_template('index_rss_feed', layout: false)
     end
 
     it 'should render feed atom by search' do
       get 'search', :q => 'a', :format => 'atom'
       response.should be_success
-      response.should render_template('index_atom_feed')
-      @layouts.keys.compact.should be_empty
+      response.should render_template('index_atom_feed', layout: false)
     end
 
     it 'search with empty result' do
       get 'search', :q => 'abcdefghijklmnopqrstuvwxyz'
-      response.should render_template('articles/error')
-      assigns[:articles].should be_empty
+      response.should render_template('articles/error', layout: false)
     end
 
   end
@@ -124,7 +121,7 @@ describe ArticlesController, "base" do
       context "with the view rendered" do
         render_views
         it 'should not have h3 tag' do
-          response.should have_selector("h3")
+          response.body.should have_selector("h3")
         end
       end
 
@@ -145,8 +142,8 @@ describe ArticlesController, "base" do
       assigns[:articles].should_not be_nil
       assigns[:articles].should_not be_empty
 
-      response.should have_selector("head>link[href='#{blog.base_url}/archives']")
-      response.should have_selector('title', :content => "Archives for test blog")
+      response.body.should have_selector("head>link[href='#{blog.base_url}/archives']", visible: false)
+      response.body.should have_selector('title', :text => "Archives for test blog", visible: false)
     end
   end
 
@@ -169,11 +166,11 @@ describe ArticlesController, "base" do
     context "with the view rendered" do
       render_views
       it 'should have a canonical url' do
-        response.should have_selector("head>link[href='#{blog.base_url}/2004/4']")
+        response.body.should have_selector("head>link[href='#{blog.base_url}/2004/4']", visible: false)
       end
 
       it 'should have a good title' do
-        response.should have_selector('title', :content => "Archives for test blog")
+        response.body.should have_selector('title', :text => "Archives for test blog", visible: false)
       end
     end
   end
@@ -211,31 +208,27 @@ describe ArticlesController, "feeds" do
   specify "/articles.atom => an atom feed" do
     get 'index', :format => 'atom'
     response.should be_success
-    response.should render_template("index_atom_feed")
+    response.should render_template("index_atom_feed", layout: false)
     assigns(:articles).should == [article1, article2]
-    @layouts.keys.compact.should be_empty
   end
 
   specify "/articles.rss => an RSS 2.0 feed" do
     get 'index', :format => 'rss'
     response.should be_success
-    response.should render_template("index_rss_feed")
+    response.should render_template("index_rss_feed", layout: false)
     assigns(:articles).should == [article1, article2]
-    @layouts.keys.compact.should be_empty
   end
 
   specify "atom feed for archive should be valid" do
     get 'index', :year => 2004, :month => 4, :format => 'atom'
-    response.should render_template("index_atom_feed")
+    response.should render_template("index_atom_feed", layout: false)
     assigns(:articles).should == [article2]
-    @layouts.keys.compact.should be_empty
   end
 
   specify "RSS feed for archive should be valid" do
     get 'index', :year => 2004, :month => 4, :format => 'rss'
-    response.should render_template("index_rss_feed")
+    response.should render_template("index_rss_feed", layout: false)
     assigns(:articles).should == [article2]
-    @layouts.keys.compact.should be_empty
   end
 end
 
@@ -244,6 +237,7 @@ describe ArticlesController, "the index" do
 
   before(:each) do
     create(:user, :login => 'henri', :profile => create(:profile_admin, :label => Profile::ADMIN))
+    create(:article)
   end
 
   it "should ignore the HTTP Accept: header" do
@@ -440,19 +434,19 @@ describe ArticlesController, "redirecting" do
         render_views
 
         it 'should have good rss feed link' do
-          response.should have_selector("head>link[href=\"http://myblog.net/#{article.permalink}.html.rss\"]")
+          response.body.should have_selector("head>link[href=\"http://myblog.net/#{article.permalink}.html.rss\"]", visible: false)
         end
 
         it 'should have good atom feed link' do
-          response.should have_selector("head>link[href=\"http://myblog.net/#{article.permalink}.html.atom\"]")
+          response.body.should have_selector("head>link[href=\"http://myblog.net/#{article.permalink}.html.atom\"]", visible: false)
         end
 
         it 'should have a canonical url' do
-          response.should have_selector("head>link[href='#{blog.base_url}/#{article.permalink}.html']")
+          response.body.should have_selector("head>link[href='#{blog.base_url}/#{article.permalink}.html']", visible: false)
         end
 
         it 'should have a good title' do
-          response.should have_selector('title', :content => "A big article | test blog")
+          response.body.should have_selector('title', :text => "A big article | test blog", visible: false)
         end
       end
     end
@@ -481,8 +475,7 @@ describe ArticlesController, "redirecting" do
 
       it 'should render feedback atom feed' do
         assigns(:feedback).should == [trackback1]
-        response.should render_template('feedback_atom_feed')
-        @layouts.keys.compact.should be_empty
+        response.should render_template('feedback_atom_feed', layout: false)
       end
     end
 
@@ -496,8 +489,7 @@ describe ArticlesController, "redirecting" do
 
       it 'should render rss20 partial' do
         assigns(:feedback).should == [trackback1]
-        response.should render_template('feedback_rss_feed')
-        @layouts.keys.compact.should be_empty
+        response.should render_template('feedback_rss_feed', layout: false)
       end
     end
   end
@@ -543,18 +535,18 @@ describe ArticlesController, "password protected" do
 
   it 'article alone should be password protected' do
     get :redirect, :from => "#{article.permalink}.html"
-    response.should have_selector('input[id="article_password"]', :count => 1)
+    response.body.should have_selector('input[id="article_password"]', :count => 1)
   end
 
   describe "#check_password" do
     it "shows article when given correct password" do
       xhr :get, :check_password, :article => {:id => article.id, :password => article.password}
-      response.should_not have_selector('input[id="article_password"]')
+      response.body.should_not have_selector('input[id="article_password"]')
     end
 
     it "shows password form when given incorrect password" do
       xhr :get, :check_password, :article => {:id => article.id, :password => "wrong password"}
-      response.should have_selector('input[id="article_password"]')
+      response.body.should have_selector('input[id="article_password"]')
     end
   end
 end

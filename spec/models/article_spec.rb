@@ -156,12 +156,29 @@ describe Article do
     end
   end
 
-  ### XXX: Should we have a test here?
-  it "test_send_pings" do
-  end
+  describe "saving an Article" do
+    context "with a blog that sends outbound pings" do
+      let(:referenced_url) { 'http://anotherblog.org/a-post' }
+      let!(:blog) { create(:blog, send_outbound_pings: 1) }
 
-  ### XXX: Should we have a test here?
-  it "test_send_multiple_pings" do
+      it 'sends a pingback to urls linked in the body' do
+        ActiveRecord::Base.observers.should include(:email_notifier)
+        ActiveRecord::Base.observers.should include(:web_notifier)
+        a = Article.new :body => %{<a href="#{referenced_url}">}, :title => 'Test the pinging', :published => true
+        mock_ping = double('ping')
+        a.pings.stub(:build) { double 'other ping' }
+        a.pings.stub(:build).with("url" => referenced_url).and_return mock_ping
+        mock_ping.should_receive(:send_pingback_or_trackback).with(%r{http://myblog.net/\d{4}/\d{2}/\d{2}/test-the-pinging})
+
+        expect(a.html_urls.size).to eq(1)
+        a.save!
+        a.should be_just_published
+        a = Article.find(a.id)
+        a.should_not be_just_published
+        # Saving again will not resend the pings
+        a.save
+      end
+    end
   end
 
   describe "Testing redirects" do
@@ -196,15 +213,6 @@ describe Article do
     create(:tag, :name => 'foo', :articles => [art1, art2])
     articles = Tag.find_by_name('foo').published_articles
     assert_equal 2, articles.size
-  end
-
-  it "test_find_published" do
-    article = create(:article, title: 'Article 1!', state: 'published')
-    create(:article, published: false, state: 'draft')
-    articles = Article.find_published
-    assert_equal 1, articles.size
-    articles = Article.find_published(:all, :conditions => "title = 'Article 1!'")
-    assert_equal [article], articles
   end
 
   it "test_just_published_flag" do
@@ -243,7 +251,7 @@ describe Article do
 
   def assert_sets_trigger(art)
     assert_equal 1, Trigger.count
-    assert Trigger.find(:first, :conditions => ['pending_item_id = ?', art.id])
+    assert Trigger.where(pending_item_id: art.id).first
     assert !art.published
     t = Time.now
     # We stub the Time.now answer to emulate a sleep of 4. Avoid the sleep. So
@@ -262,7 +270,7 @@ describe Article do
     a.resources << create(:resource)
     assert_equal 3, a.resources.size
     a.destroy
-    assert_equal 0, Resource.find(:all, :conditions => "article_id = #{a.id}").size
+    assert_equal 0, Resource.where(article_id: a.id).size
   end
 
   describe "#interested_users" do

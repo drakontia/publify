@@ -2,7 +2,7 @@ class Admin::FeedbackController < Admin::BaseController
   cache_sweeper :blog_sweeper
 
   def index
-    scoped_feedback = Feedback.scoped
+    scoped_feedback = Feedback
 
     if params[:only].present?
       scoped_feedback = scoped_feedback.send(params[:only])
@@ -37,7 +37,7 @@ class Admin::FeedbackController < Admin::BaseController
 
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.build(params[:comment])
+    @comment = @article.comments.build(params[:comment].permit!)
     @comment.user_id = current_user.id
 
     if request.post? and @comment.save
@@ -64,7 +64,7 @@ class Admin::FeedbackController < Admin::BaseController
       redirect_to :action => 'index'
       return
     end
-    comment.attributes = params[:comment]
+    comment.attributes = params[:comment].permit!
     if request.post? and comment.save
       flash[:success] = I18n.t('admin.feedback.update.success')
       redirect_to action: 'article', id: comment.article.id
@@ -88,21 +88,20 @@ class Admin::FeedbackController < Admin::BaseController
   def change_state
     return unless request.xhr?
 
-    feedback = Feedback.find(params[:id])
-    template = feedback.change_state!
+    @feedback = Feedback.find(params[:id])
+    template = @feedback.change_state!
 
-    render(:update) do |page|
+    respond_to do |format|
+      
       if params[:context] != 'listing'
         @comments = Comment.last_published
         page.replace_html('commentList', :partial => 'admin/dashboard/comment')
       else
         if template == "ham"
-          page.visual_effect :appear, "feedback_#{feedback.id}"
-          page.visual_effect :fade, "placeholder_#{feedback.id}"
+          format.js { render 'ham' }
         else
-          page.visual_effect :appear, "placeholder_#{feedback.id}"
-          page.visual_effect :fade, "feedback_#{feedback.id}"
-        end
+          format.js { render 'spam'}
+        end        
       end
     end
   end

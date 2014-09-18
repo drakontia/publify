@@ -8,7 +8,7 @@ class Admin::ContentController < Admin::BaseController
   cache_sweeper :blog_sweeper
 
   def auto_complete_for_article_keywords
-    @items = Tag.find(:all, select: :display_name, order: :display_name).map {|t| t.display_name}
+    @items = Tag.select(:display_name).order(:display_name).map {|t| t.display_name}
     render inline: "<%= @items %>"
   end
 
@@ -17,7 +17,9 @@ class Admin::ContentController < Admin::BaseController
     @articles = Article.search_with(@search).page(params[:page]).per(this_blog.admin_display_elements)
 
     if request.xhr?
-      render partial: 'article_list', locals: { articles: @articles }
+      respond_to do |format|
+        format.js {  }
+      end
     else
       @article = Article.new(params[:article])
     end
@@ -94,7 +96,7 @@ class Admin::ContentController < Admin::BaseController
 
     get_fresh_or_existing_draft_for_article
 
-    @article.attributes = params[:article]
+    @article.attributes = params[:article].permit!
 
     @article.published = false
     @article.author = current_user
@@ -103,7 +105,7 @@ class Admin::ContentController < Admin::BaseController
     @article.text_filter ||= current_user.default_text_filter
 
     if @article.title.blank?
-      lastid = Article.find(:first, :order => 'id DESC').id
+      lastid = Article.order('id desc').first.id
       @article.title = "Draft article " + lastid.to_s
     end
 
@@ -133,7 +135,7 @@ class Admin::ContentController < Admin::BaseController
   private
 
   def load_resources
-    @post_types = PostType.find(:all)
+    @post_types = PostType.all
     @images = Resource.images_by_created_at.page(params[:page]).per(10)
     @resources = Resource.without_images_by_filename
     @macros = TextFilter.macro_filters
@@ -151,12 +153,16 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def update_article_attributes
-    @article.attributes = params[:article]
+    @article.attributes = update_params
     @article.published_at = parse_date_time params[:article][:published_at]
     @article.author = current_user
     @article.save_attachments!(params[:attachments])
     @article.state = "draft" if @article.draft
     @article.text_filter ||= current_user.default_text_filter
+  end
+
+  def update_params
+    params.require(:article).except(:id).permit!
   end
   
   def get_layout

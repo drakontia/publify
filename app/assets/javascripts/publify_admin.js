@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require datetimepicker
 //= require bootstrap
 //= require publify_jquery
 //= require administration_jquery
@@ -11,5 +12,6 @@
 //= require typeahead
 //= require admin_publify
 //= require sidebar
+//= require lightbox
 
 // Front javascript manifest

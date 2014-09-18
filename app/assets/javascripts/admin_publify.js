@@ -46,16 +46,16 @@ function save_article_tags() {
 
 function doneTyping () {
   $( "#save-bar").fadeIn(2000, function() {
-    
+
   });
 }
 
 function set_savebar() {
   var typingTimer;
-  var doneTypingInterval = 5000;
+  var doneTypingInterval = 3000;
   
   $( "#article_body_and_extended" ).keydown(function() {
-    $( "#save-bar").fadeOut(3000, function() {
+    $( "#save-bar").fadeOut(2000, function() {
       
     });
     clearTimeout(typingTimer);
@@ -75,3 +75,7 @@ $(document).ready(function() {
   $('#page_form').each(function(e){set_widerea($('#page_body'))});
 });
 
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+}); 
