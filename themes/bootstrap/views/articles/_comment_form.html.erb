@@ -31,6 +31,10 @@
   <div class='form-group'><%= raw recaptcha_tags :ajax => true %></div>
   <% end %>
 
-  <input type='submit' id='form-submit-button' class='btn btn-info col-offset-md-2' value="<%= t('.comment') %>" />
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <input type='submit' id='form-submit-button' class='btn btn-info' value="<%= t('.comment') %>" />
+    </div>
+  </div>
 </div>
 <% end %>
