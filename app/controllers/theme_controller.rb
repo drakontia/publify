@@ -12,6 +12,10 @@ class ThemeController < ContentController
     render_theme_item(:images, params[:filename])
   end
 
+  def fonts
+    render_theme_item(:fonts, params[:filename])
+  end
+
   def error
     render :nothing => true, :status => 404
   end
@@ -51,6 +55,16 @@ class ThemeController < ContentController
       'image/png'
     when /\.swf$/
       'application/x-shockwave-flash'
+    when /\.woff$/
+      'application/font-woff'
+    when /\.ttf$/
+      'application/x-font-ttf'
+    when /\.otf$/
+      'application/x-font-otf'
+    when /(\.svg|\.svgf)$/
+      'image/svg+xml'
+    when /\.eot$/
+      'application/vnd.ms-fontobject'
     else
       'application/binary'
     end
