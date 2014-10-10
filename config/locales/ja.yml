@@ -10,7 +10,7 @@ ja:
       search: "Search"
   page_sidebar:
     content:
-      pages: "Pages"
+      pages: "ページ"
   activerecord:
     errors:
       template:
@@ -38,7 +38,7 @@ ja:
       admin: "admin"
     index:
       blog_name: "Blog name"
-      save: "Save"
+      save: "保存"
       welcome_to_your_blog_setup: "Welcome to your blog setup"
       your_mail: "Your email"
     page:
@@ -52,20 +52,20 @@ ja:
   tags:
     index:
       there_is_no_tags: "There is no tag"
-      next_page: "Next page"
-      previous_page: "Previous page"
+      next_page: "次のページ"
+      previous_page: "前のページ"
   helper:
     at: "at"
   articles:
     password_form:
       submit: "Submit"
     index:
-      next_page: "Next page"
-      previous_page: "Previous page"
-      page: "page"
+      next_page: "次のページ"
+      previous_page: "前のページ"
+      page: "ページ"
     search:
-      next_page: "Next page"
-      previous_page: "Previous page"
+      next_page: "次のページ"
+      previous_page: "前のページ"
     comment_preview:
       is_about_to_say: "〜について言う"
     meta:
@@ -78,9 +78,13 @@ ja:
       you_can_leave_a: "You can leave a %{comment}"
       comment: "comment"
       or_trackback: "or a %{trackback} from your own site"
-      trackback: "trackback"
+      trackback: "トラックバック"
       read_full_article: "Read full article"
+      email: "Eメール"
+      never_displayed: "never displayed"
+      website: "Website"
       comments: "コメント"
+      about_to_say: "is about to say"
     archives:
       posted_in: "Posted in"
       no_articles_found: "記事が見つかりませんでした"
@@ -92,7 +96,7 @@ ja:
       add_me_to_twitter: "add me to Twitter"
       use_the_following_link_to_trackback: "トラックバックリンク"
       trackbacks: "Trackbacks"
-      edit: "Edit"
+      edit: "編集"
       comments: "コメント"
       leave_a_response: "コメントを書く"
       rss_feed: "この記事のRSSフィード"
@@ -101,13 +105,13 @@ ja:
       required: "required"
       leave_a_comment: "Leave a comment"
       comment_author: "Name %{author}"
-      email: "Email"
+      email: "Eメール"
       website: "Website"
-      comments: "comments"
+      comments: "コメント"
       markdown_enabled: "Markdown enabled"
       textile_enabled: "Textile enabled"
       never_displayed: "never displayed"
-      comment: "comment"
+      comment: "コメント"
       email_address: "Email address"
       your_website: "Your website"
       leave_url_email: "leave url/email"
@@ -129,14 +133,14 @@ ja:
         other: "%{count} comments"
   notes:
     index:
-      next_page: "Next page"
-      previous_page: "Previous page"
+      next_page: "次のページ"
+      previous_page: "前のページ"
     note:
       view_on_twitter: "View on Twitter"
   profile:
-    admin: "Publify administrator"
-    publisher: "Blog publisher"
-    contributor: "Contributor"
+    admin: "管理者"
+    publisher: "投稿者"
+    contributor: "協力者"
   user:
     status:
       active: "Active"
@@ -156,8 +160,8 @@ ja:
   views:
     pagination:
       truncate: "Truncate"
-      next: "Next"
-      last: "Last"
+      next: "次"
+      last: "最後""
   layouts:
     default:
       html:
@@ -202,11 +206,11 @@ ja:
         posse_to_twitter: "POSSE to twitter"
         in_reply_to: "In reply to"
         tweet_id_like: "Tweet id like 123456"
-        permanent_link: "Permanent link"
+        permanent_link: "パーマネントリンク"
         published: "公開済み"
         publish_at: "公開日"
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         publish: "公開"
       show:
         destroy_confirmation: "Destroy confirmation"
@@ -221,7 +225,7 @@ ja:
         no_redirects: "There are no redirects yet. Why don't you start and create one?"
         cancel: "キャンセル"
         save: "保存"
-        or: "or"
+        or: "または"
         redirects: "Redirects"
         from: "From"
         to: "To"
@@ -242,19 +246,24 @@ ja:
         error: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
         sidebar: "サイドバー"
         drag_some_plugins_here: "サイドバーで利用するプラグインをドラッグしてください"
-        or: "or"
+        or: "または"
         cancel: "キャンセル"
         explain_how_its_works: "ブログに表示するサイドバー項目をドラッグ＆ドロップで変更してください。サイドバーから項目を削除した場合はすぐに変更が保存されますが、「公開」ボタンを押すまでは有効になりません。"
         publish_changes: "変更を公開"
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
+      config:
+        available_items: "利用可能な項目"
+        active_sidebar_items: "有効なサイドバー項目"
+      target_sidebar:
+        update: "更新"
     settings:
       update:
         success: "設定は更新されました"
       display:
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         ago: "ago"
         custom_url: "Custom URL shortener domain"
@@ -276,7 +285,7 @@ ja:
       feedback:
         none: "none"
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         feedback_settings: "Feedback settings"
         feedback: "Feedback"
@@ -310,7 +319,7 @@ ja:
         fill_the_twitter_credentials: "fill in the oauth credentials"
         registered_your_application: "registered your application"
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         write: "新規作成"
         publish: "公開"
@@ -343,7 +352,7 @@ ja:
         may_take_a_moment: "少しお待ちください"
       index:
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         general_settings: "General settings"
         your_blog: "あなたのブログ"
@@ -360,7 +369,7 @@ ja:
     seo:
       titles:
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         title_settings: "Title settings"
         home: "Home"
@@ -396,7 +405,7 @@ ja:
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
         permalinks: "Permalinks"
@@ -417,7 +426,7 @@ ja:
         humans_txt: "Human"
         explain_humans_txt: "It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website. http://humanstxt.org/"
         cancel: "キャンセル"
-        or: "or"
+        or: "または"
         update_settings: "Update settings"
         global_settings: "Global settings"
         general_settings: "一般設定"
@@ -468,7 +477,7 @@ ja:
         name: "名前"
         cancel: "キャンセル"
         save: "保存"
-        or: "or"
+        or: "または"
     resources:
       upload:
         success: "アップロードするファイル"
@@ -493,7 +502,7 @@ ja:
       new:
         cancel: "キャンセル"
         save: "保存"
-        or: "or"
+        or: "または"
         post_types: "Post Types"
         name: "名前"
         description: "説明"
@@ -690,36 +699,36 @@ ja:
         no_articles: "There are no articles yet. Why don't you start and create one?"
       index:
         published: "公開済み"
-        new_article: "New article"
-        all_articles: "All articles"
+        new_article: "新しい記事"
+        all_articles: "全ての記事"
         manage_articles: "記事の管理"
-        withdrawn: "Withdrawn"
+        withdrawn: "ゴミ箱"
         drafts: "下書き:"
-        publication_pending: "Publication pending"
+        publication_pending: "保留中"
         search: "検索"
         title: "タイトル"
-        select_a_category: "Select a category"
-        select_an_author: "Select an author"
-        publication_date: "Publication date"
+        select_a_category: "カテゴリー"
+        select_an_author: "著者"
+        publication_date: "公開日"
         filter: "フィルター"
       form:
-        article_type: "Article type"
+        article_type: "記事タイプ"
         now: "now"
-        preview: "Preview"
+        preview: "プレビュー"
         save: "保存"
         default: "Default"
         cancel: "キャンセル"
         allow_comments_status:
-          zero: "disabled"
-          one: "enabled"
+          zero: "無効"
+          one: "有効"
         allow_pings_status:
           zero: "disabled"
           one: "enabled"
         public: "Public"
         publish: "公開"
         title: "タイトル"
-        images: "Images"
-        publish_settings: "Publish settings"
+        images: "画像"
+        publish_settings: "公開設定"
         status: "ステータス"
         published: "公開済み"
         allowed_comments_and_trackbacks: "Comments are %{allow_comment} and trackbacks are %{allow_trackback}"
@@ -742,10 +751,10 @@ ja:
       new:
         cancel: "キャンセル"
         save: "保存"
-        or: "or"
+        or: "または"
         categories: "カテゴリ"
         name: "名前"
-        keywords: "Keywords"
+        keywords: "キーワード"
         permalink: "パーマリンク"
         explaination: "Your category slug. Leave empty if you don't know what to put here"
         description: "説明"
@@ -753,10 +762,10 @@ ja:
     menu:
       help: "Help"
       documentation: "Documentation"
-      report_a_bug: "Report a bug"
+      report_a_bug: "バグ報告"
       in_page_plugins: "In page plugins"
       sidebar_plugins: "Sidebar plugins"
-      logged_in_as: "Logged in as %{login}"
+      logged_in_as: "%{login}でログイン中"
       new_article: "New Article"
       new_page: "New Page"
       new_media: "New Media"
@@ -799,21 +808,21 @@ ja:
         registered_your_application: "registered your application"
         cancel: "キャンセル"
         save: "保存"
-        or: "or"
+        or: "または"
         user_status: "User Status"
         account_settings: "Account Settings"
         login: "ログイン"
-        password: "Password"
-        password_confirmation: "Password confirmation"
+        password: "パスワード"
+        password_confirmation: "パスワードの確認"
         email: "メールアドレス"
         profile: "プロフィール"
         status: "Status"
-        profile_settings: "Profile Settings"
-        firstname: "First name"
-        lastname: "Last name"
-        nickname: "Nickname"
-        display_name: "Display name"
-        article_filter: "Article filter"
+        profile_settings: "プロフィール設定"
+        firstname: "名"
+        lastname: "姓"
+        nickname: "ニックネーム"
+        display_name: "表示名"
+        article_filter: "記事フィルター"
         avatar: "Avatar Settings"
         avatar_current: "Current avatar"
         upload: "Upload your profile image"
@@ -856,7 +865,7 @@ ja:
       admin: "admin"
     recover_password:
       title: "Recover your password"
-      username_or_email: "Username or email"
+      username_or_email: "ユーザ名、もしくはEメール"
       reset_my_password: "Reset my password"
       notice: "An email has been successfully sent to your address with your new password"
       error: "Oops, something wrong just happened"
