@@ -8,7 +8,6 @@ body {
 }
 
 #logo {
-  margin-top: 60px;
   height: 300px;
   background-image: url('../../images/theme/header.jpg');
   background-position: center center;
@@ -16,6 +15,25 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.ic_freecompany_box .ic_crest_64 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.ic_crest_44 {
+  float: left;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: url("../images/freecompany/ic/crest/bg_40.png") no-repeat 0 0;
+}
+.ic_crest_44 img {
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
 
 .vertical-container {
@@ -47,14 +65,14 @@ body {
 }
 
 #page img {
-    background: #ddd;
-    border: 1px solid #DDDDDD;
-    border-radius: 6px;
-    line-height: 1;
-    padding: 4px;
-    display: block;
-    max-width: 100%;
-    height: auto;
+  background: #ddd;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  line-height: 1;
+  padding: 4px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .status {
