@@ -7,10 +7,10 @@
   <%= render 'shared/page_header' %>
 </head>
 <body>
-  <nav class="navbar navbar-inverse" role="navigation">
+  <nav class="navbar navbar-inverse" role="navigation" style="backgroud-color: #424141; border-color: #424141">
     <div class="container-fluid">
-      <div class='navbar-header' style="padding: 0;">
-      <%= link_to(this_blog.base_url, class: 'navbar-brand' ) do %>
+      <div class='navbar-header'>
+      <%= link_to(this_blog.base_url, class: 'navbar-brand', style: 'padding-top: 2px;' ) do %>
         <%= content_tag(:div, :class => 'ic_crest_44') do %>
           <%= content_tag(:span) do %>
             <%= image_tag("http://img2.finalfantasyxiv.com/c/B27_03117b168c3a39e866bc39e537da398c_93_64x64.png", :size => "44x44") %>
