@@ -37,7 +37,7 @@ ja:
       proceed_to: "Proceed to %{link}"
       admin: "admin"
     index:
-      blog_name: "Blog name"
+      blog_name: "ブログ名"
       save: "保存"
       welcome_to_your_blog_setup: "Welcome to your blog setup"
       your_mail: "Your email"
@@ -51,14 +51,14 @@ ja:
       this_comment_has_been_flagged_for_moderator_approval: "このコメントはモデレーターの確認が必要です。モデレーターが確認後にコメントが表示されます。"
   tags:
     index:
-      there_is_no_tags: "There is no tag"
+      there_is_no_tags: "タグはありません"
       next_page: "次のページ"
       previous_page: "前のページ"
   helper:
     at: "at"
   articles:
     password_form:
-      submit: "Submit"
+      submit: "送信"
     index:
       next_page: "次のページ"
       previous_page: "前のページ"
@@ -76,10 +76,10 @@ ja:
       you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
       atom_feed: "Atom feed"
       you_can_leave_a: "You can leave a %{comment}"
-      comment: "comment"
+      comment: "コメント"
       or_trackback: "or a %{trackback} from your own site"
       trackback: "トラックバック"
-      read_full_article: "Read full article"
+      read_full_article: "続きを読む"
       email: "Eメール"
       never_displayed: "never displayed"
       website: "Website"
@@ -89,13 +89,13 @@ ja:
       posted_in: "Posted in"
       no_articles_found: "記事が見つかりませんでした"
     read:
-      comments_are_disabled: "Comments are disabled"
+      comments_are_disabled: "コメントはできません"
       trackbacks_for: "Trackbacks for"
-      trackbacks_are_disabled: "Trackbacks are disabled"
+      trackbacks_are_disabled: "トラックバックはできません"
       if_you_liked_this_article_you_can: "If you liked this article you can %{add_twitter}"
-      add_me_to_twitter: "add me to Twitter"
+      add_me_to_twitter: "フォローしてください"
       use_the_following_link_to_trackback: "トラックバックリンク"
-      trackbacks: "Trackbacks"
+      trackbacks: "トラックバック"
       edit: "編集"
       comments: "コメント"
       leave_a_response: "コメントを書く"
@@ -104,12 +104,12 @@ ja:
     comment_form:
       required: "required"
       leave_a_comment: "Leave a comment"
-      comment_author: "Name %{author}"
+      comment_author: "名前 %{author}"
       email: "Eメール"
       website: "Website"
       comments: "コメント"
-      markdown_enabled: "Markdown enabled"
-      textile_enabled: "Textile enabled"
+      markdown_enabled: "マークダウンを使用できます"
+      textile_enabled: "Textileを使用できます"
       never_displayed: "never displayed"
       comment: "コメント"
       email_address: "Email address"
@@ -123,14 +123,14 @@ ja:
       preview_comment: "前のコメント"
     article_links:
       comments:
-        zero: "no comments"
-        one: "1 comment"
-        other: "%{count} comments"
+        zero: "コメントなし"
+        one: "1 コメント"
+        other: "%{count} コメント"
     comment_counter:
       comments:
-        zero: "no comments"
-        one: "1 comment"
-        other: "%{count} comments"
+        zero: "コメントなし"
+        one: "1 コメント"
+        other: "%{count} コメント"
   notes:
     index:
       next_page: "次のページ"
@@ -143,11 +143,11 @@ ja:
     contributor: "協力者"
   user:
     status:
-      active: "Active"
-      inactive: "Inactive"
+      active: "有効"
+      inactive: "無効"
   notice:
-    note_successfully_updated: "Note was successfully updated"
-    note_successfully_created: "Note was successfully created"
+    note_successfully_updated: "ノートは正常に更新されました"
+    note_successfully_created: "ノートは正常に作成されました"
   errors:
     problem_sending_to_twitter: "Oooops something wrong happened"
     you_are_not_allowed: "Error, you are not allowed to perform this action"
@@ -166,7 +166,7 @@ ja:
     default:
       html:
         home: "Home"
-        statuses: "Statuses"
+        statuses: "近況"
         powered_by: "Powered by %{powered_by}"
         designed_by: "Designed by %{designed_by}"
     administration:
@@ -226,7 +226,7 @@ ja:
         cancel: "キャンセル"
         save: "保存"
         or: "または"
-        redirects: "Redirects"
+        redirects: "リダイレクト"
         from: "From"
         to: "To"
         leave_empty_to_shorten_a_link: "Leave empty to shorten a link"
@@ -280,7 +280,7 @@ ja:
         feedburner_id: "FeedBurner ID"
         publishing_options: "Publishing Options"
         status_main_feed: "Display statuses in the main feed"
-        statuses: "Statuses"
+        statuses: "近況"
         time_format: "Time format"
       feedback:
         none: "none"
@@ -353,8 +353,8 @@ ja:
       index:
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
-        general_settings: "General settings"
+        update_settings: "設定を更新する"
+        general_settings: "全般"
         your_blog: "あなたのブログ"
         blog_name: "ブログ名"
         blog_subtitle: "ブログサブタイトル"
@@ -370,11 +370,11 @@ ja:
       titles:
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
-        title_settings: "Title settings"
+        update_settings: "設定を更新する"
+        title_settings: "タイトル"
         home: "Home"
-        title_template: "Title template"
-        description_template: "Description template"
+        title_template: "タイトルのテンプレート"
+        description_template: "説明のテンプレート"
         articles: "記事"
         pages: "ページ"
         paginated_archives: "Paginated archives"
