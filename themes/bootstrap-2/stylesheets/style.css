@@ -1,5 +1,6 @@
 body {
   background: #edece3;
+  font-family: Georgia, Meiryo;
 }
 
 /* Page header classes */
@@ -8,9 +9,9 @@ body {
 }
 
 #logo {
-  height: 300px;
+  height: 550px;
   background-image: url('../../images/theme/BwDviIqCQAASt8s.jpg');
-  background-position: center center;
+  background-position: center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
