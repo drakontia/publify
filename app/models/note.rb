@@ -121,7 +121,7 @@ class Note < Content
   def short_link
     path = self.redirects.first.from_path
     prefix.sub!(/^https?\:\/\//, '')
-    "#{prefix} #{path}"
+    "#{prefix}/#{path}"
   end
 
   def prefix
