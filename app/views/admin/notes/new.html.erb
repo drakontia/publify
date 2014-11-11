@@ -11,7 +11,7 @@
     <%= form_tag :action=>"edit", :id => @note.id do %>
       <input type="hidden" name="note[text_filter]" id="note_textfilter" value="<%= current_user.text_filter_name %>" />
       <div class='form-group'>
-        <%= text_area(:note, :body, {class: 'form-control', rows: '7', placeholder: t(".compose_new_note")}) %>  
+        <%= text_area(:note, :body, {class: 'form-control', rows: '4', maxlength: '100', placeholder: t(".compose_new_note")}) %>
       </div>
 
       <fieldset class="hidden-phone">
