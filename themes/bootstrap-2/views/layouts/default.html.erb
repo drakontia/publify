@@ -5,7 +5,11 @@
   <title><%= h(page_title) %></title>
   <%= stylesheet_link_tag "/stylesheets/theme/bootstrap.css", "/stylesheets/theme/style.css", "/stylesheets/user-styles.css", :media => 'all' %>
   <%= render 'shared/page_header' %>
-</head>
+  <script type="text/javascript">
+    $(window).load(function () {
+      $("table").addClass('table table-bordered');
+    });
+  </script></head>
 <body>
   <nav class="navbar navbar-inverse" role="navigation" style="background-color: #424141; border-color: #424141">
     <div class="container-fluid">
