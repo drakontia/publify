@@ -16,7 +16,7 @@ class Admin::NotesController < Admin::BaseController
     note.published_at = parse_date_time params[:note][:published_at]
     note.attributes = params[:note].permit!
     note.text_filter ||= current_user.default_text_filter
-    note.published_at ||= Time.now
+    note.published_at ||= Time.zone.now
     if note.save
       if params[:push_to_twitter] && note.twitter_id.blank?
         unless note.send_to_twitter
