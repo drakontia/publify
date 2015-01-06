@@ -1,7 +1,7 @@
 ja:
   meta_sidebar:
     content:
-      rss_feed: "RSS Feed"
+      rss_feed: "RSSフィード"
       admin: "Admin"
       powered_by_publify: "Powered by Publify"
       search: "Search"
@@ -20,7 +20,7 @@ ja:
         article:
           attributes:
             title:
-              blank: "can't be blank"
+              blank: "空白にはできません"
   datetime:
     distance_in_words:
       x_days: "Distance in words"
@@ -31,8 +31,8 @@ ja:
   setup:
     confirm:
       you_have_successfully_signed_up: "You have successfully signed up"
-      login: "Login: %{user}"
-      password: "Password: %{pass}"
+      login: "ユーザ名: %{user}"
+      password: "パスワード: %{pass}"
       dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
       proceed_to: "Proceed to %{link}"
       admin: "admin"
@@ -75,7 +75,7 @@ ja:
       this_entry_was_posted_on: "This entry was posted on %{published_at}"
       you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
       atom_feed: "Atom feed"
-      you_can_leave_a: "You can leave a %{comment}"
+      you_can_leave_a: "%{comment}を残せます"
       comment: "コメント"
       or_trackback: "or a %{trackback} from your own site"
       trackback: "トラックバック"
@@ -102,8 +102,8 @@ ja:
       rss_feed: "この記事のRSSフィード"
       comments_are_disabled: "コメントは許可されていません"
     comment_form:
-      required: "required"
-      leave_a_comment: "Leave a comment"
+      required: "必須"
+      leave_a_comment: "コメントを残す"
       comment_author: "名前 %{author}"
       email: "Eメール"
       website: "Website"
@@ -136,7 +136,7 @@ ja:
       next_page: "次のページ"
       previous_page: "前のページ"
     note:
-      view_on_twitter: "View on Twitter"
+      view_on_twitter: "Twitterで見る"
   profile:
     admin: "管理者"
     publisher: "投稿者"
@@ -159,7 +159,7 @@ ja:
     no_notes_found: "No notes found..."
   views:
     pagination:
-      truncate: "Truncate"
+      truncate: "..."
       next: "次"
       last: "最後"
   layouts:
@@ -173,7 +173,7 @@ ja:
       new: "New"
   authors:
     show:
-      contact_information: "Contact information"
+      contact_information: "コンタクト"
       web_site: "Web site:"
       jabber: "Jabber:"
       msn: "MSN:"
@@ -220,7 +220,7 @@ ja:
         delete: "削除"
     redirects:
       destroy:
-        success: 'Redirection was successfully deleted.'
+        success: 'リダイレクションは正常に削除されました'
       new:
         no_redirects: "There are no redirects yet. Why don't you start and create one?"
         cancel: "キャンセル"
@@ -235,7 +235,7 @@ ja:
         success: "Theme selection updated"
       index:
         choose_a_theme: "テーマの選択"
-        use_this_theme: "Use this theme"
+        use_this_theme: "このテーマを使う"
         active_theme: "%{name} - 現在のテーマ"
     profiles:
       index:
@@ -264,43 +264,43 @@ ja:
       display:
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
+        update_settings: "更新"
         ago: "ago"
         custom_url: "Custom URL shortener domain"
         custom_url_help: "If you have a custom domain for URL shortening, enter it here."
-        date_format: "Date format"
+        date_format: "日付の形式"
         default_article_show: "articles on the homepage"
         default_feed_show: "most recent articles in feed"
-        display: "Display"
-        display_settings: "Display Settings"
+        display: "表示"
+        display_settings: "表示設定"
         feed_articles: "Article excerpts"
-        feed_settings: "RSS Feed Settings"
+        feed_settings: "RSSフィード設定"
         feed_excerpts_only: "Show only article excerpts in feed"
         feedburner_help: "Enter your FeedBurner ID if you wish to use your Google FeedBurner account instead of using the Publify feed URL."
         feedburner_id: "FeedBurner ID"
         publishing_options: "Publishing Options"
         status_main_feed: "Display statuses in the main feed"
         statuses: "近況"
-        time_format: "Time format"
+        time_format: "時刻形式"
       feedback:
         none: "none"
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
-        feedback_settings: "Feedback settings"
-        feedback: "Feedback"
+        update_settings: "更新"
+        feedback_settings: "フィードバック設定"
+        feedback: "フィードバック"
         comments: "コメント"
         enable_comments_by_default: "デフォルトでコメントを有効にする"
         enable_feedback_moderation: "フィードバック承認機能を有効にする"
         explain_feedback_moderation: "サイト全体のフィードバック承認機能を有効にすることができます。有効にするとコメントやトラックバックは承認されるまで表示されません。"
-        trackbacks: "Trackbacks"
+        trackbacks: "トラックバック"
         enable_trackbacks_by_default: "デフォルトでトラックバックを許可する"
         disable_trackbacks_sitewide: "Disable trackbacks site-wide"
         explain_disable_trackbacks: "この設定はすでにあるトラックバックを削除しませんが、新しく追加しようとするトラックバックを防ぐことができます。"
         comments_filter: "コメントフィルター"
         avatars_provider: "Avatars provider"
-        spam: "Spam"
-        spam_protection: "Spam protection"
+        spam: "スパム"
+        spam_protection: "スパム対策"
         enable_spam_protection: "スパムプロテクションを有効にする"
         explain_spam_protection: "スパムプロテクションを有効にすると、投稿者のIPアドレスおよびその投稿内容をローカル、リモート両方のブラックリストと比較します"
         askimet_key: "Akismetキー"
@@ -320,7 +320,7 @@ ja:
         registered_your_application: "registered your application"
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
+        update_settings: "更新"
         write: "新規作成"
         publish: "公開"
         trackbacks: "トラックバック"
@@ -408,12 +408,12 @@ ja:
         or: "または"
         update_settings: "Update settings"
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
-        permalinks: "Permalinks"
-        permalink_format: "Permalink format"
+        permalinks: "パーマリンク"
+        permalink_format: "パーマリンク形式"
         date_and_title: "Date and title"
         month_and_title: "Month and title"
-        title_only: "Title only"
-        custom: "Custom"
+        title_only: "タイトル"
+        custom: "カスタム"
         sample: "Here are some examples to get you started."
         you_can_custom_your_url_structure: "You can custom your URL structure using the following tags:"
         your_article_slug: "your article slug. <strong>Using this slug is mandatory</strong>."
@@ -446,7 +446,7 @@ ja:
         use_canonical_url: "Use canonical URL"
         read_more_about: "Read more about %{link}"
         google: "Google"
-        google_analytics: "Google Analytics"
+        google_analytics: "Googleアナリティクス"
         google_webmaster_tools_validation_link: "Google Webmaster Tools validation link"
         custom_tracking_code: "Custom tracking code"
         explain: "Here you can add anything you want to appear in your application header, such as analytics service tracking code."
@@ -459,7 +459,7 @@ ja:
         show_help_on_publify_macros: "Publifyマクロのヘルプを表示"
         name: "名前"
         description: "説明"
-        tag: "Tag"
+        tag: "タグ"
       destroy:
         destroy_confirmation: "Destroy confirmation"
         are_you_sure: "Are you sure you want to delete this %{element}"
@@ -468,7 +468,7 @@ ja:
         delete: "削除"
     tags:
       edit:
-        success: "Tag was successfully updated" 
+        success: "タグは正常に更新されました"
       new:
         no_tags: "There are no tags yet. Why don't you start and create one?"
         articles: "記事"
