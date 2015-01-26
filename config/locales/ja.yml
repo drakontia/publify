@@ -270,6 +270,7 @@ ja:
         custom_url_help: "If you have a custom domain for URL shortening, enter it here."
         date_format: "日付の形式"
         default_article_show: "articles on the homepage"
+        default_archives_show: "articles on the  archives page"
         default_feed_show: "most recent articles in feed"
         display: "表示"
         display_settings: "表示設定"

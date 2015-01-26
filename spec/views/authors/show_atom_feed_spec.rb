@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "author/show_atom_feed.atom.builder" do
+describe "authors/show_atom_feed.atom.builder", :type => :view do
   let!(:blog) { create(:blog) }
 
   describe "with no items" do
@@ -10,7 +10,7 @@ describe "author/show_atom_feed.atom.builder" do
     end
 
     it "renders the atom header partial" do
-      view.should render_template(partial: "shared/_atom_header")
+      expect(view).to render_template(partial: "shared/_atom_header")
     end
   end
 
@@ -24,16 +24,12 @@ describe "author/show_atom_feed.atom.builder" do
       render
     end
 
-    it "creates a valid feed" do
-      assert_feedvalidator rendered
-    end
-
-    it "creates an atom feed with two items" do
+    it "creates a valid atom feed with two items" do
       assert_atom10 rendered, 2
     end
 
     it "renders the article atom partial twice" do
-      view.should render_template(:partial => "shared/_atom_item_article", :count => 2)
+      expect(view).to render_template(:partial => "shared/_atom_item_article", :count => 2)
     end
   end
 end

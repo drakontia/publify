@@ -1,8 +1,11 @@
 # coding: utf-8
-require 'spec_helper'
+require 'rails_helper'
 
-describe "articles/index_rss_feed.rss.builder" do
+describe "articles/index_rss_feed.rss.builder", :type => :view do
   let!(:blog) { build_stubbed :blog }
+
+  let(:rendered_entry) { Feedjira::Feed.parse(rendered).entries.first }
+  let(:xml_entry) { Nokogiri::XML.parse(rendered).css("item").first }
 
   describe "rendering articles (with some funny characters)" do
     before do
@@ -14,16 +17,12 @@ describe "articles/index_rss_feed.rss.builder" do
       render
     end
 
-    it "creates a valid feed" do
-      assert_feedvalidator rendered
-    end
-
-    it "creates an RSS feed with two items" do
+    it "creates a valid RSS feed with two items" do
       assert_rss20 rendered, 2
     end
 
     it "renders the article RSS partial twice" do
-      view.should render_template(:partial => "shared/_rss_item_article", :count => 2)
+      expect(view).to render_template(:partial => "shared/_rss_item_article", :count => 2)
     end
   end
 
@@ -37,12 +36,12 @@ describe "articles/index_rss_feed.rss.builder" do
 
     it "has the correct guid" do
       render
-      rendered_entry.css("guid").first.content.should == "urn:uuid:#{@article.guid}"
+      expect(rendered_entry.entry_id).to eq "urn:uuid:#{@article.guid}"
     end
 
     it "has a link to the article's comment section" do
       render
-      rendered_entry.css("comments").first.content.should == @article.permalink_url + "#comments"
+      expect(xml_entry.css("comments").first.content).to eq(@article.permalink_url + "#comments")
     end
 
     describe "with an author without email set" do
@@ -52,7 +51,7 @@ describe "articles/index_rss_feed.rss.builder" do
       end
 
       it "does not have an author entry" do
-        rendered_entry.css("author").should be_empty
+        expect(rendered_entry.author).to be_nil
       end
     end
 
@@ -68,11 +67,11 @@ describe "articles/index_rss_feed.rss.builder" do
         end
 
         it "has an author entry" do
-          rendered_entry.css("author").should_not be_empty
+          expect(rendered_entry.author).not_to be_empty
         end
 
         it "has the author's email in the author entry" do
-          rendered_entry.css("author").first.content.should =~ /foo@bar.com/
+          expect(rendered_entry.author).to match(/foo@bar.com/)
         end
       end
 
@@ -83,7 +82,7 @@ describe "articles/index_rss_feed.rss.builder" do
         end
 
         it "does not have an author entry" do
-          rendered_entry.css("author").should be_empty
+          expect(rendered_entry.author).to be_nil
         end
       end
     end
@@ -95,7 +94,7 @@ describe "articles/index_rss_feed.rss.builder" do
       end
 
       it "shows the body and extended content in the feed" do
-        rendered_entry.css("description").first.content.should =~ /public info.*and more/m
+        expect(rendered_entry.summary).to match(/public info.*and more/m)
       end
     end
 
@@ -106,17 +105,15 @@ describe "articles/index_rss_feed.rss.builder" do
 
       it "shows only the body content in the feed if there is no excerpt" do
         render
-        entry = rendered_entry
-        entry.css("description").first.content.should =~ /public info/
-        entry.css("description").first.content.should_not =~ /public info.*and more/m
+        expect(rendered_entry.summary).to match(/public info/)
+        expect(rendered_entry.summary).not_to match(/public info.*and more/m)
       end
 
       it "shows the excerpt instead of the body content in the feed, if there is an excerpt" do
         @article.excerpt = "excerpt"
         render
-        entry = rendered_entry
-        entry.css("description").first.content.should =~ /excerpt/
-        entry.css("description").first.content.should_not =~ /public info/
+        expect(rendered_entry.summary).to match(/excerpt/)
+        expect(rendered_entry.summary).not_to match(/public info/)
       end
     end
 
@@ -128,11 +125,11 @@ describe "articles/index_rss_feed.rss.builder" do
       end
 
       it "shows the body content in the feed" do
-        rendered_entry.css("description").first.content.should =~ /public info/
+        expect(rendered_entry.summary).to match(/public info/)
       end
 
       it "shows the RSS description in the feed" do
-        rendered_entry.css("description").first.content.should =~ /rss description/
+        expect(rendered_entry.summary).to match(/rss description/)
       end
     end
 
@@ -143,7 +140,7 @@ describe "articles/index_rss_feed.rss.builder" do
       @article = stub_full_article
       @article.body = "shh .. it's a secret!"
       @article.extended = "even more secret!"
-      @article.stub(:password) { "password" }
+      allow(@article).to receive(:password) { "password" }
       assign(:articles, [@article])
     end
 
@@ -154,12 +151,13 @@ describe "articles/index_rss_feed.rss.builder" do
       end
 
       it "shows only a link to the article" do
-        rendered_entry.css("description").first.content.should ==
+        expect(rendered_entry.summary).to eq(
           "<p>This article is password protected. Please <a href='#{@article.permalink_url}'>fill in your password</a> to read it</p>"
+        )
       end
 
       it "does not show any secret bits anywhere" do
-        rendered.should_not =~ /secret/
+        expect(rendered).not_to match(/secret/)
       end
     end
 
@@ -170,12 +168,13 @@ describe "articles/index_rss_feed.rss.builder" do
       end
 
       it "shows only a link to the article" do
-        rendered_entry.css("description").first.content.should ==
+        expect(rendered_entry.summary).to eq(
           "<p>This article is password protected. Please <a href='#{@article.permalink_url}'>fill in your password</a> to read it</p>"
+        )
       end
 
       it "does not show any secret bits anywhere" do
-        rendered.should_not =~ /secret/
+        expect(rendered).not_to match(/secret/)
       end
     end
   end
@@ -189,17 +188,12 @@ describe "articles/index_rss_feed.rss.builder" do
       render
     end
 
-    it "creates a valid feed" do
-      assert_feedvalidator rendered
+    it "creates a valid RSS feed with one item" do
+      assert_rss20 rendered, 1
     end
   end
 
-  def rendered_entry
-    parsed = Nokogiri::XML.parse(rendered)
-    parsed.css("item").first
-  end
-
-  describe :title do
+  describe "#title" do
     before(:each) do
       assign(:articles, [article])
       render
@@ -207,12 +201,16 @@ describe "articles/index_rss_feed.rss.builder" do
 
     context "with a note" do
       let(:article) { create(:note) }
-      it { expect(rendered_entry.css("title").text).to eq(article.body) }
+      it "is equal to the note body" do
+        expect(rendered_entry.title).to eq(article.body)
+      end
     end
 
     context "with an article" do
       let(:article) { create(:article) }
-      it { expect(rendered_entry.css("title").text).to eq(article.title) }
+      it "is equal to the article title" do
+        expect(rendered_entry.title).to eq(article.title)
+      end
     end
   end
 

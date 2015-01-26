@@ -127,9 +127,9 @@
   <legend><%= t('.twitter')%></legend>
   <%- unless twitter_available?(this_blog, current_user) %>
     <p class='alert alert-warning'>
-  <%= t(".how_to_setup_twitter", twitter_settings_link: link_to(t(".fill_the_twitter_credentials"), controller: 'admin/settings', action: 'write'), twitter_registration_link: link_to(t(".registered_your_application"), "https://dev.twitter.com/apps/new")) %>
-  </p>
-<%- end %>
+    <%= t(".how_to_setup_twitter", twitter_settings_link: link_to(t(".fill_the_twitter_credentials"), controller: 'admin/settings', action: 'write'), twitter_registration_link: link_to(t(".registered_your_application"), "https://dev.twitter.com/apps/new")) %>
+    </p>
+  <%- end %>
   <div class='form-group'>
     <label class='control-label col-sm-2' for="user_twitter_account"><%= t('.twitter_account')%></label>
     <div class='col-sm-5'>
@@ -153,55 +153,57 @@
 
 <fieldset class='form-horizontal'>
   <legend><%= t('.contact_settings')%></legend>
-  <div class='alert alert-info'><%= t('.contact_explain', link: link_to(t('.author_page'), author_path(id: current_user.login))) %></div>
-  <div class='form-group'>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_description"><%= t('.about')%></label>
-      <div class='col-sm-5'>
-        <%= text_area('user', 'description', {:class => 'form-control', :rows => 5}) %>
-      </div>
-    </div>
-    <label class='control-label col-sm-2' for="user_url"><%= t('.website')%></label>
-    <div class='col-sm-5'>
-      <%= text_field('user', 'url', {:class => 'form-control'}) %>
-    </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_msn"><%= t('.msn')%></label>
-      <div class='col-sm-5'>
-        <%= text_field('user', 'msn', {:class => 'form-control'}) %>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_yahoo"><%= t('.yahoo')%></label>
-      <div class='col-sm-5'>
-        <%= text_field('user', 'yahoo', {:class => 'form-control'}) %>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_jabber"><%= t('.jabber')%></label>
-      <div class='col-sm-5'>
-        <%= text_field('user', 'jabber', {:class => 'form-control'}) %>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_aim"><%= t('.aim')%></label>
-      <div class='col-sm-5'>
-        <%= text_field('user', 'aim', {:class => 'form-control'}) %>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label col-sm-2' for="user_twitter"><%= t('.twitter')%></label>
-      <div class='col-sm-5'>
-        <%= text_field('user', 'twitter', {:class => 'form-control'}) %>
-      </div>
-    </div>
-  </fieldset>
-  <% end %>
-
-  <div class='form-actions'>
-    <hr />
-    <%= link_to(t(".cancel"), {action: 'index'}) %>
-    <%= t(".or") %>
-    <%= submit_tag(t(".save"), class: 'btn btn-success') %>
+  <div class='alert alert-info'>
+    <%= t('.contact_explain', link: link_to(t('.author_page'), author_path(id: current_user.login))) %>
   </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_description"><%= t('.about')%></label>
+    <div class='col-sm-5'>
+      <%= text_area('user', 'description', {:class => 'form-control', :rows => 5}) %>
+    </div>
+  </div>
+  <label class='control-label col-sm-2' for="user_url"><%= t('.website')%></label>
+  <div class='col-sm-5'>
+    <%= text_field('user', 'url', {:class => 'form-control'}) %>
+  </div>
+  </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_msn"><%= t('.msn')%></label>
+    <div class='col-sm-5'>
+      <%= text_field('user', 'msn', {:class => 'form-control'}) %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_yahoo"><%= t('.yahoo')%></label>
+    <div class='col-sm-5'>
+      <%= text_field('user', 'yahoo', {:class => 'form-control'}) %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_jabber"><%= t('.jabber')%></label>
+    <div class='col-sm-5'>
+      <%= text_field('user', 'jabber', {:class => 'form-control'}) %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_aim"><%= t('.aim')%></label>
+    <div class='col-sm-5'>
+      <%= text_field('user', 'aim', {:class => 'form-control'}) %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class='control-label col-sm-2' for="user_twitter"><%= t('.twitter')%></label>
+    <div class='col-sm-5'>
+      <%= text_field('user', 'twitter', {:class => 'form-control'}) %>
+    </div>
+  </div>
+</fieldset>
+
+<% end %>
+
+<div class='form-actions'>
+  <hr />
+  <%= link_to(t(".cancel"), {action: 'index'}) %>
+  <%= t(".or") %>
+  <%= submit_tag(t(".save"), class: 'btn btn-success') %>
+</div>

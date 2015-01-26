@@ -1,5 +1,5 @@
 class Sidebar < ActiveRecord::Base
-  serialize :config
+  serialize :config, Hash
 
   class Field
     attr_accessor :key
@@ -186,12 +186,28 @@ class Sidebar < ActiveRecord::Base
     @display_name || short_name.humanize
   end
 
-  def self.available_sidebars
-    Sidebar.descendants.sort_by { |klass| klass.to_s }
-  end
+  class << self
+    attr_accessor :view_root
 
-  def self.available_sidebar_types
-    @available_sidebar_types ||= available_sidebars.map {|klass| klass.to_s}
+    # TODO: Avoid making this available from subclasses
+    def register_sidebar klass
+      registered_sidebars << klass
+      @available_sidebar_types = nil
+    end
+
+    def available_sidebars
+      registered_sidebars.sort_by(&:to_s)
+    end
+
+    def available_sidebar_types
+      registered_sidebars.map(&:to_s).sort
+    end
+
+    private
+
+    def registered_sidebars
+      @registered_sidebars ||= []
+    end
   end
 
   def self.fields=(newval)
@@ -208,34 +224,12 @@ class Sidebar < ActiveRecord::Base
     end
   end
 
-  class << self
-    attr_accessor :view_root
-  end
-
   def blog
     Blog.default
   end
 
-  def initialize(*args)
-    if block_given?
-      super(*args) { |instance| yield instance }
-    else
-      super(*args)
-    end
-    self.class.fields.each do |field|
-      unless config.has_key?(field.key)
-        config[field.key] = field.default
-      end
-    end
-  end
-
-
   def publish
     self.active_position = self.staged_position
-  end
-
-  def config
-    self[:config] ||= { }
   end
 
   def html_id

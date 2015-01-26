@@ -42,6 +42,7 @@ class Blog < ActiveRecord::Base
   setting :text_filter,                :string, 'markdown smartypants'
   setting :comment_text_filter,        :string, 'markdown smartypants'
   setting :limit_article_display,      :integer, 10
+  setting :limit_archives_display,     :integer, 20
   setting :limit_rss_display,          :integer, 10
   setting :default_allow_pings,        :boolean, false
   setting :default_allow_comments,     :boolean, true
@@ -113,16 +114,6 @@ class Blog < ActiveRecord::Base
   setting :statuses_in_timeline,      :boolean, true
 
   validate :permalink_has_identifier
-
-  def initialize(*args)
-    super
-    # Yes, this is weird - PDC
-    begin
-      self.settings ||= {}
-    rescue Exception => e
-      self.settings = {}
-    end
-  end
 
   # The default Blog. This is the lowest-numbered blog, almost always
   # id==1. This should be the only blog as well.

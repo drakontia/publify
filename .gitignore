@@ -9,7 +9,6 @@ db/*.sqlite*
 .*.swp
 .*.swo
 .DS_Store
-.rspec
 installer/rails_installer.yml
 /public/files
 /public/images/theme
@@ -30,5 +29,4 @@ public/cache/*
 /vendor/bundle
 /themes/*
 !/themes/bootstrap-2
-!/themes/typographic
 gems/

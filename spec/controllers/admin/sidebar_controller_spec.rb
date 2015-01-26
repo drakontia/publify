@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Admin::SidebarController do
+describe Admin::SidebarController, :type => :controller do
   before do
     FactoryGirl.create(:blog)
     #TODO Delete after removing fixtures
@@ -15,8 +15,18 @@ describe Admin::SidebarController do
     it "test_index" do
       get :index
       assert_template 'index'
-      assert_tag :tag => "div",
-        :attributes => { :id => "sidebar-config" }
+      assert_select 'div[id="sidebar-config"]'
+    end
+  end
+
+  describe '#update' do
+    it "updates content" do
+      sidebar = FactoryGirl.create(:sidebar)
+
+      post :update, {:id => sidebar.to_param, :configure => {"#{sidebar.id}"=>{"title"=>"Links", "body"=>"another html"}}}
+      sidebar.reload
+
+      expect(sidebar.config["body"]).to eq("another html")
     end
   end
 end

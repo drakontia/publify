@@ -1,11 +1,13 @@
 class Admin::FeedbackController < Admin::BaseController
   cache_sweeper :blog_sweeper
+  Only_domain = ['unapproved', 'presumed_ham', 'presumed_spam', 'ham', 'spam']
 
   def index
     scoped_feedback = Feedback
 
-    if params[:only].present?
-      scoped_feedback = scoped_feedback.send(params[:only])
+    if params[:only].present? 
+      @only_param = Only_domain.dup.delete(params[:only])
+      scoped_feedback = scoped_feedback.send(@only_param) if @only_param
     end
 
     if params[:page].blank? || params[:page] == "0"
@@ -138,7 +140,7 @@ class Admin::FeedbackController < Admin::BaseController
     when 'Delete all spam'
       if request.post?
         Feedback.delete_all(['state = ?', 'spam'])
-        flash[:success] = I18n.t('admin.feedback.bulkops.success')
+        flash[:success] = I18n.t('admin.feedback.bulkops.success_deleted_spam')
       end
     else
       flash[:error] = I18n.t('admin.feedback.bulkops.error')

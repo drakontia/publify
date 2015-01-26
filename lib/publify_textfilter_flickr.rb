@@ -8,9 +8,9 @@ class PublifyApp
 
       def self.help_text
         %{
-You can use `<typo:flickr>` to display images from [Flickr](http://flickr.com).  Example:
+You can use `<publify:flickr>` to display images from [Flickr](http://flickr.com).  Example:
 
-    <typo:flickr img="31367273" size="small"/>
+    <publify:flickr img="31367273" size="small"/>
 
 will produce an `<img>` tag showing image number 31367273 from Flickr.  This image will be linked to
 the Flickr page for this image, so you can zoom in and see larger versions.  It will also have a
@@ -54,7 +54,9 @@ This macro takes a number of parameters:
           details     = sizes.find {|s| s['label'].downcase == size.downcase } || sizes.first
           width       = details['width']
           height      = details['height']
-          imageurl    = details['source']
+          # use protocol-relative URL after getting the source address
+          # so not to break HTTPS support
+          imageurl    = details['source'].sub(/^https?:/, '')
           imagelink = flickrimage.urls.find {|u| u.type == "photopage"}.to_s
 
           caption   ||= sanitize(CGI.unescapeHTML(flickrimage.description)) unless flickrimage.description.blank?

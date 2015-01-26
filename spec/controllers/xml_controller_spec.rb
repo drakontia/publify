@@ -1,9 +1,10 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe XmlController do
+describe XmlController, :type => :controller do
   before do
+    Blog.where(base_url: "http://myblog.net").each(&:destroy)
     create(:blog, base_url: "http://myblog.net")
-    Trigger.stub(:fire) { }
+    allow(Trigger).to receive(:fire) { }
   end
 
   def assert_moved_permanently_to(location)
@@ -88,7 +89,7 @@ describe XmlController do
     describe "for an article" do
       before do
         @article = build_stubbed(:article, published_at: Time.now, permalink: "foo")
-        Article.stub(:find) { @article }
+        allow(Article).to receive(:find) { @article }
       end
 
       describe "without format parameter" do
@@ -127,12 +128,12 @@ describe XmlController do
   describe "#articlerss" do
     before do
       @article = build_stubbed(:article, published_at: Time.now, permalink: "foo")
-      Article.stub(:find) { @article }
+      allow(Article).to receive(:find) { @article }
     end
 
     it "redirects permanently to the article RSS feed" do
       get :articlerss, :id => @article.id
-      assert_moved_permanently_to @article.feed_url('rss')
+      assert_moved_permanently_to URI.parse(@article.feed_url('rss')).path
     end
   end
 
@@ -152,6 +153,7 @@ describe XmlController do
 
   # TODO: make this more robust
   describe "#rsd" do
+    render_views
     before do
       get :rsd
     end
@@ -167,6 +169,7 @@ describe XmlController do
 
   # TODO: make this more robust
   describe "#feed with googlesitemap format" do
+    render_views
     before do
       FactoryGirl.create(:tag)
       get :feed, :format => 'googlesitemap', :type => 'sitemap'

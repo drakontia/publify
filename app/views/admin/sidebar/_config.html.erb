@@ -4,7 +4,7 @@
       <h3><%= t(".available_items")%></h3>
       <div id="available_box">
         <% if @available.blank? %>
-          <p class='alert-message warning'><%= t(".you_have_no_plugins_installed")%>.</p>
+        <p class='alert-message warning'><%= t(".you_have_no_plugins_installed")%>.</p>
         <% else %>
           <%= render :partial => 'available', :collection => @available %>
         <% end %>

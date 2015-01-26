@@ -93,17 +93,18 @@ class ArticlesController < ContentController
     # because it's changed
     ["%year%/%month%/%day%/%title%", "articles/%year%/%month%/%day%/%title%"].each do |part|
       @article = factory.match_permalink_format(from, part)
-      return redirect_to @article.permalink_url, status: 301 if @article
+      return redirect_to URI.parse(@article.permalink_url).path, status: 301 if @article
     end
 
     r = Redirect.find_by_from_path(from)
-    return redirect_to r.full_to_path, status: 301 if r
+    return redirect_to r.full_to_path, status: 301 if r # Let redirection made outside of the blog on purpose (deal with it, Brakeman!)
 
     render "errors/404", status: 404
   end
 
   def archives
-    @articles = Article.published
+    limit = this_blog.limit_archives_display
+    @articles = Article.published.page(params[:page]).per(limit)
     @page_title = this_blog.archives_title_template.to_title(@articles, this_blog, params)
     @keywords = this_blog.meta_keywords
     @description = this_blog.archives_desc_template.to_title(@articles, this_blog, params)
