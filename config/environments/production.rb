@@ -79,4 +79,7 @@ Rails.application.configure do
 
   # Setting Time zone.
   config.time_zone = 'Asia/Tokyo'
+
+  # for safe to run puma
+  config.threadsafe!
 end
