@@ -29,7 +29,7 @@ body {
   position: relative;
   width: 44px;
   height: 44px;
-  background: url("../images/freecompany/ic/crest/bg_40.png") no-repeat 0 0;
+  background: url("../../images/theme/bg_40.png") no-repeat 0 0;
 }
 .ic_crest_44 img {
   position: absolute;
