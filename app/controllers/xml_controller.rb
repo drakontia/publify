@@ -1,25 +1,24 @@
 class XmlController < ApplicationController
-  caches_page :feed, :if => Proc.new {|c|
+  caches_page :feed, if: proc {|c|
     c.request.query_string == ''
   }
 
-  NORMALIZED_FORMAT_FOR = {'atom' => 'atom', 'rss' => 'rss',
-    'atom10' => 'atom', 'atom03' => 'atom', 'rss20' => 'rss',
-    'googlesitemap' => 'googlesitemap', 'rsd' => 'rsd' }
+  NORMALIZED_FORMAT_FOR = { 'atom' => 'atom', 'rss' => 'rss',
+                            'atom10' => 'atom', 'atom03' => 'atom', 'rss20' => 'rss',
+                            'googlesitemap' => 'googlesitemap', 'rsd' => 'rsd' }
 
-  ACCEPTED_TYPE =  %w{feed comments article tag author trackbacks sitemap}
+  ACCEPTED_TYPE =  %w(feed comments article tag author trackbacks sitemap)
 
   def feed
     @format = 'rss'
     if params[:format]
-      unless @format = NORMALIZED_FORMAT_FOR[params[:format]]
-        return render(text: 'Unsupported format', status: 404)
-      end
+      @format = NORMALIZED_FORMAT_FOR[params[:format]]
+      return render(text: 'Unsupported format', status: 404) unless @format
     end
 
     # TODO: Move redirects into config/routes.rb, if possible
     param_type = ACCEPTED_TYPE.dup.delete(params[:type])
-    param_id = params[:id]#.present? && params[:id].to_i # Think about a way to secure that to a valid tag/author for int value…
+    param_id = params[:id] # .present? && params[:id].to_i # Think about a way to secure that to a valid tag/author for int value ...
 
     case param_type
     when 'feed'
@@ -29,11 +28,11 @@ class XmlController < ApplicationController
     when 'article'
       redirect_to Article.find(param_id).feed_url(@format), status: :moved_permanently
     when 'tag', 'author'
-      redirect_to self.send("#{param_type}_url", param_id, format: @format), status: :moved_permanently
+      redirect_to send("#{param_type}_url", param_id, format: @format), status: :moved_permanently
     when 'trackbacks'
       redirect_to trackbacks_url(format: @format), status: :moved_permanently
     when 'sitemap'
-      @items = Array.new
+      @items = []
       @blog = this_blog
 
       @feed_title = this_blog.blog_name
@@ -66,7 +65,6 @@ class XmlController < ApplicationController
   end
 
   def rsd
-    render "rsd", formats: [:rsd], handlers: [:builder]
+    render 'rsd', formats: [:rsd], handlers: [:builder]
   end
-
 end
