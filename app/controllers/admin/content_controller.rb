@@ -62,7 +62,7 @@ class Admin::ContentController < Admin::BaseController
 
     update_article_attributes
 
-    if @article.save
+    if @article.update
       Article.where(parent_id: @article.id).map(&:destroy) unless @article.draft
       flash[:success] = I18n.t('admin.content.update.success')
       redirect_to action: 'index'
