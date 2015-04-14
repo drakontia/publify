@@ -2,12 +2,12 @@ ja:
   meta_sidebar:
     content:
       rss_feed: "RSSフィード"
-      admin: "Admin"
+      admin: "管理"
       powered_by_publify: "Powered by Publify"
-      search: "Search"
+      search: "検索"
   search_sidebar:
     content:
-      search: "Search"
+      search: "検索"
   page_sidebar:
     content:
       pages: "ページ"
@@ -159,6 +159,8 @@ ja:
     no_notes_found: "No notes found..."
   views:
     pagination:
+      first: "最初"
+      previous: "前"
       truncate: "..."
       next: "次"
       last: "最後"
@@ -382,15 +384,15 @@ ja:
         dated_archives: "Dated archives"
         categories: "カテゴリ"
         tags: "タグ"
-        author_page: "Author page"
-        search_results: "Search results"
-        short_statuses_lists: "Short statuses lists"
-        short_statuses: "Short statuses"
+        author_page: "著者ページ"
+        search_results: "検索結果"
+        short_statuses_lists: "近況リスト"
+        short_statuses: "近況"
         help_on_title_settings: "Help on title settings"
         these_tags_can_be_included: "These tags can be included in your templates and will be replaced when displaying the page."
         replaced_with_the_title_of_the_article_page: "Replaced with the title of the article/page"
-        the_blog_s_name: "The blog's name"
-        the_blog_s_tagline_description: "The blog's tagline / description"
+        the_blog_s_name: "ブログ名"
+        the_blog_s_tagline_description: "ブログのタグラインと説明"
         replaced_with_the_post_page_excerpt: "Replaced with the post/page excerpt"
         replaced_with_the_article_tags: "Replaced with the article tags (comma separated)"
         replaced_with_the_article_categories: "Replaced with the article categories (comma separated)"
@@ -411,8 +413,8 @@ ja:
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
         permalinks: "パーマリンク"
         permalink_format: "パーマリンク形式"
-        date_and_title: "Date and title"
-        month_and_title: "Month and title"
+        date_and_title: "日付とタイトル"
+        month_and_title: "月とタイトル"
         title_only: "タイトル"
         custom: "カスタム"
         sample: "Here are some examples to get you started."
@@ -462,8 +464,8 @@ ja:
         description: "説明"
         tag: "タグ"
       destroy:
-        destroy_confirmation: "Destroy confirmation"
-        are_you_sure: "Are you sure you want to delete this %{element}"
+        destroy_confirmation: "削除の確認"
+        are_you_sure: "この%{element}を本当に削除しますか?"
         action_or_other: "%{first_action} または %{second_action}"
         cancel: "キャンセル"
         delete: "削除"
@@ -487,7 +489,7 @@ ja:
         notice: "File has been deleted"
       index:
         no_resources: "There are no resources yet. Why don't you start and create one?"
-        media_library: "Media Library"
+        media_library: "メディアライブラリ"
         upload_a_file_to_your_site: "サイトにファイルをアップロード"
         upload: "アップロード"
         filename: "ファイル名"
@@ -495,10 +497,10 @@ ja:
         content_type: "コンテンツタイプ"
         file_size: "ファイルサイズ"
         date: "日付"
-        are_you_sure: "Are you sure?"
-        thumbnail: "Thumbnail"
-        medium_size: "Medium size"
-        original_size: "Original size"
+        are_you_sure: "よろしいですか?"
+        thumbnail: "サムネイル"
+        medium_size: "ミディアム"
+        original_size: "オリジナル"
     post_types:
       new:
         cancel: "キャンセル"
@@ -525,10 +527,10 @@ ja:
         date: "日付"
       form:
         cancel: "キャンセル"
-        change: "Change"
+        change: "変更"
         publish: "公開"
         title: "タイトル"
-        images: "Images"
+        images: "イメージ"
         publish_settings: "Publish settings"
         status: "ステータス"
         online: "オンライン"
@@ -536,8 +538,8 @@ ja:
         permanent_link: "Permanent link"
         page_with_action_name: "%{action} page"
         type_your_post: "Type your post"
-        published: "published"
-        offline: "offline"
+        published: "公開"
+        offline: "オフライン"
       pages:
         no_pages: "There are no pages yet. Why don't you start and create one?"
     feedback:
@@ -555,7 +557,7 @@ ja:
       create:
         success: "Comment was successfully created."
       destroy:
-        success: "Deleted"
+        success: "削除"
         error: "Not found"
       bulkops:
         error: "Not implemented"
@@ -580,18 +582,18 @@ ja:
         presumed_spam: "Presumed spam"
         search: "検索"
         status: "ステータス"
-        comment_author: "Comment Author"
-        comment: "Comment"
+        comment_author: "コメント主"
+        comment: "コメント"
         article: "記事"
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
-        select_all: "Select all"
+        select_all: "全選択"
       article:
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         comments_for: "〜へコメント%{title}"
         status: "ステータス"
-        comment_author: "Comment Author"
-        comment: "Comment"
-        add_a_comment: "Add a comment"
+        comment_author: "コメント主"
+        comment: "コメント"
+        add_a_comment: "コメントを書く"
         author: "投稿者"
         email: "メールアドレス"
         url: "Url"
