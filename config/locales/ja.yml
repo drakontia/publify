@@ -198,14 +198,14 @@ ja:
       header:
         notes: "Notes"
       form:
-        now: "Now"
+        now: "今"
         no_notes: "There are no notes yet. Why don't you start and create one?"
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the oauth credentials"
         registered_your_application: "registered your application"
-        compose_new_note: "Compose new note"
-        publish_settings: "Publish settings"
-        posse_to_twitter: "POSSE to twitter"
+        compose_new_note: "近況を書く"
+        publish_settings: "公開設定"
+        posse_to_twitter: "ツイッターに公開する"
         in_reply_to: "In reply to"
         tweet_id_like: "Tweet id like 123456"
         permanent_link: "パーマネントリンク"
@@ -486,7 +486,7 @@ ja:
         success: "アップロードするファイル"
         warning: "アップロードできません"
       destroy:
-        notice: "File has been deleted"
+        notice: "ファイルは削除されました"
       index:
         no_resources: "There are no resources yet. Why don't you start and create one?"
         media_library: "メディアライブラリ"
@@ -501,6 +501,7 @@ ja:
         thumbnail: "サムネイル"
         medium_size: "ミディアム"
         original_size: "オリジナル"
+        delete: "削除"
     post_types:
       new:
         cancel: "キャンセル"
@@ -706,7 +707,7 @@ ja:
         all_articles: "全ての記事"
         manage_articles: "記事の管理"
         withdrawn: "ゴミ箱"
-        drafts: "下書き:"
+        drafts: "下書き"
         publication_pending: "保留中"
         search: "検索"
         title: "タイトル"
@@ -725,8 +726,8 @@ ja:
           zero: "無効"
           one: "有効"
         allow_pings_status:
-          zero: "disabled"
-          one: "enabled"
+          zero: "無効"
+          one: "有効"
         public: "Public"
         publish: "公開"
         title: "タイトル"
@@ -764,10 +765,10 @@ ja:
         title: "タイトル"
     menu:
       help: "Help"
-      documentation: "Documentation"
+      documentation: "ドキュメント"
       report_a_bug: "バグ報告"
-      in_page_plugins: "In page plugins"
-      sidebar_plugins: "Sidebar plugins"
+      in_page_plugins: "ページ内プラグイン"
+      sidebar_plugins: "サイドバープラグイン"
       logged_in_as: "%{login}でログイン中"
       new_article: "New Article"
       new_page: "New Page"
@@ -901,7 +902,7 @@ ja:
     formats:
       default: "%m/%d/%Y %H:%M"
       short: "%m/%d/%y"
-      letters_month_with_year: "%m %Y"
+      letters_month_with_year: "%Y年%m"
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
     abbr_month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
