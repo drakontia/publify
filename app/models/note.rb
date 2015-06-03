@@ -83,7 +83,7 @@ class Note < Content
       end
       tweet = twitter.update(twitter_message, options)
       self.twitter_id = tweet.attrs[:id_str]
-      embedtweet = twitter.oembed(tweet).html
+      embedtweet = twitter.oembed(tweet)
       Rails.logger.error(embedtweet.html)
       #self.body = embedtweet.html
       save
