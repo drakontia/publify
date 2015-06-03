@@ -84,7 +84,8 @@ class Note < Content
       tweet = twitter.update(twitter_message, options)
       self.twitter_id = tweet.attrs[:id_str]
       embedtweet = twitter.oembed(tweet).html
-      self.body = embedtweet.html
+      Rails.logger.error(embedtweet.html)
+      #self.body = embedtweet.html
       save
       user.update_twitter_profile_image(tweet.attrs[:user][:profile_image_url])
       true
