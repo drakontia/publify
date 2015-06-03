@@ -110,7 +110,7 @@ ja:
       comments: "コメント"
       markdown_enabled: "マークダウンを使用できます"
       textile_enabled: "Textileを使用できます"
-      never_displayed: "never displayed"
+      never_displayed: "表示不可"
       comment: "コメント"
       email_address: "Email address"
       your_website: "Your website"
@@ -171,6 +171,7 @@ ja:
         statuses: "近況"
         powered_by: "Powered by %{powered_by}"
         designed_by: "Designed by %{designed_by}"
+        archives: "アーカイヴ"
     administration:
       new: "New"
   authors:
@@ -623,38 +624,38 @@ ja:
         notice: "There's a new version of Publify available. Why don't you upgrade to <a href='http://publify.co/stable.tgz'>the latest Publify version</a> ?"
         welcome_back: "お帰りなさいませ、%{user_name} 様"
       drafts:
-        your_drafts: "Your drafts"
-        no_drafts_yet: "No drafts yet, why don't you start and write one"
+        your_drafts: "下書き"
+        no_drafts_yet: "下書きはありません。怖がらずに書き始めてみましょう。"
       welcome:
-        today: "Today"
-        articles_and_comments_count_since: "%{articles_count} articles and %{comments_count} comments were posted since your last connexion"
+        today: "今日"
+        articles_and_comments_count_since: "あなたの最後の接続から、%{articles_count} 記事と %{comments_count} コメントが書き込まれました"
         running_publify: "Publify バージョン%{version} が稼働中です"
         content: "コンテンツ"
         articles_count:
-          zero: "no article"
+          zero: "記事なし"
           one: "1記事"
           other: "%{count}記事"
         your_articles_count:
-          zero: "no article writen by you"
-          one: "1 article writen by you"
-          other: "%{count} articles writen by you"
+          zero: "あなたが書いた記事なし"
+          one: "あなたが書いた記事1つ"
+          other: "あなたが書いた記事%{count}つ"
         drafts_count:
-          zero: "no draft"
-          one: "1 draft"
-          other: "%{count} drafts"
+          zero: "下書きなし"
+          one: "下書き1つ"
+          other: "下書き%{count}つ"
         pages_count:
-          zero: "no page"
-          one: "1 page"
-          other: "%{count} pages"
+          zero: "ページなし"
+          one: "ページ1つ"
+          other: "ページ%{count}つ"
         notes_count:
-          zero: "no note"
-          one: "1 note"
-          other: "%{count} notes"
+          zero: "ノートなし"
+          one: "ノート1つ"
+          other: "ノート%{count}つ"
         feedback: "フィードバック"
         comments_count:
           zero: "コメントなし"
-          one: "1 comment"
-          other: "%{count} comments"
+          one: "コメント1つ"
+          other: "コメント%{count}つ"
         approved_count:
           zero: "no approved"
           one: "1 approved"
@@ -664,8 +665,8 @@ ja:
           one: "1 unconfirmed"
           other: "%{count} unconfirmed"
         spam_count:
-          zero: "no spam"
-          one: "1 spam"
+          zero: "スパムなし"
+          one: "スパム1つ"
           other: "%{count} spam"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
@@ -673,22 +674,22 @@ ja:
         write_a_page: "ページを作成する"
         update_your_profile_or_change_your_password: "プロフィールを編集したりパスワードを変更する"
         customization_explain: "You can also do a bit of design, %{theme_link} or %{sidebar_link}."
-        change_your_blog_presentation: "change your blog presentation"
-        enable_plugins: "enable plugins"
+        change_your_blog_presentation: "ブログの説明の変更"
+        enable_plugins: "プラグインの有効化"
         help_explain: "If you need help, %{doc_link}."
-        read_our_documentation: "read our documentation"
+        read_our_documentation: "わたしたちのドキュメントを読んで下さい"
       inbound:
         inbound_links: "外部からのリンク"
         you_have_no_internet_connection: "インターネットに接続できません"
         no_one_made_link_to_you_yet: "まだどこからもリンクされていません"
         made_a_link_to_you_on: " からこのようにリンクされています "
-        at_an_unknown_date: "at an unknown date"
-        at: "at"
+        at_an_unknown_date: "不明な日付に"
+        at: "に"
       comment:
         no_comments_yet: "まだコメントはありません"
-        by: "By"
+        by: "による"
       comments:
-        latest_comments: "Latest Comments"
+        latest_comments: "最新のコメント"
     content:
       create:
         success: "記事を作成しました"
@@ -698,7 +699,7 @@ ja:
       edit:
         error: "あなたのアカウントではこの操作は許可されていません"
       autosave:
-        success: "Article was successfully saved"
+        success: "記事は正常に保存されました"
       article_list:
         no_articles: "There are no articles yet. Why don't you start and create one?"
       index:
@@ -717,10 +718,10 @@ ja:
         filter: "フィルター"
       form:
         article_type: "記事タイプ"
-        now: "now"
+        now: "今"
         preview: "プレビュー"
         save: "保存"
-        default: "Default"
+        default: "デフォルト"
         cancel: "キャンセル"
         allow_comments_status:
           zero: "無効"
@@ -736,7 +737,7 @@ ja:
         status: "ステータス"
         published: "公開済み"
         allowed_comments_and_trackbacks: "Comments are %{allow_comment} and trackbacks are %{allow_trackback}"
-        change: "Change"
+        change: "変更"
         allow_trackbacks: "トラックバックを許可"
         allow_comments: "コメントを許可"
         ok: "OK"
@@ -787,13 +788,13 @@ ja:
         explaination: "To save on resources, Publify generates static files along with your content. These files are deleted when a new article is created. You can, at any time, delete these files yourself."
       destroy:
         success: "キャッシュはクリアされました"
-        error: "Cache could not be cleared"
+        error: "キャッシュをクリアできませんでした"
     users:
       edit:
         success: "プロフィールが更新されました"
         edit_user: "ユーザー編集"
       new:
-        success: "User was successfully created"
+        success: "ユーザーは正常に作成されました"
         add_user: "ユーザーの追加"
       index:
         login: "ログイン"
@@ -808,13 +809,13 @@ ja:
         user_state: "%{state}"
       form:
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
-        fill_the_twitter_credentials: "fill in the oauth credentials"
-        registered_your_application: "registered your application"
+        fill_the_twitter_credentials: "OAuth認証を入力してください"
+        registered_your_application: "あなたのアプリケーションを登録してください"
         cancel: "キャンセル"
         save: "保存"
         or: "または"
-        user_status: "User Status"
-        account_settings: "Account Settings"
+        user_status: "ユーザー状況"
+        account_settings: "アカウント設定"
         login: "ログイン"
         password: "パスワード"
         password_confirmation: "パスワードの確認"
@@ -827,25 +828,25 @@ ja:
         nickname: "ニックネーム"
         display_name: "表示名"
         article_filter: "記事フィルター"
-        avatar: "Avatar Settings"
-        avatar_current: "Current avatar"
-        upload: "Upload your profile image"
-        upload_file: "Upload a .jpg, .png or .gif file"
-        notification_settings: "Notifications"
-        notifications: "Send notification messages"
-        notification_email: "via email"
-        notification_article: "when new article is posted"
-        notification_comment: "when new comment is posted"
-        twitter_settings: "Twitter Settings"
-        twitter_account: "Twitter username"
-        twitter_help: "Twitter account you want to post with"
-        twitter_oauth: "Twitter OAuth token"
-        twitter_oauth_secret: "Twitter OAuth secret"
-        contact_settings: "Contact Settings"
-        contact_explain: "This information will be displayed on your %{link}"
-        author_page: "author page"
-        about: "Biography"
-        website: "Website"
+        avatar: "アバター設定"
+        avatar_current: "現在のアバター"
+        upload: "プロフィール画像のアップロード"
+        upload_file: "アップロード可能ファイル形式:jpg, png or gif"
+        notification_settings: "通知"
+        notifications: "通知メッセージを送信する"
+        notification_email: "メールで"
+        notification_article: "記事が作成された時"
+        notification_comment: "コメントが投稿された時"
+        twitter_settings: "ツイッター設定"
+        twitter_account: "ツイッターID"
+        twitter_help: "ツイートするのに使用するアカウント名"
+        twitter_oauth: "ツイッターOAuth認証"
+        twitter_oauth_secret: "ツイッターOAuth認証シークレットキー"
+        contact_settings: "コンタクト設定"
+        contact_explain: "これらの情報はあなたの%{link}に表示されます"
+        author_page: "著者ページ"
+        about: "バイオグラフィー"
+        website: "ウェブサイト"
         msn: "MSN Messenger ID"
         yahoo: "Yahoo! Messenger ID"
         jabber: "Jabber ID"
@@ -853,9 +854,9 @@ ja:
         twitter: "Twitter username"
   accounts:
     back_to: "&larr; Back to %{place}"
-    back_to_login: "Back to login"
-    create_account: "Create an account"
-    lost_my_password: "I've lost my password"
+    back_to_login: "ログインに戻る"
+    create_account: "アカウントの作成"
+    lost_my_password: "パスワードを忘れた場合"
     login:
       title: "ログイン"
       login: "ログイン"
@@ -868,9 +869,9 @@ ja:
       proceed_to: "Proceed to %{link}"
       admin: "admin"
     recover_password:
-      title: "Recover your password"
+      title: "パスワードの再生成"
       username_or_email: "ユーザ名、もしくはEメール"
-      reset_my_password: "Reset my password"
+      reset_my_password: "パスワードのリセット"
       notice: "An email has been successfully sent to your address with your new password"
       error: "Oops, something wrong just happened"
     signup:
@@ -902,7 +903,7 @@ ja:
     formats:
       default: "%m/%d/%Y %H:%M"
       short: "%m/%d/%y"
-      letters_month_with_year: "%Y年%m"
+      letters_month_with_year: "%Y年%m月"
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
     abbr_month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
