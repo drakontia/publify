@@ -5,10 +5,10 @@
 ### Download
 
 You can download the latest
-Publify [stable release (8.1.1)](https://github.com/publify/publify/archive/v8.1.1.tar.gz)
+Publify [stable release (8.2.0)](https://github.com/publify/publify/archive/v8.2.0.tar.gz)
 or [clone the Publify repository](https://github.com/publify/publify.git).
 
-[![Build Status](https://travis-ci.org/publify/publify.png)](https://travis-ci.org/publify/publify)
+[![Build Status](https://travis-ci.org/publify/publify.png?branch=master)](https://travis-ci.org/publify/publify)
 [![Code Climate](https://codeclimate.com/github/publify/publify.png)](https://codeclimate.com/github/publify/publify)
 [![Dependency Status](https://gemnasium.com/publify/publify.png)](https://gemnasium.com/publify/publify)
 
@@ -51,9 +51,12 @@ The demo is reset every 2 hours.
 
 To install Publify you need the following:
 
--   Ruby 2.0, 2.1 or 2.2
--   Ruby On Rails 4.2.0
--   A database engine, MySQL, PgSQL or SQLite3
+- Ruby 2.0, 2.1 or 2.2
+- Ruby On Rails 4.2.0
+- A database engine, MySQL, PgSQL or SQLite3
+- A compatible JavaScript installation for asset compilation. See [the execjs
+  readme](https://github.com/sstephenson/execjs#readme) for details.
+- ImageMagick (used by mini_magick).
 
 1.  Unzip Publify archive
 2.  Rename database.yml.yourEngine as database.yml

@@ -182,13 +182,13 @@ class Article < Content
     req_params[:permalink] = params[:title] if params[:title]
     req_params[:published_at] = date_range if date_range
 
-    return nil if req_params.empty? # no search if no params send
-    article = published.where(req_params).first
+    return if req_params.empty? # no search if no params send
+    article = published.find_by(req_params)
     return article if article
 
     if params[:title]
       req_params[:permalink] = CGI.escape(params[:title])
-      article = published.where(req_params).first
+      article = published.find_by(req_params)
       return article if article
     end
   end
@@ -249,7 +249,7 @@ class Article < Content
   # "extended" fields, and instead edits everything in a single edit field,
   # separating the extended content using "\<!--more-->".
   def body_and_extended
-    if extended.nil? || extended.empty?
+    if extended.blank?
       body
     else
       body + "\n<!--more-->\n" + extended

@@ -107,7 +107,9 @@ module AccessControl
 
     def initialize(name, controller = nil)
       @name = name
-      @controllers, @menus, @submenus = [], [], []
+      @controllers = []
+      @menus = []
+      @submenus = []
       @controllers << controller
     end
 
@@ -161,10 +163,6 @@ module AccessControl
 
     def uid
       @name.to_s.downcase.gsub(/[^a-z0-9]+/, '').gsub(/-+$/, '').gsub(/^-+$/, '')
-    end
-
-    def current_url?(controller, action)
-      @url[:controller] == controller && @url[:action] == action
     end
   end
 end

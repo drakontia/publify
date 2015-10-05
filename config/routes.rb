@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   # CommentsController
   resources :comments, as: 'admin_comments', only: [:index, :create] do
     collection do
-      match :preview, via: [:get, :post, :put, :delete]
+      post :preview
     end
   end
 
@@ -70,6 +70,7 @@ Rails.application.routes.draw do
     get 'stylesheets/theme/:filename', action: 'stylesheets', format: false
     get 'javascripts/theme/:filename', action: 'javascript', format: false
     get 'images/theme/:filename', action: 'images', format: false
+    get 'fonts/theme/:filename', action: 'fonts', format: false
   end
 
   # For the tests
@@ -138,20 +139,13 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :seo, only: [:index], format: false do
-      collection do
-        get 'permalinks'
-        get 'titles'
-        post 'permalinks'
-        post 'update'
-      end
-    end
+    resource :seo, controller: 'seo', only: [:show, :update], format: false
+    resource :migrations, only: [:show, :update]
 
     resources :settings, only: [:index], format: false do
       collection do
         get 'display'
         get 'feedback'
-        get 'update_database'
         get 'write'
         post 'migrate'
         post 'update'
@@ -161,7 +155,7 @@ Rails.application.routes.draw do
     resources :sidebar, only: [:index, :update, :destroy] do
       collection do
         put :publish
-        put :sortable
+        post :sortable
       end
     end
 

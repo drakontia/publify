@@ -158,63 +158,74 @@ describe Article, type: :model do
     context 'with a blog that sends outbound pings' do
       let(:referenced_url) { 'http://anotherblog.org/a-post' }
       let!(:blog) { create(:blog, send_outbound_pings: 1) }
+      let(:mock_pinger) { instance_double('Ping::Pinger') }
+      let(:article) do
+        Article.new(body: %(<a href="#{referenced_url}">),
+                    title: 'Test the pinging',
+                    published: true)
+      end
 
-      # FIXME: This spec is way too complex
-      it 'sends a pingback to urls linked in the body' do
-        expect(Thread.list.count).to eq 3
+      before do
+        # Check supposition
+        expect(Thread.list.count).to eq 1
 
-        expect(ActiveRecord::Base.observers).to include(:email_notifier)
-        expect(ActiveRecord::Base.observers).to include(:web_notifier)
-        a = Article.new(body: %(<a href="#{referenced_url}">),
-                        title: 'Test the pinging',
-                        published: true)
+        allow(Ping::Pinger).to receive(:new).and_return mock_pinger
+        allow(mock_pinger).to receive(:send_pingback_or_trackback)
 
-        mock_pinger = instance_double('Ping::Pinger')
-        allow(Ping::Pinger).to receive(:new).
-          with(%r{http://myblog.net/\d{4}/\d{2}/\d{2}/test-the-pinging}, Ping).
-          and_return mock_pinger
-        expect(mock_pinger).to receive(:send_pingback_or_trackback)
-
-        expect(a.html_urls.size).to eq(1)
-        a.save!
+        article.save!
 
         10.times do
-          break if Thread.list.count <= 3
+          break if Thread.list.count == 1
           sleep 0.1
         end
-
-        expect(a).to be_just_published
-        a = Article.find(a.id)
-        expect(a).not_to be_just_published
-        # Saving again will not resend the pings
-        a.save
       end
+
+      it 'lets a Ping::Pinger object send pingback to the external URLs' do
+        expect(Ping::Pinger).to have_received(:new).
+          with(article.permalink_url, Ping)
+        expect(mock_pinger).to have_received :send_pingback_or_trackback
+      end
+    end
+  end
+
+  describe '#just_published' do
+    it 'is true when the article has just been saved as published' do
+      article = Article.new(body: 'bar bar', title: 'Foo', published: true)
+      article.save
+      expect(article).to be_just_published
+    end
+
+    it 'is false when a published article is loaded' do
+      article = Article.new(body: 'bar bar', title: 'Foo', published: true)
+      article.save!
+      article = Article.find(article.id)
+      expect(article).not_to be_just_published
     end
   end
 
   describe 'Testing redirects' do
     it 'a new published article gets a redirect' do
       a = Article.create(title: 'Some title', body: 'some text', published: true)
-      expect(a.redirects.first).not_to be_nil
-      expect(a.redirects.first.to_path).to eq(a.permalink_url)
+      expect(a.redirect).not_to be_nil
+      expect(a.redirect.to_path).to eq(a.permalink_url)
     end
 
     it 'a new unpublished article should not get a redirect' do
       a = Article.create(title: 'Some title', body: 'some text', published: false)
-      expect(a.redirects.first).to be_nil
+      expect(a.redirect).to be_nil
     end
 
     it 'Changin a published article permalink url should only change the to redirection' do
       a = Article.create(title: 'Some title', body: 'some text', published: true)
-      expect(a.redirects.first).not_to be_nil
-      expect(a.redirects.first.to_path).to eq(a.permalink_url)
-      r = a.redirects.first.from_path
+      expect(a.redirect).not_to be_nil
+      expect(a.redirect.to_path).to eq(a.permalink_url)
+      r = a.redirect.from_path
 
       a.permalink = 'some-new-permalink'
       a.save
-      expect(a.redirects.first).not_to be_nil
-      expect(a.redirects.first.to_path).to eq(a.permalink_url)
-      expect(a.redirects.first.from_path).to eq(r)
+      expect(a.redirect).not_to be_nil
+      expect(a.redirect.to_path).to eq(a.permalink_url)
+      expect(a.redirect.from_path).to eq(r)
     end
   end
 

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 <%= form_tag({action: 'update', id: @article.id}, method: :patch, multipart: true, id: "article_form", class: 'autosave') do %>
+=======
+<%= form_tag({action: 'update', id: @article.id}, method: :put, multipart: true, id: "article_form", class: 'autosave') do %>
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
   <%= render 'form' %>
 <% end %>

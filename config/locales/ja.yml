@@ -46,8 +46,8 @@ ja:
       body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
   comments:
     comment:
-      by: "by"
       said: "発言"
+      by: "by"
       this_comment_has_been_flagged_for_moderator_approval: "このコメントはモデレーターの確認が必要です。モデレーターが確認後にコメントが表示されます。"
   tags:
     index:
@@ -199,17 +199,31 @@ ja:
       header:
         notes: "Notes"
       form:
+<<<<<<< HEAD
         now: "今"
         no_notes: "There are no notes yet. Why don't you start and create one?"
+=======
+        now: "Now"
+        compose_new_note: "Compose new note"
+        no_notes: "There are no notes yet. Why don't you create one?"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
-        fill_the_twitter_credentials: "fill in the oauth credentials"
+        fill_the_twitter_credentials: "fill in the OAuth credentials"
         registered_your_application: "registered your application"
+<<<<<<< HEAD
         compose_new_note: "近況を書く"
         publish_settings: "公開設定"
         posse_to_twitter: "ツイッターに公開する"
         in_reply_to: "In reply to"
         tweet_id_like: "Tweet id like 123456"
         permanent_link: "パーマネントリンク"
+=======
+        publish_settings: "Publish settings"
+        posse_to_twitter: "POSSE to Twitter"
+        tweet_id_like: "Tweet id like 123456"
+        in_reply_to: "In reply to"
+        permanent_link: "Permanent link"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         published: "公開済み"
         publish_at: "公開日"
         cancel: "キャンセル"
@@ -217,7 +231,7 @@ ja:
         publish: "公開"
       show:
         destroy_confirmation: "Destroy confirmation"
-        are_you_sure: "Are you sure you want to delete this note"
+        are_you_sure: "Are you sure you want to delete this note?"
         action_or_other: "%{first_action} または %{second_action}"
         cancel: "キャンセル"
         delete: "削除"
@@ -240,30 +254,53 @@ ja:
         choose_a_theme: "テーマの選択"
         use_this_theme: "このテーマを使う"
         active_theme: "%{name} - 現在のテーマ"
+    migrations:
+      show:
+        database_migration: "データベースマイグレーション"
+        information: "インフォメーション"
+        current_database_version: "現在のデータベースのバージョン"
+        you_are_up_to_date: "最新です!"
+        migrations: "Migrations"
+        migration_pending:
+          one: "There is one migration pending."
+          other: "There are %{count} migrations pending."
+        needed_migrations: "マイグレーションが必要です"
+        update_database_now: "データベースを今すぐ更新"
+        may_take_a_moment: "少しお待ちください"
     profiles:
       index:
         success: "プロフィールが更新されました"
         your_profile: "あなたのプロフィール"
     sidebar:
       index:
-        error: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
         sidebar: "サイドバー"
         drag_some_plugins_here: "サイドバーで利用するプラグインをドラッグしてください"
+<<<<<<< HEAD
         or: "または"
+=======
+        error: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
+        or: "or"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         cancel: "キャンセル"
         explain_how_its_works: "ブログに表示するサイドバー項目をドラッグ＆ドロップで変更してください。サイドバーから項目を削除した場合はすぐに変更が保存されますが、「公開」ボタンを押すまでは有効になりません。"
         publish_changes: "変更を公開"
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
+<<<<<<< HEAD
       config:
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
       target_sidebar:
         update: "更新"
+=======
+      target_sidebar:
+        update: 'Update'
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
     settings:
       update:
         success: "設定は更新されました"
+        error: "Error: %{messages}"
       display:
         cancel: "キャンセル"
         or: "または"
@@ -273,7 +310,7 @@ ja:
         custom_url_help: "If you have a custom domain for URL shortening, enter it here."
         date_format: "日付の形式"
         default_article_show: "articles on the homepage"
-        default_archives_show: "articles on the  archives page"
+        default_archives_show: "articles on the archives page"
         default_feed_show: "most recent articles in feed"
         display: "表示"
         display_settings: "表示設定"
@@ -342,18 +379,6 @@ ja:
         publish_on_twitter: "Publish on Twitter"
         twitter_consumer_key: "Twitter consumer key"
         twitter_consumer_secret: "Twitter consumer secret"
-      update_database:
-        database_migration: "データベースマイグレーション"
-        information: "インフォメーション"
-        current_database_version: "現在のデータベースのバージョン"
-        you_are_up_to_date: "最新です!"
-        migrations: "Migrations"
-        migration_pending:
-          one: "There is one migration pending."
-          other: "There are %{count} migrations pending."
-        needed_migrations: "マイグレーションが必要です"
-        update_database_now: "データベースを今すぐ更新"
-        may_take_a_moment: "少しお待ちください"
       index:
         cancel: "キャンセル"
         or: "または"
@@ -371,11 +396,20 @@ ja:
         email_address_used_to_notify: "通知の送信先メールアドレス"
         items_to_display_in_admin_lists: "管理リストに表示する行数"
     seo:
-      titles:
+      show:
         cancel: "キャンセル"
+<<<<<<< HEAD
         or: "または"
         update_settings: "設定を更新する"
         title_settings: "タイトル"
+=======
+        or: "or"
+        update_settings: "Update settings"
+        global_settings: "Global settings"
+        title_settings: "Title settings"
+        permalinks: "Permalinks"
+      titles:
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         home: "Home"
         title_template: "タイトルのテンプレート"
         description_template: "説明のテンプレート"
@@ -408,6 +442,7 @@ ja:
         replaced_by_the_archive_date: "Replaced by the archive date"
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
+<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
         update_settings: "Update settings"
@@ -418,6 +453,14 @@ ja:
         month_and_title: "月とタイトル"
         title_only: "タイトル"
         custom: "カスタム"
+=======
+        explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
+        permalink_format: "Permalink format"
+        date_and_title: "Date and title"
+        month_and_title: "Month and title"
+        title_only: "Title only"
+        custom: "Custom"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         sample: "Here are some examples to get you started."
         you_can_custom_your_url_structure: "You can custom your URL structure using the following tags:"
         your_article_slug: "your article slug. <strong>Using this slug is mandatory</strong>."
@@ -425,14 +468,17 @@ ja:
         your_article_month: "your article month of publication."
         your_article_day: "your article day of publication."
         help_on_permalink_settings: "Help on permalink settings"
-      index:
+      general:
         human: "Human"
         humans_txt: "Human"
         explain_humans_txt: "It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website. http://humanstxt.org/"
+<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
         update_settings: "Update settings"
         global_settings: "Global settings"
+=======
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         general_settings: "一般設定"
         meta_keywords: "METAタグKeywords"
         use_meta_keywords: "Use meta keywords"
@@ -472,7 +518,11 @@ ja:
         delete: "削除"
     tags:
       edit:
+<<<<<<< HEAD
         success: "タグは正常に更新されました"
+=======
+        success: "Tag was successfully updated"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       new:
         no_tags: "There are no tags yet. Why don't you start and create one?"
         articles: "記事"
@@ -564,17 +614,18 @@ ja:
       bulkops:
         error: "Not implemented"
         success_deleted_spam: "All spam have been deleted"
-        success_mark_as_ham: 
+        success_mark_as_ham:
           zero: "No item selected to mark as Ham"
           one: "Marked 1 item as Ham"
           other: "Marked %{count} items as Ham"
-        success_mark_as_spam: 
+        success_mark_as_spam:
           zero: "No item selected to mark as Spam"
           one: "Marked 1 item as Spam"
           other: "Marked %{count} items as Spam"
         success_classification: "Confirmed classification of %{count} item(s)"
         success_deleted: "Deleted %{count} item(s)"
       index:
+        no_feedback: "There is no feedback yet. Why don't you create some?"
         feedback: "フィードバック"
         all: "All"
         unapproved_comments: "未承認コメント"
@@ -587,8 +638,12 @@ ja:
         comment_author: "コメント主"
         comment: "コメント"
         article: "記事"
+<<<<<<< HEAD
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         select_all: "全選択"
+=======
+        select_all: "Select all"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       article:
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         comments_for: "〜へコメント%{title}"
@@ -618,10 +673,11 @@ ja:
         this_comment_by_was_flagged_as_spam: "This comment by %{author} was flagged as spam, %{cancel_link}?"
         cancel: "キャンセル"
     dashboard:
+      publify_version:
+        error: "You are at least one major version of Publify out of date. You should upgrade immediately. Download and install <a href='http://publify.co/stable.tgz'>the latest Publify version</a>"
+        warning: "There's a new version of Publify available which may contain important bug fixes. Why don't you upgrade to <a href='http://publify.co/stable.tgz'>the latest Publify version</a>?"
+        notice: "There's a new version of Publify available. Why don't you upgrade to <a href='http://publify.co/stable.tgz'>the latest Publify version</a>?"
       index:
-        error: "You are late from at least one major version of Publify. You should upgrade immediately. Download and install <a href='http://publify.co/stable.tgz'>the latest Publify version</a>"
-        warning: "There's a new version of Publify available which may contain important bug fixes. Why don't you upgrade to <a href='http://publify.co/stable.tgz'>the latest Publify version</a> ?"
-        notice: "There's a new version of Publify available. Why don't you upgrade to <a href='http://publify.co/stable.tgz'>the latest Publify version</a> ?"
         welcome_back: "お帰りなさいませ、%{user_name} 様"
       drafts:
         your_drafts: "下書き"
@@ -695,13 +751,12 @@ ja:
         success: "記事を作成しました"
       update:
         success: "記事が更新されました"
-        error: "あなたのアカウントではこの操作は許可されていません"
-      edit:
+      access_granted:
         error: "あなたのアカウントではこの操作は許可されていません"
       autosave:
         success: "記事は正常に保存されました"
       article_list:
-        no_articles: "There are no articles yet. Why don't you start and create one?"
+        no_articles: "There are no articles yet. Why don't you create one?"
       index:
         published: "公開済み"
         new_article: "新しい記事"
@@ -794,8 +849,12 @@ ja:
         success: "プロフィールが更新されました"
         edit_user: "ユーザー編集"
       new:
+<<<<<<< HEAD
         success: "ユーザーは正常に作成されました"
+=======
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         add_user: "ユーザーの追加"
+        success: "User was successfully created"
       index:
         login: "ログイン"
         users: "ユーザー"
@@ -812,10 +871,17 @@ ja:
         fill_the_twitter_credentials: "OAuth認証を入力してください"
         registered_your_application: "あなたのアプリケーションを登録してください"
         cancel: "キャンセル"
+<<<<<<< HEAD
         save: "保存"
         or: "または"
         user_status: "ユーザー状況"
         account_settings: "アカウント設定"
+=======
+        or: "or"
+        save: "保存"
+        user_status: "User Status"
+        account_settings: "Account Settings"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         login: "ログイン"
         password: "パスワード"
         password_confirmation: "パスワードの確認"
@@ -874,13 +940,13 @@ ja:
       reset_my_password: "パスワードのリセット"
       notice: "An email has been successfully sent to your address with your new password"
       error: "Oops, something wrong just happened"
+    logout:
+      notice: "ログアウトしました"
     signup:
       title: "サインアップ"
       username: "ユーザー名"
       email: "メールアドレス"
       signup: "サインアップ"
-    logout:
-      notice: "ログアウトしました"
   langs:
     da_DK: "Danish"
     de_DE: "German"
@@ -903,7 +969,12 @@ ja:
     formats:
       default: "%m/%d/%Y %H:%M"
       short: "%m/%d/%y"
+<<<<<<< HEAD
       letters_month_with_year: "%Y年%m月"
+=======
+      with_spaces: "%d %B %y"
+      letters_month_with_year: "%m %Y"
+>>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
     abbr_month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
