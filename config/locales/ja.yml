@@ -258,7 +258,7 @@ ja:
         success: "プロフィールが更新されました"
         your_profile: "あなたのプロフィール"
       form:
-        acount_settings: "アカウント設定"
+        account_settings: "アカウント設定"
         login: "ログイン"
         password: "パスワード"
         password_confirmation: "パスワード確認"
