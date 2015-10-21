@@ -3,45 +3,10 @@ source 'https://rubygems.org'
 # if ENV["HEROKU"]
   ruby '2.1.5'
 
-<<<<<<< HEAD
   gem "pg"
   gem "puma" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 # end
-=======
-  gem 'pg'
-  gem 'thin' # Change this to another web server if you want (ie. unicorn, passenger, puma...)
-  gem 'rails_12factor'
-else
-
-  require 'yaml'
-  env = ENV['RAILS_ENV'] || 'development'
-  dbfile = File.expand_path('../config/database.yml', __FILE__)
-
-  unless File.exist?(dbfile)
-    if ENV['DB']
-      FileUtils.cp "config/database.yml.#{ENV['DB'] || 'postgres'}", 'config/database.yml'
-    else
-      raise 'You need to configure config/database.yml first'
-    end
-  end
-
-  conf = YAML.load(File.read(dbfile))
-  environment = conf[env]
-  adapter = environment['adapter'] if environment
-  raise 'You need define an adapter in your database.yml or set your RAILS_ENV variable' if adapter == '' || adapter.nil?
-  case adapter
-  when 'sqlite3'
-    gem 'sqlite3'
-  when 'postgresql'
-    gem 'pg'
-  when 'mysql2'
-    gem 'mysql2', '~> 0.3.18'
-  else
-    raise "Don't know what gem to use for adapter #{adapter}"
-  end
-end
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
 
 gem 'rails', '~> 4.2.2'
 
