@@ -30,17 +30,17 @@ ja:
       the_page_you_are_looking_for: "The page you are looking for has moved or does not exist."
   setup:
     confirm:
-      you_have_successfully_signed_up: "You have successfully signed up"
+      you_have_successfully_signed_up: "登録が完了しました"
       login: "ユーザ名: %{user}"
       password: "パスワード: %{pass}"
-      dont_lose_the_mail_sent: "Don't lose the mail sent at %{email} or you won't be able to login anymore"
-      proceed_to: "Proceed to %{link}"
+      dont_lose_the_mail_sent: "%{email}に送信したメールをなくさないでください。さもないと、二度とログインできなくなります。"
+      proceed_to: "%{link}に進む"
       admin: "admin"
     index:
       blog_name: "ブログ名"
       save: "保存"
       welcome_to_your_blog_setup: "Welcome to your blog setup"
-      your_mail: "Your email"
+      your_mail: "Eメール"
     page:
       about: "About"
       body: "This is an example of a Publify page. You can edit this to write information about yourself or your site so readers know who you are. You can create as many pages as this one as you like and manage all of your content inside Publify."
@@ -72,16 +72,16 @@ ja:
       published_on: "Published on %{publish_date_and_time} by %{by}, tags %{tags}"
     article:
       posted_by: "投稿者"
-      this_entry_was_posted_on: "This entry was posted on %{published_at}"
+      this_entry_was_posted_on: "この記事は%{published_at}に投稿されました"
       you_can_follow_entries_through_the: "You can follow any response to this entry through the %{feed}"
       atom_feed: "Atom feed"
-      you_can_leave_a: "%{comment}を残せます"
+      you_can_leave_a: "%{comment}できます"
       comment: "コメント"
       or_trackback: "or a %{trackback} from your own site"
       trackback: "トラックバック"
       read_full_article: "続きを読む"
       email: "Eメール"
-      never_displayed: "never displayed"
+      never_displayed: "非表示"
       website: "Website"
       comments: "コメント"
       about_to_say: "is about to say"
@@ -103,7 +103,7 @@ ja:
       comments_are_disabled: "コメントは許可されていません"
     comment_form:
       required: "必須"
-      leave_a_comment: "コメントを残す"
+      leave_a_comment: "コメントする"
       comment_author: "名前 %{author}"
       email: "Eメール"
       website: "Website"
@@ -112,12 +112,12 @@ ja:
       textile_enabled: "Textileを使用できます"
       never_displayed: "表示不可"
       comment: "コメント"
-      email_address: "Email address"
-      your_website: "Your website"
+      email_address: "メールアドレス"
+      your_website: "ウェブサイト"
       leave_url_email: "leave url/email"
       your_name: "あなたの名前"
       your_blog: "ブログ"
-      your_email: "あなたのemail"
+      your_email: "あなたのメールアドレス"
       your_message: "メッセージ"
       comment_markup_help: "コメントのマークアップヘルプ"
       preview_comment: "前のコメント"
@@ -199,31 +199,17 @@ ja:
       header:
         notes: "Notes"
       form:
-<<<<<<< HEAD
         now: "今"
+        compose_new_note: "近況を書く"
         no_notes: "There are no notes yet. Why don't you start and create one?"
-=======
-        now: "Now"
-        compose_new_note: "Compose new note"
-        no_notes: "There are no notes yet. Why don't you create one?"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the OAuth credentials"
         registered_your_application: "registered your application"
-<<<<<<< HEAD
-        compose_new_note: "近況を書く"
         publish_settings: "公開設定"
         posse_to_twitter: "ツイッターに公開する"
-        in_reply_to: "In reply to"
         tweet_id_like: "Tweet id like 123456"
+        in_reply_to: "In reply to"
         permanent_link: "パーマネントリンク"
-=======
-        publish_settings: "Publish settings"
-        posse_to_twitter: "POSSE to Twitter"
-        tweet_id_like: "Tweet id like 123456"
-        in_reply_to: "In reply to"
-        permanent_link: "Permanent link"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         published: "公開済み"
         publish_at: "公開日"
         cancel: "キャンセル"
@@ -275,28 +261,19 @@ ja:
       index:
         sidebar: "サイドバー"
         drag_some_plugins_here: "サイドバーで利用するプラグインをドラッグしてください"
-<<<<<<< HEAD
-        or: "または"
-=======
         error: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
-        or: "or"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
+        or: "または"
         cancel: "キャンセル"
         explain_how_its_works: "ブログに表示するサイドバー項目をドラッグ＆ドロップで変更してください。サイドバーから項目を削除した場合はすぐに変更が保存されますが、「公開」ボタンを押すまでは有効になりません。"
         publish_changes: "変更を公開"
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
-<<<<<<< HEAD
       config:
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
       target_sidebar:
         update: "更新"
-=======
-      target_sidebar:
-        update: 'Update'
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
     settings:
       update:
         success: "設定は更新されました"
@@ -398,18 +375,12 @@ ja:
     seo:
       show:
         cancel: "キャンセル"
-<<<<<<< HEAD
         or: "または"
-        update_settings: "設定を更新する"
+        update_settings: "更新"
+        global_settings: "全般設定"
         title_settings: "タイトル"
-=======
-        or: "or"
-        update_settings: "Update settings"
-        global_settings: "Global settings"
-        title_settings: "Title settings"
-        permalinks: "Permalinks"
+        permalinks: "パーマリンク"
       titles:
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         home: "Home"
         title_template: "タイトルのテンプレート"
         description_template: "説明のテンプレート"
@@ -442,25 +413,16 @@ ja:
         replaced_by_the_archive_date: "Replaced by the archive date"
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
-<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
+        update_settings: "更新"
         explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
         permalinks: "パーマリンク"
         permalink_format: "パーマリンク形式"
         date_and_title: "日付とタイトル"
         month_and_title: "月とタイトル"
-        title_only: "タイトル"
+        title_only: "タイトルのみ"
         custom: "カスタム"
-=======
-        explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
-        permalink_format: "Permalink format"
-        date_and_title: "Date and title"
-        month_and_title: "Month and title"
-        title_only: "Title only"
-        custom: "Custom"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         sample: "Here are some examples to get you started."
         you_can_custom_your_url_structure: "You can custom your URL structure using the following tags:"
         your_article_slug: "your article slug. <strong>Using this slug is mandatory</strong>."
@@ -472,13 +434,10 @@ ja:
         human: "Human"
         humans_txt: "Human"
         explain_humans_txt: "It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website. http://humanstxt.org/"
-<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
-        update_settings: "Update settings"
-        global_settings: "Global settings"
-=======
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
+        update_settings: "更新"
+        global_settings: "全般設定"
         general_settings: "一般設定"
         meta_keywords: "METAタグKeywords"
         use_meta_keywords: "Use meta keywords"
@@ -518,11 +477,7 @@ ja:
         delete: "削除"
     tags:
       edit:
-<<<<<<< HEAD
         success: "タグは正常に更新されました"
-=======
-        success: "Tag was successfully updated"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       new:
         no_tags: "There are no tags yet. Why don't you start and create one?"
         articles: "記事"
@@ -638,12 +593,8 @@ ja:
         comment_author: "コメント主"
         comment: "コメント"
         article: "記事"
-<<<<<<< HEAD
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         select_all: "全選択"
-=======
-        select_all: "Select all"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       article:
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         comments_for: "〜へコメント%{title}"
@@ -723,16 +674,16 @@ ja:
         spam_count:
           zero: "スパムなし"
           one: "スパム1つ"
-          other: "%{count} spam"
+          other: "%{count}個のスパム"
       overview:
         dashboard_explain: "This place gives you a quick overview of what happens on your Publify blog and what you can do. Maybe will you want to %{available_actions}"
         write_a_post: "記事を投稿する"
         write_a_page: "ページを作成する"
         update_your_profile_or_change_your_password: "プロフィールを編集したりパスワードを変更する"
-        customization_explain: "You can also do a bit of design, %{theme_link} or %{sidebar_link}."
+        customization_explain: "また、%{theme_link}か%{sidebar_link}で、少しデザインを変える事も出来ます。"
         change_your_blog_presentation: "ブログの説明の変更"
         enable_plugins: "プラグインの有効化"
-        help_explain: "If you need help, %{doc_link}."
+        help_explain: "もし分からないことがあったら、%{doc_link}."
         read_our_documentation: "わたしたちのドキュメントを読んで下さい"
       inbound:
         inbound_links: "外部からのリンク"
@@ -826,10 +777,10 @@ ja:
       in_page_plugins: "ページ内プラグイン"
       sidebar_plugins: "サイドバープラグイン"
       logged_in_as: "%{login}でログイン中"
-      new_article: "New Article"
-      new_page: "New Page"
-      new_media: "New Media"
-      new_note : "New Note"
+      new_article: "新規記事"
+      new_page: "新規ページ"
+      new_media: "新規メディア"
+      new_note : "新規ノート"
       profile: "プロフィール"
       logout: "ログアウト &raquo;"
       home: "Home"
@@ -849,12 +800,8 @@ ja:
         success: "プロフィールが更新されました"
         edit_user: "ユーザー編集"
       new:
-<<<<<<< HEAD
-        success: "ユーザーは正常に作成されました"
-=======
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         add_user: "ユーザーの追加"
-        success: "User was successfully created"
+        success: "ユーザーは正常に作成されました"
       index:
         login: "ログイン"
         users: "ユーザー"
@@ -867,27 +814,20 @@ ja:
         state: "状態"
         user_state: "%{state}"
       form:
-        how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
+        how_to_setup_twitter: "もし、ツイッターに近況を報告したい場合は、%{twitter_registration_link}で登録した後に%{twitter_settings_link}を取得する必要があります。"
         fill_the_twitter_credentials: "OAuth認証を入力してください"
         registered_your_application: "あなたのアプリケーションを登録してください"
         cancel: "キャンセル"
-<<<<<<< HEAD
-        save: "保存"
         or: "または"
+        save: "保存"
         user_status: "ユーザー状況"
         account_settings: "アカウント設定"
-=======
-        or: "or"
-        save: "保存"
-        user_status: "User Status"
-        account_settings: "Account Settings"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         login: "ログイン"
         password: "パスワード"
         password_confirmation: "パスワードの確認"
         email: "メールアドレス"
         profile: "プロフィール"
-        status: "Status"
+        status: "状況"
         profile_settings: "プロフィール設定"
         firstname: "名"
         lastname: "姓"
@@ -917,9 +857,9 @@ ja:
         yahoo: "Yahoo! Messenger ID"
         jabber: "Jabber ID"
         aim: "AIM screen name"
-        twitter: "Twitter username"
+        twitter: "ツイッターユーザー名"
   accounts:
-    back_to: "&larr; Back to %{place}"
+    back_to: "&larr; %{place}に戻る"
     back_to_login: "ログインに戻る"
     create_account: "アカウントの作成"
     lost_my_password: "パスワードを忘れた場合"
@@ -928,11 +868,11 @@ ja:
       login: "ログイン"
       password: "パスワード"
       remember_me: "ログイン状態を持続"
-      sign_in: "Sign in"
+      sign_in: "サインイン"
       success: "ログインしました"
       error: "ログインに失敗しました"
     confirm:
-      proceed_to: "Proceed to %{link}"
+      proceed_to: "%{link}に進む"
       admin: "admin"
     recover_password:
       title: "パスワードの再生成"
@@ -969,12 +909,8 @@ ja:
     formats:
       default: "%m/%d/%Y %H:%M"
       short: "%m/%d/%y"
-<<<<<<< HEAD
-      letters_month_with_year: "%Y年%m月"
-=======
       with_spaces: "%d %B %y"
-      letters_month_with_year: "%m %Y"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
+      letters_month_with_year: "%Y年%m月"
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
     abbr_month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
