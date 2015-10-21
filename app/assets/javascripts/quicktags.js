@@ -60,7 +60,7 @@ function get_buttons(textfilter) {
       edButtons.push(new edButton('ed_publifycode', 'publify:code', '', '\n</publify:code>\n\n', 'publify:code'));
       break;
 
-  case "github flavered markdown":
+  case "github flavored markdown":
       edButtons.push(new edButton('ed_bold', 'b', '**', '**', 'b'));
       edButtons.push(new edButton('ed_italic', 'i', '*', '*', 'i'));
       edButtons.push(new edButton('ed_link', 'link', '(', '', 'a'));
