@@ -199,31 +199,17 @@ ja:
       header:
         notes: "Notes"
       form:
-<<<<<<< HEAD
         now: "今"
+        compose_new_note: "近況を書く"
         no_notes: "There are no notes yet. Why don't you start and create one?"
-=======
-        now: "Now"
-        compose_new_note: "Compose new note"
-        no_notes: "There are no notes yet. Why don't you create one?"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         how_to_setup_twitter: "If you want to push short statuses on Twitter, you need to %{twitter_settings_link} Twitter gave you after you %{twitter_registration_link}."
         fill_the_twitter_credentials: "fill in the OAuth credentials"
         registered_your_application: "registered your application"
-<<<<<<< HEAD
-        compose_new_note: "近況を書く"
         publish_settings: "公開設定"
         posse_to_twitter: "ツイッターに公開する"
-        in_reply_to: "In reply to"
         tweet_id_like: "Tweet id like 123456"
+        in_reply_to: "In reply to"
         permanent_link: "パーマネントリンク"
-=======
-        publish_settings: "Publish settings"
-        posse_to_twitter: "POSSE to Twitter"
-        tweet_id_like: "Tweet id like 123456"
-        in_reply_to: "In reply to"
-        permanent_link: "Permanent link"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         published: "公開済み"
         publish_at: "公開日"
         cancel: "キャンセル"
@@ -275,28 +261,19 @@ ja:
       index:
         sidebar: "サイドバー"
         drag_some_plugins_here: "サイドバーで利用するプラグインをドラッグしてください"
-<<<<<<< HEAD
-        or: "または"
-=======
         error: "It seems something went wrong. Maybe some of your sidebars are actually missing and you should either reinstall them or remove them manually"
-        or: "or"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
+        or: "または"
         cancel: "キャンセル"
         explain_how_its_works: "ブログに表示するサイドバー項目をドラッグ＆ドロップで変更してください。サイドバーから項目を削除した場合はすぐに変更が保存されますが、「公開」ボタンを押すまでは有効になりません。"
         publish_changes: "変更を公開"
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
         download_more_plugins: "You can download and install sidebar plugins from our official <a href='https://github.com/fdv/publify/wiki/Sidebar-plugins'>plugin repository</a>. All you have to do is upload the theme directory in your vendor/plugins directory."
-<<<<<<< HEAD
       config:
         available_items: "利用可能な項目"
         active_sidebar_items: "有効なサイドバー項目"
       target_sidebar:
         update: "更新"
-=======
-      target_sidebar:
-        update: 'Update'
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
     settings:
       update:
         success: "設定は更新されました"
@@ -401,15 +378,10 @@ ja:
 <<<<<<< HEAD
         or: "または"
         update_settings: "設定を更新する"
-        title_settings: "タイトル"
-=======
-        or: "or"
-        update_settings: "Update settings"
         global_settings: "Global settings"
-        title_settings: "Title settings"
+        title_settings: "タイトル"
         permalinks: "Permalinks"
       titles:
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         home: "Home"
         title_template: "タイトルのテンプレート"
         description_template: "説明のテンプレート"
@@ -442,7 +414,6 @@ ja:
         replaced_by_the_archive_date: "Replaced by the archive date"
         replaced_by_the_content_body: "Replaced by the content body"
       permalinks:
-<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
         update_settings: "Update settings"
@@ -453,14 +424,6 @@ ja:
         month_and_title: "月とタイトル"
         title_only: "タイトル"
         custom: "カスタム"
-=======
-        explain: "Publify offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links."
-        permalink_format: "Permalink format"
-        date_and_title: "Date and title"
-        month_and_title: "Month and title"
-        title_only: "Title only"
-        custom: "Custom"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         sample: "Here are some examples to get you started."
         you_can_custom_your_url_structure: "You can custom your URL structure using the following tags:"
         your_article_slug: "your article slug. <strong>Using this slug is mandatory</strong>."
@@ -472,13 +435,10 @@ ja:
         human: "Human"
         humans_txt: "Human"
         explain_humans_txt: "It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website. http://humanstxt.org/"
-<<<<<<< HEAD
         cancel: "キャンセル"
         or: "または"
         update_settings: "Update settings"
         global_settings: "Global settings"
-=======
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         general_settings: "一般設定"
         meta_keywords: "METAタグKeywords"
         use_meta_keywords: "Use meta keywords"
@@ -518,11 +478,7 @@ ja:
         delete: "削除"
     tags:
       edit:
-<<<<<<< HEAD
         success: "タグは正常に更新されました"
-=======
-        success: "Tag was successfully updated"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       new:
         no_tags: "There are no tags yet. Why don't you start and create one?"
         articles: "記事"
@@ -638,12 +594,8 @@ ja:
         comment_author: "コメント主"
         comment: "コメント"
         article: "記事"
-<<<<<<< HEAD
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         select_all: "全選択"
-=======
-        select_all: "Select all"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
       article:
         no_feedback: "There are no feedback yet. Why don't you start and create one?"
         comments_for: "〜へコメント%{title}"
@@ -849,10 +801,7 @@ ja:
         success: "プロフィールが更新されました"
         edit_user: "ユーザー編集"
       new:
-<<<<<<< HEAD
         success: "ユーザーは正常に作成されました"
-=======
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         add_user: "ユーザーの追加"
         success: "User was successfully created"
       index:
@@ -871,17 +820,10 @@ ja:
         fill_the_twitter_credentials: "OAuth認証を入力してください"
         registered_your_application: "あなたのアプリケーションを登録してください"
         cancel: "キャンセル"
-<<<<<<< HEAD
-        save: "保存"
         or: "または"
+        save: "保存"
         user_status: "ユーザー状況"
         account_settings: "アカウント設定"
-=======
-        or: "or"
-        save: "保存"
-        user_status: "User Status"
-        account_settings: "Account Settings"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         login: "ログイン"
         password: "パスワード"
         password_confirmation: "パスワードの確認"
@@ -967,14 +909,10 @@ ja:
     pt_BR: "Portuguese (Brazilian)"
   time:
     formats:
-      default: "%m/%d/%Y %H:%M"
-      short: "%m/%d/%y"
-<<<<<<< HEAD
+      default: "%Y/%m/%d %H:%M"
+      short: "%y/%m/%d"
+      with_spaces: "%y %d %B"
       letters_month_with_year: "%Y年%m月"
-=======
-      with_spaces: "%d %B %y"
-      letters_month_with_year: "%m %Y"
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
     abbr_month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]

@@ -6,11 +6,7 @@ var bind_sortable = function() {
 
       $.ajax({
         data: data,
-<<<<<<< HEAD
         type: 'PUT',
-=======
-        type: 'POST',
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
         dataType: 'json',
         url: '/admin/sidebar/sortable',
         statusCode: {
@@ -27,16 +23,11 @@ var bind_sortable = function() {
 
   });
 
-<<<<<<< HEAD
   $('.draggable').draggable({
-=======
-  $('.draggable').draggable({ 
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
     connectToSortable: '.sortable',
     helper: "clone",
     revert: "invalid"
   });
-<<<<<<< HEAD
   $('#available_box').disableSelection();
   $('.sidebar_item').on('ajax:success', function(data, textStatus, xhr) {
     $(this).parent().replaceWith(data);
@@ -47,17 +38,6 @@ var bind_sortable = function() {
   });
 }
 
-=======
-  $('.sidebar_item').on('ajax:success', function(data, textStatus, xhr) {
-    $(this).parent().replaceWith(data);
-  }
-  );
-  $('.deletion_link').on('ajax:success', function(data, textStatus, xhr) {
-    $(this).parent().remove();
-  }
-  );
-};
->>>>>>> 50909944e588210042c3523701cf9bb09dea7a4f
 $(document).ready(function() {
   bind_sortable();
 });
