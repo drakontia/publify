@@ -47,7 +47,8 @@
           Time.now.strftime('%d %b %Y') => '%d %b %Y',
           Time.now.strftime('%d %B %Y') => '%d %B %Y',
           Time.now.strftime('%Y/%m/%d') => '%Y/%m/%d',
-          distance_of_time_in_words(Time.now, Time.now - 2.days) => 'setting_date_format_distance_of_time_in_words'})
+          distance_of_time_in_words(Time.now, Time.now - 2.days) => 'setting_date_format_distance_of_time_in_words'},
+        :class => 'form-control')
         %>
       </div>
     </div>
@@ -57,7 +58,8 @@
         <%= select(:setting, :time_format, {
           Time.now.strftime('%Hh%M') => '%Hh%M',
           Time.now.strftime('%H:%M') => '%H:%M',
-          Time.now.strftime('%I:%M%p') => '%I:%M%p'})
+          Time.now.strftime('%I:%M%p') => '%I:%M%p'},
+        :class => 'form-control')
         %>
       </div>
     </div>
