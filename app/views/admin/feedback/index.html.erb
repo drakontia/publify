@@ -7,30 +7,30 @@
 
 <%= render 'shared/flash', flash: flash %>
 <%= form_tag({action: 'index'}, method: :get, class: 'form-inline') do %>
-  <div>
-    <span class='badge badge-inverse'>
+  <div class="form-group">
+    <span class='label label-danger'>
       <%= link_to(t(".all"), controller: 'admin/feedback', action: :index) %>
     </span>&nbsp;
-    <span class='badge'>
+    <span class='label label-default'>
       <%= link_to(t(".unapproved_comments"), controller: 'admin/feedback', action: :index, confirmed: 'f') %>
     </span>&nbsp;
-    <span class='badge badge-success'>
+    <span class='label label-success'>
       <%= link_to(t(".ham"), controller: 'admin/feedback', action: :index, ham: 'f') %>
     </span>&nbsp;
-    <span class='badge badge-important'>
+    <span class='label label-primary'>
       <%= link_to(t(".spam"), controller: 'admin/feedback', action: :index, spam: 'f') %>
     </span>&nbsp;
-    <span class='badge badge-info'>
+    <span class='label label-info'>
       <%= link_to(t(".presumed_ham"), controller: 'admin/feedback', action: :index, presumed_ham: 'f') %>
     </span>&nbsp;
-    <span class='badge badge-warning'>
+    <span class='label label-warning'>
       <%= link_to(t(".presumed_spam"), controller: 'admin/feedback', action: :index, published: 'f') %>
     </span>&nbsp;
-    <div class='pull-right input-group'>
-      <input type="text" id="feedback_search" name="search" value="<%=h params[:search] %>" class='medium' />
-      <%= submit_tag(t(".search"), {:class => 'btn'}) %>
-    </div>
   </div>
+  <div class='pull-right form-group'>
+    <input type="text" id="feedback_search" name="search" value="<%=h params[:search] %>" class='medium form-control' />
+  </div>
+  <%= submit_tag(t(".search"), {:class => 'btn btn-default'}) %>
 <% end %>
 
 <%= form_tag({:action => 'bulkops'}, {class: 'form-inline'}) do %>
