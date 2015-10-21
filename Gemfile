@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 # if ENV["HEROKU"]
   ruby '2.1.5'
 
-  gem "pg"
-  gem "puma" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
-  gem "rails_12factor"
+  gem 'pg'
+  gem 'puma' # Change this to another web server if you want (ie. unicorn, passenger, puma...)
+  gem 'rails_12factor'
 # end
 
 gem 'rails', '~> 4.2.2'
@@ -41,6 +41,7 @@ gem 'recaptcha', require: 'recaptcha/rails', branch: 'rails3'
 gem 'rubypants', '~> 0.2.0'
 gem 'twitter', '~> 5.14.0'
 gem 'uuidtools', '~> 2.1.1'
+gem 'rubocop', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,7 +59,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.3.1'
   gem 'simplecov', require: false
   gem 'pry-rails'
-  gem 'rubocop', require: false
   gem 'better_errors', '~> 2.1.1'
   gem 'binding_of_caller'
   gem 'guard-rspec'

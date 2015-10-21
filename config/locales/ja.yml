@@ -907,9 +907,9 @@ ja:
     pt_BR: "Portuguese (Brazilian)"
   time:
     formats:
-      default: "%m/%d/%Y %H:%M"
-      short: "%m/%d/%y"
-      with_spaces: "%d %B %y"
+      default: "%Y/%m/%d %H:%M"
+      short: "%y/%m/%d"
+      with_spaces: "%y %d %B"
       letters_month_with_year: "%Y年%m月"
   date:
     month_names: [~, "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
