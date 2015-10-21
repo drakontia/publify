@@ -375,7 +375,6 @@ ja:
     seo:
       show:
         cancel: "キャンセル"
-<<<<<<< HEAD
         or: "または"
         update_settings: "設定を更新する"
         global_settings: "Global settings"
