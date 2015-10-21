@@ -100,7 +100,12 @@
   <% unless controller.controller_name == 'users'%>
     <fieldset class='form-horizontal'>
       <legend><%= t('.avatar') %></legend>
-      <p><%= display_user_avatar(current_user, 'thumb') %> <%= t('.avatar_current') %></p>
+      <div class='form-group'>
+        <label class='control-label col-sm-2' for="avatar"><%= t('.avatar_current') %></label>
+        <div class='col-sm-5'>
+          <%= display_user_avatar(current_user, 'thumb') %>
+        </div>
+      </div>
       <div class='form-group'>
         <label class='control-label col-sm-2' for="avatar"><%= t('.upload') %></label>
         <div class='col-sm-5'>
