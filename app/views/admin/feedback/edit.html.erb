@@ -48,6 +48,6 @@
       <script type="text/javascript">edToolbar('comment_body', '<%= current_user.default_text_filter.name %>');</script>
       <%= text_area 'comment', 'body', { :rows => '10', :class => 'input-block-level'} %>
     </div>
-    <%= cancel_or_save %>
+    <%= t(".action_or_other", first_action: link_to(t(".cancel"), {action: 'index'}), second_action: submit_tag(t(".save"), class: 'btn btn-primary')) %>
   </fieldset>
 <% end %>
