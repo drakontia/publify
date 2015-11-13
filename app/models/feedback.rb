@@ -82,11 +82,11 @@ class Feedback < ActiveRecord::Base
   end
 
   def akismet_options
-    { comment_type: self.class.to_s.downcase,
-      comment_author: originator,
-      comment_author_email: email,
-      comment_author_url: url,
-      comment_content: body }
+    { type: self.class.to_s.downcase,
+      author: originator,
+      author_email: email,
+      author_url: url,
+      text: body }
   end
 
   def spam_fields
