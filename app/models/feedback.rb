@@ -164,7 +164,7 @@ class Feedback < ActiveRecord::Base
     return if akismet.nil?
     begin
       Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
-        akismet.send("submit_#{spam_or_ham}",
+        akismet."submit_#{spam_or_ham}"(
                      ip, user_agent, akismet_options)
       end
     rescue Timeout::Error
