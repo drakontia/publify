@@ -153,18 +153,34 @@ class Feedback < ActiveRecord::Base
   end
 
   def report_as_spam
-    report_as('spam')
+    return if akismet.nil?
+    begin
+      Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
+        akismet.submit_spam(
+                     ip, user_agent, akismet_options)
+      end
+    rescue Timeout::Error
+      nil
+    end
   end
 
   def report_as_ham
-    report_as('ham')
+    return if akismet.nil?
+    begin
+      Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
+        akismet.submit_ham(
+                     ip, user_agent, akismet_options)
+      end
+    rescue Timeout::Error
+      nil
+    end
   end
 
   def report_as(spam_or_ham)
     return if akismet.nil?
     begin
       Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
-        akismet."submit_#{spam_or_ham}"(
+        akismet.send("submit_#{spam_or_ham}",
                      ip, user_agent, akismet_options)
       end
     rescue Timeout::Error
