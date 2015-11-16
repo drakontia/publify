@@ -157,7 +157,7 @@ class Feedback < ActiveRecord::Base
     begin
       Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
         akismet.submit_spam(
-                     ip, user_agent, akismet_options)
+          ip, user_agent, akismet_options)
       end
     rescue Timeout::Error
       nil
@@ -168,20 +168,8 @@ class Feedback < ActiveRecord::Base
     return if akismet.nil?
     begin
       Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
-        akismet.submit_ham(
-                     ip, user_agent, akismet_options)
-      end
-    rescue Timeout::Error
-      nil
-    end
-  end
-
-  def report_as(spam_or_ham)
-    return if akismet.nil?
-    begin
-      Timeout.timeout(defined?($TESTING) ? 5 : 3600) do
-        akismet.send("submit_#{spam_or_ham}",
-                     ip, user_agent, akismet_options)
+        akismet.ham(
+          ip, user_agent, akismet_options)
       end
     rescue Timeout::Error
       nil

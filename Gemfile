@@ -8,7 +8,7 @@ source 'https://rubygems.org'
   gem 'rails_12factor'
 # end
 
-gem 'rails', '~> 4.2.2'
+gem 'rails', '~> 4.2.5'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -41,7 +41,7 @@ gem 'recaptcha', require: 'recaptcha/rails', branch: 'rails3'
 gem 'rubypants', '~> 0.2.0'
 gem 'twitter', '~> 5.14.0'
 gem 'uuidtools', '~> 2.1.1'
-gem 'rubocop', require: false
+gem 'rubocop', '~> 0.35.1', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

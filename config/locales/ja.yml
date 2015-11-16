@@ -721,11 +721,11 @@ ja:
           one: "スパム1つ"
           other: "%{count}個のスパム"
       overview:
-        dashboard_explain: "ここでは、Publifyブログで何が起こったか、あなたが何ができるかを簡単に分かる事ができます。あなたが出来ることは、以下のことです。%{available_actions}"
+        dashboard_explain_html: "ここでは、Publifyブログで何が起こったか、あなたが何ができるかを簡単に分かる事ができます。あなたが出来ることは、以下のことです。%{available_actions}"
         write_a_post: "記事を投稿する"
         write_a_page: "ページを作成する"
         update_your_profile_or_change_your_password: "プロフィールを編集したりパスワードを変更する"
-        customization_explain: "また、%{theme_link}か%{sidebar_link}で、少しデザインを変える事も出来ます。"
+        customization_explain_html: "また、%{theme_link}か%{sidebar_link}で、少しデザインを変える事も出来ます。"
         change_your_blog_presentation: "ブログの説明の変更"
         enable_plugins: "プラグインの有効化"
         help_explain: "もし分からないことがあったら、%{doc_link}."
