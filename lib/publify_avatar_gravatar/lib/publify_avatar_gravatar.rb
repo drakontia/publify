@@ -25,7 +25,7 @@ module PublifyPlugins
         klass = options[:class] ? options[:class] : 'avatar gravatar'
 
         url = '//www.gravatar.com/avatar.php?' << options.map { |key, value| "#{key}=#{value}" }.sort.join('&amp;')
-        image_tag(url, :class => klass, :alt => "Gravatar")
+        <img src=\"#{url}\" class=\"#{klass}\" alt=\"Gravatar\" />
       end
     end
   end
