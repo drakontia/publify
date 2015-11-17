@@ -30,7 +30,7 @@
   <div class='pull-right form-group'>
     <input type="text" id="feedback_search" name="search" value="<%=h params[:search] %>" class='medium form-control' />
   </div>
-  <%= submit_tag(t(".search"), {:class => 'btn btn-default'}) %>
+  <%= submit(t(".search"), {:class => 'btn btn-default'}) %>
 <% end %>
 
 <%= form_tag({:action => 'bulkops'}, {class: 'form-inline'}) do %>
