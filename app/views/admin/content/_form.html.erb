@@ -42,7 +42,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title" id="myModalLabel"><%= t('.publish') %>
-          <%= submit_tag(t('.publish'), class: 'btn btn-success pull-right') %>&nbsp;
+          <%= submit_tag(t('.publish'), class: 'btn btn-success pull-right').html_safe %>&nbsp;
         </h2>
       </div>
       <div class="modal-body">
@@ -160,7 +160,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('.cancel') %></button>
-        <%= submit_tag(t('.publish'), class: 'btn btn-success') %>
+        <%= submit_tag(t('.publish'), class: 'btn btn-success').html_safe %>
       </div>
     </div>
   </div>
