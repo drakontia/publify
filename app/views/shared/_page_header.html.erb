@@ -21,7 +21,7 @@
   <script type="text/javascript"><%= @content_for_script %></script>
 <% end %>
 <%= this_blog.custom_tracking_field unless this_blog.custom_tracking_field.blank? %>
-<%= google_analytics %>
+<%= google_analytics.html_safe %>
 <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
 
 <%= meta_tag 'og:site_name', this_blog.blog_name %>
