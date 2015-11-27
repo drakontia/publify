@@ -1,10 +1,10 @@
 <% if article.excerpt? %>
-  <%= article.excerpt %>
+  <%= article.excerpt.html_safe %>
   <div class="extended">
     <p><%= link_to_permalink article, t(".continue_reading") %></p>
   </div>
 <% else %>
-  <%= article.html(:body) %>
+  <%= article.html(:body).html_safe %>
   <% if article.extended? %>
     <div class="extended">
       <p><%= link_to_permalink article, t(".continue_reading") %></p>
