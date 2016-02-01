@@ -38,6 +38,9 @@ module Publify
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Add sidebar plugin's local file.
+    config.i18n.load_path += Dir[Rails.root.join('lib', '*_sidebar', 'config', 'locales', '*.{rb,yml}')]
   end
 
   # Load included libraries.
