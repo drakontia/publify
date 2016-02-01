@@ -4,7 +4,9 @@ describe Admin::SeoController, type: :controller do
   let!(:blog) { create(:blog) }
   let(:admin) { create(:user, :as_admin) }
 
-  before { request.session = { user: admin.id } }
+  before do
+    sign_in admin
+  end
 
   describe '#show' do
     render_views
@@ -20,7 +22,7 @@ describe Admin::SeoController, type: :controller do
     context 'with section permalinks' do
       before { get :show, section: :permalinks }
 
-      it 'renders the general section' do
+      it 'renders the permalinks section' do
         expect(response).to render_template('_permalinks')
       end
     end
@@ -70,10 +72,10 @@ describe Admin::SeoController, type: :controller do
     end
 
     it 'should not save blog with bad permalink format' do
-      @blog = Blog.default
+      @blog = Blog.first
       good_update 'setting' => { 'permalink_format' => '/%month%' }
       expect(response).to render_template('show')
-      expect(@blog).to eq(Blog.default)
+      expect(@blog).to eq(Blog.first)
     end
   end
 end

@@ -3,15 +3,18 @@
 require 'digest/sha1'
 
 module ApplicationHelper
+  include BlogHelper
+
   # Need to rewrite this one, quick hack to test my changes.
   attr_reader :page_title
 
   def render_sidebars(*sidebars)
-    (sidebars.blank? ? Sidebar.order(:active_position) : sidebars).map do |sb|
+    rendered_sidebars = (sidebars.blank? ? Sidebar.order(:active_position) : sidebars).map do |sb|
       @sidebar = sb
       sb.parse_request(content_array, params)
       render_sidebar(sb)
-    end.join
+    end
+    safe_join rendered_sidebars
   rescue => e
     logger.error e
     logger.error e.backtrace.join("\n")
@@ -22,7 +25,7 @@ module ApplicationHelper
     if sidebar.view_root
       render_deprecated_sidebar_view_in_view_root sidebar
     else
-      render_to_string(partial: sidebar.content_partial, locals: sidebar.to_locals_hash, layout: false)
+      render_to_string(partial: sidebar.content_partial, locals: sidebar.to_locals_hash, layout: false).html_safe
     end
   end
 
@@ -38,24 +41,12 @@ module ApplicationHelper
       new_root = File.join(this_blog.current_theme.path, 'views', new_root)
       view_root = new_root if File.exist?(File.join(new_root, 'content.rhtml'))
     end
-    render_to_string(file: "#{view_root}/content.rhtml", locals: sidebar.to_locals_hash, layout: false)
+    render_to_string(file: "#{view_root}/content.rhtml", locals: sidebar.to_locals_hash, layout: false).html_safe
   end
 
   def themeable_stylesheet_link_tag(name)
     src = this_blog.current_theme.path + "/stylesheets/#{name}.css"
     stylesheet_link_tag "/stylesheets/theme/#{name}.css" if File.exist? src
-  end
-
-  def articles?
-    Article.any?
-  end
-
-  def trackbacks?
-    Trackback.any?
-  end
-
-  def comments?
-    Comment.any?
   end
 
   def render_to_string(*args, &block)
@@ -85,7 +76,7 @@ module ApplicationHelper
 
   def markup_help_popup(markup, text)
     if markup && markup.commenthelp.size > 1
-      "<a href=\"#{url_for controller: 'articles', action: 'markup_help', id: markup.id}\" onclick=\"return popup(this, 'Publify Markup Help')\">#{text}</a>"
+      link_to text, url_for(controller: 'articles', action: 'markup_help', id: markup.id), onclick: "return popup(this, 'Publify Markup Help')"
     else
       ''
     end
@@ -96,7 +87,7 @@ module ApplicationHelper
     tag = []
     tag << %{ onmouseover="if (getCookie('publify_user_profile') == 'admin') { $('#{admin_id}').show(); }" }
     tag << %{ onmouseout="$('#{admin_id}').hide();" }
-    tag.join ' '
+    tag.join(' ').html_safe
   end
 
   def feed_title
@@ -158,10 +149,6 @@ module ApplicationHelper
     end
   end
 
-  def use_canonical
-    "<link rel='canonical' href='#{this_blog.base_url + request.fullpath}' />".html_safe
-  end
-
   def page_header_includes
     content_array.map(&:whiteboard).map do |w|
       w.select { |k, _v| k =~ /^page_header_/ }.map do |_, v|
@@ -215,10 +202,6 @@ module ApplicationHelper
     meta_tag 'keywords', @keywords unless @keywords.blank?
   end
 
-  def this_blog
-    @blog ||= Blog.default
-  end
-
   def stop_index_robots?(blog)
     stop = (params[:year].present? || params[:page].present?)
     stop = blog.unindex_tags if controller_name == 'tags'
@@ -263,6 +246,19 @@ module ApplicationHelper
       end
     else
       html(item, :all)
+    end
+  end
+
+  def nofollowify_links(string)
+    if this_blog.dofollowify
+      string
+    else
+      result = string.gsub(/<a(.*?)>/i, '<a\1 rel="nofollow">')
+      if string.html_safe?
+        result.html_safe
+      else
+        result
+      end
     end
   end
 end

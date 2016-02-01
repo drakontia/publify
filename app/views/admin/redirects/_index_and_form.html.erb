@@ -53,8 +53,11 @@
       <% for redirect in @redirects %>
       <tr>
         <td>
-          <%= link_to("#{redirect.to_url}", "#{redirect.to_url}") %>
-          <%= show_redirect_actions redirect %>
+          <%= link_to("#{redirect.from_url}", "#{redirect.from_url}") %>
+          <div class="action">
+            <%= button_to_edit redirect %>
+            <%= button_to_delete redirect %>
+          </div>
         </td>
         <td><%= link_to(redirect.to_path, redirect.to_path) %></td>
       </tr>

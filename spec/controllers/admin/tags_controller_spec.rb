@@ -6,7 +6,9 @@ describe Admin::TagsController, type: :controller do
   let!(:blog) { create(:blog) }
   let!(:user) { create(:user, login: 'henri', profile: create(:profile_admin)) }
 
-  before { request.session = { user: user.id } }
+  before do
+    sign_in user
+  end
 
   describe 'GET #index' do
     it 'responds successfully with an HTTP 200 status code' do
@@ -23,12 +25,17 @@ describe Admin::TagsController, type: :controller do
 
   describe 'create a new tag' do
     it 'should create a tag and redirect to #index' do
-      expect do
-        post :create, tag: { display_name: 'new_tag' }
-        expect(response).to redirect_to(action: 'index')
-        expect(Tag.count).to eq(1)
-        expect(Tag.first.display_name).to eq('new_tag')
-      end.to change(Tag, :count)
+      post :create, tag: { display_name: 'new_tag' }
+      expect(response).to redirect_to(action: 'index')
+      expect(Tag.count).to eq(1)
+      expect(Tag.first.display_name).to eq('new_tag')
+    end
+
+    it 'renders #index on error' do
+      blog.tags.create! display_name: 'foo'
+      post :create, tag: { display_name: 'foo' }
+      expect(response).to render_template('index')
+      expect(Tag.count).to eq(1)
     end
   end
 

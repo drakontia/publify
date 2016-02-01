@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= I18n.locale %>">
   <head>
     <%= render 'shared/page_header' %>
     <%= themeable_stylesheet_link_tag :theme %>
@@ -7,26 +7,26 @@
     <title><%=h page_title %></title>
   </head>
 
-<body>
-<div class="container">
-  <div id="header">
-    <h1><%= link_to this_blog.blog_name, this_blog.base_url %></h1>
-    <p class="desc"><%= this_blog.blog_subtitle %></p>
-  </div>
+  <body>
+  <div class="container">
+    <div id="header">
+      <h1><%= link_to this_blog.blog_name, this_blog.base_url %></h1>
+      <p class="desc"><%= this_blog.blog_subtitle %></p>
+    </div>
 
-  <div class="content">
-    <%= yield %>
-  </div>
+    <div class="content">
+      <%= yield %>
+    </div>
 
-  <div class="sidebar">
-    <%= render_sidebars %>
-  </div>
+    <div class="sidebar">
+      <%= render_sidebars %>
+    </div>
 
-  <div class="footer">
-    <p class="legal">
-      <%= t(".powered_by", powered_by: link_to('Publify', 'http://publify.co')) %>
-    </p>
+    <div class="footer">
+      <p class="legal">
+        <%= t(".powered_by_html", powered_by: link_to('Publify', 'http://publify.co')) %>
+      </p>
+    </div>
   </div>
-</div>
-</body>
+  </body>
 </html>

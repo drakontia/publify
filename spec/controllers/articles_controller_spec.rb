@@ -184,7 +184,7 @@ describe ArticlesController, 'nousers', type: :controller do
 
   it 'redirects to signup' do
     get 'index'
-    expect(response).to redirect_to(controller: 'accounts', action: 'signup')
+    expect(response).to redirect_to new_user_registration_path
   end
 end
 
@@ -243,12 +243,11 @@ describe ArticlesController, 'previewing', type: :controller do
 
   describe 'with non logged user' do
     before :each do
-      @request.session = {}
       get :preview, id: create(:article).id
     end
 
     it 'should redirect to login' do
-      expect(response).to redirect_to(controller: 'accounts', action: 'login')
+      expect(response).to redirect_to new_user_session_path
     end
   end
 
@@ -256,7 +255,9 @@ describe ArticlesController, 'previewing', type: :controller do
     let(:admin) { create(:user, :as_admin) }
     let(:article) { create(:article, user: admin) }
 
-    before(:each) { @request.session = { user: admin.id } }
+    before do
+      sign_in admin
+    end
 
     describe 'theme rendering' do
       render_views
@@ -309,7 +310,7 @@ describe ArticlesController, 'redirecting', type: :controller do
     # redirects?
     describe 'and non-empty relative_url_root' do
       before do
-        build_stubbed(:blog, base_url: 'http://test.host/blog')
+        create(:blog, base_url: 'http://test.host/blog')
         create(:user)
       end
 
@@ -361,7 +362,7 @@ describe ArticlesController, 'redirecting', type: :controller do
     end
 
     it 'should redirect to article with url_root' do
-      build_stubbed(:blog, base_url: 'http://test.host/blog')
+      create(:blog, base_url: 'http://test.host/blog')
       create(:article, permalink: 'second-blog-article', published_at: Time.utc(2004, 4, 1))
       get :redirect, from: 'articles/2004/04/01/second-blog-article'
       assert_response 301
@@ -369,20 +370,22 @@ describe ArticlesController, 'redirecting', type: :controller do
     end
 
     it 'should redirect to article with articles in url_root' do
-      build_stubbed(:blog, base_url: 'http://test.host/aaa/articles/bbb')
+      create(:blog, base_url: 'http://test.host/aaa/articles/bbb')
       create(:article, permalink: 'second-blog-article', published_at: Time.utc(2004, 4, 1))
       get :redirect, from: 'articles/2004/04/01/second-blog-article'
       assert_response 301
       expect(response).to redirect_to('http://test.host/aaa/articles/bbb/2004/04/01/second-blog-article')
     end
+
+    it 'should not redirect to an article from another blog'
   end
 
   describe 'with permalink_format like %title%.html' do
     let!(:blog) { create(:blog, permalink_format: '/%title%.html') }
     let!(:admin) { create(:user, :as_admin) }
 
-    before(:each) do
-      @request.session = { user: admin.id }
+    before do
+      sign_in admin
     end
 
     context 'with an article' do
@@ -573,12 +576,11 @@ describe ArticlesController, 'preview page', type: :controller do
 
   describe 'with non logged user' do
     before :each do
-      @request.session = {}
       get :preview_page, id: create(:article).id
     end
 
     it 'should redirect to login' do
-      expect(response).to redirect_to(controller: 'accounts', action: 'login')
+      expect(response).to redirect_to new_user_session_path
     end
   end
 
@@ -587,7 +589,7 @@ describe ArticlesController, 'preview page', type: :controller do
 
     before(:each) do
       henri = create(:user, login: 'henri', profile: create(:profile_admin, label: Profile::ADMIN))
-      @request.session = { user: henri.id }
+      sign_in henri
     end
 
     with_each_theme do |theme, view_path|

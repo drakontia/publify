@@ -41,6 +41,10 @@ module Publify
 
     # Add sidebar plugin's local file.
     config.i18n.load_path += Dir[Rails.root.join('lib', '*_sidebar', 'config', 'locales', '*.{rb,yml}')]
+
+    config.to_prepare do
+      DeviseController.layout 'accounts'
+    end
   end
 
   # Load included libraries.
@@ -66,8 +70,6 @@ module Publify
   # require 'publify_plugins'
   require 'bare_migration'
   require 'publify_version'
-
-  require 'publify_login_system'
 
   Date::DATE_FORMATS.merge!(
     :long_weekday => '%a %B %e, %Y %H:%M'

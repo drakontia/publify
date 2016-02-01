@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807134129) do
+ActiveRecord::Schema.define(version: 20160110094906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150807134129) do
     t.integer  "parent_id"
     t.text     "settings"
     t.string   "post_type",      default: "read"
+    t.integer  "blog_id"
   end
 
   add_index "contents", ["id", "type"], name: "index_contents_on_id_and_type", using: :btree
@@ -114,19 +115,13 @@ ActiveRecord::Schema.define(version: 20150807134129) do
     t.text   "modules"
   end
 
-  create_table "profiles_rights", id: false, force: :cascade do |t|
-    t.integer "profile_id"
-    t.integer "right_id"
-  end
-
-  add_index "profiles_rights", ["profile_id"], name: "index_profiles_rights_on_profile_id", using: :btree
-
   create_table "redirects", force: :cascade do |t|
     t.string   "from_path"
     t.string   "to_path"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "content_id"
+    t.integer  "blog_id"
   end
 
   create_table "resources", force: :cascade do |t|
@@ -153,6 +148,7 @@ ActiveRecord::Schema.define(version: 20150807134129) do
     t.text    "config"
     t.integer "staged_position"
     t.string  "type"
+    t.integer "blog_id",         null: false
   end
 
   add_index "sidebars", ["id", "type"], name: "index_sidebars_on_id_and_type", using: :btree
@@ -172,6 +168,7 @@ ActiveRecord::Schema.define(version: 20150807134129) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "display_name"
+    t.integer  "blog_id"
   end
 
   create_table "text_filters", force: :cascade do |t|
@@ -193,8 +190,8 @@ ActiveRecord::Schema.define(version: 20150807134129) do
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
-    t.string   "password"
-    t.text     "email"
+    t.string   "encrypted_password",        default: "",       null: false
+    t.string   "email",                     default: "",       null: false
     t.text     "name"
     t.boolean  "notify_via_email"
     t.boolean  "notify_on_new_articles"
@@ -207,9 +204,21 @@ ActiveRecord::Schema.define(version: 20150807134129) do
     t.datetime "last_connection"
     t.text     "settings"
     t.integer  "resource_id"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",             default: 0,        null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["resource_id"], name: "index_users_on_resource_id", using: :btree
   add_index "users", ["text_filter_id"], name: "index_users_on_text_filter_id", using: :btree
 

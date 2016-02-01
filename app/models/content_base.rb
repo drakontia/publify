@@ -3,10 +3,6 @@ module ContentBase
     base.extend ClassMethods
   end
 
-  def blog
-    @blog ||= Blog.default
-  end
-
   attr_accessor :just_changed_published_status
   alias_method :just_changed_published_status?, :just_changed_published_status
 
@@ -44,7 +40,7 @@ module ContentBase
   # Post-process the HTML.  This is a noop by default, but Comment overrides it
   # to enforce HTML sanity.
   def html_postprocess(_field, html)
-    html
+    html.html_safe
   end
 
   def html_preprocess(_field, html)
