@@ -53,7 +53,7 @@ group :development, :test do
 
   gem 'factory_girl', '~> 4.5.0'
   gem 'capybara'
-  gem 'rspec-rails', '~> 3.4.0'
+  gem 'rspec-rails', '~> 3.3.0'
   gem 'simplecov', require: false
   gem 'pry-rails'
 end
