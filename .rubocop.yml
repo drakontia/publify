@@ -8,8 +8,8 @@ AllCops:
   - 'tmp/**/*'
   - 'vendor/**/*'
 
-  # Include Rails cops
-  RunRailsCops: true
+Rails:
+  Enabled: true
 
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
@@ -42,6 +42,10 @@ Style/CollectionMethods:
 Style/DotPosition:
   EnforcedStyle: trailing
 
+# This cop doesn't detect use of break yet
+Style/EachWithObject:
+  Enabled: false
+
 # Do not use unnecessary spacing.
 Style/ExtraSpacing:
   Enabled: true
@@ -49,6 +53,15 @@ Style/ExtraSpacing:
 # Allows format strings with: format, sprintf or percent.
 Style/FormatString:
   Enabled: false
+
+# TODO: Re-enable and fix offenses
+Style/GuardClause:
+  Enabled: false
+
+# Multi-line operations should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 
 # Multi-line operations should be simply indented. Aligning them makes it even
 # harder to keep a sane line length.
@@ -58,5 +71,9 @@ Style/MultilineOperationIndentation:
 # Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
+
+# Allow meaningful names for single-line reduce etc.
+Style/SingleLineBlockParams:
+  Enabled: false
 
 inherit_from: .rubocop_todo.yml

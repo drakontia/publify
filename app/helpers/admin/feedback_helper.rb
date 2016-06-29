@@ -1,13 +1,13 @@
 module Admin::FeedbackHelper
   def comment_class(state)
-    return 'label-info' if state.to_s.downcase == 'presumed_ham'
-    return 'label-warning' if state.to_s.downcase == 'presumed_spam'
-    return 'label-success' if state.to_s.downcase == 'ham'
+    return 'label-info' if state.to_s.casecmp('presumed_ham').zero?
+    return 'label-warning' if state.to_s.casecmp('presumed_spam').zero?
+    return 'label-success' if state.to_s.casecmp('ham').zero?
     'label-danger'
   end
 
   def show_feedback_actions(item, context = 'listing')
-    return if current_user.profile.label == 'contributor'
+    return unless can? :manage, 'admin/feedback'
     content_tag(:div, class: 'action', style: '') do
       safe_join [
         content_tag(:small, change_status(item, context)),

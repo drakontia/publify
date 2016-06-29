@@ -22,7 +22,7 @@ FactoryGirl.define do
     password 'top-secret'
     state 'active'
     twitter '@getpublify'
-    association :profile, factory: :profile
+    profile User::CONTRIBUTOR
     association :resource, factory: :avatar
     association :text_filter, factory: :textile
 
@@ -47,11 +47,15 @@ FactoryGirl.define do
     end
 
     trait :as_admin do
-      association :profile, factory: :profile_admin
+      profile User::ADMIN
     end
 
     trait :as_publisher do
-      association :profile, factory: :profile_publisher
+      profile User::PUBLISHER
+    end
+
+    trait :as_contributor do
+      profile User::CONTRIBUTOR
     end
   end
 
@@ -157,7 +161,7 @@ FactoryGirl.define do
   end
 
   factory :blog do
-    base_url 'http://myblog.net'
+    base_url 'http://test.host/blog'
     hide_extended_on_rss true
     blog_name 'test blog'
     limit_article_display 2
@@ -173,10 +177,10 @@ http://alsoping.example.com/rpc/ping"
     sp_global true
     default_allow_comments true
     email_from 'scott@sigkill.org'
-    association :text_filter, factory: :textile
+    text_filter 'textile'
     sp_article_auto_close 0
     link_to_author false
-    association :comment_text_filter, factory: :markdown
+    comment_text_filter 'markdown'
     permalink_format '/%year%/%month%/%day%/%title%'
     use_canonical_url true
     rss_description_text 'rss description text'
@@ -191,27 +195,6 @@ http://alsoping.example.com/rpc/ping"
     factory :blog_with_twitter do
       twitter_consumer_key 'consumer_key'
       twitter_consumer_secret 'consumer_secret'
-    end
-  end
-
-  factory :profile, class: :profile do
-    label { FactoryGirl.generate(:label) }
-    nicename 'Publify contributor'
-    modules [:dashboard, :profile]
-
-    factory :profile_admin do
-      label Profile::ADMIN
-      nicename 'Publify administrator'
-      modules [:dashboard, :write, :articles, :pages, :feedback, :themes, :customizesidebar, :users, :seo, :media, :settings, :profile, :notes]
-    end
-
-    factory :profile_publisher do
-      label 'publisher'
-      nicename 'Blog publisher'
-      modules [:users, :dashboard, :write, :articles, :pages, :feedback, :media, :notes]
-    end
-
-    factory :profile_contributor do
     end
   end
 

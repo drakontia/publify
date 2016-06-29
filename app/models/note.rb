@@ -39,7 +39,7 @@ class Note < Content
   end
 
   def html_preprocess(_field, html)
-    PublifyApp::Textfilter::Twitterfilter.filtertext(nil, nil, html, nil)
+    PublifyApp::Textfilter::Twitterfilter.filtertext(html)
   end
 
   def truncate(message, length)
@@ -128,14 +128,14 @@ class Note < Content
     uris = URI.extract(message, %w(http https ftp))
     uris << prefix
     uris.each do |uri|
-      case uri.split(':')[0]
-      when 'https'
-        payload = '-' * TWITTER_HTTPS_URL_LENGTH
-      when 'ftp'
-        payload = '-' * TWITTER_FTP_URL_LENGTH
-      else
-        payload = '-' * TWITTER_HTTP_URL_LENGTH
-      end
+      payload = case uri.split(':')[0]
+                when 'https'
+                  '-' * TWITTER_HTTPS_URL_LENGTH
+                when 'ftp'
+                  '-' * TWITTER_FTP_URL_LENGTH
+                else
+                  '-' * TWITTER_HTTP_URL_LENGTH
+                end
       message = message.gsub(uri, payload)
     end
     message.length > 140

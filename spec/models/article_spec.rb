@@ -12,12 +12,12 @@ describe Article, type: :model do
   describe '#permalink_url' do
     describe 'with hostname' do
       subject { blog.articles.build(permalink: 'article-3', published_at: Time.utc(2004, 6, 1)).permalink_url(nil, false) }
-      it { is_expected.to eq('http://myblog.net/2004/06/01/article-3') }
+      it { is_expected.to eq("#{blog.base_url}/2004/06/01/article-3") }
     end
 
     describe 'without hostname' do
       subject { blog.articles.build(permalink: 'article-3', published_at: Time.utc(2004, 6, 1)).permalink_url(nil, true) }
-      it { is_expected.to eq('/2004/06/01/article-3') }
+      it { is_expected.to eq("#{blog.root_path}/2004/06/01/article-3") }
     end
 
     # NOTE: URLs must not have any multibyte characters in them. The
@@ -25,21 +25,21 @@ describe Article, type: :model do
     describe 'with a multibyte permalink' do
       subject { blog.articles.build(permalink: 'ルビー', published_at: Time.utc(2004, 6, 1)) }
       it 'escapes the multibyte characters' do
-        expect(subject.permalink_url(nil, true)).to eq('/2004/06/01/%E3%83%AB%E3%83%93%E3%83%BC')
+        expect(subject.permalink_url(nil, true)).to eq("#{blog.root_path}/2004/06/01/%E3%83%AB%E3%83%93%E3%83%BC")
       end
     end
 
     describe 'with a permalink containing a space' do
       subject { blog.articles.build(permalink: 'hello there', published_at: Time.utc(2004, 6, 1)) }
       it "escapes the space as '%20', not as '+'" do
-        expect(subject.permalink_url(nil, true)).to eq('/2004/06/01/hello%20there')
+        expect(subject.permalink_url(nil, true)).to eq("#{blog.root_path}/2004/06/01/hello%20there")
       end
     end
 
     describe 'with a permalink containing a plus' do
       subject { blog.articles.build(permalink: 'one+two', published_at: Time.utc(2004, 6, 1)) }
       it 'does not escape the plus' do
-        expect(subject.permalink_url(nil, true)).to eq('/2004/06/01/one+two')
+        expect(subject.permalink_url(nil, true)).to eq("#{blog.root_path}/2004/06/01/one+two")
       end
     end
   end
@@ -54,11 +54,11 @@ describe Article, type: :model do
     let(:article) { build(:article, permalink: 'article-3', published_at: Time.utc(2004, 6, 1)) }
 
     it 'returns url for atom feed for a Atom 1.0 asked' do
-      expect(article.feed_url('atom10')).to eq 'http://myblog.net/2004/06/01/article-3.atom'
+      expect(article.feed_url('atom10')).to eq "#{blog.base_url}/2004/06/01/article-3.atom"
     end
 
     it 'returns url for rss feed for a RSS 2 asked' do
-      expect(article.feed_url('rss20')).to eq 'http://myblog.net/2004/06/01/article-3.rss'
+      expect(article.feed_url('rss20')).to eq "#{blog.base_url}/2004/06/01/article-3.rss"
     end
   end
 
@@ -119,8 +119,10 @@ describe Article, type: :model do
   end
 
   describe 'the html_urls method' do
+    let(:blog) { create :blog, text_filter: 'none' }
+
     before do
-      allow(blog).to receive(:text_filter_object) { TextFilter.new(filters: []) }
+      create :none
       @article = blog.articles.build
     end
 
@@ -158,16 +160,17 @@ describe Article, type: :model do
   describe 'saving an Article' do
     context 'with a blog that sends outbound pings' do
       let(:referenced_url) { 'http://anotherblog.org/a-post' }
-      let!(:blog) { create(:blog, send_outbound_pings: 1) }
+      let!(:blog) { create(:blog, send_outbound_pings: 1, text_filter: 'none') }
       let(:mock_pinger) { instance_double('Ping::Pinger') }
-      let(:article) {
+      let(:article) do
         blog.articles.build(body: %(<a href="#{referenced_url}">),
                             title: 'Test the pinging',
                             blog_id: 1,
                             published: true)
-      }
+      end
 
       before do
+        create :none
         # Check supposition
         expect(Thread.list.count).to eq 1
 
@@ -332,7 +335,7 @@ describe Article, type: :model do
 
   describe '#access_by?' do
     before do
-      @alice = build(:user, profile: build(:profile_admin, label: Profile::ADMIN))
+      @alice = build(:user, :as_admin)
     end
 
     it 'admin should have access to an article written by another' do
@@ -349,7 +352,8 @@ describe Article, type: :model do
     before :each do
       @article = blog.articles.build(
         body: 'basic text',
-        extended: 'extended text to explain more and more how Publify is wonderful')
+        extended: 'extended text to explain more and more how Publify is wonderful'
+      )
     end
 
     it 'should combine body and extended content' do
@@ -413,14 +417,14 @@ describe Article, type: :model do
   describe '#comment_url' do
     it 'should render complete url of comment' do
       article = build_stubbed(:article, id: 123)
-      expect(article.comment_url).to eq("/comments?article_id=#{article.id}")
+      expect(article.comment_url).to eq("#{blog.root_path}/comments?article_id=#{article.id}")
     end
   end
 
   describe '#preview_comment_url' do
     it 'should render complete url of comment' do
       article = build_stubbed(:article, id: 123)
-      expect(article.preview_comment_url).to eq("/comments/preview?article_id=#{article.id}")
+      expect(article.preview_comment_url).to eq("#{blog.root_path}/comments/preview?article_id=#{article.id}")
     end
   end
 
@@ -507,7 +511,7 @@ describe Article, type: :model do
 
     describe '#permalink_url' do
       it 'uses UTC to determine correct day' do
-        expect(@a.permalink_url).to eq('http://myblog.net/2011/02/21/a-big-article')
+        expect(@a.permalink_url).to eq "#{blog.base_url}/2011/02/21/a-big-article"
       end
     end
 
@@ -534,7 +538,7 @@ describe Article, type: :model do
 
     describe '#permalink_url' do
       it 'uses UTC to determine correct day' do
-        expect(@a.permalink_url).to eq('http://myblog.net/2011/02/22/a-big-article')
+        expect(@a.permalink_url).to eq "#{blog.base_url}/2011/02/22/a-big-article"
       end
     end
 
@@ -561,7 +565,7 @@ describe Article, type: :model do
 
     describe '#permalink_url' do
       it 'uses JST to determine correct day' do
-        expect(@a.permalink_url).to eq('http://myblog.net/2012/12/31/a-big-article')
+        expect(@a.permalink_url).to eq "#{blog.base_url}/2012/12/31/a-big-article"
       end
     end
 
@@ -588,7 +592,7 @@ describe Article, type: :model do
 
     describe '#permalink_url' do
       it 'uses JST to determine correct day' do
-        expect(@a.permalink_url).to eq('http://myblog.net/2013/01/01/a-big-article')
+        expect(@a.permalink_url).to eq("#{blog.base_url}/2013/01/01/a-big-article")
       end
     end
 
@@ -636,13 +640,17 @@ describe Article, type: :model do
   end
 
   describe 'save_attachment!' do
-    it 'calls resource create_and_upload and add this new resource' do
-      resource = build(:resource)
-      file = OpenStruct.new
+    let(:file) { file_upload('some_file') }
+
+    it 'adds a new resource' do
       article = create(:article)
-      expect(Resource).to receive(:create_and_upload).with(file).and_return(resource)
-      article.save_attachment!(file).reload
-      expect(article.resources).to eq [resource]
+      article.save_attachment!(file)
+      article.reload
+
+      resource = article.resources.first
+      upload = resource.upload
+
+      expect(upload.file.basename).to eq 'some_file'
     end
   end
 
@@ -678,7 +686,7 @@ describe Article, type: :model do
         end
 
         it "calls send_weblogupdatesping when it's not already done" do
-          new_ping = OpenStruct.new
+          new_ping = double(Ping)
           urls_to_ping = [new_ping]
           expect_any_instance_of(Blog).to receive(:urls_to_ping_for).and_return(urls_to_ping)
           expect(article).to receive(:permalink_url)
@@ -690,7 +698,7 @@ describe Article, type: :model do
 
         it "calls send_pingback_or_trackback when it's not already done" do
           expect_any_instance_of(Blog).to receive(:urls_to_ping_for).and_return([])
-          new_ping = OpenStruct.new
+          new_ping = double(Ping)
           expect(article).to receive(:html_urls_to_ping).and_return([new_ping])
           expect(article).to receive(:permalink_url)
           expect(new_ping).to receive(:send_pingback_or_trackback)

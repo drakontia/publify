@@ -1,7 +1,7 @@
 class SpamProtection
-  IP_RBLS = ['opm.blitzed.us', 'bsb.empty.us']
-  HOST_RBLS = ['multi.surbl.org', 'bsb.empty.us']
-  SECOND_LEVEL = %w(co com net org gov)
+  IP_RBLS = ['opm.blitzed.us', 'bsb.empty.us'].freeze
+  HOST_RBLS = ['multi.surbl.org', 'bsb.empty.us'].freeze
+  SECOND_LEVEL = %w(co com net org gov).freeze
 
   attr_accessor :this_blog
 
@@ -53,7 +53,11 @@ class SpamProtection
 
   def scan_uris(uris = [])
     uris.each do |uri|
-      host = URI.parse(uri).host rescue next
+      host = begin
+               URI.parse(uri).host
+             rescue URI::InvalidURIError
+               next
+             end
       return scan_ip(host) if host =~ Format::IP_ADDRESS
 
       host_parts = host.split('.').reverse
@@ -80,8 +84,9 @@ class SpamProtection
             throw :hit,
                   "#{rbl} positively resolved subdomain #{d} => #{response}"
           end
-        rescue SocketError # rubocop:disable Lint/HandleExceptions
+        rescue SocketError
           # NXDOMAIN response => negative:  d is not in RBL
+          next
         end
       end
     end
@@ -90,20 +95,5 @@ class SpamProtection
 
   def logger
     @logger ||= ::Rails.logger || Logger.new(STDOUT)
-  end
-end
-
-module ActiveRecord
-  module Validations
-    module ClassMethods
-      def validates_against_spamdb(*attr_names)
-        configuration = { message: 'blocked by SpamProtection' }
-        configuration.update(attr_names.pop) if attr_names.last.is_a?(Hash)
-
-        validates_each(attr_names, configuration) do |record, attr_name, value|
-          record.errors.add(attr_name, configuration[:message]) if SpamProtection.new(record.blog).is_spam?(value)
-        end
-      end
-    end
   end
 end

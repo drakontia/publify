@@ -50,12 +50,17 @@ class Content < ActiveRecord::Base
   # NOTE: Due to how Rails injects association methods, this cannot be put in ContentBase
   # TODO: Allowing assignment of a string here is not very clean.
   def text_filter=(filter)
-    filter_object = filter.to_text_filter
-    if filter_object
-      self.text_filter_id = filter_object.id
-    else
-      self.text_filter_id = filter.to_i
-    end
+    filter_object = case filter
+                    when TextFilter
+                      filter
+                    else
+                      TextFilter.find_or_default(filter)
+                    end
+    self.text_filter_id = if filter_object
+                            filter_object.id
+                          else
+                            filter.to_i
+                          end
   end
 
   def shorten_url
@@ -106,7 +111,7 @@ class Content < ActiveRecord::Base
 
   def withdraw!
     withdraw
-    self.save!
+    save!
   end
 
   def link_to_author?
@@ -138,12 +143,6 @@ class Content < ActiveRecord::Base
     # Double check because of crappy data in my own old database
     return unless published && redirect.present?
     redirect.from_url
-  end
-end
-
-class Object
-  def to_text_filter
-    TextFilter.find_by_name(to_s) || TextFilter.find_by_name('none')
   end
 end
 

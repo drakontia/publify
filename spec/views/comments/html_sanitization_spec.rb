@@ -23,7 +23,7 @@ shared_examples_for 'CommentSanitization' do
       @blog.comment_text_filter = value
       build_stubbed(value.empty? ? 'none' : value)
 
-      render file: 'comments/show'
+      render partial: 'comments/comment', locals: { comment: @comment }
       expect(rendered).to have_selector('.content')
       expect(rendered).to have_selector('.author')
 
@@ -31,13 +31,13 @@ shared_examples_for 'CommentSanitization' do
       expect(rendered).not_to have_selector('.content a:not([rel=nofollow])')
       # No links with javascript
       expect(rendered).not_to have_selector('.content a[onclick]')
-      expect(rendered).not_to have_selector(".content a[href^=\"javascript:\"]")
+      expect(rendered).not_to have_selector('.content a[href^="javascript:"]')
 
       expect(rendered).not_to have_selector('.author script')
       expect(rendered).not_to have_selector('.author a:not([rel=nofollow])')
       # No links with javascript
       expect(rendered).not_to have_selector('.author a[onclick]')
-      expect(rendered).not_to have_selector(".author a[href^=\"javascript:\"]")
+      expect(rendered).not_to have_selector('.author a[href^="javascript:"]')
     end
   end
 end
@@ -140,7 +140,7 @@ shared_examples_for 'CommentSanitizationWithDofollow' do
       @blog.comment_text_filter = value
       @blog.save
 
-      render file: 'comments/show'
+      render partial: 'comments/comment', locals: { comment: @comment }
       expect(rendered).to have_selector('.content')
       expect(rendered).to have_selector('.author')
 
@@ -148,13 +148,13 @@ shared_examples_for 'CommentSanitizationWithDofollow' do
       expect(rendered).not_to have_selector('.content a[rel=nofollow]')
       # No links with javascript
       expect(rendered).not_to have_selector('.content a[onclick]')
-      expect(rendered).not_to have_selector(".content a[href^=\"javascript:\"]")
+      expect(rendered).not_to have_selector('.content a[href^="javascript:"]')
 
       expect(rendered).not_to have_selector('.author script')
       expect(rendered).not_to have_selector('.author a[rel=nofollow]')
       # No links with javascript
       expect(rendered).not_to have_selector('.author a[onclick]')
-      expect(rendered).not_to have_selector(".author a[href^=\"javascript:\"]")
+      expect(rendered).not_to have_selector('.author a[href^="javascript:"]')
     end
   end
 end

@@ -11,7 +11,7 @@ FactoryGirl.find_definitions
 
 class EmailNotify
   class << self
-    alias_method :real_send_user_create_notification, :send_user_create_notification
+    alias real_send_user_create_notification send_user_create_notification
     def send_user_create_notification(_user); end
   end
 end
@@ -93,7 +93,7 @@ def assert_rss20(feed, count)
 end
 
 def stub_full_article(time = Time.now, blog: Blog.first)
-  author = FactoryGirl.build_stubbed(User, name: 'User Name')
+  author = FactoryGirl.build_stubbed(:user, name: 'User Name')
   text_filter = FactoryGirl.build(:textile)
 
   a = FactoryGirl.build_stubbed(:article,
@@ -112,13 +112,19 @@ end
 # test standard view and all themes
 def with_each_theme
   yield nil, ''
-  Dir.new(File.join(::Rails.root.to_s, 'themes')).each do |theme|
-    next if theme =~ /\.\.?/
-    theme_dir = "#{::Rails.root}/themes/#{theme}"
+  Theme.find_all.each do |theme|
+    theme_dir = theme.path
     view_path = "#{theme_dir}/views"
     if File.exist?("#{theme_dir}/helpers/theme_helper.rb")
       require "#{theme_dir}/helpers/theme_helper.rb"
     end
-    yield theme, view_path
+    yield theme.name, view_path
   end
+end
+
+def file_upload(filename)
+  ActionDispatch::Http::UploadedFile.new(
+    tempfile: File.new(Rails.root.join('spec', 'fixtures', 'testfile.txt')),
+    filename: filename
+  )
 end

@@ -23,12 +23,12 @@ describe Content, type: :model do
 
     describe '#short_url' do
       let(:redirect) { build_stubbed(:redirect, from_path: 'foo', to_path: 'bar', blog: blog) }
-      let(:content) {
+      let(:content) do
         build_stubbed(:content,
                       blog: blog,
                       published: true,
                       redirect: redirect)
-      }
+      end
 
       describe 'normally' do
         let(:blog) { build_stubbed(:blog, base_url: 'http://myblog.net') }
@@ -55,16 +55,15 @@ describe Content, type: :model do
       end
     end
 
+    # TODO: Move implementation out of models
     describe '#really_send_notifications' do
       it 'sends notifications to interested users' do
-        @content = Content.new
-        henri = create(:user)
-        alice = create(:user)
+        @content = Article.new
+        henri = create(:user, notify_on_new_articles: true)
+        alice = create(:user, notify_on_new_articles: true)
 
-        expect(@content).to receive(:notify_user_via_email).with henri
-        expect(@content).to receive(:notify_user_via_email).with alice
-
-        expect(@content).to receive(:interested_users).and_return([henri, alice])
+        expect(@content).to receive(:send_notification_to_user).with henri
+        expect(@content).to receive(:send_notification_to_user).with alice
 
         @content.really_send_notifications
       end

@@ -401,13 +401,13 @@ describe Admin::ContentController, type: :controller do
       it 'should return foo for keywords fo' do
         get :auto_complete_for_article_keywords, article: { keywords: 'fo' }
         expect(response).to be_success
-        expect(response.body).to eq("[\"bar\",\"bazz\",\"foo\"]")
+        expect(response.body).to eq('["bar","bazz","foo"]')
       end
     end
   end
 
   describe 'common behavior with publisher connection' do
-    let!(:user) { create(:user, text_filter: create(:markdown), profile: create(:profile_publisher)) }
+    let!(:user) { create(:user, :as_publisher, text_filter: create(:markdown)) }
 
     before :each do
       user.save
@@ -420,7 +420,7 @@ describe Admin::ContentController, type: :controller do
   end
 
   describe 'with publisher connection' do
-    let!(:user) { create(:user, text_filter: create(:markdown), profile: create(:profile_publisher)) }
+    let!(:user) { create(:user, :as_publisher, text_filter: create(:markdown)) }
 
     before do
       sign_in user

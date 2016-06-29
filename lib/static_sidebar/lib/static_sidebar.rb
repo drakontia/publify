@@ -10,11 +10,11 @@ class StaticSidebar < Sidebar
   <li><a href="/admin">Admin</a></li>
 </ul>
 
-'
+'.freeze
   description 'Static content, like links to other sites, advertisements, or blog meta-information'
 
   setting :title, 'Links'
   setting :body, DEFAULT_TEXT, input_type: :text_area
 end
 
-Sidebar.register_sidebar StaticSidebar
+SidebarRegistry.register_sidebar StaticSidebar

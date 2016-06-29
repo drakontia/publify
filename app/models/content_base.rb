@@ -4,7 +4,7 @@ module ContentBase
   end
 
   attr_accessor :just_changed_published_status
-  alias_method :just_changed_published_status?, :just_changed_published_status
+  alias just_changed_published_status? just_changed_published_status
 
   def really_send_notifications
     interested_users.each do |value|
@@ -33,7 +33,7 @@ module ContentBase
   def generate_html(field, text = nil)
     text ||= self[field].to_s
     prehtml = html_preprocess(field, text).to_s
-    html = (text_filter || default_text_filter).filter_text_for_content(blog, prehtml, self) || prehtml
+    html = (text_filter || default_text_filter).filter_text(prehtml) || prehtml
     html_postprocess(field, html).to_s
   end
 
@@ -52,11 +52,11 @@ module ContentBase
   end
 
   def excerpt_text(length = 160)
-    if respond_to?(:excerpt) && (excerpt || '') != ''
-      text = generate_html(:excerpt, excerpt)
-    else
-      text = html(:all)
-    end
+    text = if respond_to?(:excerpt) && (excerpt || '') != ''
+             generate_html(:excerpt, excerpt)
+           else
+             html(:all)
+           end
 
     text = text.strip_html
 
@@ -74,7 +74,7 @@ module ContentBase
 
   def publish!
     self.published = true
-    self.save!
+    save!
   end
 
   # The default text filter.  Generally, this is the filter specified by blog.text_filter,

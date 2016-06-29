@@ -105,7 +105,7 @@ describe Note, type: :model do
       context 'with a more than 140 char note' do
         let(:note) { create(:note, body: 'a big message that contains more than 140 char is not to hard to do. You only need to speak as a french guy, a lot to say nothing. And that probably the best way to write more that 140 char') }
 
-        let(:fake_twitter) { OpenStruct.new }
+        let(:fake_twitter) { double(Twitter::REST::Client) }
 
         before(:each) do
           expect(Twitter::REST::Client).to receive(:new).and_return(fake_twitter)
@@ -130,7 +130,8 @@ describe Note, type: :model do
     end
 
     describe 'twitter_message' do
-      let(:note) { create(:note, body: tweet) }
+      let(:blog) { create :blog, base_url: 'http://myblog.net' }
+      let(:note) { create(:note, blog: blog, body: tweet) }
 
       context 'with a short simple message' do
         let(:tweet) { 'A message without URL' }
@@ -152,14 +153,20 @@ describe Note, type: :model do
       end
 
       context 'With a test message from production...' do
-        let(:tweet) { "Le dojo de nantes, c'est comme au McDo, sans les odeurs, et en plus rigolo: RT @abailly Ce midi c'est coding dojo à la Cantine #Nantes. Pour s'inscrire si vous voulez c'est ici: http://cantine.atlantic2.org/evenements/coding-dojo-8/ … Sinon venez comme vous êtes" }
+        let(:tweet) do
+          "Le dojo de nantes, c'est comme au McDo, sans les odeurs, et en plus rigolo: RT @abailly Ce midi c'est coding dojo à la Cantine #Nantes." \
+                      " Pour s'inscrire si vous voulez c'est ici: http://cantine.atlantic2.org/evenements/coding-dojo-8/ … Sinon venez comme vous êtes"
+        end
         let(:expected_tweet) { "Le dojo de nantes, c'est comme au McDo, sans les odeurs, et en plus rigolo: RT @abailly Ce midi c'est coding... (#{note.redirect.from_url})" }
         it { expect(note.twitter_message).to eq(expected_tweet) }
         it { expect(note.twitter_message.length).to eq(138) }
       end
 
       context 'with a bug message' do
-        let(:tweet) { "\"JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript. It uses only six different characters to write and execute code.\" http://www.jsfuck.com/ " }
+        let(:tweet) do
+          '"JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript.' \
+                      ' It uses only six different characters to write and execute code." http://www.jsfuck.com/ '
+        end
         let(:expected_tweet) { "\"JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript. It uses only... (#{note.redirect.from_url})" }
 
         it { expect(note.twitter_message).to eq(expected_tweet) }

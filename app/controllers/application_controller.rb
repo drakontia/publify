@@ -4,18 +4,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, only: [:edit, :update, :delete]
 
-  before_action :reset_local_cache, :fire_triggers, :load_lang, :set_paths
-  after_action :reset_local_cache
+  before_action :fire_triggers, :load_lang, :set_paths
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  class << self
-    unless self.respond_to? :template_root
-      def template_root
-        ActionController::Base.view_paths.last
-      end
-    end
+  private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :email
   end
-
-  protected
 
   def login_required
     authenticate_user! && authorize!(params[:action], params[:controller])
@@ -26,11 +22,6 @@ class ApplicationController < ActionController::Base
     Dir.glob(File.join(::Rails.root.to_s, 'lib', '*_sidebar/app/views')).select do |file|
       append_view_path file
     end
-  end
-
-  def setup_themer
-    # Ick!
-    self.class.view_paths = ::ActionController::Base.view_paths.dup.unshift("#{::Rails.root}/themes/#{this_blog.theme}/views")
   end
 
   def fire_triggers
@@ -46,11 +37,6 @@ class ApplicationController < ActionController::Base
     elsif I18n.available_locales.include?(this_blog.lang.sub('_', '-').to_sym)
       I18n.locale = this_blog.lang.sub('_', '-')
     end
-  end
-
-  def reset_local_cache
-    session session: new unless session
-    @current_user = nil
   end
 
   def add_to_cookies(name, value, path = nil, _expires = nil)

@@ -43,7 +43,7 @@ describe PublifyTime do
     end
 
     it 'returns nil when year, month and day are not numeric' do
-      expect(PublifyTime.delta 'foo', 'bar', 'baz').to be_nil
+      expect(PublifyTime.delta('foo', 'bar', 'baz')).to be_nil
     end
   end
 
@@ -87,7 +87,7 @@ describe 'find Article date range ' do
       @a.published_at = '1 Jan 2013 01:00 UTC'
       @a.save!
 
-      params = @a.permalink_url.gsub('http://myblog.net/', '').split('/')
+      params = @a.permalink_url.gsub("#{@a.blog.base_url}/", '').split('/')
       @year = params[0]
       @month = params[1]
       @day = params[2]
@@ -109,7 +109,7 @@ describe 'find Article date range ' do
     end
 
     it 'delta_like given year' do
-      range = PublifyTime.delta_like("#{@year}")
+      range = PublifyTime.delta_like(@year)
       expect(Article.where(published_at: range)).to eq([@a])
     end
 
@@ -132,7 +132,7 @@ describe 'find Article date range ' do
       @a.published_at = '1 Jan 2013 01:00 +0900'
       @a.save!
 
-      params = @a.permalink_url.gsub('http://myblog.net/', '').split('/')
+      params = @a.permalink_url.gsub("#{@a.blog.base_url}/", '').split('/')
       @year = params[0]
       @month = params[1]
       @day = params[2]
@@ -154,7 +154,7 @@ describe 'find Article date range ' do
     end
 
     it 'delta_like given year' do
-      range = PublifyTime.delta_like("#{@year}")
+      range = PublifyTime.delta_like(@year)
       expect(Article.where(published_at: range)).to eq([@a])
     end
 

@@ -78,11 +78,24 @@ class Blog < ActiveRecord::Base
   setting :google_analytics, :string, ''
   setting :feedburner_url, :string, ''
   setting :rss_description, :boolean, false
-  setting :rss_description_text, :string, "<hr /><p><small>Original article written by %author% and published on <a href='%blog_url%'>%blog_name%</a> | <a href='%permalink_url%'>direct link to this article</a> | If you are reading this article anywhere other than on <a href='%blog_url%'>%blog_name%</a>, it has been illegally reproduced and without proper authorization.</small></p>"
+  setting :rss_description_text, :string, <<EOS
+<hr />
+<p><small>Original article written by %author% and published on <a href='%blog_url%'>%blog_name%</a>
+| <a href='%permalink_url%'>direct link to this article</a>
+| If you are reading this article anywhere other than on <a href='%blog_url%'>%blog_name%</a>,
+  it has been illegally reproduced and without proper authorization.</small></p>
+EOS
   setting :permalink_format, :string, '/%year%/%month%/%day%/%title%'
   setting :robots, :string, 'User-agent: *\nAllow: /\nDisallow: /admin\n'
-  setting :humans, :string, "/* TEAM */\nYour title: Your name.\nSite: email, link to a contact form, etc.\nTwitter: your Twitter username.\n\n/* SITE */\nSoftware: Publify [http://publify.co] #{PUBLIFY_VERSION}"
+  setting :humans, :string, <<EOS
+/* TEAM */
+Your title: Your name.
+Site: email, link to a contact form, etc.
+Twitter: your Twitter username.
 
+/* SITE */
+Software: Publify [http://publify.co] #{PUBLIFY_VERSION}
+EOS
   setting :index_categories, :boolean, true # deprecated but still needed for backward compatibility
   setting :unindex_categories, :boolean, false
   setting :index_tags, :boolean, true # deprecated but still needed for backward compatibility
@@ -154,23 +167,23 @@ class Blog < ActiveRecord::Base
   # The +Theme+ object for the current theme.
   def current_theme(reload = nil)
     @current_theme = nil if reload
-    @current_theme ||= Theme.find(theme)
+    @current_theme ||= Theme.find(theme) || Theme.new('', '')
   end
 
   # Generate a URL based on the +base_url+.  This allows us to generate URLs
   # without needing a controller handy, so we can produce URLs from within models
   # where appropriate.
   #
-  # It also caches the result in the RouteCache, so repeated URL generation
+  # It also caches the result in the Rails cache, so repeated URL generation
   # requests should be fast, as they bypass all of Rails' route logic.
   def url_for_with_base_url(options = {}, extra_params = {})
     case options
     when String
-      if extra_params[:only_path]
-        url_generated = root_path
-      else
-        url_generated = base_url
-      end
+      url_generated = if extra_params[:only_path]
+                        root_path
+                      else
+                        base_url
+                      end
       url_generated += "/#{options}" # They asked for 'url_for "/some/path"', so return it unedited.
       url_generated += "##{extra_params[:anchor]}" if extra_params[:anchor]
       url_generated
@@ -192,6 +205,7 @@ class Blog < ActiveRecord::Base
   alias_method_chain :url_for, :base_url
 
   # The URL for a static file.
+  # FIXME: Let carrierwave handle this by itself
   def file_url(filename)
     if CarrierWave.configure { |config| config.storage == CarrierWave::Storage::Fog }
       filename
@@ -233,7 +247,7 @@ class Blog < ActiveRecord::Base
   end
 
   def text_filter_object
-    text_filter.to_text_filter
+    TextFilter.find_or_default(text_filter)
   end
 
   def urls_to_ping_for(article)
