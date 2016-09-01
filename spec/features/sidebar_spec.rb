@@ -5,10 +5,18 @@ feature 'Customize Sidebar', js: true do
 
   before do
     henri = create(:user, :as_admin)
-    sign_in henri
+    #sign_in henri
   end
 
-  scenario 'Add available sidebar item to effective items' do
+  scenario "Signing in" do
+    visit '/users/sign_in'
+    within("#new_user") do
+      fill_in 'user_login', :witn => henri.name
+      fill_in 'user_password', :witn => henri.password
+    end
+    click_button 'commit'
+    expect(page).to have_content 'Success'
+  #scenario 'Add available sidebar item to effective items' do
     visit '/admin/sidebar'
 
     expect(page).to have_content '.draggable'
