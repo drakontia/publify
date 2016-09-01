@@ -11,11 +11,11 @@ feature 'Customize Sidebar', js: true do
   scenario "Signing in" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_login', :witn => henri.name
-      fill_in 'user_password', :witn => henri.password
+      fill_in 'Login', :witn => henri.name
+      fill_in 'Password', :witn => henri.password
+      click_button 'Sign in'
     end
-    click_button 'commit'
-    expect(page).to have_content 'Success'
+    expect(page).to have_content 'Singned in successfully.'
   #scenario 'Add available sidebar item to effective items' do
     visit '/admin/sidebar'
 
@@ -27,6 +27,6 @@ feature 'Customize Sidebar', js: true do
     source.drag_to(target)
     expect{page.find(".sortable")}.to have_context source
 
-    click_button 'commit'
+    click_button 'Publish changes'
   end
 end
