@@ -87,6 +87,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.12.0', require: false
   gem 'pry-rails', '~> 0.3.4'
   gem 'pry', '~> 0.10.3'
+  gem 'poltergeist'
 
   gem 'rubocop', '~> 0.41.0', require: false
   gem 'i18n-tasks', '~> 0.9.1' if RUBY_VERSION >= '2.1'
