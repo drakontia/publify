@@ -4,7 +4,51 @@
 
 ### Breaking/large changes
 
+* Break out Publify functionality into several engines. These engines will
+  become separate gems in the future (mvz)
+* Use Rails' default method of setting secrect_key_base in production: Through
+  an environment variable. This means you will have to update your production
+  environment so this variable is actually set (whithajess)
+
 ### Other changes
+
+* Hide spinner on ajax:complete for article search (nathanallen)
+* Fix layout for log in form (mvz)
+* Fix spinner for sidebar editor (mvz)
+
+## 8.3.3
+
+* Fix Devise error during sign-in (mvz)
+* Protect from forgery on all actions (mvz)
+* Have Devise be paranoid by default (mvz)
+* Fix resource upload and properly check mime types (mvz)
+* Store session in the database to prevent session hijacking (mvz)
+* Correctly escape blog name in devise view (mvz)
+
+## 8.3.2
+
+* Replace deprecated count-with-conditions (mvz)
+* Loosen/update dependencies (mvz)
+* Fix google sitemap (mvz)
+* Restore theme helper loading (mvz)
+* Fix password edit form (jetware)
+
+## 8.3.1
+
+* Fix live search (mvz)
+* Introduce SidebarRegistry to avoid need to preload all sidebars (mvz)
+* Avoid use of String#html_safe (mvz)
+* Fix several cases of double-escaped HTML (mvz)
+* Avoid ambiguous field reference in feedback scopes (apsheronets)
+* Remove spurious error message when starting a new article (mvz)
+* Replace bundled bootstrap with bootstrap-sass gem (mvz)
+* Link Resource directly to Blog in order to make upload of images to media
+  library work again (mvz)
+* Fix comment order and other feedback scopes (mvz)
+* Fix autosave (mvz)
+* Improve russian translation (apsheronets)
+* Fix note publication date entry (mvz)
+* Ensure settings update flash has the correct language (mvz)
 
 ## 8.3.0
 

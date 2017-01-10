@@ -46,7 +46,7 @@ The demo is reset every 2 hours.
 ### Download
 
 You can download the latest
-Publify [stable release (8.3.0)](https://github.com/publify/publify/archive/v8.3.0.tar.gz)
+Publify [stable release (8.3.3)](https://github.com/publify/publify/archive/v8.3.3.tar.gz)
 
 If you want to run the master branch, you can [clone the Publify
 repository](https://github.com/publify/publify.git). However, random things may
@@ -79,6 +79,13 @@ $ rails server
 ```
 
 You can now launch you browser and access 127.0.0.1:3000.
+
+### Install Publify on a server
+
+You can use your preferred installation method (e.g., Capistrano) to install
+Publify on a server. You will also need to set up the environment so it
+contains at least `SECRET_KEY_BASE`. Your web server may allow you to set this,
+or you can consider using a tool like `dotenv`.
 
 ### Install Publify on Heroku
 

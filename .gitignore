@@ -1,7 +1,6 @@
 config/database.yml
 config/mail.yml
 config/timezone.yml
-config/secret.token
 *.log
 *~
 db/db*
@@ -18,12 +17,14 @@ installer/rails_installer.yml
 /public/robots.txt
 /public/stylesheets/theme
 /public/stylesheets/all.css
+/publify_core/spec/dummy/public/files
 tmp/*
 /coverage/
 nbproject
 public/cache/*
 .rbenv-version
 .ruby-version
+.env
 .bundle/
 .sass-cache/
 /vendor/bundle

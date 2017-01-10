@@ -6,10 +6,16 @@ AllCops:
   - 'config/**/*'
   - 'db/**/*'
   - 'tmp/**/*'
-  - 'vendor/**/*'
+  - 'publify_core/**/*'
+  - 'publify_amazon_sidebar/**/*'
+  - 'publify_textfilter_code/**/*'
 
 Rails:
   Enabled: true
+
+# We have duplication due to extra logic in the Gemfile
+Bundler/DuplicatedGem:
+  Enabled: false
 
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:

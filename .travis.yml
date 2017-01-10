@@ -2,9 +2,8 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.1
-  - 2.2
-  - 2.3.0
+  - 2.2.6
+  - 2.3.3
 env:
   - DB=sqlite
   - DB=mysql
@@ -13,6 +12,10 @@ install:
   - bundle install --without development
 before_script:
   - bundle exec rake db:create db:migrate
+script: 'bundle exec rake'
+after_success:
+  - bundle exec codeclimate-test-reporter
+
 branches:
   only:
     - master
