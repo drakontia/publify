@@ -23,16 +23,18 @@ links without protocol, but starting with `www`.
 * `:strikethrough`: parse strikethrough, PHP-Markdown style
 Two `~` characters mark the start of a strikethrough,
 e.g. `this is ~~good~~ bad`.
+* `:footnotes`: parse footnotes, PHP-Markdown style. A footnote works very much like a reference-style link: it consists of a marker next to the text (e.g. This is a sentence.[^1]) and a footnote definition on its own line anywhere within the document (e.g. [^1]: This is a footnote.).
 
         }
       end
 
-      def self.filtertext(blog,content,text,params)
+      def self.filtertext(text)
         opt = {
           :tables             => true,
           :fenced_code_blocks => true,
           :autolink           => true,
-          :strikethrough      => true
+          :strikethrough      => true,
+          :footnotes          => true
         }
         markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,opt)
         markdown.render(text)
