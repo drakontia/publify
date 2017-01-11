@@ -1,4 +1,5 @@
 Recaptcha.configure do |config|
-  config.site_key  = '6LfdSvwSAAAAAPDl2OxbjKfNW7MCCJL65ua6TOF5'
-  config.secret_key = '6LfdSvwSAAAAAEi-PN4IIE2CEvuQKKjL5IAN3P9L'
+  # Keep keys out of the code base with environment variables.
+  # export RECAPTCHA_SITE_KEY   = '6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy'
+  # export RECAPTCHA_SECRET_KEY = '6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx'
 end
